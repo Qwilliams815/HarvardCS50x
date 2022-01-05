@@ -25,6 +25,7 @@ int main(void)
 
     fclose(input);
 
+
     for int i=0 while i<whole length: i++ {
         if i < 44 {
             write file[i] with 1byte
