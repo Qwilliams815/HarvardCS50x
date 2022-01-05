@@ -50,11 +50,11 @@ int main(int argc, char *argv[])
         // Write each bit to ouput file header
         //fwrite(bytes[i], sizeof(BYTE), HEADER_SIZE, output);
         header[i] = bytes[i];
-        printf("%i ", header[i]);
+        printf("%i", header[i]);
     }
 
-    fwrite(header, sizeof(BYTE), HEADER_SIZE, output);
-    while bit != eof
+    //fwrite(header, sizeof(BYTE), HEADER_SIZE, output);
+    //while bit != eof
 
     printf("\n");
     //FILE *output = fopen("OUTPUT.wav", "a");
