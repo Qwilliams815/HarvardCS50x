@@ -43,13 +43,13 @@ int main(int argc, char *argv[])
     //long header;
     fread(bytes, sizeof(BYTE), HEADER_SIZE, input);
     //fwrite(bytes, sizeof(BYTE), HEADER_SIZE, output);
-    printf("%s", bytes);
+    //printf("%s", bytes);
     // Iterate Over first 44 bits.
-    //for (int i=0; i<HEADER_SIZE; i++) {
-    //    // Write each bit to ouput file header
-    //    fwrite(bytes[i], sizeof(BYTE), HEADER_SIZE, output);
-    //    printf("%i ", bytes[i]);
-    //}
+    for (int i=0; i<HEADER_SIZE; i++) {
+        // Write each bit to ouput file header
+        //fwrite(bytes[i], sizeof(BYTE), HEADER_SIZE, output);
+        printf("%i ", bytes[i]);
+    }
     printf("\n");
     //FILE *output = fopen("OUTPUT.wav", "a");
     //int header[44];
