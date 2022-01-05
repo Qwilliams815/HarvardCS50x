@@ -17,10 +17,13 @@ int main(void)
 
     int data[44];
     int i=0;
-    while (fread(data, sizeof(BYTE), 44, input)) {
-        printf("%i", data[i]);
-        i++;
-    }
+    //while (fread(data, sizeof(BYTE), 44, input)) {
+    //    printf("%i", data[i]);
+    //    i++;
+    //}
+
+    
+
     printf("\n");
 
     fclose(input);
