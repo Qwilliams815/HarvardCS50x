@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
     }
 
     fwrite(header, sizeof(BYTE), HEADER_SIZE, output);
-
+    while bit != eof
 
     printf("\n");
     //FILE *output = fopen("OUTPUT.wav", "a");
