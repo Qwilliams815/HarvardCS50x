@@ -38,12 +38,11 @@ int main(int argc, char *argv[])
 
     // TODO: Copy header from input file to output file
     //open file fprintf to write to a file
-    //FILE *input = fopen(argv[1], "r");
     BYTE bytes[HEADER_SIZE];
     //Read Header from input file
-    long header;
-    fread(bytes, sizeof(BYTE), HEADER_SIZE, input);
-    fwrite(bytes, sizeof(BYTE), HEADER_SIZE, output);
+    //long header;
+    fread(bytes[0], sizeof(BYTE), HEADER_SIZE, input);
+    fwrite(bytes[0], sizeof(BYTE), HEADER_SIZE, output);
     printf("%s", bytes);
     // Iterate Over first 44 bits.
     //for (int i=0; i<HEADER_SIZE; i++) {
