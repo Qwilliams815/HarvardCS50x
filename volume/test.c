@@ -25,6 +25,15 @@ int main(void)
 
     fclose(input);
 
+    for int i=0 while i<whole length: i++ {
+        if i < 44 {
+            write file[i] with 1byte
+        } else {
+            temp = file[i*factor];
+            write factor with 2 bytes
+        }
+    }
+
     //int i = 44;
     //while (i != EOF) {
     //    int sample = file[i];
