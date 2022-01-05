@@ -17,7 +17,7 @@ int main(void)
 
     int data[44];
     int i=0;
-    while (fread(data, 1, 1, input) != 0) {
+    while (fread(data, sizeof(BYTE), 44, input)) {
         printf("%i", data[i]);
         i++;
     }
@@ -26,14 +26,14 @@ int main(void)
     fclose(input);
 
 
-    for int i=0 while i<whole length: i++ {
-        if i < 44 {
-            write file[i] with 1byte
-        } else {
-            temp = file[i*factor];
-            write factor with 2 bytes
-        }
-    }
+    //for int i=0 while i<whole length: i++ {
+    //    if i < 44 {
+    //        write file[i] with 1byte
+    //    } else {
+    //        temp = file[i*factor];
+    //        write factor with 2 bytes
+    //    }
+    //}
 
     //int i = 44;
     //while (i != EOF) {
