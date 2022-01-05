@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
     BYTE bytes[HEADER_SIZE];
     fread(bytes, sizeof(BYTE), HEADER_SIZE, input);
     //fwrite(bytes, sizeof(BYTE), HEADER_SIZE, output);
-    
+
     //printf("%s", bytes);
     // Iterate Over first 44 bits.
     int header[HEADER_SIZE];
@@ -50,7 +50,8 @@ int main(int argc, char *argv[])
         header[i] = bytes[i];
         printf("%i", header[i]);
     }
-
+    sample = 
+    while (i != EOF)
     //fwrite(header, sizeof(BYTE), HEADER_SIZE, output);
     //while bit != eof
 
