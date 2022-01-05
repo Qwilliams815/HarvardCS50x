@@ -15,13 +15,14 @@ int main(void)
     //printf("%c\n", n[4]);
     FILE *input = fopen("input.wav", "r");
 
-    fread(input, sizeof(BYTE), 44, input);
-    printf("%s", input[1]);
+    int data[44];
+    fread(data, sizeof(BYTE), 44, input);
+    printf("%i", data[1]);
 
-    int i = 44;
-    while (i != EOF) {
-        int sample = file[i];
-        print file[i]
-        i++;
-    }
+    //int i = 44;
+    //while (i != EOF) {
+    //    int sample = file[i];
+    //    print file[i]
+    //    i++;
+    //}
 }
