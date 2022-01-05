@@ -4,6 +4,9 @@
 #include <stdint.h>
 #include <stdlib.h>
 
+typedef uint8_t BYTE;
+typedef int16_t BYTE2;
+
 int main(void)
 {
     char *n = "Hello!";
@@ -12,6 +15,7 @@ int main(void)
     //printf("%c\n", n[4]);
     FILE *input = fopen("input.wav", "r");
 
-    printf("%s", input);
+    fread(input, )
+    printf("%s", input[1]);
 
 }
