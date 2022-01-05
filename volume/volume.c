@@ -51,6 +51,7 @@ int main(int argc, char *argv[])
         printf("%i", header[i]);
     }
     BYTE2 samples[];
+    sample = 
     while (i != EOF)
     //fwrite(header, sizeof(BYTE), HEADER_SIZE, output);
     //while bit != eof
