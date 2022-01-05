@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
     //open file fprintf to write to a file
     FILE *input = fopen(argv[1], "r");
     //FILE *output = fopen("OUTPUT.wav", "a");
-    header[44] =
+    //int header[44];
 
     //for (int i=0; i<HEADER_SIZE; i++) {
     //
