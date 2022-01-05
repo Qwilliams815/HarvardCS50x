@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
     BYTE bytes[HEADER_SIZE];
     fread(bytes, sizeof(BYTE), HEADER_SIZE, input);
     for (int i=0; i<HEADER_SIZE; i++) {
-        fwrite(&c, sizeof(char), 1, output)
+        fwrite(bytes[i], sizeof(BYTE), HEADER_SIZE, output);
         printf("%i ", bytes[i]);
     }
     printf("\n");
