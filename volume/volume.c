@@ -38,8 +38,8 @@ int main(int argc, char *argv[])
     FILE *input = fopen(argv[1], "r");
     FILE *output = fopen("OUTPUT.wav", "a");
 
-    for (int i=0; i<44; i++) {
-
+    for (int i=0; i<HEADER_SIZE; i++) {
+        
     }
 
 
