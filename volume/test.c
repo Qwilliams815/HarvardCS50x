@@ -22,8 +22,9 @@ int main(void)
     //    i++;
     //}
 
-    char ch = fgetc(input);
-    while (ch != 0) {
+    //char ch = fgetc(input);
+    char ch;
+    while ((ch = fgetc(input)) != 0) {
         printf("%c", ch);
     }
 
