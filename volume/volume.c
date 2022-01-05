@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
     //open file fprintf to write to a file
     FILE *input = fopen(argv[1], "r");
     BYTE bytes[5];
-    fread(bytes, sizeof(BYTE), 5, input);
+    fread(bytes, sizeof(BYTE), 5, *input);
     for (int i=0; i<5; i++) {
         printf("%i", bytes[i]);
     }
