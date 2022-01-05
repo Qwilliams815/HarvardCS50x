@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
     // TODO: Copy header from input file to output file
     //open file fprintf to write to a file
     //FILE *input = fopen(argv[1], "r");
-    int len = 6;
+    int len = 40;
     BYTE bytes[len];
     fread(bytes, sizeof(BYTE), len, input);
     for (int i=0; i<len; i++) {
