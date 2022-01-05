@@ -44,6 +44,7 @@ int main(int argc, char *argv[])
     long header;
     fread(&header, sizeof(BYTE), HEADER_SIZE, input);
     fwrite(&header, sizeof(BYTE), HEADER_SIZE, output);
+    printf("%ld", header);
     // Iterate Over first 44 bits.
     //for (int i=0; i<HEADER_SIZE; i++) {
     //    // Write each bit to ouput file header
