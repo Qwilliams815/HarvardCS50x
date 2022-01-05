@@ -16,8 +16,8 @@ int main(void)
     FILE *input = fopen("input.wav", "r");
 
     int data[44];
-    fread(data, sizeof(BYTE), 1, input);
-    printf("%i", data[44]);
+    fread(data, sizeof(BYTE), 3, input);
+    printf("%i", data[0]);
     printf("\n");
 
     fclose(input);
