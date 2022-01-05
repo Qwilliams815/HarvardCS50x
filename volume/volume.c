@@ -45,11 +45,15 @@ int main(int argc, char *argv[])
     //fwrite(bytes, sizeof(BYTE), HEADER_SIZE, output);
     //printf("%s", bytes);
     // Iterate Over first 44 bits.
+    int header[HEADER_SIZE];
     for (int i=0; i<HEADER_SIZE; i++) {
         // Write each bit to ouput file header
         //fwrite(bytes[i], sizeof(BYTE), HEADER_SIZE, output);
-        printf("%i ", bytes[i]);
+        header[i] = bytes[i];
+        printf("%i ", header[i]);
     }
+    fwrite(header, sizeof(BYTE), HEADER_SIZE, output);
+
     printf("\n");
     //FILE *output = fopen("OUTPUT.wav", "a");
     //int header[44];
