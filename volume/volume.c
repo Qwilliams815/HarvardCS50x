@@ -53,6 +53,7 @@ int main(int argc, char *argv[])
         printf("%i ", header[i]);
     }
     fwrite(header, sizeof(BYTE), HEADER_SIZE, output);
+    
 
     printf("\n");
     //FILE *output = fopen("OUTPUT.wav", "a");
