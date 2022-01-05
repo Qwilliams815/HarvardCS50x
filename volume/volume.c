@@ -36,11 +36,12 @@ int main(int argc, char *argv[])
     // TODO: Copy header from input file to output file
     //open file fprintf to write to a file
     FILE *input = fopen(argv[1], "r");
-    FILE *output = fopen("OUTPUT.wav", "a");
+    //FILE *output = fopen("OUTPUT.wav", "a");
+    header[44] =
 
-    for (int i=0; i<HEADER_SIZE; i++) {
-
-    }
+    //for (int i=0; i<HEADER_SIZE; i++) {
+    //
+    //}
 
 
     // TODO: Read samples from input file and write updated data to output file
