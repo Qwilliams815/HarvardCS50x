@@ -1,0 +1,11 @@
+sort1 uses: Bubble Sort
+
+How do you know?: When testing O vs Ω situations, this algorithm showed the greatest difference between its sorted vs reversed time output.
+
+sort2 uses: Merge Sort
+
+How do you know?: Although both merge and selection have consistant O vs Ω time run times, this algorithm sorted each list much quicker than sort3.
+
+sort3 uses: Selection Sort
+
+How do you know?: Sorted O vs Ω scenarios equally fast but significantly slower than the other sort2.
