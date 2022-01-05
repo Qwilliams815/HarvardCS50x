@@ -50,9 +50,10 @@ int main(int argc, char *argv[])
         header[i] = bytes[i];
         printf("%i", header[i]);
     }
-    BYTE2 samples[];
-    sample = 
+    BYTE2 samples[strlen()];
+    sample =
     while (i != EOF)
+    fread()
     //fwrite(header, sizeof(BYTE), HEADER_SIZE, output);
     //while bit != eof
 
