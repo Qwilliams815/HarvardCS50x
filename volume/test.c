@@ -17,7 +17,7 @@ int main(void)
 
     int data[44];
     int i=0;
-    while (fread(data, sizeof(BYTE), 1, input) != 0) {
+    while (fread(data, 1, 1, input) != 0) {
         printf("%i", data[i]);
         i++;
     }
