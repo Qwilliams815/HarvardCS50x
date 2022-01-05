@@ -37,12 +37,10 @@ int main(int argc, char *argv[])
     float factor = atof(argv[3]);
 
     // TODO: Copy header from input file to output file
-    //open file fprintf to write to a file
     BYTE bytes[HEADER_SIZE];
-    //Read Header from input file
-    //long header;
     fread(bytes, sizeof(BYTE), HEADER_SIZE, input);
     //fwrite(bytes, sizeof(BYTE), HEADER_SIZE, output);
+    
     //printf("%s", bytes);
     // Iterate Over first 44 bits.
     int header[HEADER_SIZE];
@@ -57,13 +55,6 @@ int main(int argc, char *argv[])
     //while bit != eof
 
     printf("\n");
-    //FILE *output = fopen("OUTPUT.wav", "a");
-    //int header[44];
-
-    //for (int i=0; i<HEADER_SIZE; i++) {
-    //
-    //}
-
 
     // TODO: Read samples from input file and write updated data to output file
 
