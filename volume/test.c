@@ -17,7 +17,8 @@ int main(void)
 
     int data[44];
     fread(data, sizeof(BYTE), 44, input);
-    printf("%i", data[1]);
+    printf("%d", data[1]);
+    printf("\n");
 
     //int i = 44;
     //while (i != EOF) {
