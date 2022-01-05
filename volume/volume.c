@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
     FILE *output = fopen("OUTPUT.wav", "a");
 
     for (int i=0; i<HEADER_SIZE; i++) {
-        
+
     }
 
 
