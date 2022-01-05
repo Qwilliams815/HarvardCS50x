@@ -9,5 +9,6 @@ int main(void)
     string n = "Hello!";
     //int *p = n;
     printf("%p\n", n);
+    printf("%s\n", n);
 
 }
