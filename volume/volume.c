@@ -41,8 +41,9 @@ int main(int argc, char *argv[])
     BYTE bytes[5];
     fread(bytes, sizeof(BYTE), 5, input);
     for (int i=0; i<5; i++) {
-        printf("%i", bytes[i]);
+        printf("%i ", bytes[i]);
     }
+    printf("\n");
     //FILE *output = fopen("OUTPUT.wav", "a");
     //int header[44];
 
