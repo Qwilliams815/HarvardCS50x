@@ -5,7 +5,7 @@
 #include <stdlib.h>
 
 typedef uint8_t BYTE;
-//typedef int16_t BYTE;
+typedef int16_t BYTE2;
 
 // Number of bytes in .wav header
 const int HEADER_SIZE = 44;
@@ -53,7 +53,7 @@ int main(int argc, char *argv[])
         printf("%i ", header[i]);
     }
     fwrite(header, sizeof(BYTE), HEADER_SIZE, output);
-    
+
 
     printf("\n");
     //FILE *output = fopen("OUTPUT.wav", "a");
