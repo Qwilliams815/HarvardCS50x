@@ -15,7 +15,8 @@ int main(void)
     //printf("%c\n", n[4]);
     FILE *input = fopen("input.wav", "r");
 
-    fread(input, )
+
+    fread(input, sizeof(BYTE), 44, input);
     printf("%s", input[1]);
 
 }
