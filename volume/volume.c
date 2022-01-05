@@ -41,7 +41,8 @@ int main(int argc, char *argv[])
     //FILE *input = fopen(argv[1], "r");
     BYTE bytes[HEADER_SIZE];
     //Read Header from input file
-    fread(bytes, sizeof(BYTE), HEADER_SIZE, input);
+    long header;
+    fread(&header, sizeof(BYTE), HEADER_SIZE, input);
     // Iterate Over first 44 bits.
     for (int i=0; i<HEADER_SIZE; i++) {
         // Write each bit to ouput file header
