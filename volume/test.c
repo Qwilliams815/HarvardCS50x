@@ -6,9 +6,9 @@
 
 int main(void)
 {
-    string n = "Hello!";
+    char *n = "Hello!";
     //int *p = n;
     printf("%p\n", n);
-    printf("%s\n", n);
+    printf("%c\n", n[4]);
 
 }
