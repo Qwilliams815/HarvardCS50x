@@ -4,8 +4,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef uint8_t BYTE;
-typedef int16_t BYTE2;
+typedef uint8_t HEADER;
+typedef int16_t SAMPLE;
 
 // Number of bytes in .wav header
 const int HEADER_SIZE = 44;
@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
 
     // TODO: Copy header from input file to output file
     BYTE bytes[HEADER_SIZE];
-    fread(bytes, sizeof(BYTE), HEADER_SIZE, input);
+    fread(bytes, sizeof(HEADER), HEADER_SIZE, input);
     //fwrite(bytes, sizeof(BYTE), HEADER_SIZE, output);
 
     //printf("%s", bytes);
@@ -50,11 +50,11 @@ int main(int argc, char *argv[])
         header[i] = bytes[i];
         printf("%i", header[i]);
     }
-    BYTE2 samples[strlen()];
+    SAMPLE samples[strlen()];
     sample =
     while (i != EOF)
     fread()
-    //fwrite(header, sizeof(BYTE), HEADER_SIZE, output);
+    //fwrite(header, sizeof(HEADER), HEADER_SIZE, output);
     //while bit != eof
 
     printf("\n");
