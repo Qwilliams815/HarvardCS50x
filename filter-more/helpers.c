@@ -22,9 +22,6 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
             pixel.rgbtBlue = pixel_color_avg;
         }
     }
-
-    //take avg of each pixel rgbtRed, rgbtGreen, and rgbtBlue values
-    //roung them
     //set them all to that new rounded avg
 
     return;
