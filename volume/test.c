@@ -24,11 +24,11 @@ int main(void)
 
     //char ch = fgetc(input);
     char ch;
-    while ((ch = fgetc(input)) != 0) {
-        //printf("%c", ch);
+    while ((ch = fgetc(input)) != feof) {
+        printf("%c", ch);
     }
 
-    printf("%i", fread(data, sizeof(BYTE), input))
+    //printf("%i", fread(data, sizeof(BYTE), input))
 
     printf("\n");
 
