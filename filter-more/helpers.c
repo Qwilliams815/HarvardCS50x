@@ -3,7 +3,15 @@
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
 {
-    //Loop through rows / columns
+    //Loop through height / width
+    for (int row=0; row<width-1; row++) {
+        for (int column=0; column<height-1; column++) {
+            //take avg of each pixel rgbtRed, rgbtGreen, and rgbtBlue values
+
+            //round them
+
+        }
+    }
 
     //take avg of each pixel rgbtRed, rgbtGreen, and rgbtBlue values
     //roung them
