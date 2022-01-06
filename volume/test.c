@@ -17,15 +17,19 @@ int main(void)
 
     int data[44];
     int i=0;
-    while (fread(data, sizeof(BYTE), 44, input)) {
-        
+    while (fread(data, 1, 1, input)) {
+        printf("%i", data);
     }
 
-    while (i<44) {
-        fread(data, sizeof(BYTE), 44, input)
+    for (int i=0; i<44; i++) {
         printf("%i", data[i]);
-        i++;
     }
+
+    //while (i<44) {
+    //    fread(data, sizeof(BYTE), 44, input)
+    //    printf("%i", data[i]);
+    //    i++;
+    //}
 
     //char ch = fgetc(input);
     //char ch;
