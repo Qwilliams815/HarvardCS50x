@@ -7,8 +7,8 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
 {
     //Loop through height / width
     printf("test helloooooooo\n");
-    for (int row=0; row<width; row++) {
-        for (int column=0; column<height; column++) {
+    for (int row=0; row<height; row++) {
+        for (int column=0; column<width; column++) {
             RGBTRIPLE pixel = image[row][column];
 
             //take avg of each pixel rgbtRed, rgbtGreen, and rgbtBlue values and round them
