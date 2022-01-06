@@ -14,3 +14,4 @@ int main(void)
     //test[0] = 5;
     printf("%i", test);
 }
+note: initialize the variable 'test' to silence this warning
