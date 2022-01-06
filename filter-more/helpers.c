@@ -10,7 +10,8 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
         for (int column=0; column<height-1; column++) {
             RGBTRIPLE pixel = image[row][column];
             //take avg of each pixel rgbtRed, rgbtGreen, and rgbtBlue values and round them
-            int pixel_color_avg = round((pixel.rgbtRed + pixel.rgbtGreen + pixel.rgbtBlue) \ 3);
+            int pixel_color_avg = round(pixel.rgbtRed + pixel.rgbtGreen + pixel.rgbtBlue);
+            pixel_color_avg /= 3;
 
             // Asign new values
             pixel.rgbtRed = pixel_color_avg;
@@ -23,7 +24,7 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
     //roung them
     //set them all to that new rounded avg
 
-    return image;
+    return;
 }
 
 // Reflect image horizontally
