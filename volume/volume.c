@@ -37,29 +37,12 @@ int main(int argc, char *argv[])
     float factor = atof(argv[3]);
 
     // TODO: Copy header from input file to output file
-    HEADER bytes[HEADER_SIZE];
-    fread(bytes, sizeof(HEADER), HEADER_SIZE, input);
-    //fwrite(bytes, sizeof(BYTE), HEADER_SIZE, output);
-
-    //printf("%s", bytes);
-    // Iterate Over first 44 bits.
-    int header[HEADER_SIZE];
-    for (int i=0; i<HEADER_SIZE; i++) {
-        // Write each bit to ouput file header
-        //fwrite(bytes[i], sizeof(BYTE), HEADER_SIZE, output);
-        header[i] = bytes[i];
-        printf("%i", header[i]);
-    }
-    SAMPLE samples[strlen()];
-    sample =
-    while (i != EOF)
-    fread()
-    //fwrite(header, sizeof(HEADER), HEADER_SIZE, output);
-    //while bit != eof
-
-    printf("\n");
+    HEADER header[HEADER_SIZE];
+    fread(header, sizeof(HEADER), HEADER_SIZE, input);
+    fwrite(header, sizeof(HEADER), HEADER_SIZE, output);
 
     // TODO: Read samples from input file and write updated data to output file
+    
 
     // Close files
     fclose(input);
