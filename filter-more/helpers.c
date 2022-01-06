@@ -6,7 +6,7 @@
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
 {
     //Loop through height / width
-    printf("test");
+    printf("test helloooooooo\n");
     for (int row=0; row<width; row++) {
         for (int column=0; column<height; column++) {
             RGBTRIPLE pixel = image[row][column];
