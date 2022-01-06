@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
     fwrite(header, sizeof(HEADER), HEADER_SIZE, output);
 
     // TODO: Read samples from input file and write updated data to output file
-    
+    SAMPLE sample;
 
     // Close files
     fclose(input);
