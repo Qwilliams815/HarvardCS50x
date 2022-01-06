@@ -20,7 +20,7 @@ int main(void)
     fread(header, 1, 44, input);
     fwrite(header, 1, 44, output);
 
-    buffer = input[44];
+    fwrite()
 
     for (int i=0; i<44; i++) {
         printf("%i ", header[i]);
