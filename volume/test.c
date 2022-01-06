@@ -4,8 +4,8 @@
 #include <stdint.h>
 #include <stdlib.h>
 
-typedef uint8_t BYTE;
-typedef int16_t BYTE2;
+//typedef uint8_t BYTE;
+//typedef int16_t BYTE2;
 
 int main(void)
 {
