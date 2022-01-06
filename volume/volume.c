@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
     SAMPLE sample;
     while (fread(&sample, sizeof(SAMPLE), 1, input)) {
         sample = sample * factor;
-        fwrite(sample, sizeof(SAMPLE), 1, output)
+        fwrite(&sample, sizeof(SAMPLE), 1, output);
     }
 
     // Close files
