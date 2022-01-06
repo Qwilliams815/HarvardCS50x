@@ -9,21 +9,39 @@ typedef int16_t BYTE2;
 
 int main(void)
 {
-    char *n = "Hello!";
+    //char *n = "Hello!";
     //int *p = n;
     //printf("%p\n", n);
     //printf("%c\n", n[4]);
+
     FILE *input = fopen("input.wav", "r");
 
-    int data[44];
-    int i=0;
-    while (fread(data, 1, 1, input)) {
-        printf("%i", data);
+    uint8_t header[44];
+    fread(header, 1, 44, input);
+    for (int i=0; i<44; i++) {
+        printf("%i ", header[i]);
     }
 
-    for (int i=0; i<44; i++) {
-        printf("%i", data[i]);
-    }
+
+
+
+
+
+
+
+
+
+
+
+    //int data[44];
+    //int i=0;
+    //while (fread(data, 1, 1, input)) {
+    //    printf("%i", data);
+    //}
+//
+    //for (int i=0; i<44; i++) {
+    //    printf("%i", data[i]);
+    //}
 
     //while (i<44) {
     //    fread(data, sizeof(BYTE), 44, input)

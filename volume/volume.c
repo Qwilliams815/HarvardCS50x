@@ -4,6 +4,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+typedef uint8_t HEADER;
+typedef int16_t SAMPLE;
+
 // Number of bytes in .wav header
 const int HEADER_SIZE = 44;
 
