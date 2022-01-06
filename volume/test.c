@@ -18,6 +18,7 @@ int main(void)
 
     uint8_t header[44];
     fread(header, 1, 44, input);
+
     for (int i=0; i<44; i++) {
         printf("%i ", header[i]);
     }
