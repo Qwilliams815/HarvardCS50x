@@ -35,7 +35,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
         for (int column=0; column<width; column++) {
 
             RGBTRIPLE temp = image[row][opposite];
-            image[row][opposite]; = image[row][column];
+            image[row][opposite] = image[row][column];
             image[row][column] = temp;
 
             //first pixel is image[row][0], last pixel is image[width]
