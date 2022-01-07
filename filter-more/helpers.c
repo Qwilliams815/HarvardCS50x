@@ -30,6 +30,11 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
 // Reflect image horizontally
 void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
+    for (int row=0; row<height; row++) {
+        for (int column=0; column<width; column++) {
+            first pixel is image[0][0], last pixel is image[width-1]
+        }
+    }
     return;
 }
 
