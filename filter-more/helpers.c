@@ -6,7 +6,6 @@
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
 {
     //Loop through height / width
-    printf("test helloooooooo\n");
     for (int row=0; row<height; row++) {
         for (int column=0; column<width; column++) {
             //RGBTRIPLE pixel = image[row][column];
@@ -30,13 +29,14 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
 // Reflect image horizontally
 void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
+    printf("Test\n");
     for (int row=0; row<height; row++) {
         int opposite = width;
         for (int column=0; column<width; column++) {
 
-            temp = image[row][opposite];
-            image[row][opposite] = image[row][column];
-            image[row][column] = temp[row][opposite];
+            //temp = image[row][opposite];
+            //image[row][opposite] = image[row][column];
+            //image[row][column] = temp[row][opposite];
 
             //first pixel is image[row][0], last pixel is image[width]
             opposite--;
