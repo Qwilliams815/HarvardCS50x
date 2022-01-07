@@ -30,6 +30,9 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
 void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
     printf("Test\n");
+    printf("%i\n", image[0][3].rgbtRed);
+    RGBTRIPLE test = image[height][width];
+
     for (int row=0; row<height; row++) {
         int opposite = width;
         for (int column=0; column<width; column++) {
