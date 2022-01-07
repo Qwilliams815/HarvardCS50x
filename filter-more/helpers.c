@@ -34,9 +34,9 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
         int opposite = width;
         for (int column=0; column<width; column++) {
 
-            RGBTRIPLE temp = image[row][opposite];
+            RGBTRIPLE temp[row][opposite] = image[row][opposite];
             image[row][opposite] = image[row][column];
-            image[row][column] = temp;
+            image[row][column] = temp[row][opposite];
 
             //first pixel is image[row][0], last pixel is image[width]
             opposite--;
