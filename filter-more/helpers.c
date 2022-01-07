@@ -34,11 +34,11 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
         int opposite = width;
         for (int column=0; column<width; column++) {
 
-            int temp = image[row][width];
-            image[row][width]; = image[row][column];
-            image[row][width] = temp;
+            RGBTRIPLE temp = image[row][opposite];
+            image[row][opposite]; = image[row][column];
+            image[row][column] = temp;
 
-            first pixel is image[row][0], last pixel is image[width]
+            //first pixel is image[row][0], last pixel is image[width]
             opposite--;
         }
     }
