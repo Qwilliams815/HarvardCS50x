@@ -87,7 +87,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 
             //first pixel is image[row][0], last pixel is image[width-1]
             opposite--;
-            //printf("%i ", opposite);
+            printf("%i ", opposite);
         }
     }
     return;
