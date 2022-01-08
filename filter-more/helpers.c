@@ -41,9 +41,8 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 
 
 
+    int opposite = width-1;
     for (int row=0; row<height-1; row++) {
-        int opposite = width-1;
-        printf("%i ", opposite);
         for (int column=0; column<width-1; column++) {
             //RGBTRIPLE left_most_pixel = image[row][column];
             //RGBTRIPLE right_most_pixel = image[row][opposite];
@@ -65,6 +64,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 
             //first pixel is image[row][0], last pixel is image[width-1]
             opposite--;
+            printf("%i ", opposite);
         }
     }
     return;
