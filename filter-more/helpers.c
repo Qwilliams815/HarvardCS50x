@@ -31,13 +31,15 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
     //printf("Test\n");
     //printf("%i\n", image[0][3].rgbtRed);
-    //RGBTRIPLE test = image[0][3];
+    //RGBTRIPLE test = image[0][0];
     //printf("%i\n", test.rgbtRed);
+    image[0][0].rgbtBlue = 255;
+    image[0][width-1].rgbtBlue = 255;
 
-    
+
 
     for (int row=0; row<height; row++) {
-        int opposite = width;
+        int opposite = width-1;
         for (int column=0; column<width; column++) {
             //RGBTRIPLE left_most_pixel = image[row][column];
             //RGBTRIPLE right_most_pixel = image[row][opposite];
