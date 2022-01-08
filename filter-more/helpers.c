@@ -68,8 +68,6 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
                 image[row][column] = temp;
                 opposite--;
                 halfway++;
-                //printf("%i ", opposite);
-
             }
 
         }
