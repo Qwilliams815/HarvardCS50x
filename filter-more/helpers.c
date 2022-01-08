@@ -44,9 +44,10 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
             //RGBTRIPLE left_most_pixel = image[row][column];
             //RGBTRIPLE right_most_pixel = image[row][opposite];
 
-            RGBTRIPLE temp.rgbtRed = image[row][opposite].rgbtRed;
-            RGBTRIPLE temp.rgbtGreen = image[row][opposite].rgbtGreen;
-            RGBTRIPLE temp.rgbtBluee = image[row][opposite].rgbtBlue;
+            RGBTRIPLE temp = image[row][opposite];
+            temp.rgbtRed = image[row][opposite].rgbtRed;
+            temp.rgbtGreen = image[row][opposite].rgbtGreen;
+            temp.rgbtBlue = image[row][opposite].rgbtBlue;
 
             image[row][opposite].rgbtRed = image[row][column].rgbtRed;
             image[row][opposite].rgbtGreen = image[row][column].rgbtGreen;
