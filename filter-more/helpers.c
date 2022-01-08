@@ -29,18 +29,20 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
 // Reflect image horizontally
 void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
-    printf("Test\n");
-    printf("%i\n", image[0][3].rgbtRed);
-    RGBTRIPLE test = image;
-    printf("%i\n", test[0][4].rgbtRed);
+    //printf("Test\n");
+    //printf("%i\n", image[0][3].rgbtRed);
+    //RGBTRIPLE test = image[0][3];
+    //printf("%i\n", test.rgbtRed);
 
     for (int row=0; row<height; row++) {
         int opposite = width;
         for (int column=0; column<width; column++) {
+            //RGBTRIPLE left_most_pixel = image[row][column];
+            //RGBTRIPLE right_most_pixel = image[row][opposite];
 
-            //temp = image[row][opposite];
-            //image[row][opposite] = image[row][column];
-            //image[row][column] = temp[row][opposite];
+            RGBTRIPLE temp = image[row][opposite];
+            image[row][opposite] = image[row][column];
+            image[row][column] = temp;
 
             //first pixel is image[row][0], last pixel is image[width]
             opposite--;
