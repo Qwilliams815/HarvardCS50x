@@ -57,37 +57,43 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 
 
 
+
     for (int row=0; row<height; row++) {
         int opposite = width-1;
+        int halfway = 0;
         for (int column=0; column<width; column++) {
+            if (halfway != width/2) {
+                RGBTRIPLE temp = image[row][opposite];
+                image[row][opposite] = image[row][column];
+                image[row][column] = temp;
 
-            RGBTRIPLE temp = image[row][opposite];
-            image[row][opposite] = image[row][column];
-            image[row][column] = temp;
+                //RGBTRIPLE left_most_pixel = image[row][column];
+                //RGBTRIPLE right_most_pixel = image[row][opposite];
+                //printf("Row: %i Column: %i", row, column); 398 598
+                //printf("Row: %i Column: %i", row, column);
 
-            //RGBTRIPLE left_most_pixel = image[row][column];
-            //RGBTRIPLE right_most_pixel = image[row][opposite];
-            //printf("Row: %i Column: %i", row, column); 398 598
-            //printf("Row: %i Column: %i", row, column);
-
-            //image[row][opposite].rgbtRed = 255;
-            //RGBTRIPLE temp = image[row][opposite];
-            //temp.rgbtRed = image[row][opposite].rgbtRed;
-            //temp.rgbtGreen = image[row][opposite].rgbtGreen;
-            //temp.rgbtBlue = image[row][opposite].rgbtBlue;
-//
-            //image[row][opposite].rgbtRed = image[row][column].rgbtRed;
-            //image[row][opposite].rgbtGreen = image[row][column].rgbtGreen;
-            //image[row][opposite].rgbtBlue = image[row][column].rgbtBlue;
-//
-            //image[row][column].rgbtRed = temp.rgbtRed;
-            //image[row][column].rgbtGreen = temp.rgbtGreen;
-            //image[row][column].rgbtBlue = temp.rgbtBlue;
+                //image[row][opposite].rgbtRed = 255;
+                //RGBTRIPLE temp = image[row][opposite];
+                //temp.rgbtRed = image[row][opposite].rgbtRed;
+                //temp.rgbtGreen = image[row][opposite].rgbtGreen;
+                //temp.rgbtBlue = image[row][opposite].rgbtBlue;
+    //
+                //image[row][opposite].rgbtRed = image[row][column].rgbtRed;
+                //image[row][opposite].rgbtGreen = image[row][column].rgbtGreen;
+                //image[row][opposite].rgbtBlue = image[row][column].rgbtBlue;
+    //
+                //image[row][column].rgbtRed = temp.rgbtRed;
+                //image[row][column].rgbtGreen = temp.rgbtGreen;
+                //image[row][column].rgbtBlue = temp.rgbtBlue;
 
 
-            //first pixel is image[row][0], last pixel is image[width-1]
-            opposite--;
-            printf("%i ", opposite);
+                //first pixel is image[row][0], last pixel is image[width-1]
+                opposite--;
+                halfway++;
+                //printf("%i ", opposite);
+
+            }
+
         }
     }
     return;
