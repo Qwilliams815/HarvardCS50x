@@ -45,7 +45,9 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
             //RGBTRIPLE right_most_pixel = image[row][opposite];
 
             RGBTRIPLE temp = image[row][opposite];
+
             image[row][opposite] = image[row][column];
+            
             image[row][column] = temp;
 
             //first pixel is image[row][0], last pixel is image[width]
