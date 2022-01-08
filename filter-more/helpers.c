@@ -34,6 +34,8 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
     //RGBTRIPLE test = image[0][3];
     //printf("%i\n", test.rgbtRed);
 
+    
+
     for (int row=0; row<height; row++) {
         int opposite = width;
         for (int column=0; column<width; column++) {
