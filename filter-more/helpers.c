@@ -45,6 +45,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
         for (int column=0; column<width-1; column++) {
             //RGBTRIPLE left_most_pixel = image[row][column];
             //RGBTRIPLE right_most_pixel = image[row][opposite];
+            printf("Row: %i Column: %i", row, column);
 
             RGBTRIPLE temp = image[row][opposite];
             temp.rgbtRed = image[row][opposite].rgbtRed;
