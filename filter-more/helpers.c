@@ -49,7 +49,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
             //printf("Row: %i Column: %i", row, column); 398 598
             //printf("Row: %i Column: %i", row, column);
 
-            image[row][opposite].rgbtRed = 255;
+            //image[row][opposite].rgbtRed = 255;
             //RGBTRIPLE temp = image[row][opposite];
             //temp.rgbtRed = image[row][opposite].rgbtRed;
             //temp.rgbtGreen = image[row][opposite].rgbtGreen;
