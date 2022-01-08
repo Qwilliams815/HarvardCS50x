@@ -37,6 +37,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
     image[0][width-1].rgbtRed = 255;
     image[height-1][0].rgbtBlue = 255;
     printf("height: %i width: %i\n", height, width);
+    //height 400, width: 600
 
 
 
