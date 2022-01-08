@@ -76,6 +76,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 avg_green += image[local_row][local_column].rgbtGreen;
                 avg_blue += image[local_row][local_column].rgbtBlue;
             }
+            }
         }
 
         image[row][column].rgbtRed = avg_red/num_of_pixels;
