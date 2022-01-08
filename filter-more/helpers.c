@@ -41,9 +41,9 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 
 
 
-    int opposite = width-1;
     for (int row=0; row<height-1; row++) {
         for (int column=0; column<width-1; column++) {
+            int opposite = width-1;
             //RGBTRIPLE left_most_pixel = image[row][column];
             //RGBTRIPLE right_most_pixel = image[row][opposite];
             //printf("Row: %i Column: %i", row, column); 398 598
