@@ -60,6 +60,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     int avg_red = 0;
     int avg_green = 0;
     int avg_blue = 0;
+    int num_of_pixels = 0;
 
     // Access each pixel
     for (int row=0; row<height; row++) {
@@ -77,6 +78,12 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             for (int pixel=0; pixel<9; pixel++)
 
         }
+
+        image[row][width].rgtb.Red = avg_red/num_of_pixels;
+        image[row][width].rgtb.Green = avg_green/num_of_pixels;
+        image[row][width].rgtb.Blue = avg_blue/num_of_pixels;
+
+
     }
     return;
 }
