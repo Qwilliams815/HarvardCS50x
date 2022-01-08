@@ -36,7 +36,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
     image[0][0].rgbtBlue = 255;
     image[0][width-1].rgbtBlue = 255;
     image[height-1][0].rgbtBlue = 255;
-    printf("%i\n", height);
+    printf("height: %i width: %i\n", height, width);
 
 
 
@@ -45,7 +45,8 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
         for (int column=0; column<width-1; column++) {
             //RGBTRIPLE left_most_pixel = image[row][column];
             //RGBTRIPLE right_most_pixel = image[row][opposite];
-            printf("Row: %i Column: %i", row, column);
+            //printf("Row: %i Column: %i", row, column); 398 598
+            //printf("Row: %i Column: %i", row, column);
 
             RGBTRIPLE temp = image[row][opposite];
             temp.rgbtRed = image[row][opposite].rgbtRed;
