@@ -65,10 +65,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         for (int column=0; column<width; column++) {
             //local_pixels=9;
             for (int local_row = row-1; local_row<=row+1; local_row++) {
+                for (int local_column = column-1; local_column<=column+1; local_column++) {
                 //if (image[localrow])
-                image[local_row][column-1]
-                image[local_row][column]
-                image[local_row][column+1]
+                avg_red += image[local_row][local_column].rgbtRed
             }
             int local_column = column;
             image[row][column];
