@@ -64,7 +64,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     // Access each pixel
     for (int row=0; row<height; row++) {
         for (int column=0; column<width; column++) {
-            // Access surounding local pixels of said pixel.
+            // Access surounding 3x3 grid of current pixel.
             for (int local_row = row-1; local_row<=row+1; local_row++) {
                 for (int local_column = column-1; local_column<=column+1; local_column++) {
                 //if (image[localrow])
