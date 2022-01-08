@@ -66,28 +66,6 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
                 RGBTRIPLE temp = image[row][opposite];
                 image[row][opposite] = image[row][column];
                 image[row][column] = temp;
-
-                //RGBTRIPLE left_most_pixel = image[row][column];
-                //RGBTRIPLE right_most_pixel = image[row][opposite];
-                //printf("Row: %i Column: %i", row, column); 398 598
-                //printf("Row: %i Column: %i", row, column);
-
-                //image[row][opposite].rgbtRed = 255;
-                //RGBTRIPLE temp = image[row][opposite];
-                //temp.rgbtRed = image[row][opposite].rgbtRed;
-                //temp.rgbtGreen = image[row][opposite].rgbtGreen;
-                //temp.rgbtBlue = image[row][opposite].rgbtBlue;
-    //
-                //image[row][opposite].rgbtRed = image[row][column].rgbtRed;
-                //image[row][opposite].rgbtGreen = image[row][column].rgbtGreen;
-                //image[row][opposite].rgbtBlue = image[row][column].rgbtBlue;
-    //
-                //image[row][column].rgbtRed = temp.rgbtRed;
-                //image[row][column].rgbtGreen = temp.rgbtGreen;
-                //image[row][column].rgbtBlue = temp.rgbtBlue;
-
-
-                //first pixel is image[row][0], last pixel is image[width-1]
                 opposite--;
                 halfway++;
                 //printf("%i ", opposite);
