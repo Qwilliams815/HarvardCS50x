@@ -35,8 +35,16 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
     //printf("%i\n", test.rgbtRed);
     int opposite = width-1;
     image[0][0].rgbtBlue = 255;
+    image[0][0].rgbtGreen = 0;
+    image[0][0].rgbtRed = 0;
+
     image[0][opposite].rgbtRed = 255;
-    image[0][opposite-1].rgbtGreen = 255;
+    image[0][opposite].rgbtBlue = 0;
+    image[0][opposite].rgbtGreen = 0;
+
+    RGBTRIPLE temp = image[0][opposite];
+    image[0][opposite] = image[0][0];
+    image[0][0] = temp;
 
     //image[height-1][opposite].rgbtBlue = 255;
     printf("height: %i width: %i\n", height, width);
