@@ -61,7 +61,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
             image[row][column].rgbtGreen = temp.rgbtGreen;
             image[row][column].rgbtBlue = temp.rgbtBlue;
 
-            //first pixel is image[row][0], last pixel is image[width]
+            //first pixel is image[row][0], last pixel is image[width-1]
             opposite--;
         }
     }
