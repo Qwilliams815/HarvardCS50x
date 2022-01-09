@@ -9,9 +9,13 @@ typedef int16_t BYTE2;
 
 int main(void)
 {
-    int16_t test;
+    int test1 = 0;
+    int test2 = 0;
+    int test3 = 1;
+    int test4 = 1;
 
-    //test[0] = 5;
-    printf("%i", test);
+    if (test1=0 && test2=0 || test3=1 && test4=1) {
+        printf("worked");
+    }
+
 }
-note: initialize the variable 'test' to silence this warning
