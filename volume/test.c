@@ -14,8 +14,11 @@ int main(void)
     int test3 = 1;
     int test4 = 1;
 
-    if (test1=0, test2=1 || test3=0, test4=1) {
-        printf("worked");
+    if (test1 == 0 && test2 == 1) {
+        printf("first\n");
+    } else if (test1 == 0) {
+        printf("worked\n");
     }
+
 
 }
