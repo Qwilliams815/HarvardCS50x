@@ -74,7 +74,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             // Access surounding 3x3 grid of current pixel.
             for (int local_row = row-1; local_row<=row+1; local_row++) {
                 for (int local_column = column-1; local_column<=column+1; local_column++) {
-                    //if (local_row >=0 && local_column >=0) {
+                    if (local_row >=0 && local_column >=0) {
                     //    //printf("row does exist\n");
                     //    break;
 //
@@ -82,7 +82,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 //avg_red += image[local_row][local_column].rgbtRed;
                 //avg_green += image[local_row][local_column].rgbtGreen;
                 //avg_blue += image[local_row][local_column].rgbtBlue;
-                }
+                } else if (local_row = -1 || local_column = -1)
             }
             //image[row][column].rgbtRed = avg_red/num_of_pixels;
             //image[row][column].rgbtGreen = avg_green/num_of_pixels;
