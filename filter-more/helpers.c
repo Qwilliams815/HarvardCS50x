@@ -74,12 +74,17 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             // Access surounding 3x3 grid of current pixel.
             for (int local_row = row-1; local_row<=row+1; local_row++) {
                 for (int local_column = column-1; local_column<=column+1; local_column++) {
-                    // Check if top left corner
+                    // Check if top Left
                     if (local_row == -1 && local_column == -1) {
                         //top left instructions
-                    // Middle Row Checkers
-                    } else if (local_row == -1 || local_row == height+1) {
-                        //top/bottom row middle handler
+                    // Check if top Right
+                    } else if (local_row == height+1 && local_column == width+1) {
+                        //top right handler
+                    // Check if bottom Left
+                    } else if (local_row == height+1 && local_column == -1) {
+                    // Check if bottom Right
+                    } else if (local_row == height+1 && local_column == width+1) {
+
                     }
 
                     if (local_row >=0 && local_column >=0) {
