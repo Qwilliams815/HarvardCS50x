@@ -62,17 +62,21 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     int avg_blue = 0;
     int num_of_pixels = 0;
 
+    if (image[0][0]) {
+        printf("row does exist\n");
+    }
+
     // Access each pixel
     for (int row=0; row<height; row++) {
         for (int column=0; column<width; column++) {
             // Access surounding 3x3 grid of current pixel.
             for (int local_row = row-1; local_row<=row+1; local_row++) {
                 for (int local_column = column-1; local_column<=column+1; local_column++) {
-                    if (image[local_row][local_column]) {
-                        printf("row does exist\n");
-                        break;
-
-                    }
+                    //if (image[local_row][local_column]) {
+                    //    //printf("row does exist\n");
+                    //    break;
+//
+                    //}
                 //avg_red += image[local_row][local_column].rgbtRed;
                 //avg_green += image[local_row][local_column].rgbtGreen;
                 //avg_blue += image[local_row][local_column].rgbtBlue;
