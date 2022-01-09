@@ -62,7 +62,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     int avg_blue = 0;
     int num_of_pixels = 0;
 
-    if (image[0][0]) {
+    if (image[0][0].rgbtRed) {
         printf("row does exist\n");
     }
 
