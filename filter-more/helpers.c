@@ -87,7 +87,11 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     // Check if along Top/Bottom
                     } else if (local_row == -1 || local_row == height+1) {
                     // Check if along Right/Left
-                    } else if (local_row == height+1 || local_column == width+1)
+                    } else if (local_column == -1 || local_column == width+1) {
+                    // all the rest complete 3x3's
+                    } else {
+                        
+                    }
 
                     if (local_row >=0 && local_column >=0) {
                     //    //printf("row does exist\n");
