@@ -77,6 +77,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     // Check if top Left
                     if (local_row == -1 && local_column == -1) {
                         //top left instructions
+                        
                     // Check if top Right
                     } else if (local_row == height+1 && local_column == width+1) {
                         //top right handler
@@ -90,7 +91,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     } else if (local_column == -1 || local_column == width+1) {
                     // all the rest complete 3x3's
                     } else {
-                        
+
                     }
 
                     if (local_row >=0 && local_column >=0) {
