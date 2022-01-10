@@ -123,6 +123,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 
 
     }
+    printf("Top Left \n");
     return;
 }
 
