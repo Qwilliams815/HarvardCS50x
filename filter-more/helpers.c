@@ -96,7 +96,8 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                         printf("Right/ Bottom \n");
                     // all the rest complete 3x3's
                     } else {
-                        printf("Normal \n");
+                        //printf("Normal \n");
+                        int a = 5;
                     }
 
                     //if (local_row >=0 && local_column >=0) {
