@@ -65,11 +65,11 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     int top_bottom = 0;
     int left_right = 0;
 
-    if (image[0][0].rgbtRed) {
-        printf("row does exist\n");
-    } else {
-        printf("row doesnt exist\n");
-    }
+    //if (image[0][0].rgbtRed) {
+    //    printf("row does exist\n");
+    //} else {
+    //    printf("row doesnt exist\n");
+    //}
 
     // Access each pixel
     for (int row=0; row<height; row++) {
@@ -82,7 +82,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                         printf("Top Left \n");
                         //top left instructions
                     // Check if top Right
-                    } else if (local_row == height+1 && local_column == width+1) {
+                    } else if (local_row == height && local_column == width) {
                         printf("Top Right \n");
                         //top right handler
                     // Check if bottom Left
