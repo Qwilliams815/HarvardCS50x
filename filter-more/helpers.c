@@ -82,7 +82,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                         printf("Top Left \n");
                         //top left instructions
                     // Check if top Right
-                    } else if (local_row == height && local_column == width) {
+                    } else if (local_row == -1 && local_column == width) {
                         printf("Top Right \n");
                         //top right handler
                     // Check if bottom Left
