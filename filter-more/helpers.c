@@ -99,6 +99,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                                 num_of_pixels++;
                             }
                         }
+                        printf("%i\n", num_of_pixels);
 
                     // Check if top Right
                     } else if (local_row == -1 && local_column == width) {
