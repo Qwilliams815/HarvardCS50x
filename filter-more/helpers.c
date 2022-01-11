@@ -111,9 +111,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     // Check if along Right/Left
                     } else if (local_column == -1 || local_column == width) {
                         if (local_column == -1) {
-                            top++;
+                            left++;
                         } else {
-                            bottom++;
+                            right++;
                         }
                         //printf("Right/ Left \n");
                     // all the rest complete 3x3's
