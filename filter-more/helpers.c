@@ -57,16 +57,16 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
-    int avg_red = 0;
-    int avg_green = 0;
-    int avg_blue = 0;
+    //int avg_red = 0;
+    //int avg_green = 0;
+    //int avg_blue = 0;
     //int num_of_pixels = 0;
 
     int top = 0;
     int bottom = 0;
     int left = 0;
     int right = 0;
-    int i = 1;
+    //int i = 1;
 
     printf("height: %i, width: %i\n", height, width);
     if (image[0][0].rgbtRed > 0) {
@@ -97,7 +97,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     if (local_row == -1 && local_column == -1) {
                         printf("Top Left \n");
                         for (int i = 0; i<=1; i++) {
-                            for (int j=0; j<= 1) {
+                            for (int j=0; j<= 1; j++) {
                                 avg_red += image[i][j].rgbtRed;
                                 avg_green += image[i][j].rgbtGreen;
                                 avg_blue += image[i][j].rgbtBlue;
