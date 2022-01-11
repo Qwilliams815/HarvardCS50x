@@ -62,8 +62,10 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     int avg_blue = 0;
     int num_of_pixels = 0;
 
-    int top_bottom = 0;
-    int left_right = 0;
+    int top = 0;
+    int bottom = 0;
+    int left = 0;
+    int right = 0;
 
     if (image[0][0].rgbtRed > 0) {
         printf("row does exist\n");
@@ -100,12 +102,20 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                         printf("Bottom Right \n");
                     // Check if along Top/Bottom
                     } else if (local_row == -1 || local_row == height+1) {
+                        if (local_row == -1) {
+                            top++;
+                        } else {
+                            bottom++;
+                        }
                         //printf("Top/ Bottom \n");
-                        top_bottom++;
                     // Check if along Right/Left
                     } else if (local_column == -1 || local_column == width) {
+                        if (local_column == -1) {
+                            top++;
+                        } else {
+                            bottom++;
+                        }
                         //printf("Right/ Left \n");
-                        left_right++;
                     // all the rest complete 3x3's
                     } else {
                         //printf("Normal \n");
@@ -130,7 +140,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 
 
     }
-    printf("top/bottom: %i right/left: %i\n", top_bottom, left_right);
+    printf("top: %i bottom: %i right: %i left: %i\n", top, bottom, left, right);
     return;
 }
 
