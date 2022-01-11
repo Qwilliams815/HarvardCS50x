@@ -83,6 +83,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             //if bottom right
             //if top
             //if bottom
+            RGBTRIPLE image_copy[] = image[height][width]
 
             // Access surounding 3x3 grid of current pixel.
             for (int local_row = row-1; local_row<=row+1; local_row++) {
