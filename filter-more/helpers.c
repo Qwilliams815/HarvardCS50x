@@ -92,7 +92,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     int avg_green = 0;
                     int avg_blue = 0;
                     int num_of_pixels = 0;
-                    
+
                     // Check if top Left
                     if (local_row == -1 && local_column == -1) {
                         printf("Top Left \n");
@@ -105,6 +105,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                             }
                         }
                         printf("%i\n", num_of_pixels);
+                        image[row][column].rgbtRed = avg_red/num_of_pixels;
+                        image[row][column].rgbtGreen = avg_green/num_of_pixels;
+                        image[row][column].rgbtBlue = avg_blue/num_of_pixels;
 
                     // Check if top Right
                     } else if (local_row == -1 && local_column == width) {
