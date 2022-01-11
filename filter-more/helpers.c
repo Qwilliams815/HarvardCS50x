@@ -60,7 +60,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     int avg_red = 0;
     int avg_green = 0;
     int avg_blue = 0;
-    int num_of_pixels = 0;
+    //int num_of_pixels = 0;
 
     int top = 0;
     int bottom = 0;
@@ -88,6 +88,11 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             // Access surounding 3x3 grid of current pixel.
             for (int local_row = row-1; local_row<=row+1; local_row++) {
                 for (int local_column = column-1; local_column<=column+1; local_column++) {
+                    int avg_red = 0;
+                    int avg_green = 0;
+                    int avg_blue = 0;
+                    int num_of_pixels = 0;
+                    
                     // Check if top Left
                     if (local_row == -1 && local_column == -1) {
                         printf("Top Left \n");
