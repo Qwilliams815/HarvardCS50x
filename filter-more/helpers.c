@@ -91,7 +91,8 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     // Check if top Left
                     if (local_row == -1 && local_column == -1) {
                         printf("Top Left \n");
-                        
+                        for (int i = 0; i < )
+
                     // Check if top Right
                     } else if (local_row == -1 && local_column == width) {
                         printf("Top Right \n");
