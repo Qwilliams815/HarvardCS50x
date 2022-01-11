@@ -112,8 +112,8 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     // Check if top Right
                     } else if (local_row == -1 && local_column == width) {
                         printf("Top Right \n");
-                        for (int i = row-1; i<width; i++) {
-                            for (int j=0; j<= 1; j++) {
+                        for (int i=0; i<=1; i++) {
+                            for (int j=width-2; j<= width-1; j++) {
                                 avg_red += image[i][j].rgbtRed;
                                 avg_green += image[i][j].rgbtGreen;
                                 avg_blue += image[i][j].rgbtBlue;
