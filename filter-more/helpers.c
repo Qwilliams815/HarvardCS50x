@@ -93,9 +93,10 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                         printf("Top Left \n");
                         for (int i = 0; i<=1; i++) {
                             for (int j=0; j<= 1) {
-                                
+                                avg_red += image[local_row][local_column].rgbtRed;
+                                avg_green += image[local_row][local_column].rgbtGreen;
+                                avg_blue += image[local_row][local_column].rgbtBlue;
                             }
-                            image[i][j].
                         }
 
                     // Check if top Right
