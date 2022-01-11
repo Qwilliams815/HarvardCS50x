@@ -96,17 +96,17 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                         printf("Top Right \n");
                         //top right handler
                     // Check if bottom Left
-                    } else if (local_row == height+1 && local_column == -1) {
+                    } else if (local_row == height && local_column == -1) {
                         printf("Bottom Left \n");
                     // Check if bottom Right
-                    } else if (local_row == height+1 && local_column == width+1) {
+                    } else if (local_row == height && local_column == width) {
                         printf("Bottom Right \n");
                     // Check if along Top/Bottom
                     } else if (local_row == -1 || local_row == height+1) {
                         //printf("Top/ Bottom \n");
                         top_bottom++;
                     // Check if along Right/Left
-                    } else if (local_column == -1 || local_column == width+1) {
+                    } else if (local_column == -1 || local_column == width) {
                         //printf("Right/ Left \n");
                         left_right++;
                     // all the rest complete 3x3's
