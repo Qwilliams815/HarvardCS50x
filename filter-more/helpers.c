@@ -57,8 +57,8 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
-     //RGBTRIPLE image_copy = image;
-     //printf("%i\n", image_copy[0][0].rgbtRed);
+     RGBTRIPLE image_copy = image;
+     printf("%i\n", image_copy[0][0].rgbtRed);
 
 
     int top = 0;
