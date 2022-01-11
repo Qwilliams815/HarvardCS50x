@@ -101,7 +101,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     } else if (local_row == height && local_column == width) {
                         printf("Bottom Right \n");
                     // Check if along Top/Bottom
-                    } else if (local_row == -1 || local_row == height+1) {
+                    } else if (local_row == -1 || local_row == height) {
                         if (local_row == -1) {
                             top++;
                         } else {
