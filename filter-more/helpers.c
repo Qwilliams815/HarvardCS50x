@@ -57,8 +57,8 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
-     RGBTRIPLE image_copy = image;
-     printf("%i\n", image_copy[0][0].rgbtRed);
+     //RGBTRIPLE image_copy = image;
+     //printf("%i\n", image_copy[0][0].rgbtRed);
 
 
     int top = 0;
@@ -83,8 +83,8 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             //if bottom right
             //if top
             //if bottom
-            int copy_row = 0;
-            int copy_col = 0;
+            int copy_row[height];
+            int copy_col[width];
             RGBTRIPLE image_copy[copy_row][copy_col] = image[row][column];
 
             // Access surounding 3x3 grid of current pixel.
