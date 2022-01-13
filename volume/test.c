@@ -36,7 +36,10 @@ int main(void)
     free(t);
 
     int input[] = {3, 2, 5};
+    int input_copy = input;
     int length = 0;
+
+
     for (let length=0; length<)
     int input_new = malloc(3);
 
