@@ -36,7 +36,7 @@ int main(void)
     free(t);
 
     int input[] = {3, 2, 5};
-    int input_copy = input;
+    int input_copy[3] = input;
     int length = 0;
 
 
