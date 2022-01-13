@@ -2,6 +2,7 @@
 #include "math.h"
 #include "stdio.h"
 
+
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
 {
@@ -60,12 +61,16 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
      //RGBTRIPLE image_copy = image;
      //printf("%i\n", image_copy[0][0].rgbtRed);
 
+    //int image_copy[] = {image};
+    printf("%i\n", sizeOf(image));
+
 
     int top = 0;
     int bottom = 0;
     int left = 0;
     int right = 0;
     //int i = 1;
+    //test
 
     printf("height: %i, width: %i\n", height, width);
     if (image[0][0].rgbtRed > 0) {
@@ -83,9 +88,10 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             //if bottom right
             //if top
             //if bottom
-            int copy_row[height];
-            int copy_col[width];
-            RGBTRIPLE image_copy[copy_row][copy_col] = image[row][column];
+
+            //int copy_row[height];
+            //int copy_col[width];
+            //RGBTRIPLE image_copy[copy_row][copy_col] = image[row][column];
 
             // Access surounding 3x3 grid of current pixel.
             for (int local_row = row-1; local_row<=row+1; local_row++) {
