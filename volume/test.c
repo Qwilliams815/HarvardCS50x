@@ -46,7 +46,7 @@ int main(void)
     int a = 5;
     int *x = &a;
 
-    printf("%i\n", *x);
+    printf("%i\n", &a);
 
 
 
