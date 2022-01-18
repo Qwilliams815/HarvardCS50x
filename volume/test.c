@@ -43,8 +43,10 @@ int main(void)
     //for (let length=0; length<)
     //int input_new = malloc(3);
 
-    int a;
-    printf("%i\n", *a);
+    int a = 5;
+    int *x = &a;
+
+    printf("%i\n", *x);
 
 
 
