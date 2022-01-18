@@ -22,26 +22,30 @@ int main(void)
     //}
 
     //malloc testing if reaching past arrays limits returns something or not
-    char *s = get_string("s: ");
+    //char *s = get_string("s: ");
+//
+    //char *t = malloc(strlen(s) + 1);
+//
+    //strcpy(t, s);
+//
+    //t[0] = toupper(t[0]);
+//
+    //printf("s: %s\n", s);
+    //printf("t: %s\n", t);
+//
+    //free(t);
+//
+    //int input[] = {3, 2, 5};
+    //int input_copy[3] = input;
+    //int length = 0;
+//
+//
+    //for (let length=0; length<)
+    //int input_new = malloc(3);
 
-    char *t = malloc(strlen(s) + 1);
+    int *a = 5;
+    printf("%i\n", a);
 
-    strcpy(t, s);
-
-    t[0] = toupper(t[0]);
-
-    printf("s: %s\n", s);
-    printf("t: %s\n", t);
-
-    free(t);
-
-    int input[] = {3, 2, 5};
-    int input_copy[3] = input;
-    int length = 0;
-
-
-    for (let length=0; length<)
-    int input_new = malloc(3);
 
 
 }
