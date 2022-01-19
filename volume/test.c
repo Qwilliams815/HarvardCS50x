@@ -47,6 +47,7 @@ int main(void)
     //int *pa = &a;
 
     printf("%p\n", &a);
+    printf("%i\n", a);
 
 
 
