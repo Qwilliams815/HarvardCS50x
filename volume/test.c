@@ -44,10 +44,10 @@ int main(void)
     //int input_new = malloc(3);
 
     int a = 5;
-    int *b = 10;
+    int *b = &a;
     //int *pa = &a;
 
-    printf("%p\n", b);
+    printf("%p\n", &a);
     //printf("%i\n", a);
 
 
