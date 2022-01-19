@@ -44,6 +44,7 @@ int main(void)
     //int input_new = malloc(3);
 
     int a = 5;
+    int x, y, z;
     //int *pa = &a;
 
     printf("%p\n", &a);
