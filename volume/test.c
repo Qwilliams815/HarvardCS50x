@@ -44,9 +44,9 @@ int main(void)
     //int input_new = malloc(3);
 
     int a = 5;
-    int *x = &a;
+    //int *pa = &a;
 
-    printf("%i\n", &a);
+    printf("%p\n", &a);
 
 
 
