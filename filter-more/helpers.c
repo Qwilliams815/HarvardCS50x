@@ -62,7 +62,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
      //printf("%i\n", image_copy[0][0].rgbtRed);
 
     //int image_copy[] = {image};
-    printf("%i\n", sizeOf(image));
+    //printf("%i\n", sizeOf(image));
 
 
     int top = 0;
