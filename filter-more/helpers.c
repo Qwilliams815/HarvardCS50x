@@ -65,6 +65,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     for (int row=0; row<height; row++) {
         for (int column=0; column<width; column++) {
             image_copy[row][column] = image[row][column];
+            i++;
         }
     }
     printf("pixels: %i\n", i);
