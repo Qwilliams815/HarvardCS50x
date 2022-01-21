@@ -59,7 +59,8 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
     int i = 0;
-    //test
+    RGBTRIPLE image_copy[height][width];
+
     // Access each pixel
     for (int row=0; row<height; row++) {
         for (int column=0; column<width; column++) {
