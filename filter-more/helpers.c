@@ -90,10 +90,11 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                         continue;
                     }
 
-                    avg_blue = 0;
-                    avg_green = 0;
-                    avg_red = 0;
-                    num_of_pixels = 0;
+                    // Using the image copy 
+                    avg_blue += image_copy[row + local_row][column + local_col].rgbtBlue;
+                    avg_green += image_copy[row + local_row][column + local_col].rgbtGreen;
+                    avg_red += image_copy[row + local_row][column + local_col].rgbtRed;
+                    num_of_pixels++;
 
                     avg_red += image[row][column].rgbtRed;
                     avg_green += image[i][j].rgbtGreen;
