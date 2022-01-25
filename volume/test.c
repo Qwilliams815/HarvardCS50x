@@ -44,7 +44,11 @@ int main(void)
     //int input_new = malloc(3);
 
     int a = 5;
-    int *b = &a;
+    if (a == 6) {
+        continue;
+    }
+    printf("Hello");
+    //int *b = &a;
     //int *pa = &a;
 
     printf("%p\n", &a);
