@@ -103,7 +103,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     }
 
 
-    printf("pixels: %i\n", i);
+    //printf("pixels: %i\n", i);
 }
 
 // Detect edges
