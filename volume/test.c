@@ -43,15 +43,19 @@ int main(void)
     //for (let length=0; length<)
     //int input_new = malloc(3);
 
-    int a = 5;
-    if (a == 6) {
-        continue;
+    int list[] = {5, 5, 2, 3, 7, 3, 1};
+    for (int i=0; i<7; i++) {
+        if (list[i] == 3) {
+            continue;
+        }
+        printf("%i ", list[i]);
     }
-    printf("Hello");
+    printf("\n");
+
     //int *b = &a;
     //int *pa = &a;
 
-    printf("%p\n", &a);
+    //printf("%p\n", &a);
     //printf("%i\n", a);
 
 
