@@ -89,7 +89,16 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     if (column + local_col < 0 || column + local_col >= width) {
                         continue;
                     }
-                    
+
+                    avg_blue = 0;
+                    avg_green = 0;
+                    avg_red = 0;
+                    num_of_pixels = 0;
+
+                    avg_red += image[i][j].rgbtRed;
+                                avg_green += image[i][j].rgbtGreen;
+                                avg_blue += image[i][j].rgbtBlue;
+
 
 
 
