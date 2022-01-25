@@ -79,12 +79,19 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 
             for (int local_row=-1; local_row<2; local_row++) {
                 for (int local_col=-1; local_col<2; local_col++) {
+
+                    // Check loop through local rows, compared to current pixel
                     if (row + local_row < 0 || row + local_row >= height) {
+                        //if local pixel is outside boundrey of the image, continue/skip that pixel.
                         continue;
                     }
+                    // Check loop through local columns, compared to current pixel
                     if (column + local_col < 0 || column + local_col >= width) {
                         continue;
                     }
+                    
+
+
 
                 }
             }
