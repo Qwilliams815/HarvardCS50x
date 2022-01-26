@@ -111,12 +111,29 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 // Detect edges
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
+
+    // Create Gx and Gy 2d arrays
+    int gx_array_
     // Create copy of original image
     RGBTRIPLE image_copy[height][width];
     for (int row=0; row<height; row++) {
         for (int column=0; column<width; column++) {
             image_copy[row][column] = image[row][column];
             //i++;
+        }
+    }
+
+    // Access each pixel of original image
+    for (int row=0; row<height; row++) {
+        for (int column=0; column<width; column++) {
+
+            // Initiate gx and gy values
+            int gx_red;
+            int gx_green;
+            int gx_blue;
+            int gy_red;
+            int gy_green;
+            int gy_blue;
         }
     }
 
