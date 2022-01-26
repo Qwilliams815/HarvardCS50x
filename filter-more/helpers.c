@@ -113,7 +113,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
 {
 
     // Create Gx and Gy 2d arrays
-    int gx_array_
+    int gx_array[3][3] = {{}, {}, {}};
+    int gy_array[3][3] = {{}, {}, {}};
+
     // Create copy of original image
     RGBTRIPLE image_copy[height][width];
     for (int row=0; row<height; row++) {
