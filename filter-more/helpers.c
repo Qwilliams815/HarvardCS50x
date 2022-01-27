@@ -81,12 +81,12 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             for (int local_row=-1; local_row<2; local_row++) {
                 for (int local_col=-1; local_col<2; local_col++) {
 
-                    // Check loop through local rows, compared to current pixel
+                    // Check for out-of-bounds rows
                     if (row + local_row < 0 || row + local_row >= height) {
                         //if local pixel is outside boundrey of the image, continue/skip that pixel.
                         continue;
                     }
-                    // Check loop through local columns, compared to current pixel
+                    // Check for out-of-bounds columns
                     if (column + local_col < 0 || column + local_col >= width) {
                         continue;
                     }
@@ -151,15 +151,21 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             for (int local_row=-1; local_row<2; local_row++) {
                 for (int local_col=-1; local_col<2; local_col++) {
 
-                    // Check loop through local rows, compared to current pixel
+                    // Check for out-of-bounds rows
                     if (row + local_row < 0 || row + local_row >= height) {
-                        //if local pixel is outside boundrey of the image, continue/skip that pixel.
-                        continue;
+                        // Set imaginary rgb values
+                        int blue_value = 0;
+                        int red_value = 0;
+                        int green_value = 0;
                     }
-                    // Check loop through local columns, compared to current pixel
+                    // Check for out-of-bounds columns
                     if (column + local_col < 0 || column + local_col >= width) {
-                        continue;
+                        // Set imaginary rgb values
+                        int blue_value = 0;
+                        int red_value = 0;
+                        int green_value = 0;
                     }
+                    
 
             for (let gx_index = 0; gx_index<3; gx_index++) {
 
