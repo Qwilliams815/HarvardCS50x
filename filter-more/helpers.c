@@ -62,9 +62,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         for (int column=0; column<width; column++) {
 
             //image_copy[row][column] = image[row][column];
-            int avg_blue = 0;
-            int avg_green = 0;
-            int avg_red = 0;
+            float avg_blue = 0;
+            float avg_green = 0;
+            float avg_red = 0;
             int num_of_pixels = 0;
 
             for (int local_row=-1; local_row<2; local_row++) {
