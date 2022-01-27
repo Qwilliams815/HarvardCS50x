@@ -142,10 +142,10 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             int gx_red;
             int gx_green;
             int gx_blue;
+
             int gy_red;
             int gy_green;
             int gy_blue;
-
 
             for (let gx_index = 0; gx_index<3; gx_index++) {
 
