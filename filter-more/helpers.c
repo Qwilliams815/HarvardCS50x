@@ -71,7 +71,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     // Loop through the pixels again, this time establishing avg color variables and accessing local pixels
     for (int row=0; row<height; row++) {
         for (int column=0; column<width; column++) {
-            
+
             //image_copy[row][column] = image[row][column];
             int avg_blue = 0;
             int avg_green = 0;
@@ -147,6 +147,19 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             int gy_red;
             int gy_green;
             int gy_blue;
+
+            for (int local_row=-1; local_row<2; local_row++) {
+                for (int local_col=-1; local_col<2; local_col++) {
+
+                    // Check loop through local rows, compared to current pixel
+                    if (row + local_row < 0 || row + local_row >= height) {
+                        //if local pixel is outside boundrey of the image, continue/skip that pixel.
+                        continue;
+                    }
+                    // Check loop through local columns, compared to current pixel
+                    if (column + local_col < 0 || column + local_col >= width) {
+                        continue;
+                    }
 
             for (let gx_index = 0; gx_index<3; gx_index++) {
 
