@@ -171,6 +171,8 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         imaginary = true;
                     }
 
+                    gx_red += gx_array[gx_row][gx_column]
+
                     for (int gx_row = 0; gx_row<3; gx_row++) {
                         for (int gx_col = 0; gx_col<3; gx_col++) {
                             if (imaginary != true) {
