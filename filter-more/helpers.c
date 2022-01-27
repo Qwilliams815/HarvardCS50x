@@ -173,6 +173,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         for (int gx_col = 0; gx_col<3; gx_col++) {
                             if (imaginary != true) {
                                 //set rgb values
+                                blue_value = image_copy[]
                             }
                             //caluculate rgb values * gx index.
                         }
