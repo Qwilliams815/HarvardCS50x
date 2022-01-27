@@ -174,8 +174,11 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                             if (imaginary != true) {
                                 //set rgb values
                                 int blue_value = image_copy[row + local_row][column + local_col].rgbtBlue;
+                                int green_value = image_copy[row + local_row][column + local_col].rgbtGreen;
+                                int red_value = image_copy[row + local_row][column + local_col].rgbtRed;
                             }
                             //caluculate rgb values * gx index.
+                            gx_blue = blue_value * gx_array[gx_row][gx_col]
                         }
 
 
