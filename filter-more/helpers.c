@@ -146,11 +146,21 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
 
                     // Check for out-of-bounds rows
                     if (row + local_row < 0 || row + local_row >= height) {
+                        sobel_col++;
+                        if (sobel_col == 3) {
+                        sobel_row++;
+                        sobel_col = 0;
+                        }
                         continue;
                     }
 
                     // Check for out-of-bounds columns
                     if (column + local_col < 0 || column + local_col >= width) {
+                        sobel_col++;
+                        if (sobel_col == 3) {
+                        sobel_row++;
+                        sobel_col = 0;
+                        }
                         continue;
                     }
 
