@@ -151,6 +151,8 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             for (int local_row=-1; local_row<2; local_row++) {
                 for (int local_col=-1; local_col<2; local_col++) {
                     bool imaginary = false;
+                    int gx_index = 0;
+                    int gy_index = 0;
 
                     // Check for out-of-bounds rows
                     if (row + local_row < 0 || row + local_row >= height) {
