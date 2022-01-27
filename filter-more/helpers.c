@@ -15,7 +15,7 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
             int final_color_avg = round((pixel_color_avg / 3));
             //printf("%i ", pixel_color_avg);
 
-            // Asign new values
+            // Assign new values
             image[row][column].rgbtRed = final_color_avg;
             image[row][column].rgbtGreen = final_color_avg;
             image[row][column].rgbtBlue = final_color_avg;
@@ -27,7 +27,7 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
 // Reflect image horizontally
 void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
-
+    // Loop through height
     for (int row=0; row<height; row++) {
         int opposite = width-1;
         int halfway = 0;
