@@ -132,7 +132,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             float gx_blue = 0;
             float gx_green = 0;
             float gx_red = 0;
-
+            
             float gy_blue = 0;
             float gy_green = 0;
             float gy_red = 0;
