@@ -140,13 +140,13 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         for (int column=0; column<width; column++) {
 
             // Initiate gx and gy values
-            int gx_red;
-            int gx_green;
-            int gx_blue;
+            int gx_red = 0;
+            int gx_green = 0;
+            int gx_blue = 0;
 
-            int gy_red;
-            int gy_green;
-            int gy_blue;
+            int gy_red = 0;
+            int gy_green = 0;
+            int gy_blue = 0;
 
             for (int local_row=-1; local_row<2; local_row++) {
                 for (int local_col=-1; local_col<2; local_col++) {
