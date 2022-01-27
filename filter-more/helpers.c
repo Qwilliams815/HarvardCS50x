@@ -169,8 +169,8 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         imaginary = true;
                     }
 
-                    for (let gx_row = 0; gx_row<3; gx_row++) {
-                        for (let gx_col = 0; gx_col<3; gx_col++) {
+                    for (int gx_row = 0; gx_row<3; gx_row++) {
+                        for (int gx_col = 0; gx_col<3; gx_col++) {
                             if (imaginary != true) {
                                 //set rgb values
                             }
