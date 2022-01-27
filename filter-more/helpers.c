@@ -203,7 +203,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     //}
                 }
         }
-        int blue_total = round()
+        int red_total = round(sqrt(gx_red * gx_red + gy_red * gy_red));
+        int green_total = round(sqrt(gx_green * gx_green + gy_green * gy_green));
+        int blue_total = round(sqrt(gx_blue * gx_blue + gy_blue * gy_blue));
 
     }
 
