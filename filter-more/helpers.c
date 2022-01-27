@@ -27,11 +27,13 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
 // Reflect image horizontally
 void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
-    // Loop through height
+    // Loop through each row
     for (int row=0; row<height; row++) {
+        // Establish furthest opposite pixel from current pixel
         int opposite = width-1;
         int halfway = 0;
         for (int column=0; column<width; column++) {
+            // If half the image has been filtered, stop.
             if (halfway != width/2) {
                 RGBTRIPLE temp = image[row][opposite];
                 image[row][opposite] = image[row][column];
