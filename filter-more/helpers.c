@@ -11,7 +11,7 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
         for (int column=0; column<width; column++) {
 
             //take avg of each pixel rgbtRed, rgbtGreen, and rgbtBlue values and round them
-            int pixel_color_avg = rimage[row][column].rgbtRed + image[row][column].rgbtGreen + image[row][column].rgbtBlue);
+            int pixel_color_avg = round(image[row][column].rgbtRed + image[row][column].rgbtGreen + image[row][column].rgbtBlue);
             pixel_color_avg /= 3;
             //printf("%i ", pixel_color_avg);
 
