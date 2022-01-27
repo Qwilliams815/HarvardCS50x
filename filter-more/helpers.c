@@ -95,8 +95,6 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         image[row][column].rgbtRed = round(avg_red/num_of_pixels);
         }
     }
-
-
     //printf("pixels: %i\n", i);
 }
 
