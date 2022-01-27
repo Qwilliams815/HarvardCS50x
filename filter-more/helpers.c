@@ -167,6 +167,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         continue;
                     }
 
+                    // Conduct gx and gy matrix calculations with current local pixel
                     gx_blue += image_copy[row + local_row][column + local_col].rgbtBlue * gx_array[gx_row][gx_col];
                     gx_green += image_copy[row + local_row][column + local_col].rgbtGreen * gx_array[gx_row][gx_col];
                     gx_red += image_copy[row + local_row][column + local_col].rgbtRed * gx_array[gx_row][gx_col];
