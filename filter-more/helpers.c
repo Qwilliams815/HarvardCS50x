@@ -208,16 +208,15 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         int blue_total = round(sqrt(gx_blue * gx_blue + gy_blue * gy_blue));
 
         // BGR total checker
-        if (blue_total > 255)
-        {
+        if (blue_total > 255) {
             blue_total = 255;
         }
-        if (green_total > 255)
-        {
+        
+        if (green_total > 255) {
             green_total = 255;
         }
-        if (red_total > 255)
-        {
+
+        if (red_total > 255) {
             red_total = 255;
         }
 
