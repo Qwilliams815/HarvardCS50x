@@ -150,43 +150,46 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
 
             for (int local_row=-1; local_row<2; local_row++) {
                 for (int local_col=-1; local_col<2; local_col++) {
-                    bool imaginary = false;
-                    int gx_index = 0;
-                    int gy_index = 0;
+                    //bool imaginary = false;
+                    int gx_row = 0;
+                    int gx_col = 0;
+
+                    int gy_row = 0;
+                    int gy_col = 0;
 
                     // Check for out-of-bounds rows
                     if (row + local_row < 0 || row + local_row >= height) {
                         // Set imaginary rgb values
-                        int blue_value = 0;
-                        int red_value = 0;
-                        int green_value = 0;
-                        imaginary = true;
+                        //int blue_value = 0;
+                        //int red_value = 0;
+                        //int green_value = 0;
+                        //imaginary = true;
+                        continue;
                     }
                     // Check for out-of-bounds columns
                     if (column + local_col < 0 || column + local_col >= width) {
                         // Set imaginary rgb values
-                        int blue_value = 0;
-                        int red_value = 0;
-                        int green_value = 0;
-                        imaginary = true;
+                        //int blue_value = 0;
+                        //int red_value = 0;
+                        //int green_value = 0;
+                        //imaginary = true;
+                        continue;
                     }
 
-                    gx_red += gx_array[gx_row][gx_column]
+                    gx_red += image_copy[row + local_row][column + local_col].rgbtRed * gx_array[gx_row][gx_column]
 
-                    for (int gx_row = 0; gx_row<3; gx_row++) {
-                        for (int gx_col = 0; gx_col<3; gx_col++) {
-                            if (imaginary != true) {
-                                //set rgb values
-                                int blue_value = image_copy[row + local_row][column + local_col].rgbtBlue;
-                                int green_value = image_copy[row + local_row][column + local_col].rgbtGreen;
-                                int red_value = image_copy[row + local_row][column + local_col].rgbtRed;
-                            }
-                            //caluculate rgb values * gx index.
-                            gx_blue = blue_value * gx_array[gx_row][gx_col]
-                        }
-
-
-                    }
+                    //for (int gx_row = 0; gx_row<3; gx_row++) {
+                    //    for (int gx_col = 0; gx_col<3; gx_col++) {
+                    //        if (imaginary != true) {
+                    //            //set rgb values
+                    //            int blue_value = image_copy[row + local_row][column + local_col].rgbtBlue;
+                    //            int green_value = image_copy[row + local_row][column + local_col].rgbtGreen;
+                    //            int red_value = image_copy[row + local_row][column + local_col].rgbtRed;
+                    //        }
+                    //        //caluculate rgb values * gx index.
+                    //        gx_blue = blue_value * gx_array[gx_row][gx_col]
+                    //    }
+                    //}
         }
     }
 
