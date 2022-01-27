@@ -137,11 +137,6 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             float gy_green = 0;
             float gy_red = 0;
 
-            //int gx_row = 0;
-            //int gx_col = 0;
-            //int gy_row = 0;
-            //int gy_col = 0;
-
             int sobel_row = 0;
             int sobel_col = 0;
 
@@ -167,9 +162,6 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     gy_blue += image_copy[row + local_row][column + local_col].rgbtBlue * gy_array[sobel_row][sobel_col];
                     gy_green += image_copy[row + local_row][column + local_col].rgbtGreen * gy_array[sobel_row][sobel_col];
                     gy_red += image_copy[row + local_row][column + local_col].rgbtRed * gy_array[sobel_row][sobel_col];
-
-                    //gx_col++;
-                    //gy_col++;
 
                     sobel_col++;
 
