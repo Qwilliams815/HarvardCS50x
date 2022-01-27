@@ -21,21 +21,12 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
             image[row][column].rgbtBlue = final_color_avg;
         }
     }
-    //set them all to that new rounded avg
-
     return;
 }
 
 // Reflect image horizontally
 void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
-
-    //image[0][0].rgbtBlue = 255;
-    //image[0][0].rgbtGreen = 0;
-    //image[0][0].rgbtRed = 0;
-
-    //printf("height: %i width: %i\n", height, width);
-    //height 400, width: 600
 
     for (int row=0; row<height; row++) {
         int opposite = width-1;
@@ -48,7 +39,6 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
                 opposite--;
                 halfway++;
             }
-
         }
     }
     return;
