@@ -201,6 +201,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     //        gx_blue = blue_value * gx_array[gx_row][gx_col]
                     //    }
                     //}
+                }
         }
     }
 
