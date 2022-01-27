@@ -77,15 +77,17 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                         continue;
                     }
                     // Check for out-of-bounds columns
-                    if (column + local_col < 0 || column + local_col >= width) {
+                    else if (column + local_col < 0 || column + local_col >= width) {
                         continue;
+
+                    } else {
+                        // Using the image copy, update the avg color values and increment pixel count
+                        avg_blue += image_copy[row + local_row][column + local_col].rgbtBlue;
+                        avg_green += image_copy[row + local_row][column + local_col].rgbtGreen;
+                        avg_red += image_copy[row + local_row][column + local_col].rgbtRed;
+                        num_of_pixels++;
                     }
 
-                    // Using the image copy, update the avg color values and increment pixel count
-                    avg_blue += image_copy[row + local_row][column + local_col].rgbtBlue;
-                    avg_green += image_copy[row + local_row][column + local_col].rgbtGreen;
-                    avg_red += image_copy[row + local_row][column + local_col].rgbtRed;
-                    num_of_pixels++;
                 }
             }
         image[row][column].rgbtBlue = round(avg_blue/num_of_pixels);
@@ -132,7 +134,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             float gx_blue = 0;
             float gx_green = 0;
             float gx_red = 0;
-            
+
             float gy_blue = 0;
             float gy_green = 0;
             float gy_red = 0;
@@ -156,30 +158,32 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     }
 
                     // Check for out-of-bounds columns
-                    if (column + local_col < 0 || column + local_col >= width) {
+                    else if (column + local_col < 0 || column + local_col >= width) {
                         sobel_col++;
                         if (sobel_col == 3) {
                         sobel_row++;
                         sobel_col = 0;
                         }
                         continue;
+                    } else {
+
+                        // Conduct gx and gy matrix calculations with current local pixel
+                        gx_blue += image_copy[row + local_row][column + local_col].rgbtBlue * gx_array[sobel_row][sobel_col];
+                        gx_green += image_copy[row + local_row][column + local_col].rgbtGreen * gx_array[sobel_row][sobel_col];
+                        gx_red += image_copy[row + local_row][column + local_col].rgbtRed * gx_array[sobel_row][sobel_col];
+
+                        gy_blue += image_copy[row + local_row][column + local_col].rgbtBlue * gy_array[sobel_row][sobel_col];
+                        gy_green += image_copy[row + local_row][column + local_col].rgbtGreen * gy_array[sobel_row][sobel_col];
+                        gy_red += image_copy[row + local_row][column + local_col].rgbtRed * gy_array[sobel_row][sobel_col];
+
+                        sobel_col++;
+
+                        if (sobel_col == 3) {
+                            sobel_row++;
+                            sobel_col = 0;
+                        }
                     }
 
-                    // Conduct gx and gy matrix calculations with current local pixel
-                    gx_blue += image_copy[row + local_row][column + local_col].rgbtBlue * gx_array[sobel_row][sobel_col];
-                    gx_green += image_copy[row + local_row][column + local_col].rgbtGreen * gx_array[sobel_row][sobel_col];
-                    gx_red += image_copy[row + local_row][column + local_col].rgbtRed * gx_array[sobel_row][sobel_col];
-
-                    gy_blue += image_copy[row + local_row][column + local_col].rgbtBlue * gy_array[sobel_row][sobel_col];
-                    gy_green += image_copy[row + local_row][column + local_col].rgbtGreen * gy_array[sobel_row][sobel_col];
-                    gy_red += image_copy[row + local_row][column + local_col].rgbtRed * gy_array[sobel_row][sobel_col];
-
-                    sobel_col++;
-
-                    if (sobel_col == 3) {
-                        sobel_row++;
-                        sobel_col = 0;
-                    }
                 }
             }
 
