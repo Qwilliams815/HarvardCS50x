@@ -176,7 +176,20 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         continue;
                     }
 
-                    gx_red += image_copy[row + local_row][column + local_col].rgbtRed * gx_array[gx_row][gx_column]
+                    gx_blue += image_copy[row + local_row][column + local_col].rgbtBlue * gx_array[gx_row][gx_col];
+                    gx_green += image_copy[row + local_row][column + local_col].rgbtGreen * gx_array[gx_row][gx_col];
+                    gx_red += image_copy[row + local_row][column + local_col].rgbtRed * gx_array[gx_row][gx_col];
+
+                    gy_blue += image_copy[row + local_row][column + local_col].rgbtBlue * gy_array[gy_row][gy_col];
+                    gy_green += image_copy[row + local_row][column + local_col].rgbtGreen * gy_array[gy_row][gy_col];
+                    gy_red += image_copy[row + local_row][column + local_col].rgbtRed * gy_array[gy_row][gy_col];
+
+                    gx_row++;
+                    gy_row++;
+                    gx_col++;
+                    gy_col++;
+
+
 
                     //for (int gx_row = 0; gx_row<3; gx_row++) {
                     //    for (int gx_col = 0; gx_col<3; gx_col++) {
