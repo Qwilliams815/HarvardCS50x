@@ -136,6 +136,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             float gy_green = 0;
             float gy_red = 0;
 
+            // Gx and Gy index trackers
             int sobel_row = 0;
             int sobel_col = 0;
 
@@ -198,7 +199,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 red_total = 255;
             }
 
-            // Reassign updated values
+            // Reassign pixel with updated values
             image[row][column].rgbtBlue = blue_total;
             image[row][column].rgbtGreen = green_total;
             image[row][column].rgbtRed = red_total;
