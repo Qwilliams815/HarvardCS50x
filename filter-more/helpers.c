@@ -9,7 +9,6 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
     //Loop through height / width
     for (int row=0; row<height; row++) {
         for (int column=0; column<width; column++) {
-            //RGBTRIPLE pixel = image[row][column];
 
             //take avg of each pixel rgbtRed, rgbtGreen, and rgbtBlue values and round them
             int pixel_color_avg = round(image[row][column].rgbtRed + image[row][column].rgbtGreen + image[row][column].rgbtBlue);
@@ -191,7 +190,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
 
                 }
             }
-            
+
             int red_total = round(sqrt(gx_red * gx_red + gy_red * gy_red));
             int green_total = round(sqrt(gx_green * gx_green + gy_green * gy_green));
             int blue_total = round(sqrt(gx_blue * gx_blue + gy_blue * gy_blue));
