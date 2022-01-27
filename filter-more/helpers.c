@@ -189,43 +189,29 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         gy_col = 0;
                     }
 
-                    //for (int gx_row = 0; gx_row<3; gx_row++) {
-                    //    for (int gx_col = 0; gx_col<3; gx_col++) {
-                    //        if (imaginary != true) {
-                    //            //set rgb values
-                    //            int blue_value = image_copy[row + local_row][column + local_col].rgbtBlue;
-                    //            int green_value = image_copy[row + local_row][column + local_col].rgbtGreen;
-                    //            int red_value = image_copy[row + local_row][column + local_col].rgbtRed;
-                    //        }
-                    //        //caluculate rgb values * gx index.
-                    //        gx_blue = blue_value * gx_array[gx_row][gx_col]
-                    //    }
-                    //}
                 }
-        }
-        int red_total = round(sqrt(gx_red * gx_red + gy_red * gy_red));
-        int green_total = round(sqrt(gx_green * gx_green + gy_green * gy_green));
-        int blue_total = round(sqrt(gx_blue * gx_blue + gy_blue * gy_blue));
+            }
+            
+            int red_total = round(sqrt(gx_red * gx_red + gy_red * gy_red));
+            int green_total = round(sqrt(gx_green * gx_green + gy_green * gy_green));
+            int blue_total = round(sqrt(gx_blue * gx_blue + gy_blue * gy_blue));
 
-        // BGR total checker
-        if (blue_total > 255) {
-            blue_total = 255;
-        }
-        
-        if (green_total > 255) {
-            green_total = 255;
-        }
+            // BGR total checker
+            if (blue_total > 255) {
+                blue_total = 255;
+            }
 
-        if (red_total > 255) {
-            red_total = 255;
+            if (green_total > 255) {
+                green_total = 255;
+            }
+
+            if (red_total > 255) {
+                red_total = 255;
+            }
+
+            image[row][column].rgbtBlue = blue_total;
+            image[row][column].rgbtGreen = green_total;
+            image[row][column].rgbtRed = red_total;
         }
-
-        // Assign new values to pixels
-        image[row][column].rgbtBlue = blue_total;
-        image[row][column].rgbtGreen = green_total;
-        image[row][column].rgbtRed = red_total;
-
     }
-
-
 }
