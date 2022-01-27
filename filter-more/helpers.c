@@ -199,6 +199,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 red_total = 255;
             }
 
+            // Reassign updated values
             image[row][column].rgbtBlue = blue_total;
             image[row][column].rgbtGreen = green_total;
             image[row][column].rgbtRed = red_total;
