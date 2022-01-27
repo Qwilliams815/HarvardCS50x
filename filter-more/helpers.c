@@ -137,10 +137,13 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             float gy_green = 0;
             float gy_red = 0;
 
-            int gx_row = 0;
-            int gx_col = 0;
-            int gy_row = 0;
-            int gy_col = 0;
+            //int gx_row = 0;
+            //int gx_col = 0;
+            //int gy_row = 0;
+            //int gy_col = 0;
+
+            int sobel_row = 0;
+            int sobel_col = 0;
 
             for (int local_row=-1; local_row<2; local_row++) {
                 for (int local_col=-1; local_col<2; local_col++) {
@@ -157,27 +160,23 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     }
 
                     // Conduct gx and gy matrix calculations with current local pixel
-                    gx_blue += image_copy[row + local_row][column + local_col].rgbtBlue * gx_array[gx_row][gx_col];
-                    gx_green += image_copy[row + local_row][column + local_col].rgbtGreen * gx_array[gx_row][gx_col];
-                    gx_red += image_copy[row + local_row][column + local_col].rgbtRed * gx_array[gx_row][gx_col];
+                    gx_blue += image_copy[row + local_row][column + local_col].rgbtBlue * gx_array[sobel_row][sobel_col];
+                    gx_green += image_copy[row + local_row][column + local_col].rgbtGreen * gx_array[sobel_row][sobel_col];
+                    gx_red += image_copy[row + local_row][column + local_col].rgbtRed * gx_array[sobel_row][sobel_col];
 
-                    gy_blue += image_copy[row + local_row][column + local_col].rgbtBlue * gy_array[gy_row][gy_col];
-                    gy_green += image_copy[row + local_row][column + local_col].rgbtGreen * gy_array[gy_row][gy_col];
-                    gy_red += image_copy[row + local_row][column + local_col].rgbtRed * gy_array[gy_row][gy_col];
+                    gy_blue += image_copy[row + local_row][column + local_col].rgbtBlue * gy_array[sobel_row][sobel_col];
+                    gy_green += image_copy[row + local_row][column + local_col].rgbtGreen * gy_array[sobel_row][sobel_col];
+                    gy_red += image_copy[row + local_row][column + local_col].rgbtRed * gy_array[sobel_row][sobel_col];
 
-                    gx_col++;
-                    gy_col++;
+                    //gx_col++;
+                    //gy_col++;
 
-                    if (gx_col == 3) {
-                        gx_row++;
-                        gx_col = 0;
+                    sobel_col++;
+
+                    if (sobel_col == 3) {
+                        sobel_row++;
+                        sobel_col = 0;
                     }
-
-                    if (gy_col == 3) {
-                        gy_row++;
-                        gy_col = 0;
-                    }
-
                 }
             }
 
