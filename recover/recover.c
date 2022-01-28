@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 
     // generated files must be 000.jpg, 001.jpg, ect.
 
-    //FILE *f = fopen(argv[1], "r");
+    FILE *f = fopen(argv[1], "r");
     FILE input = fread(data[], 512, all, argv[1]);
 
     // for each 512b block in argv[1]
