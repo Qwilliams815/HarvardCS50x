@@ -59,7 +59,7 @@ int main(void)
     //printf("%i\n", a);
 
     int i = 000;
-    printf("%i\n", i);
+    printf("%i\n", i+1);
 
 
 
