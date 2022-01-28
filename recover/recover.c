@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
     // for each 512b block in argv[1]
     // if block starts with 0xff 0xd8 0xff,
      if (bytes[0] == 0xff && bytes[1] == 0xd8 && bytes[2] == 0xff && (bytes[3] & 0xf0) == 0xe0) {
-         //open a write file as current_file 000kljs
+         //open a write file as current_file 000
      }
     // else write block to the current file
     // write every subsequent block to that file
