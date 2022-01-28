@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
     // if block starts with 0xff 0xd8 0xff, open a write file as current_file 000.
     // else write block to the current file
     // write every subsequent block to that file
-    //uoiuiuhgfkjhgasd
+    //uoiuiuhgfkjhgasdasd
 
 
 }
