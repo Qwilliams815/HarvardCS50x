@@ -12,5 +12,7 @@ int main(int argc, char *argv[])
     // if file cant be read, return 1
 
     // generated files must be 000.jpg, 001.jpg, ect.
-    //
+
+    FILE *f = fopen(argv[1], "r");
+    
 }
