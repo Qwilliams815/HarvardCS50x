@@ -9,6 +9,8 @@ int main(int argc, char *argv[])
         return 1;
     }
 
+    printf("hello\n");
+
     // if file cant be read, return 1
     FILE *finput = fopen(argv[1], "r");
     if (finput == NULL)
