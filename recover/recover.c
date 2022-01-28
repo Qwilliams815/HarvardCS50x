@@ -19,6 +19,7 @@ int main(int argc, char *argv[])
 
     // generated files must be 000.jpg, 001.jpg, ect.
     BYTE bytes[3];
+    fread(bytes, sizeof(BYTE), 3, file);
 
     FILE *f = fopen(argv[1], "r");
     FILE input = fread(data[], 512, all, argv[1]);
@@ -26,6 +27,7 @@ int main(int argc, char *argv[])
 
     // for each 512b block in argv[1]
     // if block starts with 0xff 0xd8 0xff, open a write file as current_file 000.
+    if ()
     // else write block to the current file
     // write every subsequent block to that file
     //uoiuiuhgfkjhgasdasdasdasdasd
