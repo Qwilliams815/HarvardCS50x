@@ -19,15 +19,14 @@ int main(int argc, char *argv[])
 
     // generated files must be 000.jpg, 001.jpg, ect.
     BYTE bytes[3];
-    fread(bytes, sizeof(BYTE), 3, file);
+    //fread(bytes, sizeof(BYTE), 3, file);
 
-    int buffer[];
-    FILE input = fread(buffer[], 512, all, argv[1]);
-    int const block_size = 512
+    int buffer[512];
+    fread(buffer, 1, 512, finput);
 
     // for each 512b block in argv[1]
     // if block starts with 0xff 0xd8 0xff,
-     if (bytes[0] == 0xff && bytes[1] == 0xd8 && bytes[2] == 0xff && (bytes[3] & 0xf0) == 0xe0) {
+     if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0) {
          //open a write file as current_file 000
      }
     // else write block to the current file
