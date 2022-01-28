@@ -21,12 +21,13 @@ int main(int argc, char *argv[])
 
     FILE *f = fopen(argv[1], "r");
     FILE input = fread(data[], 512, all, argv[1]);
+    int const block_size = 512
 
     // for each 512b block in argv[1]
     // if block starts with 0xff 0xd8 0xff, open a write file as current_file 000.
     // else write block to the current file
     // write every subsequent block to that file
-    //uoiuiuhgfkjhgasdasd
+    //uoiuiuhgfkjhgasdasdasd
 
 
 }
