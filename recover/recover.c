@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
     }
 
     // if file cant be read, return 1
-    FILE *input = fopen(argv[1], "r");
+    FILE *finput = fopen(argv[1], "r");
     if (input == NULL)
     {
         printf("Could not open file.\n");
@@ -21,7 +21,6 @@ int main(int argc, char *argv[])
     BYTE bytes[3];
     fread(bytes, sizeof(BYTE), 3, file);
 
-    FILE *f = fopen(argv[1], "r");
     int buffer[];
     FILE input = fread(buffer[], 512, all, argv[1]);
     int const block_size = 512
@@ -35,5 +34,5 @@ int main(int argc, char *argv[])
     // write every subsequent block to that file
     //uoiuiuhgfkjhgasdasdasdasdasds
 
-
+    fclose(finput);
 }
