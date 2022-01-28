@@ -12,13 +12,14 @@ int main(int argc, char *argv[])
     // if file cant be read, return 1
     FILE *finput = fopen(argv[1], "r");
     if (input == NULL)
+    
     {
         printf("Could not open file.\n");
         return 1;
     }
 
     // generated files must be 000.jpg, 001.jpg, ect.
-    BYTE bytes[3];
+    //BYTE bytes[3];
     //fread(bytes, sizeof(BYTE), 3, file);
 
     int buffer[512];
