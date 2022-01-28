@@ -4,5 +4,5 @@
 int main(int argc, char *argv[])
 {
     // ./recover card.raw
-    // 
+    // if argc > 2 
 }
