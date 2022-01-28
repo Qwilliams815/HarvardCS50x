@@ -22,7 +22,8 @@ int main(int argc, char *argv[])
     fread(bytes, sizeof(BYTE), 3, file);
 
     FILE *f = fopen(argv[1], "r");
-    FILE input = fread(data[], 512, all, argv[1]);
+    int buffer[];
+    FILE input = fread(buffer[], 512, all, argv[1]);
     int const block_size = 512
 
     // for each 512b block in argv[1]
