@@ -18,6 +18,7 @@ int main(int argc, char *argv[])
     }
 
     // generated files must be 000.jpg, 001.jpg, ect.
+    BYTE bytes[3];
 
     FILE *f = fopen(argv[1], "r");
     FILE input = fread(data[], 512, all, argv[1]);
