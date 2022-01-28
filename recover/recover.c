@@ -3,7 +3,6 @@
 
 int main(int argc, char *argv[])
 {
-    //test
-    // abother test
-    ////whoa
+    // ./recover card.raw
+    // 
 }
