@@ -5,11 +5,17 @@ int main(int argc, char *argv[])
 {
     // ./recover card.raw
     if (argc != 2) {
-        printf("usage: ./recover filename");
+        printf("usage: ./recover filename\n");
         return 1;
     }
 
     // if file cant be read, return 1
+    FILE *input = fopen(argv[1], "r");
+    if (input == NULL)
+    {
+        printf("Could not open file.\n");
+        return 1;
+    }
 
     // generated files must be 000.jpg, 001.jpg, ect.
 
