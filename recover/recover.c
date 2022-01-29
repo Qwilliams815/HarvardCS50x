@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
     //BYTE bytes[3];
     //fread(bytes, sizeof(BYTE), 3, file);
 
-    //int buffer[512];
+    BYTE buffer[512];
     int count = 0;
     while (fread(buffer, sizeof(BYTE), 512, finput) != 0) {
         //printf("%i ", buffer[0]);
