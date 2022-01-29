@@ -75,7 +75,15 @@ int main(void)
         printf("%c", buffer[j]);
     }
 
-    printf("%s", buffer);
+    //printf("%s", buffer);
+    char filename[8];
+    int num = 0;
+    string a = "000"
+    string b = "00"
+    string c = "0"
+    if (num < 10) {
+        s[rintf(filename)]
+    }
 
 
 
