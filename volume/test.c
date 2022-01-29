@@ -58,10 +58,18 @@ int main(void)
     //printf("%p\n", &a);
     //printf("%i\n", a);
 
-    string i = "000";
-    int num = 0;
-    printf("%s\n", i);
-    
+    //string i = "000";
+    //int num = 0;
+    //printf("%s\n", i);
+
+
+    char buffer[13];
+
+    int i = 50;
+    sprintf(buffer, "This is CS%i\n", i);
+
+    float f = 50.0;
+    sprintf(buffer, "This is CS%.0f\n", f);
 
 
 
