@@ -26,6 +26,7 @@ int main(int argc, char *argv[])
     // generated files must be 000.jpg, 001.jpg, ect.
     //BYTE bytes[3];
     //fread(bytes, sizeof(BYTE), 3, file);
+    string filename = "000";
 
     BYTE buffer[512];
     int count = 0;
@@ -33,6 +34,7 @@ int main(int argc, char *argv[])
         //printf("%i ", buffer[0]);
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0) {
             count++;
+
          //open a write file as current_file 000
         }
     }
