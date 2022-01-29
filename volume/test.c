@@ -58,8 +58,11 @@ int main(void)
     //printf("%p\n", &a);
     //printf("%i\n", a);
 
-    int i = 000;
-    printf("%i\n", i+1);
+    string i = "000";
+    int num = 0;
+    printf("%s\n", i);
+    
+
 
 
 
