@@ -82,7 +82,7 @@ int main(void)
     string b = "00"
     string c = "0"
     if (num < 10) {
-        s[rintf(filename)]
+        sprintf(filename)
     }
 
 
