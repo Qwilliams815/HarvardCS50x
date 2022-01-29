@@ -27,10 +27,10 @@ int main(int argc, char *argv[])
     //BYTE bytes[3];
     //fread(bytes, sizeof(BYTE), 3, file);
 
-    int buffer[512];
+    //int buffer[512];
     int count = 0;
     while (fread(buffer, sizeof(BYTE), 512, finput) != 0) {
-        printf("%d ", buffer[0]);
+        //printf("%i ", buffer[0]);
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0) {
             count++;
          //open a write file as current_file 000
