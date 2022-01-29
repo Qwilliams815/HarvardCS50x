@@ -71,7 +71,9 @@ int main(void)
     float f = 50.0;
     sprintf(buffer, "This is CS%.0f\n", f);
 
-    printf("c", buffer[0]);
+    for (int j=0; j<strlen(buffer); j++) {
+        printf("%c", buffer[j]);
+    }
 
 
 
