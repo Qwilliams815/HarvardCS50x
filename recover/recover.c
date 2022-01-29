@@ -26,8 +26,7 @@ int main(int argc, char *argv[])
 
     int buffer[512];
     int count = 0;
-    while (buffer[0] != EOF) {
-        fread(buffer, 1, 512, finput);
+    while (fread(buffer, 1, 512, finput) != 0) {
         count++;
         //if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0) {
          //open a write file as current_file 000
