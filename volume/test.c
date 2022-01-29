@@ -75,6 +75,8 @@ int main(void)
         printf("%c", buffer[j]);
     }
 
+    printf("%s", buffer);
+
 
 
 
