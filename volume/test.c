@@ -74,7 +74,7 @@ int main(void)
     }
 
     float f = 50.0;
-    sprintf(buffer, "This is CS%.0f\n", f);
+    sprintf(buffer, "This is CS%f\n", f);
     //This is CS50
 
     for (int j=0; j<strlen(buffer); j++) {
