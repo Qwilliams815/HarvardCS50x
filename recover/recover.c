@@ -6,7 +6,7 @@ typedef uint8_t BYTE;
 
 int main(int argc, char *argv[])
 {
-    // ./recover card.raw
+    // Multiple arguments and invalid file error handlers
     if (argc != 2) {
         printf("usage: ./recover filename\n");
         return 1;
@@ -14,7 +14,6 @@ int main(int argc, char *argv[])
 
     printf("hello\n");
 
-    // if file cant be read, return 1
     FILE *finput = fopen(argv[1], "r");
     if (finput == NULL)
 
