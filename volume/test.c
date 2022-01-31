@@ -67,9 +67,11 @@ int main(void)
 
     int i = 50;
     sprintf(buffer, "This is CS%i\n", i);
+    //This is CS50
 
     float f = 50.0;
     sprintf(buffer, "This is CS%.0f\n", f);
+    //This is CS50
 
     for (int j=0; j<strlen(buffer); j++) {
         printf("%c", buffer[j]);
