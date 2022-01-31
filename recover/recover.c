@@ -24,7 +24,6 @@ int main(int argc, char *argv[])
     }
 
     // generated files must be 000.jpg, 001.jpg, ect.
-    //BYTE bytes[3];
     //fread(bytes, sizeof(BYTE), 3, file);
     char filename[8];
 
