@@ -79,14 +79,11 @@ int main(void)
 
     //printf("%s", buffer);
     char filename[8];
-    int num = 0;
-    //string a = "000";
-    //string b = "00";
-    //string c = "0";
+    int num = 2235;
     if (num < 10) {
         sprintf(filename, "00%i\n", num);
         printf("%s", filename);
-    } else if (10 < num < 100) {
+    } else if (num > 10 && num < 100) {
         sprintf(filename, "0%i\n", num);
         printf("%s", filename);
     } else {
