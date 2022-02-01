@@ -84,7 +84,14 @@ int main(void)
     //string b = "00";
     //string c = "0";
     if (num < 10) {
-        sprintf("00%s", filename);
+        sprintf(filename, "00%i\n", num);
+        printf("%s", filename);
+    } else if (10 < num < 100) {
+        sprintf(filename, "0%i\n", num);
+        printf("%s", filename);
+    } else {
+        sprintf(filename, "%i\n", num);
+        printf("%s", filename);
     }
 
 
