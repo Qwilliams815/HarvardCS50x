@@ -69,27 +69,23 @@ int main(void)
     sprintf(buffer, "This is CS%i\n", i);
     //This is CS50
 
-    for (int j=0; j<strlen(buffer); j++) {
-        printf("%c", buffer[j]);
-    }
+    //printf("%s", buffer);
 
     float f = 50.0;
     sprintf(buffer, "This is CS%f\n", f);
     //This is CS50
 
-    for (int j=0; j<strlen(buffer); j++) {
-        printf("%c", buffer[j]);
-    }
+    //printf("%s", buffer);
 
     //printf("%s", buffer);
-    //char filename[8];
-    //int num = 0;
+    char filename[8];
+    int num = 0;
     //string a = "000";
     //string b = "00";
     //string c = "0";
-    //if (num < 10) {
-    //    sprintf(filename);
-    //}
+    if (num < 10) {
+        sprintf("00%s", filename);
+    }
 
 
 
