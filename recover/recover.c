@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
             count++;
         //if opne file = true
         //open file = true
-         //open a write file as current_file 000
+         //open a write file as current_file 000s
         }
     }
     printf("%i\n", count);
