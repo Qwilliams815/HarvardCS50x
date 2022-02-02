@@ -13,7 +13,6 @@ int main(int argc, char *argv[])
     }
 
     //printf("hello\n");
-
     FILE *finput = fopen(argv[1], "r");
     if (finput == NULL)
 
@@ -22,8 +21,6 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    // generated files must be 000.jpg, 001.jpg, ect.
-    //fread(bytes, sizeof(BYTE), 3, file);
     char filename[8];
 
     BYTE buffer[512];
