@@ -79,19 +79,19 @@ int main(void)
 
     //printf("%s", buffer);
     char filename[8];
-    int num = 2235;
-    if (num < 10) {
-        sprintf(filename, "00%i\n", num);
-        printf("%s", filename);
-    } else if (num > 10 && num < 100) {
-        sprintf(filename, "0%i\n", num);
-        printf("%s", filename);
-    } else {
-        sprintf(filename, "%i\n", num);
-        printf("%s", filename);
-    }
+    int num = 25;
+    //if (num < 10) {
+    //    sprintf(filename, "00%i\n", num);
+    //    printf("%s", filename);
+    //} else if (num > 10 && num < 100) {
+    //    sprintf(filename, "0%i\n", num);
+    //    printf("%s", filename);
+    //} else {
+    //    sprintf(filename, "%i\n", num);
+    //    printf("%s", filename);
+    //}
 
-
-
+    sprintf(filename, "%03i.jpg", num);
+    printf("%s", filename);
 
 }
