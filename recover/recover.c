@@ -27,10 +27,10 @@ int main(int argc, char *argv[])
     while (fread(buffer, sizeof(BYTE), 512, finput) != 0) {
         //printf("%i ", buffer[0]);
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0) {
+            // Create new file, name it.
             FILE *foutput = fopen(filename, 'w');
-            bool file_open = true;
-            while
             fwrite(buffer, sizeof(BYTE), 512, foutput);
+            //bool file_open = true;
             count++;
         //if opne file = true
         //open file = true
