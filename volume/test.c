@@ -93,6 +93,6 @@ int main(void)
 
     sprintf(filename, "%03i.jpg", num);
     printf("%s", filename);
-    //
+    //lkh vyr bi t rty ithrt
 
 }
