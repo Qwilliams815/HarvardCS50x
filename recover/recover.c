@@ -27,7 +27,19 @@ int main(int argc, char *argv[])
     while (fread(buffer, sizeof(BYTE), 512, finput) != 0) {
         //printf("%i ", buffer[0]);
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0) {
-            // Create new file, name it.
+
+            // Establish file name
+            if (count < 10) {
+                sprintf(filename, "00%i\n", count);
+                printf("%s", filename);
+            } else if (count > 10 && count < 100) {
+                sprintf(filename, "0%i\n", count);
+                printf("%s", filename);
+            } else {
+                sprintf(filename, "%i\n", count);
+                printf("%s", filename);
+            }
+
             FILE *foutput = fopen(filename, 'w');
             fwrite(buffer, sizeof(BYTE), 512, foutput);
             //bool file_open = true;
