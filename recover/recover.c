@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    printf("hello\n");
+    //printf("hello\n");
 
     FILE *finput = fopen(argv[1], "r");
     if (finput == NULL)
