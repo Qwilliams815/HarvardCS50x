@@ -15,7 +15,6 @@ int main(int argc, char *argv[])
     //printf("hello\n");
     FILE *finput = fopen(argv[1], "r");
     if (finput == NULL)
-
     {
         printf("Could not open file.\n");
         return 1;
