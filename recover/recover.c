@@ -34,8 +34,8 @@ int main(int argc, char *argv[])
             FILE *foutput = fopen(filename, 'w');
             fwrite(buffer, sizeof(BYTE), 512, foutput);
             count++;
-
-
+        //if opne file = true
+        //open file = true
          //open a write file as current_file 000
         }
     }
