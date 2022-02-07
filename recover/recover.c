@@ -1,18 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
+#include <stdbool.h>
 
 typedef uint8_t BYTE;
 
 int main(int argc, char *argv[])
 {
-    // Multiple arguments and invalid file error handlers
-    if (argc != 2) {
+    // Multiple arguments handler
+    if (argc != 2)
+    {
         printf("usage: ./recover filename\n");
         return 1;
     }
 
-    //printf("hello\n");
+    // Invalid file error handler
     FILE *finput = fopen(argv[1], "r");
     if (finput == NULL)
     {
@@ -20,35 +22,39 @@ int main(int argc, char *argv[])
         return 1;
     }
 
+    // Establishing custom '###.jpg' filename memory, .jpg file buffer size, .jpg counter, first file qualifier, and .jpg output file.
     char filename[8];
-
     BYTE buffer[512];
     int count = 0;
-    while (fread(buffer, sizeof(BYTE), 512, finput) != 0) {
-        //printf("%i ", buffer[0]);
-        if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0) {
+    bool file_open = false;
+    FILE *foutput;
 
-            // Establish file name
+    // Loop through card memory 512 bytes at a time
+    while (fread(buffer, sizeof(BYTE), 512, finput) != 0)
+    {
+        // Check for qualifying .jpg header bytes
+        if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
+        {
+            // Skip closing 1st qualifying file because it hasn't been opened yet
+            if (count != 0)
+            {
+                fclose(foutput);
+            }
 
-            FILE *foutput = fopen(filename, 'w');
-            fwrite(buffer, sizeof(BYTE), 512, foutput);
-            //bool file_open = true;
+            // Establish first file has been opened
+            file_open = true;
+
+            // Create custom .jpg output filename with count data
+            sprintf(filename, "%03i.jpg", count);
+            foutput = fopen(filename, "w");
             count++;
-        //if opne file = true
-        //open file = true
-         //open a write file as current_file 000s
+        }
+
+        // 1st .jpg file has been found and the close/open chain has started
+        if (file_open == true)
+        {
+            fwrite(buffer, sizeof(BYTE), 512, foutput);
         }
     }
-    printf("%i\n", count);
-
-    // for each 512b block in argv[1]
-    // if block starts with 0xff 0xd8 0xff,
-     //if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0) {
-         //open a write file as current_file 000
-     //}
-    // else write block to the current file
-    // write every subsequent block to that file
-    //
-
     fclose(finput);
 }
