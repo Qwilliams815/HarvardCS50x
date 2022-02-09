@@ -10,7 +10,7 @@ typedef int16_t BYTE2;
 typedef struct person
 {
     struct person *parents[2];
-    int alleles[];
+    int alleles[3];
 }
 person;
 
@@ -21,7 +21,6 @@ int main(void)
     new_person.alleles[1] = 2;
     new_person.alleles[2] = 9;
 
-    printf("%d\n", new_person.alleles[1]);
+    printf("%p\n", &new_person.alleles[1]);
 
-    free(alleles);
 }
