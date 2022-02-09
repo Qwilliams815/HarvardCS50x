@@ -22,4 +22,6 @@ int main(void)
     new_person.alleles[2] = 9;
 
     printf("%d\n", new_person.alleles[1]);
+
+    free(alleles);
 }
