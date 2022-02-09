@@ -66,7 +66,8 @@ person *create_family(int generations)
         new_person->parents[1] = NULL;
 
         // TODO: Randomly assign alleles
-        //what do
+        //what do in the unlikely event of whatever dude
+        
 
     }
 
