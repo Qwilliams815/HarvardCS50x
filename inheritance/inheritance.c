@@ -67,7 +67,8 @@ person *create_family(int generations)
 
         // TODO: Randomly assign alleles
         //what do in the unlikely event of whatever dude
-        
+        // but what i djust dont understand is whyuuuuuuuuuuuuuuasd vut
+
 
     }
 
