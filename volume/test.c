@@ -48,6 +48,7 @@ int main(void)
     char random_allele()
 {
     int r = rand() % 3;
+    printf("%i\n", r);
     if (r == 0)
     {
         return 'A';
