@@ -97,6 +97,7 @@ void free_family(person *p)
     }
 
     // TODO: Free child
+    if (p-parent)
     free(p);
 
 }
