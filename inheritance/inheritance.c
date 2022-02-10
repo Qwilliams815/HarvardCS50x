@@ -55,8 +55,7 @@ person *create_family(int generations)
         new_person->parents[1] = parent1;
 
         // TODO: Randomly assign current person's alleles based on the alleles of their parents
-        new_person->alleles[0] = random_allele();
-        new_person->alleles[1] = random_allele();
+        
 
     }
 
@@ -68,8 +67,8 @@ person *create_family(int generations)
         new_person->parents[1] = NULL;
 
         // TODO: Randomly assign alleles
-        //what do in the unlikely event of whatever dude
-        // but what i djust dont understand is whyuuuuuuuuuuuuuuasd vut
+        new_person->alleles[0] = random_allele();
+        new_person->alleles[1] = random_allele();
 
 
     }
