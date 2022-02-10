@@ -35,12 +35,15 @@ int main(void)
     new_person->parents[1] = mom;
 
 
-    //printf("allele: %c, Parent: %p\n", new_person->alleles[1], new_person->parents[0]);
-    //if (mom == NULL) {
-    //    printf("Mom is null\n");
-    //}
+    printf("allele: %c, Parent: %p\n", new_person->alleles[1], new_person->parents[0]);
+    if (mom == NULL) {
+        printf("Mom is null\n");
+    }
+
+    free(new_person);
+
     srand(time(0));
-    printf("%c\n", random_allele());
+    //printf("%c\n", random_allele());
 
 
 }
