@@ -15,7 +15,6 @@ person;
 
 const int GENERATIONS = 3;
 const int INDENT_LENGTH = 4;
-int person_count = 0;
 
 person *create_family(int generations);
 void print_family(person *p, int generation);
@@ -58,8 +57,6 @@ person *create_family(int generations)
         new_person->alleles[0] = parent0->alleles[rand() % 2];
         new_person->alleles[1] = parent1->alleles[rand() % 2];
 
-        person_count += 2;
-
     }
 
     // If there are no generations left to create
@@ -72,8 +69,6 @@ person *create_family(int generations)
         // TODO: Randomly assign alleles
         new_person->alleles[0] = random_allele();
         new_person->alleles[1] = random_allele();
-
-        person_count++;
     }
 
     // TODO: Return newly created person
@@ -90,11 +85,10 @@ void free_family(person *p)
     }
 
     // TODO: Free parents recursively
-        free_family(p->parents[0]);
-        free_family(p->parents[1]);
+    free_family(p->parents[0]);
+    free_family(p->parents[1]);
 
     // TODO: Free child
-    //if (p-parent)
     free(p);
 
 }
