@@ -4,6 +4,8 @@
 #include <stdint.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include <time.h>
+
 
 //typedef uint8_t BYTE;
 typedef int16_t BYTE2;
@@ -15,6 +17,8 @@ typedef struct person
     struct person *parents[2];
 }
 person;
+
+char random_allele();
 
 int main(void)
 {
@@ -31,9 +35,29 @@ int main(void)
     new_person->parents[1] = mom;
 
 
-    printf("allele: %c, Parent: %p\n", new_person->alleles[1], new_person->parents[0]);
-    if (mom == NULL) {
-        printf("Mom is null\n");
-    }
+    //printf("allele: %c, Parent: %p\n", new_person->alleles[1], new_person->parents[0]);
+    //if (mom == NULL) {
+    //    printf("Mom is null\n");
+    //}
 
+    printf("%c\n", random_allele());
+
+
+}
+
+    char random_allele()
+{
+    int r = rand() % 3;
+    if (r == 0)
+    {
+        return 'A';
+    }
+    else if (r == 1)
+    {
+        return 'B';
+    }
+    else
+    {
+        return 'O';
+    }
 }
