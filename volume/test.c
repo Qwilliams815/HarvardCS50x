@@ -9,14 +9,16 @@
 typedef int16_t BYTE2;
 typedef struct person
 {
-    struct person *parents[2];
+    // Value
     char alleles[3];
+    // Points to next
+    struct person *parents[2];
 }
 person;
 
 int main(void)
 {
-    person new_person;
+    person *new_person = malloc(sizeof(person));
     new_person.alleles[0] = "A";
     new_person.alleles[1] = "B";
     new_person.alleles[2] = "O";
