@@ -21,6 +21,10 @@ int main(void)
     new_person.alleles[1] = 2;
     new_person.alleles[2] = 9;
 
-    printf("%p\n", &new_person.alleles[1]);
+    new_person.parents[0] = "Dad";
+    new_person.parents[1] = "mom";
+
+
+    printf("allele: %p, Parent: %s\n", &new_person.alleles[1], new_person.parents[0]);
 
 }
