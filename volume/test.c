@@ -39,7 +39,7 @@ int main(void)
     //if (mom == NULL) {
     //    printf("Mom is null\n");
     //}
-
+    srand(time(0));
     printf("%c\n", random_allele());
 
 
