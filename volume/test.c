@@ -23,11 +23,12 @@ int main(void)
     new_person->alleles[1] = 'B';
     new_person->alleles[2] = 'C';
 
+    person *dad = malloc(sizeof(person));
+    person *mom = malloc(sizeof(person));
+    new_person->parents[0] = dad;
+    new_person->parents[1] = mom;
 
-    new_person->parents[0] = "Dad";
-    new_person->parents[1] = "Mom";
 
-
-    printf("allele: %p, Parent: %s\n", &new_person.alleles[1], new_person.parents[0]);
+    printf("allele: %c, Parent: %p\n", new_person->alleles[1], new_person->parents[0]);
 
 }
