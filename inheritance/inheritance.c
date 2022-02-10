@@ -90,9 +90,10 @@ void free_family(person *p)
     }
 
     // TODO: Free parents recursively
-    for (int i=0; i<person_count; i++)
+    for (int i=0; i<GENERATIONS; i++)
     {
-        free(p);
+        free(p->parents[0]);
+        free(p->parents[1]);
     }
 
     // TODO: Free child
