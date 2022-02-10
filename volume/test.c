@@ -25,10 +25,15 @@ int main(void)
 
     person *dad = malloc(sizeof(person));
     person *mom = malloc(sizeof(person));
+    dad = NULL;
+    mom = NULL;
     new_person->parents[0] = dad;
     new_person->parents[1] = mom;
 
 
     printf("allele: %c, Parent: %p\n", new_person->alleles[1], new_person->parents[0]);
+    if (mom == NULL) {
+        printf("Mom is null\n");
+    }
 
 }
