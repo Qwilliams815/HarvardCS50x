@@ -39,8 +39,9 @@ bool load(const char *dictionary)
     // TODO
     // Allocate Memory for node
     node *n = malloc(sizeof(node));
-    // Fill node with word
+    // Fill node with word and next address
     strcpy(n->word, "hello");
+    n->next = NULL;
     //assign node to linked hashmap spot based on hash function
 
     //If load succesful, return True, else return false
