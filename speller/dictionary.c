@@ -37,6 +37,11 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     // TODO
+    // Allocate Memory for node
+    node *n = malloc(sizeof(node));
+    // Fill node with word
+    strcpy(n->word, "hello");
+    //assign node to linked hashmap spot based on hash function
 
     //If load succesful, return True, else return false
     return false;
