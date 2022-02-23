@@ -38,11 +38,12 @@ bool load(const char *dictionary)
 {
     // TODO
     //If load succesful, return True, else return false
-    FILE *finput = fopen(argv[1], "r");
-    if (finput == NULL)
+    bool loaded = true;
+    FILE *dict = fopen(dictionary, "r");
+    if (dict == NULL)
     {
         printf("Could not open file.\n");
-        return false;
+        loaded = false;
     }
     // Allocate Memory for node
     node *n = malloc(sizeof(node));
@@ -51,7 +52,7 @@ bool load(const char *dictionary)
     n->next = NULL;
     //assign node to linked hashmap spot based on hash function
 
-    return false;
+    return loaded;
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
