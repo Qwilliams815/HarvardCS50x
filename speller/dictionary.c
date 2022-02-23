@@ -49,7 +49,7 @@ bool load(const char *dictionary)
 
     // Scan words from dictionary file
     while (fscanf(dict, "%s", word) != EOF) {
-        
+        word
     };
 
     // Allocate Memory for node
