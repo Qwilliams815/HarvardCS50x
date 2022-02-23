@@ -37,6 +37,8 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     // TODO
+
+    //If load succesful, return True, else return false
     return false;
 }
 
