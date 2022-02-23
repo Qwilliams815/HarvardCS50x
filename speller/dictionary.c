@@ -46,6 +46,10 @@ bool load(const char *dictionary)
         printf("Could not open file.\n");
         loaded = false;
     }
+
+    // Scan words from dictionary file
+    fscanf(dict, "%s", word);
+
     // Allocate Memory for node
     node *n = malloc(sizeof(node));
     // Fill node with word and next address
