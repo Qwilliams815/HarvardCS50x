@@ -37,6 +37,13 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     // TODO
+    //If load succesful, return True, else return false
+    FILE *finput = fopen(argv[1], "r");
+    if (finput == NULL)
+    {
+        printf("Could not open file.\n");
+        return false;
+    }
     // Allocate Memory for node
     node *n = malloc(sizeof(node));
     // Fill node with word and next address
@@ -44,7 +51,6 @@ bool load(const char *dictionary)
     n->next = NULL;
     //assign node to linked hashmap spot based on hash function
 
-    //If load succesful, return True, else return false
     return false;
 }
 
