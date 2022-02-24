@@ -41,6 +41,7 @@ bool load(const char *dictionary)
     //If load succesful, return True, else return false
     bool loaded = true;
     FILE *dict = fopen(dictionary, "r");
+    
     if (dict == NULL)
     {
         printf("Could not open file.\n");
