@@ -11,8 +11,7 @@ typedef struct node
 {
     char word[LENGTH + 1];
     struct node *next;
-}
-node;
+} node;
 
 // TODO: Choose number of buckets in hash table
 const unsigned int N = 100;
@@ -31,14 +30,17 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
-    return toupper(word[0]) - 'A';
+    // return toupper(word[0]) - 'A';
+    for (i=0; i<N; i++) {
+        toupper(word[i])
+    }
 }
 
 // Loads dictionary into memory, returning true if successful, else false
 bool load(const char *dictionary)
 {
     // TODO: Take dictionary, load it into a hash table
-    //If load succesful, return True, else return false
+    // If load succesful, return True, else return false
     bool loaded = true;
     FILE *dict = fopen(dictionary, "r");
 
@@ -50,8 +52,8 @@ bool load(const char *dictionary)
 
     // Scan words from dictionary file
     char *word[];
-    while (fscanf(dict, "%s", word) != EOF) {
-
+    while (fscanf(dict, "%s", word) != EOF)
+    {
     };
 
     // Allocate Memory for node
@@ -59,7 +61,7 @@ bool load(const char *dictionary)
     // Fill node with word and next address
     strcpy(n->word, "hello");
     n->next = NULL;
-    //assign node to linked hashmap spot based on hash function
+    // assign node to linked hashmap spot based on hash function
 
     return loaded;
 }

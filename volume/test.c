@@ -10,8 +10,8 @@
 
 int main(void)
 {
-    string word = "Hello";
+    char *word = "H'ello";
     // string new_word = toupper(word[0]) - 'A';
-    printf("%s", toupper(word));
-    printf("%s\n", new_word);
+    printf("%c\n", toupper(word[1]));
+    // printf("%s\n", new_word);
 }
