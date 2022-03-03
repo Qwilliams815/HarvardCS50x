@@ -6,14 +6,12 @@
 #include <ctype.h>
 #include <time.h>
 
-
-//typedef uint8_t BYTE;
-
+// typedef uint8_t BYTE;
 
 int main(void)
 {
     string word = "Hello";
-    string new_word = toupper(word[0]) - 'A';
+    // string new_word = toupper(word[0]) - 'A';
+    printf("%s", toupper(word));
     printf("%s\n", new_word);
-
 }
