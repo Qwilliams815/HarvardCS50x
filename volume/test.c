@@ -8,60 +8,12 @@
 
 
 //typedef uint8_t BYTE;
-typedef int16_t BYTE2;
-typedef struct person
-{
-    // Value
-    char alleles[3];
-    // Points to next
-    struct person *parents[2];
-}
-person;
 
-char random_allele();
 
 int main(void)
 {
-    person *new_person = malloc(sizeof(person));
-    new_person->alleles[0] = 'A';
-    new_person->alleles[1] = 'B';
-    new_person->alleles[2] = 'C';
+    string word = "Hello";
+    string new_word = toupper(word[0]) - 'A';
+    printf("%s\n", new_word);
 
-    person *dad = malloc(sizeof(person));
-    person *mom = malloc(sizeof(person));
-    dad = NULL;
-    mom = NULL;
-    new_person->parents[0] = dad;
-    new_person->parents[1] = mom;
-
-
-    printf("allele: %c, Parent: %p\n", new_person->alleles[1], new_person->parents[0]);
-    if (mom == NULL) {
-        printf("Mom is null\n");
-    }
-
-    free(new_person);
-
-    srand(time(0));
-    //printf("%c\n", random_allele());
-
-
-}
-
-    char random_allele()
-{
-    int r = rand() % 3;
-    printf("%i\n", r);
-    if (r == 0)
-    {
-        return 'A';
-    }
-    else if (r == 1)
-    {
-        return 'B';
-    }
-    else
-    {
-        return 'O';
-    }
 }
