@@ -11,4 +11,5 @@ int main(void)
         printf("%s", word);
     }
     fclose(dict);
+    return 0;
 }
