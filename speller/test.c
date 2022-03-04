@@ -7,10 +7,9 @@ int main(void)
     printf("test\n");
     FILE *dict = fopen("dictionaries/large", "r");
     char word[45];
-    fgets(word, 45, dict);
-    printf("%s", word);
-    fgets(word, 45, dict);
-    printf("%s", word);
+    while (word != NULL) {
+        fgets(word, 45, dict);
+        printf("%s", word);
+    }
     fclose(dict);
-
 }
