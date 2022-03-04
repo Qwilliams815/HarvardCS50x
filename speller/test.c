@@ -5,4 +5,7 @@
 int main(void)
 {
     printf("test\n");
+    FILE *dict = fopen("dictionaires/large", "r");
+
+    
 }
