@@ -18,6 +18,8 @@ int main(void)
     string word = "Hello";
     word += " world!";
 
+    for (int i=0; i<)
+
     printf("%s", word);
 
     fclose(dict);
