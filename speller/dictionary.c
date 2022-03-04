@@ -43,6 +43,7 @@ bool load(const char *dictionary)
     // If load succesful, return True, else return false
     bool loaded = true;
     FILE *dict = fopen(dictionary, "r");
+    while fread()
 
     if (dict == NULL)
     {
