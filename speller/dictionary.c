@@ -51,10 +51,11 @@ bool load(const char *dictionary)
     }
 
     // Scan words from dictionary file
-    char *word[];
-    while (fscanf(dict, "%s", word) != EOF)
+    char word[45];
+    while (fgets(word, 45, dict))
     {
-    };
+        printf("%s", word);
+    }
 
     // Allocate Memory for node
     node *n = malloc(sizeof(node));
