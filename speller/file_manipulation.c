@@ -8,23 +8,25 @@ int main(void)
     FILE *dict = fopen("dictionaries/large", "r");
 
     // READING LINE BY LINE WITH SPECIFIED BUFFER SIZE
-    
-    // char word[45];
-    // while (fgets(word, 45, dict)) {
-    //     printf("%s", word);
-    // }
 
-    // char ch[1];
-    // while (fgetc(ch, 1, dict)) {
-    //     char word[];
-    // }
+    char word[45];
+    while (fgets(word, 45, dict))
+    {
+        printf("%s", word);
+    }
+
+    char ch[1];
+    while (fgetc(ch, 1, dict))
+    {
+        char word[];
+    }
 
     // READING CHARACTER BY CHARACTER (SLOWER)
-    char ch;
-    while ((ch = fgetc(dict)) != EOF)
-    {
-        printf("%c", ch);
-    };
+    // char ch;
+    // while ((ch = fgetc(dict)) != EOF)
+    //{
+    //    printf("%c", ch);
+    //};
 
     fclose(dict);
     return 0;
