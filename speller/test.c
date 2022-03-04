@@ -7,8 +7,7 @@ int main(void)
     printf("test\n");
     FILE *dict = fopen("dictionaries/large", "r");
     char word[45];
-    while (*word != "zymurgy") {
-        fgets(word, 45, dict);
+    while (fgets(word, 45, dict) != EOF) {
         printf("%s", word);
     }
     fclose(dict);
