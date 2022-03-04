@@ -15,12 +15,6 @@ int main(void)
         printf("%s", word);
     }
 
-    char ch[1];
-    while (fgetc(ch, 1, dict))
-    {
-        char word[];
-    }
-
     // READING CHARACTER BY CHARACTER (SLOWER)
     // char ch;
     // while ((ch = fgetc(dict)) != EOF)
