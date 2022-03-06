@@ -8,7 +8,7 @@ unsigned int hash(const char *word)
     for (int i=0; i<strlen(word); i++) {
         ascii += word[i];
     }
-    return printf("%s -- %i\n", word, ascii);
+    return printf("%s -- %i\n\n", word, ascii);
 }
 
 int main(void)
