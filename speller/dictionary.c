@@ -54,7 +54,7 @@ bool load(const char *dictionary)
     char word[45];
     while (fgets(word, 45, dict))
     {
-        printf("%s", word);
+        //hash(word);
     }
 
     // Allocate Memory for node
