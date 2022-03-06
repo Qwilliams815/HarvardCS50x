@@ -4,11 +4,11 @@
 
 unsigned int hash(const char *word)
 {
-    // TODO: Improve this hash function
-    // return toupper(word[0]) - 'A';
-    for (i=0; i<N; i++) {
-        toupper(word[i])
+    int ascii = 0;
+    for (int i=0; i<strlen(word); i++) {
+        ascii += word[i];
     }
+    return printf("%s -- %i\n", word, ascii);
 }
 
 int main(void)
@@ -21,7 +21,7 @@ int main(void)
     char word[45];
     while (fgets(word, 45, dict))
     {
-        printf("%s", word);
+        hash(word);
 
         if (strlen(word) == 12)
         {
