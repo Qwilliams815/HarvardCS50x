@@ -12,7 +12,7 @@ unsigned int hash(const char *word)
 
     ascii *= strlen(word);
     double new = pow(ascii, strlen(word));
-    return printf("%s -- %ld\n\n", word, new);
+    return printf("%s -- %lf\n\n", word, new);
 }
 
 int main(void)
