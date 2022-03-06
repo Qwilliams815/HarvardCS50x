@@ -2,6 +2,15 @@
 #include <stdio.h>
 #include <string.h>
 
+unsigned int hash(const char *word)
+{
+    // TODO: Improve this hash function
+    // return toupper(word[0]) - 'A';
+    for (i=0; i<N; i++) {
+        toupper(word[i])
+    }
+}
+
 int main(void)
 {
     printf("test\n");
@@ -12,11 +21,12 @@ int main(void)
     char word[45];
     while (fgets(word, 45, dict))
     {
-        if (*word == "abacus") {
+        printf("%s", word);
+
+        if (strlen(word) == 12)
+        {
             break;
         }
-
-        printf("%s", word);
     }
 
     fclose(dict);
