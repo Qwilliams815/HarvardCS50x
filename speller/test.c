@@ -13,7 +13,7 @@ unsigned int hash(const char *word)
     ascii *= strlen(word);
     ascii *= word[0];
     //double new = pow(ascii, strlen(word));
-    return printf("%s -- %i\n\n", word, new);
+    return printf("%s -- %i\n\n", word, ascii);
 }
 
 int main(void)
