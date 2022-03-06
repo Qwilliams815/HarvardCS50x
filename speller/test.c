@@ -1,6 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 #include <string.h>
+#include <math.h>
 
 unsigned int hash(const char *word)
 {
@@ -8,7 +9,9 @@ unsigned int hash(const char *word)
     for (int i=0; i<strlen(word); i++) {
         ascii += word[i];
     }
+
     ascii *= strlen(word);
+    ascii = pow(ascii, word[0]);
     return printf("%s -- %i\n\n", word, ascii);
 }
 
