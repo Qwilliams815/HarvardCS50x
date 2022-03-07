@@ -19,6 +19,7 @@ const unsigned int N = 2500;
 // Create table for nodes
 node *table[N];
 
+// Hash Function for finding the index of a Word
 unsigned int hash(const char *word)
 {
     int ascii = 0;
@@ -33,10 +34,13 @@ unsigned int hash(const char *word)
     return printf("%s -- %i\n\n", word, ascii % 2500);
 }
 
+
+
+// Main Execution
 int main(void)
 
 {
-    printf("test\n");
+    //printf("test\n");
     FILE *dict = fopen("dictionaries/large", "r");
 
     // READING LINE BY LINE WITH SPECIFIED BUFFER SIZE
