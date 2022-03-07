@@ -36,7 +36,6 @@ unsigned int hash(const char *word)
 }
 
 
-
 // Main Execution
 int main(void)
 
