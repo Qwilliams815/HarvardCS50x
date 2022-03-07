@@ -52,7 +52,7 @@ int main(void)
     while (fgets(word, 45, dict))
     {
         hash(word);
-        table[hash(word)] = word;
+        //table[hash(word)] = word;
 
         if (strlen(word) == 12)
         {
