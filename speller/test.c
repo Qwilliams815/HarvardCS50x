@@ -45,7 +45,7 @@ int main(void)
     FILE *dict = fopen("dictionaries/large", "r");
 
     for (int i=0; i<N; i++) {
-        printf("%i -- %i", i, table[i]);
+        printf("%i -- %s\n", i, table[i]->word);
     }
 
     // READING LINE BY LINE WITH SPECIFIED BUFFER SIZE
