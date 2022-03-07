@@ -3,6 +3,9 @@
 #include <string.h>
 //#include <math.h>
 
+// Declare max length of any given dictionary word
+#define LENGTH 45
+
 // Create Node object
 typedef struct node
 {
