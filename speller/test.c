@@ -31,7 +31,8 @@ unsigned int hash(const char *word)
     ascii *= strlen(word);
     ascii *= word[0];
     // double new = pow(ascii, strlen(word));
-    return printf("%s -- %i\n\n", word, ascii % 2500);
+    //return printf("%s -- %i\n\n", word, ascii % 2500);
+    return ascii % 2500;
 }
 
 
@@ -43,8 +44,11 @@ int main(void)
     //printf("test\n");
     FILE *dict = fopen("dictionaries/large", "r");
 
-    // READING LINE BY LINE WITH SPECIFIED BUFFER SIZE
+    for (int i=0; i<N; i++) {
+        printf("%i -- %i", i, table[i]);
+    }
 
+    // READING LINE BY LINE WITH SPECIFIED BUFFER SIZE
     char word[45];
     while (fgets(word, 45, dict))
     {
@@ -54,6 +58,7 @@ int main(void)
         {
             break;
         }
+
     }
 
     fclose(dict);
