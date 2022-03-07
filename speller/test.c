@@ -3,6 +3,19 @@
 #include <string.h>
 //#include <math.h>
 
+// Create Node object
+typedef struct node
+{
+    char word[LENGTH + 1];
+    struct node *next;
+} node;
+
+// Set Estimated Node list length based on amount of given Keys (dictionary words)
+const unsigned int N = 2500;
+
+// Create table for nodes
+node *table[N];
+
 unsigned int hash(const char *word)
 {
     int ascii = 0;
@@ -18,6 +31,7 @@ unsigned int hash(const char *word)
 }
 
 int main(void)
+
 {
     printf("test\n");
     FILE *dict = fopen("dictionaries/large", "r");
