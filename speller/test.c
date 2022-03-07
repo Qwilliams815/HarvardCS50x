@@ -6,13 +6,14 @@
 unsigned int hash(const char *word)
 {
     int ascii = 0;
-    for (int i=0; i<strlen(word); i++) {
+    for (int i = 0; i < strlen(word); i++)
+    {
         ascii += word[i];
     }
 
     ascii *= strlen(word);
     ascii *= word[0];
-    //double new = pow(ascii, strlen(word));
+    // double new = pow(ascii, strlen(word));
     return printf("%s -- %i\n\n", word, ascii % 2500);
 }
 
