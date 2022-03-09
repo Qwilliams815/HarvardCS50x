@@ -1,6 +1,8 @@
 #include <cs50.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
+
 //#include <math.h>
 
 // Declare max length of any given dictionary word
@@ -31,7 +33,7 @@ unsigned int hash(const char *word)
     ascii *= strlen(word);
     ascii *= word[0];
     // double new = pow(ascii, strlen(word));
-    //return printf("%s -- %i\n\n", word, ascii % 2500);
+    // return printf("%s -- %i\n\n", word, ascii % 2500);
     return ascii % N;
 }
 
@@ -53,37 +55,33 @@ bool load(const char *dictionary)
     char word[45];
     while (fgets(word, 45, dict))
     {
+        // Allocate Memory for node
+        node *n = malloc(sizeof(node));
+
+        // Fill node with word and next address
+        strcpy(n->word, word);
+        n->next = NULL;
+
+        // Assign node to linked hashmap spot based on hash function
         // Get hash index of word
         int word_index = hash(word);
 
         // Populate new node properties
-        table[word_index]->word = word;
-        //table[word_index]->next = NULL;
-
-
-
-
+        table[word_index] = n;
     }
-
-    // Allocate Memory for node
-    //node *n = malloc(sizeof(node));
-    // Fill node with word and next address
-    //strcpy(n->word, "hello");
-    //n->next = NULL;
-    // assign node to linked hashmap spot based on hash function
 
     return loaded;
 }
-
 
 // Main Execution
 int main(void)
 
 {
-    //printf("test\n");
+    // printf("test\n");
     FILE *dict = fopen("dictionaries/large", "r");
 
-    for (int i=0; i<N; i++) {
+    for (int i = 0; i < N; i++)
+    {
         printf("%i -- %s\n", i, table[i]->word);
     }
 
@@ -92,13 +90,12 @@ int main(void)
     while (fgets(word, 45, dict))
     {
         hash(word);
-        //table[hash(word)] = word;
+        // table[hash(word)] = word;
 
         if (strlen(word) == 12)
         {
             break;
         }
-
     }
 
     fclose(dict);
