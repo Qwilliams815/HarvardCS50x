@@ -58,6 +58,8 @@ bool load(const char *dictionary)
 
         // Populate new node properties
         table[word_index]->word;
+        table->next = NULL;
+
 
 
 
