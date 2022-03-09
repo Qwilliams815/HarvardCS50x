@@ -6,7 +6,7 @@
 // Declare max length of any given dictionary word
 #define LENGTH 45
 
-// Create Node object
+// 1. Create Node object
 typedef struct node
 {
     char word[LENGTH + 1];
@@ -16,10 +16,10 @@ typedef struct node
 // Set Estimated Node list length based on amount of given Keys (dictionary words)
 const unsigned int N = 2500;
 
-// Create table for nodes
+// 2. Create table for nodes
 node *table[N];
 
-// Hash Function for finding the index of a Word
+// 3. Hash Function for finding the index of a Word
 unsigned int hash(const char *word)
 {
     int ascii = 0;
