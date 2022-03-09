@@ -69,7 +69,7 @@ bool load(const char *dictionary)
         // Populate new node properties
         table[word_index] = n;
 
-        
+
     }
 
     return loaded;
@@ -81,6 +81,8 @@ int main(void)
 {
     // printf("test\n");
     FILE *dict = fopen("dictionaries/large", "r");
+
+    load()
 
     for (int i = 0; i < N; i++)
     {
