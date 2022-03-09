@@ -57,7 +57,7 @@ bool load(const char *dictionary)
         int word_index = hash(word);
 
         // Populate new node properties
-        table[word_index] =;
+        table[word_index]->word = &word;
         //table[word_index]->next = NULL;
 
 
