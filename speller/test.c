@@ -45,7 +45,7 @@ bool load(const char *dictionary)
 
     if (dict == NULL)
     {
-        printf("Could not open file.\n");
+        printf("Could not open Dictionary.\n");
         loaded = false;
     }
 
@@ -53,7 +53,14 @@ bool load(const char *dictionary)
     char word[45];
     while (fgets(word, 45, dict))
     {
-        //hash(word);
+        // Get hash index of word
+        int word_index = hash(word);
+
+        // Populate new node properties
+        table[word_index]->word;
+
+
+
     }
 
     // Allocate Memory for node
