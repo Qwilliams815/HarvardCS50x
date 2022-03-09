@@ -35,7 +35,36 @@ unsigned int hash(const char *word)
     return ascii % N;
 }
 
+// Load Dictionary words into Hash Table
+bool load(const char *dictionary)
+{
+    // TODO: Take dictionary, load it into a hash table
+    // If load succesful, return True, else return false
+    bool loaded = true;
+    FILE *dict = fopen(dictionary, "r");
 
+    if (dict == NULL)
+    {
+        printf("Could not open file.\n");
+        loaded = false;
+    }
+
+    // Scan words from dictionary file
+    char word[45];
+    while (fgets(word, 45, dict))
+    {
+        //hash(word);
+    }
+
+    // Allocate Memory for node
+    node *n = malloc(sizeof(node));
+    // Fill node with word and next address
+    strcpy(n->word, "hello");
+    n->next = NULL;
+    // assign node to linked hashmap spot based on hash function
+
+    return loaded;
+}
 
 
 // Main Execution
