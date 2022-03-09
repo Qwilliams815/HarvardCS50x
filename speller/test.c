@@ -82,7 +82,7 @@ int main(void)
     // printf("test\n");
     FILE *dict = fopen("dictionaries/large", "r");
 
-    load()
+    load(dict);
 
     for (int i = 0; i < N; i++)
     {
