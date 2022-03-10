@@ -100,7 +100,9 @@ bool load(const char *dictionary)
 unsigned int size(void)
 {
     // TODO
-    if
+    //loop through hash table
+    //if next pointer is null, count++
+    //else, for each word in linked list, count++
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
