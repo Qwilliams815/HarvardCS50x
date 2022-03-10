@@ -80,8 +80,6 @@ int main(void)
     // printf("test\n");
     FILE *dict = fopen("dictionaries/large", "r");
 
-    load(&dict);
-
     for (int i = 0; i < N; i++)
     {
         printf("%i -- %s\n", i, table[i]->word);
@@ -99,6 +97,8 @@ int main(void)
             break;
         }
     }
+
+    printf("test\n");
 
     fclose(dict);
     return 0;
