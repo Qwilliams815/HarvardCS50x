@@ -94,11 +94,20 @@ bool load(const char *dictionary)
 unsigned int size(void)
 {
     // TODO
-    char word[45];
-    while (fgets(word, 45, dict))
+    FILE *dict = fopen(argv[1], "r");
+
+    if (dict != NULL)
     {
+        char word[45];
+        int count = 0;
+        while (fgets(word, 45, dict))
+        {
+            count++;
+        }
+        return count;
+    } else {
+        return 0;
     }
-    return 0;
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
