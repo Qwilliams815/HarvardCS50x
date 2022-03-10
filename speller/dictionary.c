@@ -31,7 +31,7 @@ unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
     //return toupper(word[0]) - 'A';
-    
+
     int ascii = 0;
     for (int i = 0; i < strlen(word); i++)
     {
@@ -55,7 +55,7 @@ bool load(const char *dictionary)
 
     if (dict == NULL)
     {
-        printf("Could not open file.\n");
+        printf("Could not open Dictionary.\n");
         loaded = false;
     }
 
@@ -63,15 +63,20 @@ bool load(const char *dictionary)
     char word[45];
     while (fgets(word, 45, dict))
     {
-        //hash(word);
-    }
+        // Allocate Memory for node
+        node *n = malloc(sizeof(node));
 
-    // Allocate Memory for node
-    node *n = malloc(sizeof(node));
-    // Fill node with word and next address
-    strcpy(n->word, "hello");
-    n->next = NULL;
-    // assign node to linked hashmap spot based on hash function
+        // Fill node with word and next address
+        strcpy(n->word, word);
+        n->next = NULL;
+
+        // Assign node to linked hashmap spot based on hash function
+        // Get hash index of word
+        int word_index = hash(word);
+
+        // Populate new node properties
+        table[word_index] = n;
+    }
 
     return loaded;
 }
