@@ -107,9 +107,9 @@ unsigned int size(void)
     {
         if (table[i]->next != NULL)
         {
-            node head = table[i];
-            node temp = table[i]->next;
-            while (head->next != NULL)
+            node head = table[i]->next;
+            node temp = head;
+            while (temp != NULL)
             {
                 count++
                 head = temp;
