@@ -105,7 +105,9 @@ unsigned int size(void)
             count++;
         }
         return count;
-    } else {
+    }
+    else
+    {
         return 0;
     }
 }
@@ -113,6 +115,10 @@ unsigned int size(void)
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
+    for (int i = 0; i < N; i++)
+    {
+        free(table[i]);
+    }
     // TODO
     return false;
 }
