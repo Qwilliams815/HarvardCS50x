@@ -98,7 +98,7 @@ int main(void)
         }
     }
 
-    printf("test\n");
+    printf("%i\n", strlen(table));
 
     fclose(dict);
     return 0;
