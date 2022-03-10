@@ -3,6 +3,8 @@
 #include <ctype.h>
 #include <stdbool.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 #include "dictionary.h"
 
@@ -30,7 +32,7 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
-    //return toupper(word[0]) - 'A';
+    // return toupper(word[0]) - 'A';
 
     int ascii = 0;
     for (int i = 0; i < strlen(word); i++)
