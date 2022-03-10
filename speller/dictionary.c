@@ -105,6 +105,7 @@ unsigned int size(void)
     int count = 0;
     for (int i = 0; i < N; i++)
     {
+        // If index is start of linked list, for each word in linked list, count++
         if (table[i]->next != NULL)
         {
             node *head = table[i]->next;
@@ -115,13 +116,12 @@ unsigned int size(void)
                 temp = temp->next;
             }
         }
+        // Else, if next pointer is null, count++
         else
         {
             count++;
         }
     }
-    // if next pointer is null, count++
-    // else, for each word in linked list, count++
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
