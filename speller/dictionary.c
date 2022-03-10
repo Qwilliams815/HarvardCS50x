@@ -86,7 +86,7 @@ bool load(const char *dictionary)
         // Populate new node properties
         table[word_index] = n;
     }
-
+    fclose(dict);
     return loaded;
 }
 
@@ -110,15 +110,13 @@ unsigned int size(void)
     {
         return 0;
     }
+    fclose(dict);
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
-    if (table)
-    {
-        free(table);
-    }
+
     // TODO
-    // return false;
+    return false;
 }
