@@ -70,6 +70,7 @@ bool load(const char *dictionary)
 
     // Scan words from dictionary file
     char word[45];
+    int i = 0;
     while (fgets(word, 45, dict))
     {
         // Allocate Memory for node
@@ -83,6 +84,10 @@ bool load(const char *dictionary)
         // Get hash index of word
         int word_index = hash(word);
         printf("%i -- %s\n", word_index, word);
+        if (i > 15) {
+            continue;
+        }
+        i++;
 
         // Populate new node properties
         table[word_index] = n;
