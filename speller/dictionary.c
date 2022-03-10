@@ -107,7 +107,7 @@ unsigned int size(void)
     {
         if (table[i]->next != NULL)
         {
-            temp = table[i]->next;
+            node head = table[i]->next;
             while (table[i]->next != NULL)
             {
                 iterate through linked list until
