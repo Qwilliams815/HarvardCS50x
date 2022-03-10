@@ -107,13 +107,12 @@ unsigned int size(void)
     {
         if (table[i]->next != NULL)
         {
-            node head = table[i]->next;
-            node temp = head;
+            node *head = table[i]->next;
+            node *temp = head;
             while (temp != NULL)
             {
-                count++
-                head = temp;
-                iterate through linked list until
+                count++;
+                temp = temp->next;
             }
         }
         else
