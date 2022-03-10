@@ -84,7 +84,8 @@ bool load(const char *dictionary)
         // Get hash index of word
         int word_index = hash(word);
         printf("%i -- %s\n", word_index, word);
-        if (i > 15) {
+        if (i > 15)
+        {
             continue;
         }
         i++;
@@ -100,9 +101,24 @@ bool load(const char *dictionary)
 unsigned int size(void)
 {
     // TODO
-    //loop through hash table
-    //if next pointer is null, count++
-    //else, for each word in linked list, count++
+    // loop through hash table
+    int count = 0;
+    for (int i = 0; i < N; i++)
+    {
+        if (table[i]->next != NULL)
+        {
+            while (table[i]->!= NULL)
+            {
+                iterate through linked list until
+            }
+        }
+        else
+        {
+            count++;
+        }
+    }
+    // if next pointer is null, count++
+    // else, for each word in linked list, count++
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
