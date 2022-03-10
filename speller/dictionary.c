@@ -122,6 +122,7 @@ unsigned int size(void)
             count++;
         }
     }
+    return count;
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
