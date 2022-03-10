@@ -94,7 +94,7 @@ bool load(const char *dictionary)
 unsigned int size(void)
 {
     // TODO
-    FILE *dict = fopen(, "r");
+    FILE *dict = fopen("dictionaries/large", "r");
 
     if (dict != NULL)
     {
