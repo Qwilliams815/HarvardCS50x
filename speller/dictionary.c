@@ -107,8 +107,8 @@ unsigned int size(void)
     {
         if (table[i]->next != NULL)
         {
-            n temp = table[i]->next;
-            while (table[i]->!= NULL)
+            temp = table[i]->next;
+            while (table[i]->next != NULL)
             {
                 iterate through linked list until
             }
