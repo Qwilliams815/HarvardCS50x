@@ -115,7 +115,10 @@ unsigned int size(void)
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
-    free(table);
+    if (table)
+    {
+        free(table);
+    }
     // TODO
-    //return false;
+    // return false;
 }
