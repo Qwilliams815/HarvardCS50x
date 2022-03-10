@@ -94,6 +94,7 @@ bool load(const char *dictionary)
 unsigned int size(void)
 {
     // TODO
+    for (i)
     return 0;
 }
 
