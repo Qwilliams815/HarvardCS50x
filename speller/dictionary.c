@@ -94,7 +94,10 @@ bool load(const char *dictionary)
 unsigned int size(void)
 {
     // TODO
-    for (i)
+    char word[45];
+    while (fgets(word, 45, dict))
+    {
+    }
     return 0;
 }
 
