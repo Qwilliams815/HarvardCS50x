@@ -30,7 +30,19 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
-    return toupper(word[0]) - 'A';
+    //return toupper(word[0]) - 'A';
+    
+    int ascii = 0;
+    for (int i = 0; i < strlen(word); i++)
+    {
+        ascii += word[i];
+    }
+
+    ascii *= strlen(word);
+    ascii *= word[0];
+    // double new = pow(ascii, strlen(word));
+    // return printf("%s -- %i\n\n", word, ascii % 2500);
+    return ascii % N;
 }
 
 // Loads dictionary into memory, returning true if successful, else false
