@@ -136,7 +136,7 @@ int main(void)
     }
     printf("\n");
 
-    printf(toupper(greeting[0]) - 'A');
+    printf("%i\n", toupper(greeting[0]) - 'A');
 
     fclose(dict);
     return 0;
