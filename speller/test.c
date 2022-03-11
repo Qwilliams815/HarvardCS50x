@@ -130,9 +130,8 @@ int main(void)
     // Testing
 
     const char *greeting[45] = "HELLO";
-   
 
-    // char *lower_word = malloc(sizeof(greeting));
+    char lower_word[45];
 
     for (int i = 0; greeting[i]; i++)
     {
