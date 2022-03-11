@@ -101,6 +101,8 @@ int main(void)
         if (table[hash(word)]->next == NULL) {
             strcpy(n->word, word);
             table[hash(word)]->word = word;
+        } else {
+            continue;
         }
 
         if (strlen(word) == 12)
