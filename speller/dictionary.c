@@ -83,7 +83,7 @@ bool load(const char *dictionary)
         // Assign node to linked hashmap spot based on hash function
         // Get hash index of word
         int word_index = hash(word);
-        printf("%i -- %s\n", word_index, word);
+        //printf("%i -- %s\n", word_index, word);
         if (i > 15)
         {
             continue;
