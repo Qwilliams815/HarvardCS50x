@@ -135,7 +135,7 @@ int main(void)
     //     printf("%c", tolower(greeting[i]));
     // }
 
-    char *lower_word[strlen(greeting)];
+    char *lower_word[malloc(sizeof(greeting))];
 
 
     for (int i = 0; i < strlen(greeting); i++)
