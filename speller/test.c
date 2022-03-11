@@ -81,16 +81,12 @@ int main(void)
     // printf("test\n");
     FILE *dict = fopen("dictionaries/large", "r");
 
-    for (int i = 0; i < N; i++)
-    {
-        printf("%i -- %s\n", i, table[i]->word);
-    }
-
     // READING LINE BY LINE WITH SPECIFIED BUFFER SIZE
     char word[45];
     while (fgets(word, 45, dict))
     {
         // create new n node for each word
+        
         node *n = malloc(sizeof(node));
 
         // Place empty n node in at hash(word)'s index
@@ -98,19 +94,24 @@ int main(void)
         // hash(word);
 
         // Populate n node properties
-        if (table[hash(word)]->next == NULL)
+        if (table[hash(word)] == NULL)
         {
             strcpy(n->word, word);
-            table[hash(word)]->word = word;
+            // table[hash(word)]->word = word;
         }
         else
         {
             continue;
         }
 
-        if (strlen(word) == 12)
+        // if (strlen(word) == 12)
+        // {
+        //     break;
+        // }
+
+        for (int i = 0; i < N; i++)
         {
-            break;
+            printf("%i -- %s\n", i, table[i]->word);
         }
     }
 
