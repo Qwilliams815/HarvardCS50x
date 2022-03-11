@@ -101,8 +101,8 @@ int main(void)
         if (table[hash(word)] == NULL)
         {
             strcpy(n->word, word);
-            //printf("%s, %s\n", n->word, word);
-            // table[hash(word)]->word = word;
+            // printf("%s, %s\n", n->word, word);
+            //  table[hash(word)]->word = word;
         }
         else
         {
@@ -117,7 +117,14 @@ int main(void)
 
     for (int i = 0; i < N; i++)
     {
-        printf("%i -- %s", i, table[i]->word);
+        if (table[i] == NULL)
+        {
+            printf("%i -- %s\n", i, table[i]->word);
+        }
+        else
+        {
+            printf("%i -- %s", i, table[i]->word);
+        }
     }
 
     // Testing
