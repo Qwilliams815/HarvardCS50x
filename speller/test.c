@@ -141,6 +141,14 @@ int main(void)
     {
         greeting[i] = tolower(greeting[i]);
     }
+
+    char *str = "YEEEEHAAAW";
+
+    for (int i = 0; str[i]; i++)
+    {
+        str[i] = tolower(str[i]);
+    }
+
     printf("%s\n", greeting);
 
     printf("\n");
