@@ -60,7 +60,7 @@ unsigned int hash(const char *word)
     char *lower_word[45];
     for (int i = 0; i < strlen(word); i++)
     {
-        lower_word[i] = tolower(word[i]);
+        *lower_word[i] = tolower(word[i]);
     }
 
     int ascii = 0;
