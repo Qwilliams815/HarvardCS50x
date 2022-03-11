@@ -140,7 +140,7 @@ int main(void)
 
     for (int i = 0; i < strlen(greeting); i++)
     {
-        strcpy(lower_word[i], tolower(greeting[i]));
+        lower_word[i] = tolower(&greeting[i]);
         printf("%c\n", *lower_word[i]);
     }
 
