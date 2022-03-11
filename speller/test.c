@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 //#include <math.h>
 
@@ -97,8 +98,13 @@ int main(void)
             break;
         }
     }
+    char *greeting = "HELLO";
+    for (int i =0; i<strlen(greeting); i++)
+    {
+        printf("%c", tolower(greeting[i]));
+    }
+    printf("\n");
 
-    printf("%i\n", strlen(table));
 
     fclose(dict);
     return 0;
