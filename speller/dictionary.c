@@ -27,26 +27,26 @@ bool check(const char *word)
     // TODO
 
     // Turn word lowercase
-    char *lower_word[45];
-    for (int i = 0; i < strlen(word); i++)
-    {
-        *lower_word[i] = tolower(word[i]);
-    }
+    // char *lower_word[45];
+    // for (int i = 0; i < strlen(word); i++)
+    // {
+    //     *lower_word[i] = tolower(word[i]);
+    // }
 
-    int word_index = hash(lower_word);
+    // int word_index = hash(lower_word);
 
-    // word index == table[word_index]->word
+    // // word index == table[word_index]->word
 
-    if table
-        [hash(lower_word)]
+    // if table
+    //     [hash(lower_word)]
 
-            for (int i = 0; i < N; i++)
-        {
-            if (table[i]->word == word)
-            {
-                return true;
-            }
-        }
+    //         for (int i = 0; i < N; i++)
+    //     {
+    //         if (table[i]->word == word)
+    //         {
+    //             return true;
+    //         }
+    //     }
     return false;
 }
 
