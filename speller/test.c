@@ -135,19 +135,18 @@ int main(void)
     //     printf("%c", tolower(greeting[i]));
     // }
 
-    char *lower_word[malloc(sizeof(greeting))];
+    char *lower_word = malloc(sizeof(greeting));
 
-
-    for (int i = 0; i < strlen(greeting); i++)
-    {
-        lower_word[i] = tolower(&greeting[i]);
-        printf("%c\n", *lower_word[i]);
-    }
+    // for (int i = 0; i < strlen(greeting); i++)
+    // {
+    //     lower_word[i] = tolower(greeting[i]);
+    //     printf("%c\n", *lower_word[i]);
+    // }
 
     printf("\n");
 
     // printf("%i\n", toupper(greeting[0]) - 'A');
-
+    free(lower_word);
     fclose(dict);
     return 0;
 }
