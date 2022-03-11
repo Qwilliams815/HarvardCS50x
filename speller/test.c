@@ -90,7 +90,9 @@ int main(void)
     char word[45];
     while (fgets(word, 45, dict))
     {
-        hash(word);
+        node *n = malloc(sizeof(node));
+        //hash(word);
+        strcopy()
         table[hash(word)]->word = word;
 
         if (strlen(word) == 12)
