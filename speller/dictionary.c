@@ -25,6 +25,16 @@ node *table[N];
 bool check(const char *word)
 {
     // TODO
+
+    // Turn word lowercase
+    char *lower_word[45];
+    for (int i = 0; i < strlen(word); i++)
+    {
+        lower_word[i] = tolower(word[i]);
+    }
+
+    if table[hash(lower_word)]
+
     for (int i = 0; i < N; i++)
     {
         if (table[i]->word == word)
@@ -83,7 +93,7 @@ bool load(const char *dictionary)
         // Assign node to linked hashmap spot based on hash function
         // Get hash index of word
         int word_index = hash(word);
-        //printf("%i -- %s\n", word_index, word);
+        // printf("%i -- %s\n", word_index, word);
         if (i > 15)
         {
             continue;
