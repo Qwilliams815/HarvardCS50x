@@ -95,13 +95,16 @@ int main(void)
 
         // Place empty n node in at hash(word)'s index
         table[hash(word)] = n;
-        //hash(word);
+        // hash(word);
 
         // Populate n node properties
-        if (table[hash(word)]->next == NULL) {
+        if (table[hash(word)]->next == NULL)
+        {
             strcpy(n->word, word);
             table[hash(word)]->word = word;
-        } else {
+        }
+        else
+        {
             continue;
         }
 
@@ -110,13 +113,15 @@ int main(void)
             break;
         }
     }
+
+    // Testing
+
     char *greeting = "HELLO";
-    for (int i =0; i<strlen(greeting); i++)
+    for (int i = 0; i < strlen(greeting); i++)
     {
         printf("%c", tolower(greeting[i]));
     }
     printf("\n");
-
 
     fclose(dict);
     return 0;
