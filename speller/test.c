@@ -129,11 +129,8 @@ int main(void)
 
     // Testing
 
-    char greeting[45] = "HELLO";
-    // for (int i = 0; i < strlen(greeting); i++)
-    // {
-    //     printf("%c", tolower(greeting[i]));
-    // }
+    const char *greeting[45] = "HELLO";
+   
 
     // char *lower_word = malloc(sizeof(greeting));
 

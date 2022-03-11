@@ -57,10 +57,10 @@ unsigned int hash(const char *word)
     // return toupper(word[0]) - 'A';
 
     // Turn word Lowercase
-    char *lower_word[45];
+    char lower_word[45];
     for (int i = 0; i < strlen(word); i++)
     {
-        *lower_word[i] = tolower(word[i]);
+        lower_word[i] = tolower(word[i]);
     }
 
     int ascii = 0;
