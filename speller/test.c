@@ -128,6 +128,9 @@ int main(void)
     }
 
     // Testing
+    // current item =
+    while current item != Null
+        current item = current_item-next;
 
     const char *greeting[45] = "HELLO";
 
