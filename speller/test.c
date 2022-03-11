@@ -17,7 +17,7 @@ typedef struct node
 } node;
 
 // Set Estimated Node list length based on amount of given Keys (dictionary words)
-const unsigned int N = 2500;
+const unsigned int N = 250;
 
 // 2. Create table for nodes
 node *table[N];
