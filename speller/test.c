@@ -130,13 +130,25 @@ int main(void)
     // Testing
 
     char *greeting = "HELLO";
+    // for (int i = 0; i < strlen(greeting); i++)
+    // {
+    //     printf("%c", tolower(greeting[i]));
+    // }
+
+    char *lower_word[strlen(greeting)];
     for (int i = 0; i < strlen(greeting); i++)
     {
-        printf("%c", tolower(greeting[i]));
+        //*lower_word[i] = tolower(greeting[i]);
+        printf("%c\n", tolower(greeting[i]));
     }
+
+    printf("%s\n", *lower_word);
+    free(greeting);
+    free(lower_word);
+
     printf("\n");
 
-    printf("%i\n", toupper(greeting[0]) - 'A');
+    // printf("%i\n", toupper(greeting[0]) - 'A');
 
     fclose(dict);
     return 0;
