@@ -93,13 +93,13 @@ int main(void)
         // create new n node for each word
         node *n = malloc(sizeof(node));
 
-        // Place n node in hash table
+        // Place empty n node in at hash(word)'s index
         table[hash(word)] = n;
         //hash(word);
 
         // Populate n node properties
         if (table[hash(word)]->next == NULL) {
-            strcopy(n->word, word);
+            strcpy(n->word, word);
             table[hash(word)]->word = word;
         }
 
