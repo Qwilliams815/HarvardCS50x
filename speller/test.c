@@ -86,7 +86,7 @@ int main(void)
     while (fgets(word, 45, dict))
     {
         // create new n node for each word
-        
+        // printf("%s", word);
         node *n = malloc(sizeof(node));
 
         // Place empty n node in at hash(word)'s index
@@ -108,11 +108,11 @@ int main(void)
         // {
         //     break;
         // }
+    }
 
-        for (int i = 0; i < N; i++)
-        {
-            printf("%i -- %s\n", i, table[i]->word);
-        }
+    for (int i = 0; i < N; i++)
+    {
+        printf("%i -- %s\n", i, table[i]->word);
     }
 
     // Testing
