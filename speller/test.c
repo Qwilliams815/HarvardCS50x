@@ -87,19 +87,21 @@ int main(void)
     {
         // create new n node for each word
         // printf("%s", word);
-        printf("%i -- %s", hash(word), word);
-        
+        // printf("%i -- %s", hash(word), word);
+
         node *n = malloc(sizeof(node));
 
         // Place empty n node in at hash(word)'s index
         table[hash(word)] = n;
+        strcpy(n->word, word);
+
         // hash(word);
 
         // Populate n node properties
         if (table[hash(word)] == NULL)
         {
             strcpy(n->word, word);
-            printf("%s, %s\n", n->word, word);
+            //printf("%s, %s\n", n->word, word);
             // table[hash(word)]->word = word;
         }
         else
@@ -113,10 +115,10 @@ int main(void)
         // }
     }
 
-    //for (int i = 0; i < N; i++)
-    //{
-    //    printf("%i -- %s\n", i, table[i]->word);
-    //}
+    for (int i = 0; i < N; i++)
+    {
+        printf("%i -- %s", i, table[i]->word);
+    }
 
     // Testing
 
