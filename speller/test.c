@@ -129,7 +129,7 @@ int main(void)
 
     // Testing
 
-    char *greeting = "HELLO";
+    char greeting[45] = "HELLO";
     // for (int i = 0; i < strlen(greeting); i++)
     // {
     //     printf("%c", tolower(greeting[i]));
@@ -140,13 +140,6 @@ int main(void)
     for (int i = 0; greeting[i]; i++)
     {
         greeting[i] = tolower(greeting[i]);
-    }
-
-    char *str = "YEEEEHAAAW";
-
-    for (int i = 0; str[i]; i++)
-    {
-        str[i] = tolower(str[i]);
     }
 
     printf("%s\n", greeting);
