@@ -37,15 +37,16 @@ bool check(const char *word)
 
     // word index == table[word_index]->word
 
-    if table[hash(lower_word)]
+    if table
+        [hash(lower_word)]
 
-    for (int i = 0; i < N; i++)
-    {
-        if (table[i]->word == word)
+            for (int i = 0; i < N; i++)
         {
-            return true;
+            if (table[i]->word == word)
+            {
+                return true;
+            }
         }
-    }
     return false;
 }
 
