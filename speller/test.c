@@ -88,6 +88,7 @@ int main(void)
         // create new n node for each word
         // printf("%s", word);
         printf("%i -- %s", hash(word), word);
+        
         node *n = malloc(sizeof(node));
 
         // Place empty n node in at hash(word)'s index
