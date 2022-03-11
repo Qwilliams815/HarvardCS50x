@@ -90,10 +90,18 @@ int main(void)
     char word[45];
     while (fgets(word, 45, dict))
     {
+        // create new n node for each word
         node *n = malloc(sizeof(node));
+
+        // Place n node in hash table
+        table[hash(word)] = n;
         //hash(word);
-        strcopy()
-        table[hash(word)]->word = word;
+
+        // Populate n node properties
+        if (table[hash(word)]->next == NULL) {
+            strcopy(n->word, word);
+            table[hash(word)]->word = word;
+        }
 
         if (strlen(word) == 12)
         {
