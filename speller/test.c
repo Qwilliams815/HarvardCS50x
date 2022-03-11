@@ -143,8 +143,6 @@ int main(void)
     }
 
     printf("%s\n", *lower_word);
-    free(greeting);
-    free(lower_word);
 
     printf("\n");
 
