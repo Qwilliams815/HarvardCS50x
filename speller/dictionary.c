@@ -90,6 +90,13 @@ bool load(const char *dictionary)
         loaded = false;
     }
 
+    // Set all table buckets to null
+    for (int j = 0; j < N; j++)
+    {
+        table[j] = NULL;
+        // table[j] = n;
+    }
+
     // Scan words from dictionary file
     char word[45];
     int i = 0;
@@ -97,13 +104,6 @@ bool load(const char *dictionary)
     {
         // Allocate Memory for node
         node *n = malloc(sizeof(node));
-
-        // Set all table buckets to null
-        for (int j = 0; j < N; j++)
-        {
-            table[j] = NULL;
-            // table[j] = n;
-        }
 
         // If hash(word) isnt empty, traverse the linked list until you find the last node
         node *current = table[hash(word)];
@@ -116,9 +116,7 @@ bool load(const char *dictionary)
         strcpy(current->word, word);
         current->next = NULL;
 
-
         // Fill node with word and next address
-
 
         // Assign node to linked hashmap spot based on hash function
         // Get hash index of word
