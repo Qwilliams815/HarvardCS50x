@@ -98,6 +98,21 @@ bool load(const char *dictionary)
         // Allocate Memory for node
         node *n = malloc(sizeof(node));
 
+        // Set all table buckets to null
+        for (int j = 0; j < N; j++)
+        {
+            // table[j] = NULL;
+            table[j] = n;
+        }
+
+        // If hash(word) isnt empty, traverse the linked list until you find the last node
+        node *current = table[hash(word)];
+        while (table[hash(word)] != NULL)
+        {
+            current = current->next;
+        }
+        strcpy(current->word, word);
+
         // Fill node with word and next address
         strcpy(n->word, word);
         n->next = NULL;
