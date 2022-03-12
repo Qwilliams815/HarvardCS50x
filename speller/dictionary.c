@@ -102,6 +102,8 @@ bool load(const char *dictionary)
     char word[45];
     while (fgets(word, 45, dict))
     {
+        // Allocate Memory for node
+        node *current = malloc(sizeof(node));
         int index = hash(word);
 
         // If index isnt empty, traverse the linked list until you find the last node
@@ -111,8 +113,6 @@ bool load(const char *dictionary)
             current = current->next;
         }
 
-        // Allocate Memory for node
-        node *n = malloc(sizeof(node));
         strcpy(current->word, word);
         current->next = NULL;
 
