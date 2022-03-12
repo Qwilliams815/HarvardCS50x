@@ -106,7 +106,6 @@ bool load(const char *dictionary)
         node *n = malloc(sizeof(node));
         int index = hash(word);
 
-
         // If hash(word) isnt empty, traverse the linked list until you find the last node
         node *current = table[index];
         while (table[index] != NULL)
