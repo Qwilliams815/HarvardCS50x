@@ -80,6 +80,7 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     // TODO: Take dictionary, load it into a hash table
+    
     // If load succesful, return True, else return false
     bool loaded = true;
     FILE *dict = fopen(dictionary, "r");
