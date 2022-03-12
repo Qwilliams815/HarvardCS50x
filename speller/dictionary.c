@@ -101,8 +101,8 @@ bool load(const char *dictionary)
         // Set all table buckets to null
         for (int j = 0; j < N; j++)
         {
-            // table[j] = NULL;
-            table[j] = n;
+            table[j] = NULL;
+            // table[j] = n;
         }
 
         // If hash(word) isnt empty, traverse the linked list until you find the last node
@@ -111,11 +111,14 @@ bool load(const char *dictionary)
         {
             current = current->next;
         }
-        strcpy(current->word, word);
 
-        // Fill node with word and next address
+        table[hash(word)] = n;
         strcpy(n->word, word);
         n->next = NULL;
+
+
+        // Fill node with word and next address
+
 
         // Assign node to linked hashmap spot based on hash function
         // Get hash index of word
