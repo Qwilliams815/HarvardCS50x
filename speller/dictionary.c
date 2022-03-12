@@ -112,9 +112,9 @@ bool load(const char *dictionary)
             current = current->next;
         }
 
-        table[hash(word)] = n;
-        strcpy(n->word, word);
-        n->next = NULL;
+        current = n;
+        strcpy(current->word, word);
+        current->next = NULL;
 
 
         // Fill node with word and next address
