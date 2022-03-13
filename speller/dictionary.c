@@ -123,9 +123,8 @@ bool load(const char *dictionary)
         int word_index = hash(word);
         // printf("%i -- %s\n", word_index, word);
 
-
         // Populate new node properties
-        table[word_index] = n;
+        //table[word_index] = n;
     }
     fclose(dict);
     return loaded;
