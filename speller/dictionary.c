@@ -91,7 +91,7 @@ bool load(const char *dictionary)
         loaded = false;
     }
 
-    // Set all table buckets to null
+    // Set all table buckets to NULL
     for (int j = 0; j < N; j++)
     {
         table[j] = NULL;
