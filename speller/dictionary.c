@@ -107,7 +107,7 @@ bool load(const char *dictionary)
         int index = hash(word);
 
         // If index isnt empty, traverse the linked list until you find the last node
-        node *current = table[index];
+        table[index] = current;
         while (table[index] != NULL)
         {
             current = current->next;
