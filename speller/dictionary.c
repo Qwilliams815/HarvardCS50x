@@ -105,6 +105,7 @@ bool load(const char *dictionary)
         // Allocate Memory for node
         node *current = malloc(sizeof(node));
         int index = hash(word);
+        current->word = word;
 
         // If index isnt empty, traverse the linked list until you find the last node
         // Create new node at table[index]
