@@ -81,57 +81,50 @@ bool load(const char *dictionary)
 {
     // TODO: Take dictionary, load it into a hash table
 
-    // If load succesful, return True, else return false
-    bool loaded = true;
+    // Open dictionary
     FILE *dict = fopen(dictionary, "r");
 
+    // If dictionary doesnt load properly, return false.
     if (dict == NULL)
     {
         printf("Could not open Dictionary.\n");
-        loaded = false;
+        return false;
     }
 
-    // Set all table buckets to NULL
+    // Set all initial table buckets to NULL
     for (int j = 0; j < N; j++)
     {
         table[j] = NULL;
-        // table[j] = n;
     }
 
-    // Scan words from dictionary file
+    // Scan each word from dictionary file
     char word[45];
     while (fgets(word, 45, dict))
     {
-        // Allocate Memory for node
+        // Allocate Memory for node, copy current word to node->word property.
         node *current = malloc(sizeof(node));
+        strcpy(current->word, word);
         int index = hash(word);
-        current->word = word;
 
-        // If index isnt empty, traverse the linked list until you find the last node
-        // Create new node at table[index]
-        table[index] = current;
-        // Check to see if the index stores a NULL value
-        while (table[index] != NULL)
+        // Insert node into Hash table at table[hash(word)],
+        if (table[index] == NULL)
         {
-            // If it does, set the current value to the next value,
-            table[index] = current->next;
+            table[index] = current;
+        }
+        // If
+        else
+        {
+            while (table[index] != NULL)
+            {
+                // If it does, set the current value to the next value,
+                table[index] = current->next;
+            }
+            table[index] = current;
         }
 
-        strcpy(current->word, word);
-        current->next = NULL;
-
-        // Fill node with word and next address
-
-        // Assign node to linked hashmap spot based on hash function
-        // Get hash index of word
-        int word_index = hash(word);
-        // printf("%i -- %s\n", word_index, word);
-
-        // Populate new node properties
-        //table[word_index] = n;
     }
     fclose(dict);
-    return loaded;
+    return true;
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
