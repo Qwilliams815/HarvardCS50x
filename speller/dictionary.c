@@ -107,10 +107,13 @@ bool load(const char *dictionary)
         int index = hash(word);
 
         // If index isnt empty, traverse the linked list until you find the last node
+        // Create new node at table[index]
         table[index] = current;
+        // Check to see if the index stores a NULL value
         while (table[index] != NULL)
         {
-            current = current->next;
+            // If it does, set the current value to the next value,
+            table[index] = current->next;
         }
 
         strcpy(current->word, word);
