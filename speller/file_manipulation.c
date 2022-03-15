@@ -15,6 +15,13 @@ int main(void)
         printf("%s", word);
     }
 
+    // ALTERNATIVELY, YOU CAN USE fscanf
+    char word[45];
+    while (fscanf(dict, "%s", word))
+    {
+        printf("%s", word);
+    }
+
     // READING CHARACTER BY CHARACTER (SLOWER)
     // char ch;
     // while ((ch = fgetc(dict)) != EOF)
