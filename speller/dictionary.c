@@ -121,6 +121,12 @@ bool load(const char *dictionary)
         }
         else
         {
+
+            current.next->table[index];
+            table[index] = current;
+
+
+
             while (table[index] != NULL)
             {
                 table[index] = table[index]->next;
