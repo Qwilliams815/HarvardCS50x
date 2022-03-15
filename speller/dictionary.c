@@ -106,7 +106,8 @@ bool load(const char *dictionary)
         node *current = malloc(sizeof(node));
 
         // Check if malloc returned NULL
-        if (current == NULL) {
+        if (current == NULL)
+        {
             return false;
         }
 
@@ -122,16 +123,15 @@ bool load(const char *dictionary)
         else
         {
 
-            current.next->table[index];
+            current->next = table[index];
             table[index] = current;
 
+            // while (table[index] != NULL)
+            // {
+            //     table[index] = table[index]->next;
+            // }
+            // table[index] = current;
 
-
-            while (table[index] != NULL)
-            {
-                table[index] = table[index]->next;
-            }
-            table[index] = current;
             // // If index is taken, create/ traverse a linked list, append current to the end.
             // if (table[index] != NULL)
             // {
