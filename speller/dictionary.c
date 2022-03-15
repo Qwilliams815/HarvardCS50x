@@ -114,16 +114,19 @@ bool load(const char *dictionary)
         }
         else
         {
-            // If index is taken, create/ traverse a linked list, append current to the end.
-            if (table[index] != NULL)
+            while (table[index] != NULL)
             {
-                while (current->next != NULL) {
-                    current = current->next;
-                }
+                table[index] = table[index]->next;
             }
-            //table[index] = current;
+            table[index] = current;
+            // // If index is taken, create/ traverse a linked list, append current to the end.
+            // if (table[index] != NULL)
+            // {
+            //     while (current->next != NULL) {
+            //         current = current->next;
+            //     }
+            // }
         }
-
     }
     fclose(dict);
     return true;
