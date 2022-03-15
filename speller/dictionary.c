@@ -121,7 +121,7 @@ bool load(const char *dictionary)
                     current = current->next;
                 }
             }
-            table[index] = current;
+            //table[index] = current;
         }
 
     }
