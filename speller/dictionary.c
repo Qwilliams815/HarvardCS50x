@@ -120,10 +120,6 @@ bool load(const char *dictionary)
                 while (current->next != NULL) {
                     current = current->next;
                 }
-                // If it does, set the current value to the next value,
-                //while table[index][i] != Null
-                    // i++
-                table[index] = current->next;
             }
             table[index] = current;
         }
