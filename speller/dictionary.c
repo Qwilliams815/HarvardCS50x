@@ -115,8 +115,9 @@ bool load(const char *dictionary)
         // If index is taken, create/ traverse a linked list, append current to the end.
         else
         {
-            while (table[index] != NULL)
+            if (table[index] != NULL)
             {
+                while table[index]->next != NULL
                 // If it does, set the current value to the next value,
                 //while table[index][i] != Null
                     // i++
