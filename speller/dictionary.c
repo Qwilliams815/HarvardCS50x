@@ -104,6 +104,11 @@ bool load(const char *dictionary)
     {
         // Allocate Memory for node, copy current word to node->word property.
         node *current = malloc(sizeof(node));
+
+        if (current == NULL) {
+            return false;
+        }
+        
         strcpy(current->word, word);
         current->next = NULL;
         int index = hash(word);
