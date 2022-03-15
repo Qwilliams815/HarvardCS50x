@@ -99,7 +99,7 @@ bool load(const char *dictionary)
 
     // Scan each word from dictionary file
     char word[45];
-    //while (fgets(word, 45, dict))
+    // while (fgets(word, 45, dict))
     while (fscanf(dict, "%s", word) != EOF)
     {
         // Allocate Memory for node, copy current word to node->word property.
