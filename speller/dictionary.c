@@ -111,40 +111,21 @@ bool load(const char *dictionary)
             return false;
         }
 
+        // Populate current node values
         strcpy(current->word, word);
         current->next = NULL;
         int index = hash(word);
 
         // Insert node into Hash table at table[hash(word)],
-        if (table[index] == NULL)
-        {
-            // Set next pointer to whatever node already in at index
-            current->next = table[index];
-            // Set current as new head of linked list at index
-            table[index] = current;
-        }
-        else
-        {
-            current->next = table[index];
-            table[index] = current;
-
-            // while (table[index] != NULL)
-            // {
-            //     table[index] = table[index]->next;
-            // }
-            // table[index] = current;
-
-            // // If index is taken, create/ traverse a linked list, append current to the end.
-            // if (table[index] != NULL)
-            // {
-            //     while (current->next != NULL) {
-            //         current = current->next;
-            //     }
-            // }
-        }
+        // Set next pointer to whatever node already in at index
+        current->next = table[index];
+        // Set current as new head of linked list at index
+        table[index] = current;
     }
-    fclose(dict);
-    return true;
+
+      }
+fclose(dict);
+return true;
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
