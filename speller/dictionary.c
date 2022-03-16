@@ -79,7 +79,6 @@ unsigned int hash(const char *word)
 // Loads dictionary into memory, returning true if successful, else false
 bool load(const char *dictionary)
 {
-    // TODO: Take dictionary, load it into a hash table
 
     // Open dictionary
     FILE *dict = fopen(dictionary, "r");
@@ -111,21 +110,18 @@ bool load(const char *dictionary)
             return false;
         }
 
-        // Populate current node values
+        // Update current node word value
         strcpy(current->word, word);
-        current->next = NULL;
         int index = hash(word);
 
         // Insert node into Hash table at table[hash(word)],
-        // Set next pointer to whatever node already in at index
+        // Set next pointer to whatever node already lives at index
         current->next = table[index];
         // Set current as new head of linked list at index
         table[index] = current;
     }
-
-      }
-fclose(dict);
-return true;
+    fclose(dict);
+    return true;
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
