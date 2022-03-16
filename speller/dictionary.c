@@ -73,7 +73,8 @@ unsigned int hash(const char *word)
     ascii *= word[0];
     // double new = pow(ascii, strlen(word));
     // return printf("%s -- %i\n\n", word, ascii % 2500);
-    return ascii % N;
+    return ascii % (N - 1);
+    // N - 1??
 }
 
 // Loads dictionary into memory, returning true if successful, else false
