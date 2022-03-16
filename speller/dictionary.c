@@ -118,6 +118,9 @@ bool load(const char *dictionary)
         // Insert node into Hash table at table[hash(word)],
         if (table[index] == NULL)
         {
+            // Set next pointer to whatever node already in at index
+            current->next = table[index];
+            // Set current as new head of linked list at index
             table[index] = current;
         }
         else
