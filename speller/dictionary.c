@@ -37,8 +37,10 @@ bool check(const char *word)
     }
 
     node curr = table[hash(lower_word)];
-    while (curr != NULL) {
-        if (strcmp(curr->word, lower_word) == 0) {
+    while (curr != NULL)
+    {
+        if (strcmp(curr->word, lower_word) == 0)
+        {
             return true;
         }
         curr = curr->next;
