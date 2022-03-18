@@ -156,7 +156,7 @@ unsigned int size(void)
     //         count++;
     //     }
     // }
-    return size;
+    return word_count;
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
