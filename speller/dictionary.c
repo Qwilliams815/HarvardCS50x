@@ -30,11 +30,11 @@ bool check(const char *word)
     // TODO
 
     // Turn word lowercase
-    // char *lower_word[45];
-    // for (int i = 0; i < strlen(word); i++)
-    // {
-    //     *lower_word[i] = tolower(word[i]);
-    // }
+    char *lower_word[45];
+    for (int i = 0; i < strlen(word); i++)
+    {
+        *lower_word[i] = tolower(word[i]);
+    }
 
     // int word_index = hash(lower_word);
 
