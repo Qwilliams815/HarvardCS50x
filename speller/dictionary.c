@@ -160,7 +160,7 @@ unsigned int size(void)
 bool unload(void)
 {
     for (int i=0; i<N; i++) {
-        if (table[i] != NULL) {
+        while (table[i] != NULL) {
             node *curr = table[i];
             while (curr != NULL) {
                 curr = curr->next;
