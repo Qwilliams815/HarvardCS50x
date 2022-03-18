@@ -36,6 +36,7 @@ bool check(const char *word)
         *lower_word[i] = tolower(word[i]);
     }
 
+    if (table[hash(word)] )
     // int word_index = hash(lower_word);
 
     // // word index == table[word_index]->word
