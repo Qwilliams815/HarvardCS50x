@@ -19,7 +19,7 @@ typedef struct node
 const unsigned int N = 2500;
 
 // Establish size counter for counting words in dictionary
-int size = 0;
+int word_count = 0;
 
 // Hash table
 node *table[N];
@@ -106,7 +106,7 @@ bool load(const char *dictionary)
     while (fscanf(dict, "%s", word) != EOF)
     {
         // Increment size counter
-        size++;
+        word_count++;
 
         // Allocate Memory for node, copy current word to node->word property.
         node *current = malloc(sizeof(node));
@@ -134,29 +134,29 @@ bool load(const char *dictionary)
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
 unsigned int size(void)
 {
-    // TODO
-    // loop through hash table
-    int count = 0;
-    for (int i = 0; i < N; i++)
-    {
-        // If index is start of linked list, for each word in linked list, count++
-        if (table[i]->next != NULL)
-        {
-            node *head = table[i]->next;
-            node *temp = head;
-            while (temp != NULL)
-            {
-                count++;
-                temp = temp->next;
-            }
-        }
-        // Else, if next pointer is null, count++
-        else
-        {
-            count++;
-        }
-    }
-    return count;
+    // // TODO
+    // // loop through hash table
+    // int count = 0;
+    // for (int i = 0; i < N; i++)
+    // {
+    //     // If index is start of linked list, for each word in linked list, count++
+    //     if (table[i]->next != NULL)
+    //     {
+    //         node *head = table[i]->next;
+    //         node *temp = head;
+    //         while (temp != NULL)
+    //         {
+    //             count++;
+    //             temp = temp->next;
+    //         }
+    //     }
+    //     // Else, if next pointer is null, count++
+    //     else
+    //     {
+    //         count++;
+    //     }
+    // }
+    return size;
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
