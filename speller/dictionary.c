@@ -29,37 +29,24 @@ bool check(const char *word)
 {
     // TODO
 
-    // Turn word lowercase
+    // Create lowercase version of word
     char *lower_word[45];
     for (int i = 0; i < strlen(word); i++)
     {
         *lower_word[i] = tolower(word[i]);
     }
 
-    node curr = table[hash(lower_word)];
+    // Check table index of hash(lower_word)
+    node *curr = table[hash(*lower_word)];
+    // As long as the current node isnt NUll, traverse linked list
     while (curr != NULL)
     {
-        if (strcmp(curr->word, lower_word) == 0)
+        if (strcmp(curr->word, *lower_word) == 0)
         {
             return true;
         }
         curr = curr->next;
     }
-
-    // int word_index = hash(lower_word);
-
-    // // word index == table[word_index]->word
-
-    // if table
-    //     [hash(lower_word)]
-
-    //         for (int i = 0; i < N; i++)
-    //     {
-    //         if (table[i]->word == word)
-    //         {
-    //             return true;
-    //         }
-    //     }
     return false;
 }
 
