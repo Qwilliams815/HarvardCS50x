@@ -36,7 +36,12 @@ bool check(const char *word)
         *lower_word[i] = tolower(word[i]);
     }
 
-    if (table[hash(word)] )
+    node curr = table[hash(lower_word)];
+    while (curr != NULL) {
+        if (strcmp(curr->word, lower_word) == 0)
+        curr = curr->next;
+
+    }
     // int word_index = hash(lower_word);
 
     // // word index == table[word_index]->word
