@@ -105,6 +105,9 @@ bool load(const char *dictionary)
     // while (fgets(word, 45, dict))
     while (fscanf(dict, "%s", word) != EOF)
     {
+        // Increment size counter
+        size++;
+
         // Allocate Memory for node, copy current word to node->word property.
         node *current = malloc(sizeof(node));
 
