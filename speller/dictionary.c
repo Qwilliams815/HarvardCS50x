@@ -38,10 +38,12 @@ bool check(const char *word)
 
     node curr = table[hash(lower_word)];
     while (curr != NULL) {
-        if (strcmp(curr->word, lower_word) == 0)
+        if (strcmp(curr->word, lower_word) == 0) {
+            return true;
+        }
         curr = curr->next;
-
     }
+
     // int word_index = hash(lower_word);
 
     // // word index == table[word_index]->word
