@@ -159,7 +159,12 @@ unsigned int size(void)
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
-    // traverse table, free each node if node->next == NULL, if linked list, free from end to start.
+    for (int i=0; i<N; i++) {
+        while (table[i] != NULL) {
+            node *curr = table[i]->next;
+        }
+        i++
+    }
 
     // TODO
     return false;
