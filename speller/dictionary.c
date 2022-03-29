@@ -30,7 +30,7 @@ bool check(const char *word)
     // TODO
 
     // Create lowercase version of word
-    char *lower_word[45];
+    char *lower_word[LENGTH];
     for (int i = 0; i < strlen(word); i++)
     {
         *lower_word[i] = tolower(word[i]);
@@ -57,7 +57,7 @@ unsigned int hash(const char *word)
     // return toupper(word[0]) - 'A';
 
     // Turn word Lowercase
-    char lower_word[45];
+    char lower_word[LENGTH];
     for (int i = 0; i < strlen(word); i++)
     {
         lower_word[i] = tolower(word[i]);
@@ -92,13 +92,13 @@ bool load(const char *dictionary)
     }
 
     // Set all initial table buckets to NULL
-    for (int j = 0; j < N; j++)
+    for (int i = 0; i < N; i++)
     {
-        table[j] = NULL;
+        table[i] = NULL;
     }
 
     // Scan each word from dictionary file
-    char word[45];
+    char word[LENGTH];
     // while (fgets(word, 45, dict))
     while (fscanf(dict, "%s", word) != EOF)
     {
@@ -166,9 +166,11 @@ bool unload(void)
             node *curr = table[i];
             while (curr != NULL)
             {
+                node* tmp = curr;
                 curr = curr->next;
+                free(tmp);
             }
-            free(curr);
+            //free(curr);
         }
     }
 
