@@ -179,6 +179,8 @@ bool unload(void)
             }
             //free(curr);
         }
+        printf("--------\n");
+        printf("%s\n", table[i]->word);
     }
 
     // TODO
