@@ -103,7 +103,7 @@ bool load(const char *dictionary)
     while (fscanf(dict, "%s", word) != EOF)
     {
         // Increment size counter
-        printf("%s\n", word);
+        //printf("%s\n", word);
         word_count++;
 
         // Allocate Memory for node, copy current word to node->word property.
