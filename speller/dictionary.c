@@ -168,6 +168,7 @@ bool unload(void)
     for (int i = 0; i < N; i++)
     {
         printf("made it to unload\n");
+        char *current_word = table[i]->word;
         while (table[i] != NULL)
         {
             node *curr = table[i];
