@@ -174,6 +174,7 @@ bool unload(void)
             {
                 node* tmp = curr;
                 curr = curr->next;
+                //TODO: Double free aborts code
                 free(tmp);
             }
             //free(curr);
