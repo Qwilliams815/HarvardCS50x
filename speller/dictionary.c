@@ -127,9 +127,9 @@ bool load(const char *dictionary)
     }
     fclose(dict);
 
-    for (int i = 0; i<N; i++) {
-        printf("%s\n", table[i]->word);
-    }
+    // for (int i = 0; i<N; i++) {
+    //     printf("%s\n", table[i]->word);
+    // }
 
     return true;
 }
@@ -167,7 +167,7 @@ bool unload(void)
 {
     for (int i = 0; i < N; i++)
     {
-        printf("%s\n", table[i]->word);
+        //printf("%s\n", table[i]->word);
         if (table[i] != NULL)
         //printf("test\n");
         {
