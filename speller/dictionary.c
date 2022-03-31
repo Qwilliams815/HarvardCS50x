@@ -170,7 +170,7 @@ bool unload(void)
         while (table[i] != NULL)
         {
             node *curr = table[i];
-            while (curr != NULL)
+            while (curr->next != NULL)
             {
                 node* tmp = curr;
                 curr = curr->next;
