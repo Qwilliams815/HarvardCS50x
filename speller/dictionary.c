@@ -167,7 +167,7 @@ bool unload(void)
 {
     for (int i = 0; i < N; i++)
     {
-        char current_word[45] = table[i]->word;
+        printf("%s\n", table[i]->word);
         if (table[i] != NULL)
         //printf("test\n");
         {
