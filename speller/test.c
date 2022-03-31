@@ -133,7 +133,7 @@ int main(void)
     //     current item = current_item-next;
 
     const char *greeting = "HELLO";
-    char *lower_word;
+    char *lower_word[45];
     char *strcpy(lower_word, greeting);
 
     for (int i = 0; strlen(greeting); i++)
