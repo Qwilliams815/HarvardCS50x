@@ -30,10 +30,10 @@ bool check(const char *word)
     // TODO
 
     // Create lowercase version of word
-    char lower_word[LENGTH + 1];
+    char lower_word[LENGTH];
     for (int i = 0; i < strlen(word); i++)
     {
-        lower_word[i] = tolower(*word[i]);
+        lower_word[i] = tolower(word[i]);
     }
 
     // Check table index of hash(lower_word)
