@@ -167,6 +167,7 @@ bool unload(void)
 {
     for (int i = 0; i < N; i++)
     {
+        printf("made it to unload\n");
         while (table[i] != NULL)
         {
             node *curr = table[i];
@@ -179,8 +180,8 @@ bool unload(void)
             }
             //free(curr);
         }
-        printf("--------\n");
-        printf("%s\n", table[i]->word);
+        //printf("--------\n");
+        //printf("%s\n", table[i]->word);
     }
 
     // TODO
