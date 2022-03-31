@@ -136,12 +136,13 @@ int main(void)
 
     char lower_word[45];
 
-    for (int i = 0; greeting[i]; i++)
+    for (int i = 0; strlen(greeting); i++)
     {
-        greeting[i] = tolower(greeting[i]);
+        lower_word[i] = tolower(greeting[i]);
     }
 
     printf("%s\n", greeting);
+    printf("%s\n", lower_word);
 
     printf("\n");
 
