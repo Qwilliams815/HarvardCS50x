@@ -98,7 +98,7 @@ bool load(const char *dictionary)
     }
 
     // Scan each word from dictionary file
-    char word[LENGTH];
+    char word[LENGTH + 1];
     // while (fgets(word, 45, dict))
     while (fscanf(dict, "%s", word) != EOF)
     {
