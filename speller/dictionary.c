@@ -39,19 +39,16 @@ bool check(const char *word)
     // Check table index of hash(lower_word)
     node *curr = table[hash(lower_word)];
     // As long as the current node isnt NUll, traverse linked list
-    for (int i = 0; i < N; i++)
+    while (curr != NULL)
     {
-        while (curr != NULL)
+        printf("%s , %s\n", curr->word, lower_word);
+        if (strcmp(curr->word, lower_word) == 0)
         {
-            printf("%s , %s\n", curr->word, lower_word);
-            if (strcmp(curr->word, lower_word) == 0)
-            {
-                return true;
-            }
-            curr = curr->next;
+            return true;
         }
-    return false;
+        curr = curr->next;
     }
+    return false;
 }
 
 // Hashes word to a number
