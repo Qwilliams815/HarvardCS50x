@@ -167,7 +167,7 @@ bool unload(void)
 {
     for (int i = 0; i < N; i++)
     {
-        while (table[i] != NULL)
+        if (table[i] != NULL)
         {
             node *curr = table[i];
             while (curr->next != NULL)
