@@ -119,11 +119,11 @@ int main(void)
     {
         if (table[i] == NULL)
         {
-            printf("%i -- %s\n", i, table[i]->word);
+            //printf("%i -- %s\n", i, table[i]->word);
         }
         else
         {
-            printf("%i -- %s", i, table[i]->word);
+            //printf("%i -- %s", i, table[i]->word);
         }
     }
 
@@ -132,7 +132,7 @@ int main(void)
     // while current item != Null
     //     current item = current_item-next;
 
-    //const char *greeting[45] = "HELLO";
+    const char *greeting = "HELLO";
 
     char lower_word[45];
 
