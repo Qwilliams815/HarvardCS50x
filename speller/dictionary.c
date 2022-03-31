@@ -182,5 +182,5 @@ bool unload(void)
     }
 
     // TODO
-    return false;
+    return true;
 }
