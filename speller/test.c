@@ -134,12 +134,11 @@ int main(void)
 
     const char *greeting = "HELLO";
 
-    char lower_word[45];
+    char *lower_word = greeting;
 
     for (int i = 0; strlen(greeting); i++)
     {
-        lower_word[i] = tolower(greeting[i]);
-        printf("%c", greeting[i]);
+        lower_word[i] = tolower(lower_word[i]);
     }
 
     printf("\n");
