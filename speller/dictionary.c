@@ -19,7 +19,7 @@ typedef struct node
 int word_count = 0;
 
 // TODO: Choose number of buckets in hash table
-const unsigned int N = 2500;
+const unsigned int N = 1400;
 
 
 // Hash table
