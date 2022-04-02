@@ -16,7 +16,7 @@ typedef struct node
 } node;
 
 // TODO: Choose number of buckets in hash table
-const unsigned int N = 5;
+const unsigned int N = 2500;
 
 // Establish size counter for counting words in dictionary
 int word_count = 0;
