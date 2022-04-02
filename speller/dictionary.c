@@ -55,7 +55,7 @@ bool check(const char *word)
     return false;
 }
 
-// Hashes word to a number
+// Hashes word to a number by manipulating a words ascii value.
 unsigned int hash(const char *word)
 {
     int ascii = 0;
