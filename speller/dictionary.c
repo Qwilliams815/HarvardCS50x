@@ -38,12 +38,13 @@ bool check(const char *word)
     // }
 
     // Check table index of hash(lower_word)
-    node *curr = table[hash(lower_word)];
-    node *curr = table[hash(lower_word)];
+    //node *curr = table[hash(lower_word)];
+    node *curr = table[hash(word)];
     // As long as the current node isnt NUll, traverse linked list
     while (curr != NULL)
     {
-        if (strcmp(curr->word, lower_word) == 0)
+        //if (strcmp(curr->word, lower_word) == 0)
+        if (strcmp(curr->word, word) == 0)
         {
             //free(lower_word);
             return true;
