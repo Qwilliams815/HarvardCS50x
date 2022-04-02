@@ -134,6 +134,7 @@ int main(void)
 
     char *greeting = "HELLO";
 
+    
 
     // char *lower_word = malloc(strlen(greeting) + 1);
     // strcpy(lower_word, greeting);
