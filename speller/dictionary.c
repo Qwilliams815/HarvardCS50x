@@ -142,28 +142,6 @@ bool load(const char *dictionary)
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
 unsigned int size(void)
 {
-    // // TODO
-    // // loop through hash table
-    // int count = 0;
-    // for (int i = 0; i < N; i++)
-    // {
-    //     // If index is start of linked list, for each word in linked list, count++
-    //     if (table[i]->next != NULL)
-    //     {
-    //         node *head = table[i]->next;
-    //         node *temp = head;
-    //         while (temp != NULL)
-    //         {
-    //             count++;
-    //             temp = temp->next;
-    //         }
-    //     }
-    //     // Else, if next pointer is null, count++
-    //     else
-    //     {
-    //         count++;
-    //     }
-    // }
     return word_count;
 }
 
