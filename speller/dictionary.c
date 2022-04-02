@@ -28,8 +28,7 @@ node *table[N];
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
-    // TODO
-    // Create lowercase version of word
+    // Create lowercase copy of incoming word
     char *lower_word = malloc(strlen(word) + 1);
     strcpy(lower_word, word);
 
@@ -38,7 +37,7 @@ bool check(const char *word)
         lower_word[i] = tolower(lower_word[i]);
     }
 
-    // Check table index of hash(lower_word)
+    // Check table bucket of hash(lower_word)
     node *curr = table[hash(lower_word)];
     // As long as the current node isnt NUll, traverse linked list
     while (curr != NULL)
