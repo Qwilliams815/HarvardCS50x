@@ -132,30 +132,24 @@ int main(void)
     // while current item != Null
     //     current item = current_item-next;
 
-    char *greeting = "HELLO";
+    const char *greeting = "HELLO";
 
-    printf("%c\n", greeting[0]);
-    printf("%c\n", greeting[1]);
-    printf("%c\n", greeting[2]);
-    printf("%c\n", greeting[3]);
-    printf("%c\n", greeting[4]);
-    printf("%lu\n", strlen(greeting));
 
-    // char *lower_word = malloc(strlen(greeting) + 1);
-    // strcpy(lower_word, greeting);
+    char *lower_word = malloc(strlen(greeting) + 1);
+    strcpy(lower_word, greeting);
 
-    // for (int i = 0; strlen(lower_word); i++)
-    // {
-    //     //lower_word[i] = tolower(lower_word[i]);
-    //     printf("%c\n", greeting[i]);
-    // }
+    for (int i = 0; strlen(lower_word); i++)
+    {
+        //lower_word[i] = tolower(lower_word[i]);
+        printf("%c\n", greeting[i]);
+    }
 
-    // printf("original: %s\n", greeting);
-    // printf("copy: %s\n", lower_word);
+    printf("original: %s\n", greeting);
+    printf("copy: %s\n", lower_word);
 
-    // printf("\n");
+    printf("\n");
 
-    // // printf("%i\n", toupper(greeting[0]) - 'A');
+    // printf("%i\n", toupper(greeting[0]) - 'A');
     fclose(dict);
 
 
