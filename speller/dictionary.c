@@ -69,7 +69,7 @@ unsigned int hash(const char *word)
     return ascii % (N - 1);
 }
 
-// Loads dictionary into memory, returning true if successful, else false
+// Loads dictionary into memory
 bool load(const char *dictionary)
 {
 
