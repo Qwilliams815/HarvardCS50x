@@ -138,14 +138,16 @@ int main(void)
     char *lower_word = malloc(strlen(greeting) + 1);
     strcpy(lower_word, greeting);
 
-    for (int i = 0; strlen(lower_word); i++)
+    for (int i = 0; i<strlen(lower_word); i++)
     {
-        //lower_word[i] = tolower(lower_word[i]);
+        lower_word[i] = tolower(lower_word[i]);
         printf("%c\n", greeting[i]);
     }
 
     printf("original: %s\n", greeting);
+    printf("original: %lu\n", strlen(greeting));
     printf("copy: %s\n", lower_word);
+    printf("copy: %lu\n", strlen(lower_word));
 
     printf("\n");
 
