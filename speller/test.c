@@ -134,7 +134,12 @@ int main(void)
 
     char *greeting = "HELLO";
 
-    
+    printf("%c\n", greeting[0]);
+    printf("%c\n", greeting[1]);
+    printf("%c\n", greeting[2]);
+    printf("%c\n", greeting[3]);
+    printf("%c\n", greeting[4]);
+    printf("%c\n", greeting[5]);
 
     // char *lower_word = malloc(strlen(greeting) + 1);
     // strcpy(lower_word, greeting);
