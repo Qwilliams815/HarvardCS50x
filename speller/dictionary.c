@@ -46,10 +46,12 @@ bool check(const char *word)
         //printf("%s , %s\n", curr->word, lower_word);
         if (strcmp(curr->word, lower_word) == 0)
         {
+            free(lower_word);
             return true;
         }
         curr = curr->next;
     }
+    free(lower_word);
     return false;
 }
 
