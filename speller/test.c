@@ -136,6 +136,9 @@
 
 
     char *lower_word = malloc(strlen(greeting) + 1);
+    if (lower_word == NULL) {
+        return 1;
+    }
     strcpy(lower_word, greeting);
 
     for (int i = 0; i<strlen(lower_word); i++)
