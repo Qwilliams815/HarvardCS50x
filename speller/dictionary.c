@@ -166,9 +166,6 @@ bool unload(void)
         }
         //printf("--------\n");
         //printf("%s\n", table[i]->word);
-        if (table[i] != NULL) {
-            printf("%s\n", table[i]->word);
-        }
     }
 
     // TODO
