@@ -21,7 +21,6 @@ int word_count = 0;
 // TODO: Choose number of buckets in hash table
 const unsigned int N = 1400;
 
-
 // Hash table
 node *table[N];
 
@@ -136,9 +135,9 @@ bool unload(void)
             node *curr = table[i];
             while (curr != NULL)
             {
-                node* tmp = curr;
+                node *tmp = curr;
                 curr = curr->next;
-                //TODO: Double free aborts code
+                // TODO: Double free aborts code
                 free(tmp);
             }
         }
