@@ -139,7 +139,7 @@ int main(void)
     printf("%c\n", greeting[2]);
     printf("%c\n", greeting[3]);
     printf("%c\n", greeting[4]);
-    printf("%c\n", greeting[5]);
+    printf("%lu\n", strlen(greeting));
 
     // char *lower_word = malloc(strlen(greeting) + 1);
     // strcpy(lower_word, greeting);
