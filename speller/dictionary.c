@@ -43,7 +43,7 @@ bool check(const char *word)
     // As long as the current node isnt NUll, traverse linked list
     while (curr != NULL)
     {
-        printf("%s , %s\n", curr->word, lower_word);
+        //printf("%s , %s\n", curr->word, lower_word);
         if (strcmp(curr->word, lower_word) == 0)
         {
             return true;
