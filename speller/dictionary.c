@@ -28,7 +28,6 @@ node *table[N];
 bool check(const char *word)
 {
     // TODO
-
     // Create lowercase version of word
     char *lower_word = malloc(strlen(word) + 1);
     strcpy(lower_word, word);
@@ -43,7 +42,6 @@ bool check(const char *word)
     // As long as the current node isnt NUll, traverse linked list
     while (curr != NULL)
     {
-        //printf("%s , %s\n", curr->word, lower_word);
         if (strcmp(curr->word, lower_word) == 0)
         {
             free(lower_word);
@@ -76,10 +74,7 @@ unsigned int hash(const char *word)
 
     ascii *= strlen(word);
     ascii *= word[0];
-    // double new = pow(ascii, strlen(word));
-    // return printf("%s -- %i\n\n", word, ascii % 2500);
     return ascii % (N - 1);
-    // N - 1??
 }
 
 // Loads dictionary into memory, returning true if successful, else false
@@ -104,11 +99,9 @@ bool load(const char *dictionary)
 
     // Scan each word from dictionary file
     char word[LENGTH + 1];
-    // while (fgets(word, 45, dict))
     while (fscanf(dict, "%s", word) != EOF)
     {
         // Increment size counter
-        //printf("%s\n", word);
         word_count++;
 
         // Allocate Memory for node, copy current word to node->word property.
@@ -131,11 +124,6 @@ bool load(const char *dictionary)
         table[index] = current;
     }
     fclose(dict);
-
-    // for (int i = 0; i<N; i++) {
-    //     printf("%s\n", table[i]->word);
-    // }
-
     return true;
 }
 
@@ -150,9 +138,7 @@ bool unload(void)
 {
     for (int i = 0; i < N; i++)
     {
-        //printf("%s\n", table[i]->word);
         if (table[i] != NULL)
-        //printf("test\n");
         {
             node *curr = table[i];
             while (curr != NULL)
@@ -162,12 +148,8 @@ bool unload(void)
                 //TODO: Double free aborts code
                 free(tmp);
             }
-            //free(curr);
         }
-        //printf("--------\n");
-        //printf("%s\n", table[i]->word);
     }
 
-    // TODO
     return true;
 }
