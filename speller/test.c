@@ -132,21 +132,43 @@ int main(void)
     // while current item != Null
     //     current item = current_item-next;
 
-    const char *greeting = "HELLO";
-    char *lower_word[45];
-    char *strcpy(lower_word, greeting);
+    char *greeting = "HELLO";
 
-    for (int i = 0; strlen(greeting); i++)
-    {
-        lower_word[i] = tolower(lower_word[i]);
-    }
 
-    printf("\n");
-    printf("%s\n", lower_word);
+    // char *lower_word = malloc(strlen(greeting) + 1);
+    // strcpy(lower_word, greeting);
 
-    printf("\n");
+    // for (int i = 0; strlen(lower_word); i++)
+    // {
+    //     //lower_word[i] = tolower(lower_word[i]);
+    //     printf("%c\n", greeting[i]);
+    // }
 
-    // printf("%i\n", toupper(greeting[0]) - 'A');
+    // printf("original: %s\n", greeting);
+    // printf("copy: %s\n", lower_word);
+
+    // printf("\n");
+
+    // // printf("%i\n", toupper(greeting[0]) - 'A');
     fclose(dict);
+
+
+
+    // char *s = get_string("s: ");
+    // if (s != NULL)
+    // {
+    //     char *t = malloc(strlen(s) + 1);
+    //     if (t != NULL)
+    //     {
+    //         strcpy(t, s);
+    //         printf("s: %s\n", s);
+    //         printf("t: %s\n", t);
+    //     }
+    // }
+
+
+
+
+
     return 0;
 }
