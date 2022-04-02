@@ -15,11 +15,12 @@ typedef struct node
     struct node *next;
 } node;
 
+// Establish size counter for counting words in dictionary
+int word_count = 0;
+
 // TODO: Choose number of buckets in hash table
 const unsigned int N = 2500;
 
-// Establish size counter for counting words in dictionary
-int word_count = 0;
 
 // Hash table
 node *table[N];
@@ -57,7 +58,7 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     int ascii = 0;
-    
+
     for (int i = 0; i < strlen(word); i++)
     {
         ascii += word[i];
