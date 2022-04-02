@@ -153,7 +153,7 @@
 
     // printf("%i\n", toupper(greeting[0]) - 'A');
     free(lower_word);
-    //fclose(dict);
+    // fclose(dict);
 
 
 
