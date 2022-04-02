@@ -75,9 +75,9 @@
 // }
 
 // // Main Execution
-// int main(void)
+int main(void)
 
-// {
+{
 //     // printf("test\n");
 //     FILE *dict = fopen("dictionaries/large", "r");
 
@@ -132,43 +132,31 @@
 //     // while current item != Null
 //     //     current item = current_item-next;
 
-    // const char *greeting = "HELLO";
+    const char *greeting = "HELLO";
 
 
-    // char *lower_word = malloc(strlen(greeting) + 1);
-    // if (lower_word == NULL) {
-    //     return 1;
-    // }
-    // strcpy(lower_word, greeting);
-
-    // for (int i = 0; i<strlen(lower_word); i++)
-    // {
-    //     lower_word[i] = tolower(lower_word[i]);
-    //     printf("%c\n", greeting[i]);
-    // }
-
-    // printf("original: %s\n", greeting);
-    // printf("original: %lu\n", strlen(greeting));
-    // printf("copy: %s\n", lower_word);
-    // printf("copy: %lu\n", strlen(lower_word));
-
-    // printf("\n");
-
-    // // printf("%i\n", toupper(greeting[0]) - 'A');
-    // free(lower_word);
-    // // fclose(dict);
-
-    char *s = get_string("s: ");
-    if (s != NULL)
-    {
-        char *t = malloc(strlen(s) + 1);
-        if (t != NULL)
-        {
-            strcpy(t, s);
-            printf("s: %s\n", s);
-            printf("t: %s\n", t);
-        }
+    char *lower_word = malloc(strlen(greeting) + 1);
+    if (lower_word == NULL) {
+        return 1;
     }
+    strcpy(lower_word, greeting);
+
+    for (int i = 0; i<strlen(lower_word); i++)
+    {
+        lower_word[i] = tolower(lower_word[i]);
+        printf("%c\n", greeting[i]);
+    }
+
+    printf("original: %s\n", greeting);
+    printf("original: %lu\n", strlen(greeting));
+    printf("copy: %s\n", lower_word);
+    printf("copy: %lu\n", strlen(lower_word));
+
+    printf("\n");
+
+    // printf("%i\n", toupper(greeting[0]) - 'A');
+    free(lower_word);
+    // fclose(dict);
 
 
 
