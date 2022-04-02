@@ -42,6 +42,7 @@ bool check(const char *word)
     // As long as the current node isnt NUll, traverse linked list
     while (curr != NULL)
     {
+        // Match found
         if (strcmp(curr->word, lower_word) == 0)
         {
             free(lower_word);
@@ -49,6 +50,7 @@ bool check(const char *word)
         }
         curr = curr->next;
     }
+    // Match not found
     free(lower_word);
     return false;
 }
