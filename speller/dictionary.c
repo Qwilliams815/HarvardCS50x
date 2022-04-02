@@ -29,27 +29,28 @@ bool check(const char *word)
 {
     // TODO
     // Create lowercase version of word
-    char *lower_word = malloc(strlen(word) + 1);
-    strcpy(lower_word, word);
+    // char *lower_word = malloc(strlen(word) + 1);
+    // strcpy(lower_word, word);
 
-    for (int i = 0; i < strlen(word); i++)
-    {
-        lower_word[i] = tolower(lower_word[i]);
-    }
+    // for (int i = 0; i < strlen(word); i++)
+    // {
+    //     lower_word[i] = tolower(lower_word[i]);
+    // }
 
     // Check table index of hash(lower_word)
+    node *curr = table[hash(lower_word)];
     node *curr = table[hash(lower_word)];
     // As long as the current node isnt NUll, traverse linked list
     while (curr != NULL)
     {
         if (strcmp(curr->word, lower_word) == 0)
         {
-            free(lower_word);
+            //free(lower_word);
             return true;
         }
         curr = curr->next;
     }
-    free(lower_word);
+    //free(lower_word);
     return false;
 }
 
@@ -60,10 +61,18 @@ unsigned int hash(const char *word)
     // return toupper(word[0]) - 'A';
 
     // Turn word Lowercase
-    char lower_word[LENGTH];
+    // char lower_word[LENGTH];
+    // for (int i = 0; i < strlen(word); i++)
+    // {
+    //     lower_word[i] = tolower(word[i]);
+    // }
+
+    char *lower_word = malloc(strlen(word) + 1);
+    strcpy(lower_word, word);
+
     for (int i = 0; i < strlen(word); i++)
     {
-        lower_word[i] = tolower(word[i]);
+        lower_word[i] = tolower(lower_word[i]);
     }
 
     int ascii = 0;
@@ -74,6 +83,7 @@ unsigned int hash(const char *word)
 
     ascii *= strlen(word);
     ascii *= word[0];
+    free(lower_word);
     return ascii % (N - 1);
 }
 
