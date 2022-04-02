@@ -155,7 +155,7 @@ bool unload(void)
         //printf("test\n");
         {
             node *curr = table[i];
-            while (curr->next != NULL)
+            while (curr != NULL)
             {
                 node* tmp = curr;
                 curr = curr->next;
