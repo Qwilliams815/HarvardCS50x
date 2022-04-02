@@ -119,22 +119,26 @@ bool load(const char *dictionary)
     return true;
 }
 
-// Returns number of words in dictionary if loaded, else 0 if not yet loaded
+// Returns number of words in dictionary
 unsigned int size(void)
 {
     return word_count;
 }
 
-// Unloads dictionary from memory, returning true if successful, else false
+// Unloads dictionary from memory
 bool unload(void)
 {
+    // Traverse hash table
     for (int i = 0; i < N; i++)
     {
         if (table[i] != NULL)
         {
+            // Set curr cursor to bucket head
             node *curr = table[i];
+            // Traverse linked list
             while (curr != NULL)
             {
+                // Point temp cursor to current node, advance real cursor to next node, safely free temp node
                 node *tmp = curr;
                 curr = curr->next;
                 // TODO: Double free aborts code
