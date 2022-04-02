@@ -56,17 +56,8 @@ bool check(const char *word)
 // Hashes word to a number
 unsigned int hash(const char *word)
 {
-    // TODO: Improve this hash function
-    // return toupper(word[0]) - 'A';
-
-    // Turn word Lowercase
-    char lower_word[LENGTH];
-    for (int i = 0; i < strlen(word); i++)
-    {
-        lower_word[i] = tolower(word[i]);
-    }
-
     int ascii = 0;
+    
     for (int i = 0; i < strlen(word); i++)
     {
         ascii += word[i];
