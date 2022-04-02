@@ -77,13 +77,13 @@ unsigned int hash(const char *word)
     }
 
     int ascii = 0;
-    for (int i = 0; i < strlen(word); i++)
+    for (int i = 0; i < strlen(lower_word); i++)
     {
-        ascii += word[i];
+        ascii += lower_word[i];
     }
 
-    ascii *= strlen(word);
-    ascii *= word[0];
+    ascii *= strlen(lower_word);
+    ascii *= lower_word[0];
     free(lower_word);
     return ascii % (N - 1);
 }
