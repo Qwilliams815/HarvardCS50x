@@ -29,10 +29,11 @@ def main():
 
     # TODO: Simulate N tournaments and keep track of win counts
     for team in teams:
-        counts[teams["team"]] = score
-    while N != 0:
-        counts[simulate_tournament(teams)["team"]] = score
+        counts[teams["team"]] = 0
 
+    print(counts)
+    while N != 0:
+        counts[simulate_tournament(teams)["team"]] += 1
         N -= 1
 
     # Print each team's chances of winning, according to simulation
@@ -69,7 +70,7 @@ def simulate_tournament(teams):
     # Until there is only 1 winning team remaining, run sim_round(teams)
     while len(teams) != 1:
         teams = simulate_round(teams)
-    print(teams)
+    # print(teams)
     return teams
 
 
