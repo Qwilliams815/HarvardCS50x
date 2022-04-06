@@ -1,8 +1,10 @@
 
 # Gather pyramid height from user input
-height = int(input("Height: "))
+height = get_int("Height: ")
 
-while height 
+while height != int or positive
+
+while height
 
 
 # Establish initial hash/space counts
