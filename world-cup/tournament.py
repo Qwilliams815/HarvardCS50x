@@ -28,7 +28,7 @@ def main():
     counts = {}
 
     # TODO: Simulate N tournaments and keep track of win counts
-    #populate all teams count to 0
+    # populate all teams count to 0
 
     for team in teams:
         # print(teams.index(team))
