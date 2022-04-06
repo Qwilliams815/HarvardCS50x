@@ -29,7 +29,7 @@ def main():
 
     # TODO: Simulate N tournaments and keep track of win counts
     while N != 0:
-        counts[simulate_tournament(teams)["team"]] = simulate_tournament(teams)["team"]
+        counts[simulate_tournament(teams)["team"]] = score
 
         N -= 1
 
