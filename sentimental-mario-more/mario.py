@@ -1,7 +1,8 @@
 # TODO
 height = int(input("Height: "))
 
-level = 1
+hashes = 0
+spaces = 0
 
 for level in range(height):
     print(('#' * level) + ' ' * (height-1))
