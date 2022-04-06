@@ -1,10 +1,9 @@
-import cs50
+from cs50 import get_int
 # Gather pyramid height from user input
 height = get_int("Height: ")
 
 if 1 > height > 8:
     height = get_int("Height: ")
-
 
 
 # Establish initial hash/space counts
