@@ -4,13 +4,13 @@ import csv
 import sys
 import random
 
-# Number of simluations to run
-N = 1000
-
 
 def main():
 
-    # Ensure correct usage
+    # Number of simluations to run
+    N = 1000
+
+   # Ensure correct usage
     if len(sys.argv) != 2:
         sys.exit("Usage: python tournament.py FILENAME")
 
@@ -26,6 +26,19 @@ def main():
 
     counts = {}
     # TODO: Simulate N tournaments and keep track of win counts
+    print()
+    print(teams[0])
+    i = 0
+    while N != 0:
+        simulate_tournament(teams)
+
+        # if teams[i]["rating"] > teams[i+1]["rating"]:
+        #     do whatever
+        #     else:
+        #         i += 2
+        # if team wins:
+        #     counts{team} += 1;
+        N -= 1
 
     # Print each team's chances of winning, according to simulation
     for team in sorted(counts, key=lambda team: counts[team], reverse=True):
@@ -56,6 +69,8 @@ def simulate_round(teams):
 
 def simulate_tournament(teams):
     """Simulate a tournament. Return name of winning team."""
+    while teams:
+        simulate_game()
     # TODO
 
 
