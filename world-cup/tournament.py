@@ -5,10 +5,12 @@ import sys
 import random
 
 
-def main():
+# Number of simluations to run
+N = 1000
 
-    # Number of simluations to run
-    N = 1000
+
+def main():
+    sims = N
 
    # Ensure correct usage
     if len(sys.argv) != 2:
@@ -34,19 +36,16 @@ def main():
         # print(teams.index(team))
         counts[teams[teams.index(team)]["team"]] = 0
 
-    while N != 0:
+    while sims != 0:
         # print(simulate_tournament(teams))
         counts[simulate_tournament(teams)[0]["team"]] += 1
-        N -= 1
+        sims -= 1
 
     print(counts)
 
     # Print each team's chances of winning, according to simulation
     for team in sorted(counts, key=lambda team: counts[team], reverse=True):
-        if counts["team"] != 0:
-            print(f"{team}: {counts[team] * 100 / N:.1f}% chance of winning")
-        else:
-            print(f"{team}: 0.0% chance of winning")
+        print(f"{team}: {counts[team] * 100 / N:.1f}% chance of winning")
 
 
 def simulate_game(team1, team2):
