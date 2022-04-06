@@ -71,10 +71,8 @@ def simulate_tournament(teams):
     team_index = 0
     while teams:
         # Avoid index issues
-        if team_index + 1 > len(teams):
-            break
-        simulate_game(teams[team_index], teams[team_index + 1])
-        team_index += 2
+        simulate_round(teams)
+
 
 if __name__ == "__main__":
     main()
