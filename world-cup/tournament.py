@@ -62,6 +62,9 @@ def simulate_round(teams):
             winners.append(teams[i])
         else:
             winners.append(teams[i + 1])
+    while len(winners) == 1:
+        simulate_round(winners)
+
     print(winners)
     return winners
 
