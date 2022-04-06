@@ -8,7 +8,7 @@ import random
 def main():
 
     # Number of simluations to run
-    N = 10
+    N = 1000
 
    # Ensure correct usage
     if len(sys.argv) != 2:
