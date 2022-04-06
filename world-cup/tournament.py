@@ -38,7 +38,7 @@ def main():
 
     while sims != 0:
         # print(simulate_tournament(teams))
-        counts[simulate_tournament(teams)[0]["team"]] += 1
+        counts[simulate_tournament(teams)] += 1
         sims -= 1
 
     print(counts)
@@ -78,7 +78,7 @@ def simulate_tournament(teams):
     while len(teams) != 1:
         teams = simulate_round(teams)
     # print(teams)
-    return teams
+    return teams[0]["team"]
 
 
 if __name__ == "__main__":
