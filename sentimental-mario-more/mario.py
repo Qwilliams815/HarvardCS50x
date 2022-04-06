@@ -2,6 +2,8 @@
 # Gather pyramid height from user input
 height = int(input("Height: "))
 
+if height
+
 # Establish initial hash/space counts
 hashes = 1
 spaces = height-1
