@@ -70,6 +70,7 @@ def simulate_tournament(teams):
     """Simulate a tournament. Return name of winning team."""
     team_index = 0
     while teams:
+        # Avoid index issues
         if team_index > len(teams):
             break
         simulate_game(teams[team_index], teams[team_index + 1])
