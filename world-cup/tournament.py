@@ -28,6 +28,8 @@ def main():
     counts = {}
 
     # TODO: Simulate N tournaments and keep track of win counts
+    for team in teams:
+        counts[teams["team"]] = score
     while N != 0:
         counts[simulate_tournament(teams)["team"]] = score
 
