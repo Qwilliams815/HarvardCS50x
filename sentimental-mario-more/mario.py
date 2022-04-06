@@ -2,7 +2,7 @@ from cs50 import get_int
 # Gather pyramid height from user input
 height = get_int("Height: ")
 
-while height not in range(1,9):
+while height not in range(1, 9):
     height = get_int("Height: ")
 
 
