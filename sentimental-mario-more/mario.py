@@ -2,7 +2,7 @@ from cs50 import get_int
 # Gather pyramid height from user input
 height = get_int("Height: ")
 
-while height < 1 or height > 8 or isalpha(height) == True:
+while height < 1 or height > 8 or height.isnumeric() == False:
     height = get_int("Height: ")
 
 
