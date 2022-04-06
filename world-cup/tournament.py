@@ -28,8 +28,11 @@ def main():
     counts = {}
 
     # TODO: Simulate N tournaments and keep track of win counts
+    #populate all teams count to 0
+
     for team in teams:
-        counts[teams[0]["team"]] = 0
+        # print(teams.index(team))
+        counts[teams[teams.index(team)]["team"]] = 0
 
     print(counts)
     while N != 0:
