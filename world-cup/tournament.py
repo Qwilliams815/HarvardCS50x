@@ -30,14 +30,13 @@ def main():
     counts = {}
 
     # TODO: Simulate N tournaments and keep track of win counts
-    # populate all teams count to 0
 
+    # Initialize all teams count to 0
     for team in teams:
-        # print(teams.index(team))
         counts[teams[teams.index(team)]["team"]] = 0
 
+    # Tally team wins per each tournament simulation
     while sims != 0:
-        # print(simulate_tournament(teams))
         counts[simulate_tournament(teams)] += 1
         sims -= 1
 
@@ -67,17 +66,17 @@ def simulate_round(teams):
         else:
             winners.append(teams[i + 1])
 
-    # print(winners)
     return winners
 
 
 def simulate_tournament(teams):
     """Simulate a tournament. Return name of winning team."""
 
-    # Until there is only 1 winning team remaining, run sim_round(teams)
+    # Until there is only 1 winning team remaining, run simulate_round(teams)
     while len(teams) != 1:
         teams = simulate_round(teams)
-    # print(teams)
+
+    # Return name of winning team
     return teams[0]["team"]
 
 
