@@ -34,10 +34,12 @@ def main():
         # print(teams.index(team))
         counts[teams[teams.index(team)]["team"]] = 0
 
-    print(counts)
     while N != 0:
-        counts[simulate_tournament(teams)["team"]] += 1
+        # print(simulate_tournament(teams))
+        counts[simulate_tournament(teams)[0]["team"]] += 1
         N -= 1
+
+    print(counts)
 
     # Print each team's chances of winning, according to simulation
     for team in sorted(counts, key=lambda team: counts[team], reverse=True):
