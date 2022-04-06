@@ -1,4 +1,4 @@
-
+import cs50
 # Gather pyramid height from user input
 height = get_int("Height: ")
 
