@@ -8,7 +8,7 @@ import random
 def main():
 
     # Number of simluations to run
-    N = 1
+    N = 10
 
    # Ensure correct usage
     if len(sys.argv) != 2:
@@ -29,14 +29,8 @@ def main():
 
     # TODO: Simulate N tournaments and keep track of win counts
     while N != 0:
-        simulate_tournament(teams)
+        counts[simulate_tournament(teams)["team"]] = simulate_tournament(teams)["team"]
 
-        # if teams[i]["rating"] > teams[i+1]["rating"]:
-        #     do whatever
-        #     else:
-        #         i += 2
-        # if team wins:
-        #     counts{team} += 1;
         N -= 1
 
     # Print each team's chances of winning, according to simulation
@@ -63,18 +57,18 @@ def simulate_round(teams):
         else:
             winners.append(teams[i + 1])
 
-    print(winners)
+    # print(winners)
     return winners
 
 
 def simulate_tournament(teams):
     """Simulate a tournament. Return name of winning team."""
-    # Until there is only 1 winning team remaining, run sim_round(teams)
 
+    # Until there is only 1 winning team remaining, run sim_round(teams)
     while len(teams) != 1:
         teams = simulate_round(teams)
-        print()
     print(teams)
+    return teams
 
 
 if __name__ == "__main__":
