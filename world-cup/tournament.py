@@ -26,7 +26,7 @@ def main():
             # print(row)
 
     counts = {}
-    
+
     # TODO: Simulate N tournaments and keep track of win counts
     while N != 0:
         simulate_tournament(teams)
@@ -68,8 +68,12 @@ def simulate_round(teams):
 
 def simulate_tournament(teams):
     """Simulate a tournament. Return name of winning team."""
+    team_index = 0
     while teams:
-        simulate_game()
+        if team_index > len(teams):
+            break
+        simulate_game(teams[team_index], teams[team_index + 1])
+        team_index += 2
     # TODO
 
 
