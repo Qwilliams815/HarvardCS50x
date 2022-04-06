@@ -29,7 +29,7 @@ def main():
     # TODO: Simulate N tournaments and keep track of win counts
     print()
     print(teams[0])
-    i = 0
+    # i = 0
     while N != 0:
         simulate_tournament(teams)
 
@@ -70,6 +70,7 @@ def simulate_round(teams):
 
 def simulate_tournament(teams):
     """Simulate a tournament. Return name of winning team."""
+    i = 0;
     while teams:
         simulate_game()
     # TODO
