@@ -2,13 +2,13 @@
 # Gather pyramid height from user input
 height = int(input("Height: "))
 
-# Establish initial hash/space amounts
+# Establish initial hash/space counts
 hashes = 1
 spaces = height-1
 
-i = 0
-while i < height:
-    print((' ' * spaces) + ('#' * hashes) + "  " + ('#' * hashes) + (' ' * spaces))
+# Generate each line, inc/decrementing hash and space counts
+while hashes != height+1:
+    print((' ' * spaces) + ('#' * hashes) +
+          "  " + ('#' * hashes) + (' ' * spaces))
     spaces -= 1
     hashes += 1
-    i += 1
