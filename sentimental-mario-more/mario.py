@@ -13,6 +13,6 @@ spaces = height-1
 # Generate each line, inc/decrementing hash and space counts
 while hashes != height+1:
     print((' ' * spaces) + ('#' * hashes) +
-          "  " + ('#' * hashes) + (' ' * spaces))
+          "  " + ('#' * hashes))
     spaces -= 1
     hashes += 1
