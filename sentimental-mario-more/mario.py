@@ -2,9 +2,9 @@
 # Gather pyramid height from user input
 height = get_int("Height: ")
 
-while height != int or positive
+if 1 > height > 8:
+    height = get_int("Height: ")
 
-while height
 
 
 # Establish initial hash/space counts
