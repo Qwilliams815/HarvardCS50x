@@ -5,3 +5,9 @@ from cs50 import get_string
 # TODO Coleman-Liau formula 0.0588 * L - 0.296 * S - 15.8
 # L is avg letters per 100 words
 # S is avg sentances per 100 words
+
+for letter in text:
+    if ord(letter) is space:
+        word_count += 1
+    elif ord(letter) is period
+        sentance_count += 1
