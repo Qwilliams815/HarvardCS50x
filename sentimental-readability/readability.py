@@ -8,6 +8,8 @@ text = get_string("Text: ")
 # S is avg sentances per 100 words
 # X is the grade level
 
+grade = 0;
+
 letter_count = 0
 word_count = 0
 sentance_count = 0
@@ -20,13 +22,17 @@ for letter in text:
         letter_count += 1
     if ord(letter) is space:
         word_count += 1
-    elif ord(letter) is period or question mark or exclamation point
+    elif ord(letter) in punctuation:
         sentance_count += 1
+
+print(letter_count)
+print(word_count)
+print(sentance_count)
 
 grade = round(grade)
 if grade > 16:
     print("Grade: 16+")
 elif grade < 1:
-    print("Before Grade 1)
+    print("Before Grade 1")
 else:
     print(f"Grade: {grade}")
