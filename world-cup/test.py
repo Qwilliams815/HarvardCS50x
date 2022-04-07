@@ -1,17 +1,21 @@
-number = "378282246310005"
+number = "371449635398431"
 amex = ["34", "37"]
 master_card = ["51", "52", "53", "54", "55"]
 
-if len(number) < 13 or len(number) > 16:
-    print("INVALID")
-    number = input("Number: ")
+# 371449635398431 AMEX
 
-for i in number:
-    if i.isalpha() == True or i == '-':
-        print("INVALID")
-        number = input("Number: ")
+num_sum_1 = 0
+for num in number[-2::-2]:
+    num_sum_1 += int(num) * 2
+    print(num)
+print("sum1:", num_sum_1)
 
-for num in amex:
-    if number.startswith(num) and len(number) == 15:
-        print("AMEX")
-        quit()
+num_sum_2 = 0
+for num in number[-1::-2]:
+    num_sum_2 += int(num)
+    print(num)
+print("sum1:", num_sum_1)
+
+if (num_sum_1 + num_sum_2) % 10 != 0:
+    print("INVALID3")
+    quit()
