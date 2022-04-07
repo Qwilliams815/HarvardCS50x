@@ -15,10 +15,16 @@ while len(number) < 13 or len(number) > 16:
 # Luhn's Algorithm
 
 # 371449635398431 AMEX
-num_sum_1 = ""
+num_list_1 = ""
 for num in number[-2::-2]:
-    num_sum_1 += str(int(num) * 2)
+    num_list_1 += str(int(num) * 2)
 print(num_sum_1)
+
+num_sum = 0
+for num in num_list_1:
+    
+
+
 
 num_sum_2 = 0
 for num in number[-1::-2]:
