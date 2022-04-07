@@ -2,7 +2,7 @@ import re
 
 
 number = "371449635398431"
-number_pattern = "/\d/g"
+number_pattern = "[0-9]"
 
 if (re.search(number_pattern, number)):
     print("valid")
