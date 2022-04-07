@@ -15,9 +15,9 @@ while len(number) < 13 or len(number) > 16:
 # Luhn's Algorithm
 
 # 371449635398431 AMEX
-num_sum_1 = 0
+num_sum_1 = ""
 for num in number[-2::-2]:
-    num_sum_1 += int(num) * 2
+    num_sum_1 += str(int(num) * 2)
 print(num_sum_1)
 
 num_sum_2 = 0
