@@ -1,7 +1,7 @@
 import re
 
 
-number = "37144963s5398431"
+number = "371449635398431"
 number_pattern = "[0-9]"
 
 if number.isdigit():

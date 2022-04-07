@@ -3,12 +3,11 @@ from cs50 import get_int
 number = input("Number: ")
 
 # Number cannot be negative, contain alpha characters, too short, too long
-for i in number:
-    if i.isalpha() == True or i == '-':
-        print("INVALID1")
-        number = input("Number: ")
+while number.isdigit() == False:
+    print("INVALID1")
+    number = input("Number: ")
 
-if len(number) < 13 or len(number) > 16:
+while len(number) < 13 or len(number) > 16:
     print("INVALID2")
     number = input("Number: ")
 
