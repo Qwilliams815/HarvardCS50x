@@ -25,7 +25,7 @@ for num in number[-1::-2]:
 
 if (num_sum_1 + num_sum_2) % 10 != 0:
     print("INVALID")
-    number = input("Number: ")
+    quit()
 
 # Verify card company base on starting digits
 amex = ["34", "37"]
