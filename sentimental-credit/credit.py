@@ -10,28 +10,25 @@ number = input("Number: ")
 if len(number) < 13 or len(number) > 16:
     print("INVALID")
     quit()
-    # number = input("Number: ")
-
 
 # Luhn's Algorithm
 
-# 371449635398431 AMEX
+# Starting from the end, take every other number, multiply by 2, add all digits to string
 num_list_1 = ""
 for num in number[-2::-2]:
     num_list_1 += str(int(num) * 2)
-# print(num_list_1)
 
+# Iterate over num_list string, adding each int(digit) to num_sum_1
 num_sum_1 = 0
 for num in num_list_1:
     num_sum_1 += int(num)
-# print(num_sum_1)
 
+# Add up the rest of the CC numbers
 num_sum_2 = 0
 for num in number[-1::-2]:
     num_sum_2 += int(num)
-    # print(num)
-#print("num sum 2:", num_sum_2)
 
+# Sum and check modulo
 if (num_sum_1 + num_sum_2) % 10 != 0:
     print("INVALID")
     quit()
