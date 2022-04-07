@@ -5,11 +5,11 @@ number = input("Number: ")
 # Number cannot be negative, contain alpha characters, too short, too long
 for i in number:
     if i.isalpha() == True or i == '-':
-        print("INVALID")
+        print("INVALID1")
         number = input("Number: ")
 
 if len(number) < 13 or len(number) > 16:
-    print("INVALID")
+    print("INVALID2")
     number = input("Number: ")
 
 
@@ -23,7 +23,7 @@ for num in number[-1::-2]:
     num_sum_2 += int(num)
 
 if (num_sum_1 + num_sum_2) % 10 != 0:
-    print("INVALID")
+    print("INVALID3")
     quit()
 
 # Verify card company base on starting digits
