@@ -15,14 +15,14 @@ word_count = 0
 sentence_count = 0
 
 # Unicode values for period, question mark, and exclamation point
-punctuation = [46, 63, 33]
+punctuation = ['.', '?', '!']
 
 for letter in text:
     if letter.isalpha() == True:
         letter_count += 1
-    if ord(letter) == 32:
+    if letter == ' ':
         word_count += 1
-    elif ord(letter) in punctuation:
+    elif letter in punctuation:
         sentence_count += 1
 
 print(letter_count)
