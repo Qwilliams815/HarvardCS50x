@@ -11,8 +11,9 @@ text = get_string("Text: ")
 grade = 0
 
 letter_count = 0
-if text[0] != ''
-word_count = 1
+word_count = 0
+if text[0] != '':
+    word_count = 1
 sentence_count = 0
 
 # Unicode values for period, question mark, and exclamation point
