@@ -20,12 +20,19 @@ master_card = ["51", "52", "53", "54", "55"]
 for num in amex:
     if number.startswith(num) and len(number) == 15:
         print("AMEX")
+        quit()
+
 for num in master_card:
-    if number.startswith(num):
+    if number.startswith(num) and len(number) == 15:
         print("MASTERCARD")
-if number[0] == "4":
-    print("VISA")
-else:
-    print("INVALID")
+        quit()
+
+if len(number) == 13 or len(number) == 16:
+    if number[0] == "4":
+        print("VISA")
+        quit()
+
+print("INVALID")
+
 
 
