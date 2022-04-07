@@ -12,7 +12,8 @@ letter_count = 0
 word_count = 0
 sentance_count = 0
 
-punctuation = []
+# Unicode values for period, question mark, and exclamation point
+punctuation = [46, 63, 33]
 
 for letter in text:
     if character.isalpha() == True:
