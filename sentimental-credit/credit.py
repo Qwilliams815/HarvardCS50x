@@ -2,6 +2,11 @@ from cs50 import get_int
 
 number = input("Number: ")
 
+if number.isalpha() == True or int(number) < 0:
+    print("INVALID")
+    number = input("Number: ")
+
+# Luhn's Algorithm
 num_sum_1 = 0
 for num in number[-2::-2]:
     num_sum_1 += int(num) * 2
@@ -12,8 +17,9 @@ for num in number[-1::-2]:
 
 if (num_sum_1 + num_sum_2) % 10 != 0:
     print("INVALID")
-    quit()
+    number = input("Number: ")
 
+# Verify card company base on starting digits
 amex = ["34", "37"]
 master_card = ["51", "52", "53", "54", "55"]
 
