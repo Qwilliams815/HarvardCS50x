@@ -1,4 +1,7 @@
+import re
+
 number = "371449635398431"
+number_patter = "[0-9]"
 amex = ["34", "37"]
 master_card = ["51", "52", "53", "54", "55"]
 
