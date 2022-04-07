@@ -9,5 +9,5 @@ from cs50 import get_string
 for letter in text:
     if ord(letter) is space:
         word_count += 1
-    elif ord(letter) is period
+    elif ord(letter) is period or question mark or exclamation point
         sentance_count += 1
