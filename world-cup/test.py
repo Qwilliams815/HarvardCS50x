@@ -1,8 +1,8 @@
 import re
 
 
-number = "37144963dasdDSA53984asd31"
-number_pattern = "[0-9]"
+number = "371449635398431"
+number_pattern = "/\d/g"
 
 if (re.search(number_pattern, number)):
     print("valid")
