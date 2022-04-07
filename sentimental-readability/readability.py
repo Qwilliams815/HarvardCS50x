@@ -8,7 +8,15 @@ text = get_string("Text: ")
 # S is avg sentances per 100 words
 # X is the grade level
 
+letter_count = 0
+word_count = 0
+sentance_count = 0
+
+punctuation = []
+
 for letter in text:
+    if character.isalpha() == True:
+        letter_count += 1
     if ord(letter) is space:
         word_count += 1
     elif ord(letter) is period or question mark or exclamation point
