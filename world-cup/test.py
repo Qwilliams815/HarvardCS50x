@@ -1,2 +1,3 @@
-test = [1, 2, 3, 4, 5, 6, 8 ,9, 10, 11, 12]
-print(test[-1::-2])
+test = 10002313
+if test.startswith(1):
+    print('yes')
