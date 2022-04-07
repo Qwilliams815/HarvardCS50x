@@ -1,13 +1,13 @@
 import re
 
 
-number = "371449635398431"
+number = "37144963s5398431"
 number_pattern = "[0-9]"
 
-if (re.search(number_pattern, number)):
-    print("valid")
+if number.isdigit():
+    print("true")
 else:
-    print("invalid")
+    print("false")
 
 
 # amex = ["34", "37"]
