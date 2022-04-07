@@ -1,3 +1,3 @@
 test = 10002313
-if test.startswith(1):
+if str(test).startswith("1"):
     print('yes')

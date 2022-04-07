@@ -10,19 +10,19 @@ num_sum_2 = 0
 for num in number[-1::-2]:
     num_sum_2 += num
 
-if (num_sum_1 + num_sum_2) % 10 != 0;
+if (num_sum_1 + num_sum_2) % 10 != 0:
     print("INVALID")
 
 amex = ["34", "37"]
 master_card = ["51", "52", "53", "54", "55"]
 
 for num in amex:
-    if number.startswith(num):
+    if str(number).startswith(num):
         print("AMEX")
 for num in master_card:
-    if number.startswith(num):
-        print("MASTERCARD)
-if number[0] == "4":
+    if str(number).startswith(num):
+        print("MASTERCARD")
+if str(number)[0] == "4":
     print("VISA")
 
 
