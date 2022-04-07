@@ -13,7 +13,6 @@ if len(number) < 13 or len(number) > 16:
     number = input("Number: ")
 
 
-
 # Luhn's Algorithm
 num_sum_1 = 0
 for num in number[-2::-2]:
