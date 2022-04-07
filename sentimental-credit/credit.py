@@ -7,9 +7,9 @@ number = input("Number: ")
 #     print("INVALID")
 #     number = input("Number: ")
 
-# while len(number) < 13 or len(number) > 16:
-#     print("INVALID")
-#     number = input("Number: ")
+if len(number) < 13 or len(number) > 16:
+    print("INVALID")
+    # number = input("Number: ")
 
 
 # Luhn's Algorithm
