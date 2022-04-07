@@ -20,9 +20,10 @@ for num in number[-2::-2]:
     num_list_1 += str(int(num) * 2)
 print(num_list_1)
 
-num_sum = 0
+num_sum_1 = 0
 for num in num_list_1:
-    num_sum += int(num)
+    num_sum_1 += int(num)
+print(num_sum_1)
 
 
 num_sum_2 = 0
