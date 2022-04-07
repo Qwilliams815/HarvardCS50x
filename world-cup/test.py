@@ -1,13 +1,10 @@
 import re
 
 
-number = "371449635398431"
+number = "5555555555554444"
 number_pattern = "[0-9]"
 
-if number.isdigit():
-    print("true")
-else:
-    print("false")
+print(len(number))
 
 
 # amex = ["34", "37"]
