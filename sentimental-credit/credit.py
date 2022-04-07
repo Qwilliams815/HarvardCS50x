@@ -25,5 +25,7 @@ for num in master_card:
         print("MASTERCARD")
 if number[0] == "4":
     print("VISA")
+else:
+    print("INVALID")
 
 
