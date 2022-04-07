@@ -8,26 +8,26 @@ text = get_string("Text: ")
 # S is avg sentances per 100 words
 # X is the grade level
 
-grade = 0;
+grade = 0
 
 letter_count = 0
 word_count = 0
-sentance_count = 0
+sentence_count = 0
 
 # Unicode values for period, question mark, and exclamation point
 punctuation = [46, 63, 33]
 
 for letter in text:
-    if character.isalpha() == True:
+    if letter.isalpha() == True:
         letter_count += 1
-    if ord(letter) is space:
+    if ord(letter) == 32:
         word_count += 1
     elif ord(letter) in punctuation:
-        sentance_count += 1
+        sentence_count += 1
 
 print(letter_count)
 print(word_count)
-print(sentance_count)
+print(sentence_count)
 
 grade = round(grade)
 if grade > 16:
