@@ -18,12 +18,11 @@ while len(number) < 13 or len(number) > 16:
 num_list_1 = ""
 for num in number[-2::-2]:
     num_list_1 += str(int(num) * 2)
-print(num_sum_1)
+print(num_list_1)
 
 num_sum = 0
 for num in num_list_1:
-    
-
+    num_sum += int(num)
 
 
 num_sum_2 = 0
@@ -53,6 +52,3 @@ if len(number) == 13 or len(number) == 16:
     if number[0] == "4":
         print("VISA")
         quit()
-
-
-
