@@ -4,11 +4,11 @@ number = input("Number: ")
 
 # Number cannot be negative, contain alpha characters, too short, too long
 for i in number:
-    if i.isalpha() == True:
+    if i.isalpha() == True or i == '-':
         print("INVALID")
         number = input("Number: ")
 
-if number.isalpha() == True or int(number) < 0:
+if len(number) < 13 or len(number) > 16:
     print("INVALID")
     number = input("Number: ")
 

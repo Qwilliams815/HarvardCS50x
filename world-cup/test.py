@@ -1,3 +1,4 @@
-test = 10002313
-if str(test).startswith("1"):
-    print('yes')
+test = "-10002313"
+for i in test:
+    if int(i) <0:
+        print("yes")
