@@ -5,4 +5,7 @@ number = get_int("Number: ")
 # AMEX start with 34, 37
 # Mastercard start with 51, 52, 53, 54, or 55
 # VISA start with 4
-1234 12345
+
+num_sum = 0
+for num in number[-1::-1]:
+    num_sum += num * 2
