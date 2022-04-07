@@ -31,10 +31,10 @@ for num in number[-1::-2]:
     # print(num)
 #print("num sum 2:", num_sum_2)
 
-while (num_sum_1 + num_sum_2) % 10 != 0:
+if (num_sum_1 + num_sum_2) % 10 != 0:
     print("INVALID")
-    number = input("Number: ")
-
+    quit()
+    
 # Verify card company base on starting digits
 amex = ["34", "37"]
 master_card = ["51", "52", "53", "54", "55"]
