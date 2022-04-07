@@ -28,6 +28,7 @@ for letter in text:
 print(letter_count)
 print(word_count)
 print(sentence_count)
+print(len(text))
 
 grade = round(grade)
 if grade > 16:
