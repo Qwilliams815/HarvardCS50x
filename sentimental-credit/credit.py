@@ -2,9 +2,17 @@ from cs50 import get_int
 
 number = input("Number: ")
 
+# Number cannot be negative, contain alpha characters, too short, too long
+for i in number:
+    if i.isalpha() == True:
+        print("INVALID")
+        number = input("Number: ")
+
 if number.isalpha() == True or int(number) < 0:
     print("INVALID")
     number = input("Number: ")
+
+
 
 # Luhn's Algorithm
 num_sum_1 = 0
