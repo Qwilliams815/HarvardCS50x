@@ -14,7 +14,7 @@ num_sum_2 = 0
 for num in number[-1::-2]:
     num_sum_2 += int(num)
     print(num)
-print("sum1:", num_sum_1)
+print("sum2:", num_sum_2)
 
 if (num_sum_1 + num_sum_2) % 10 != 0:
     print("INVALID3")
