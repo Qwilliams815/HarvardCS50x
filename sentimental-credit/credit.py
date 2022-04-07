@@ -3,13 +3,13 @@ from cs50 import get_int
 number = input("Number: ")
 
 # Number cannot be negative, contain alpha characters, too short, too long
-while number.isdigit() == False:
-    print("INVALID")
-    number = input("Number: ")
+# while number.isdigit() == False:
+#     print("INVALID")
+#     number = input("Number: ")
 
-while len(number) < 13 or len(number) > 16:
-    print("INVALID")
-    number = input("Number: ")
+# while len(number) < 13 or len(number) > 16:
+#     print("INVALID")
+#     number = input("Number: ")
 
 
 # Luhn's Algorithm
