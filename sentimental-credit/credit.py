@@ -46,7 +46,5 @@ if len(number) == 13 or len(number) == 16:
         print("VISA")
         quit()
 
-print("INVALID")
-
 
 
