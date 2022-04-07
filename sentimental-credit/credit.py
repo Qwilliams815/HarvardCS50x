@@ -1,18 +1,12 @@
-from cs50 import get_int
-
+# Used built-in input() to keep card number input as string format
 number = input("Number: ")
 
-# Number cannot be negative, contain alpha characters, too short, too long
-# while number.isdigit() == False:
-#     print("INVALID")
-#     number = input("Number: ")
-
+# Card number length check
 if len(number) < 13 or len(number) > 16:
     print("INVALID")
     quit()
 
 # Luhn's Algorithm
-
 # Starting from the end, take every other number, multiply by 2, add all digits to string
 num_list_1 = ""
 for num in number[-2::-2]:
@@ -33,7 +27,7 @@ if (num_sum_1 + num_sum_2) % 10 != 0:
     print("INVALID")
     quit()
 
-# Verify card company base on starting digits
+# Verify card company based on card starting digits
 amex = ["34", "37"]
 master_card = ["51", "52", "53", "54", "55"]
 
