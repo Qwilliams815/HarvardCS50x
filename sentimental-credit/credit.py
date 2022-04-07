@@ -9,6 +9,7 @@ number = input("Number: ")
 
 if len(number) < 13 or len(number) > 16:
     print("INVALID")
+    quit()
     # number = input("Number: ")
 
 
@@ -34,7 +35,7 @@ for num in number[-1::-2]:
 if (num_sum_1 + num_sum_2) % 10 != 0:
     print("INVALID")
     quit()
-    
+
 # Verify card company base on starting digits
 amex = ["34", "37"]
 master_card = ["51", "52", "53", "54", "55"]
