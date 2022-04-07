@@ -45,7 +45,7 @@ for num in amex:
         quit()
 
 for num in master_card:
-    if number.startswith(num) and len(number) == 15:
+    if number.startswith(num) and len(number) == 16:
         print("MASTERCARD")
         quit()
 
