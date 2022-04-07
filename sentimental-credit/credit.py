@@ -2,10 +2,6 @@ from cs50 import get_int
 
 number = get_int("Number: ")
 
-# AMEX start with 34, 37
-# Mastercard start with 51, 52, 53, 54, or 55
-# VISA start with 4
-
 num_sum_1 = 0
 for num in number[-2::-2]:
     num_sum_1 += num * 2
@@ -17,6 +13,16 @@ for num in number[-1::-2]:
 if (num_sum_1 + num_sum_2) % 10 != 0;
     print("INVALID")
 
-if number.startswith()
+amex = ["34", "37"]
+master_card = ["51", "52", "53", "54", "55"]
+
+for num in amex:
+    if number.startswith(num):
+        print("AMEX")
+for num in master_card:
+    if number.startswith(num):
+        print("MASTERCARD)
+if number[0] == "4":
+    print("VISA")
 
 
