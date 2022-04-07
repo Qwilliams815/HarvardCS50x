@@ -1,7 +1,15 @@
 import re
 
+
 number = "371449635398431"
 number_patter = "[0-9]"
+
+if (re.search(number_pattern, number)):
+    print("valid")
+else:
+    print("invalid")
+
+
 amex = ["34", "37"]
 master_card = ["51", "52", "53", "54", "55"]
 
