@@ -11,7 +11,8 @@ text = get_string("Text: ")
 letter_count = 0
 word_count = 1
 if text.isalpha() == False:
-    word_count = 0
+    print("Before Grade 1")
+    quit()
 sentence_count = 0
 
 # Unicode values for period, question mark, and exclamation point
@@ -32,7 +33,8 @@ print(len(text))
 
 
 # TODO Coleman-Liau formula 0.0588 * L - 0.296 * S - 15.8 = grade
-grade = 0.0588 * letter_count / word_count * 100 - 0.296 * sentence_count / word_count * 100 - 15.8
+grade = 0.0588 * letter_count / word_count * 100 - \
+    0.296 * sentence_count / word_count * 100 - 15.8
 print("grade:", grade)
 # L is avg letters per 100 words
 # S is avg sentances per 100 words
