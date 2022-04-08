@@ -10,7 +10,7 @@ text = get_string("Text: ")
 
 letter_count = 0
 word_count = 1
-if text.isalpha() == False:
+if text == '':
     print("Before Grade 1")
     quit()
 sentence_count = 0
