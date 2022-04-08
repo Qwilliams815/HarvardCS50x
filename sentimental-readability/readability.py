@@ -32,7 +32,7 @@ print(len(text))
 
 
 # TODO Coleman-Liau formula 0.0588 * L - 0.296 * S - 15.8 = grade
-grade = round(0.0588 * (letter_count / 100) - 0.296 * (sentence_count / 100) - 15.8)
+grade = 0.0588 * (letter_count / 100) - 0.296 * (sentence_count / 100) - 15.8
 print("grade:", grade)
 # L is avg letters per 100 words
 # S is avg sentances per 100 words
