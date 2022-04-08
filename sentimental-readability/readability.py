@@ -1,21 +1,11 @@
 from cs50 import get_string
 
-# TODO input some text, output the grade level for the text
-text = get_string("Text: ")
 
-# TODO Coleman-Liau formula 0.0588 * L - 0.296 * S - 15.8 = grade
-# L is avg letters per 100 words
-# S is avg sentances per 100 words
-# X is the grade level
+text = get_string("Text: ")
 
 letter_count = 0
 word_count = 1
-# if text == '':
-#     print("Before Grade 1")
-#     quit()
 sentence_count = 0
-
-# Unicode values for period, question mark, and exclamation point
 punctuation = ['.', '?', '!']
 
 for letter in text:
@@ -26,19 +16,9 @@ for letter in text:
     elif letter in punctuation:
         sentence_count += 1
 
-# print(letter_count)
-# print(word_count)
-# print(sentence_count)
-# print(len(text))
-
-
-# TODO Coleman-Liau formula 0.0588 * L - 0.296 * S - 15.8 = grade
+# Coleman-Liau formula 0.0588 * L - 0.296 * S - 15.8 = grade
 grade = round(0.0588 * letter_count / word_count * 100 -
               0.296 * sentence_count / word_count * 100 - 15.8)
-#print("grade:", grade)
-# L is avg letters per 100 words
-# S is avg sentances per 100 words
-# X is the grade level
 
 if grade >= 16:
     print("Grade: 16+")
