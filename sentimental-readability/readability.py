@@ -1,6 +1,6 @@
 from cs50 import get_string
 
-
+# Gather text input form user and establish starting letter/word/sentence counts
 text = get_string("Text: ")
 
 letter_count = 0
@@ -8,6 +8,7 @@ word_count = 1
 sentence_count = 0
 punctuation = ['.', '?', '!']
 
+# Iterate over text, increment appropriate letter/word/sentence counts
 for letter in text:
     if letter.isalpha() == True:
         letter_count += 1
