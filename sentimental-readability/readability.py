@@ -9,9 +9,9 @@ text = get_string("Text: ")
 # X is the grade level
 
 letter_count = 0
-word_count = 0
-if text.isalpha() == True:
-    word_count = 1
+word_count = 1
+if text.isalpha() == False:
+    word_count = 0
 sentence_count = 0
 
 # Unicode values for period, question mark, and exclamation point
