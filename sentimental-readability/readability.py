@@ -8,8 +8,6 @@ text = get_string("Text: ")
 # S is avg sentances per 100 words
 # X is the grade level
 
-grade = 0
-
 letter_count = 0
 word_count = 0
 if text.isalpha() == True:
@@ -31,6 +29,14 @@ print(letter_count)
 print(word_count)
 print(sentence_count)
 print(len(text))
+
+
+# TODO Coleman-Liau formula 0.0588 * L - 0.296 * S - 15.8 = grade
+grade = 0.0588 * (letter_count / 100) - 0.296 * (sentance_count / 100) - 15.8
+# L is avg letters per 100 words
+# S is avg sentances per 100 words
+# X is the grade level
+
 
 grade = round(grade)
 if grade > 16:
