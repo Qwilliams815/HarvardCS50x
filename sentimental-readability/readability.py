@@ -12,7 +12,7 @@ grade = 0
 
 letter_count = 0
 word_count = 0
-if text[0] != '':
+if text.isalpha() == True:
     word_count = 1
 sentence_count = 0
 
