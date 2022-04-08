@@ -14,15 +14,22 @@ int main(void)
     int words = 0;
     int sentances = 0;
 
-    for (int i=0, n=strlen(text); i < n; i++) {
-        if (isalpha(text[i])) {
+    for (int i = 0, n = strlen(text); i < n; i++)
+    {
+        if (isalpha(text[i]))
+        {
             letters += 1;
-        } else if (isspace(text[i])) {
+        }
+        else if (isspace(text[i]))
+        {
             words += 1;
-        } else if (text[i] == '.' || text[i] == '?' || text[i] == '!') {
+        }
+        else if (text[i] == '.' || text[i] == '?' || text[i] == '!')
+        {
             words += 1;
             sentances += 1;
-            if (text[i+1] == ' ') {
+            if (text[i + 1] == ' ')
+            {
                 words -= 1;
             }
         }
@@ -32,13 +39,16 @@ int main(void)
     float index = 0.0588 * letters / words * 100 - 0.296 * sentances / words * 100 - 15.8;
 
     // Grade min/max handler
-    if (round(index) >= 16) {
+    if (round(index) >= 16)
+    {
         printf("Grade 16+\n");
-    } else if (round(index) < 1) {
-        printf("Grade Before Grade 1\n");
-    } else {
-        printf("Grade %i\n", (int) round(index));
     }
-
-    //printf("%i letter(s)\n%i word(s)\n%i sentance(s)\n", letters, words, sentances);
+    else if (round(index) < 1)
+    {
+        printf("Grade Before Grade 1\n");
+    }
+    else
+    {
+        printf("Grade %i\n", (int)round(index));
+    }
 }
