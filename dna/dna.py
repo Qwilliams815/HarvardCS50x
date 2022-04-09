@@ -5,6 +5,7 @@ import sys
 def main():
 
     # TODO: Check for command-line usage
+    # $ python dna.py databases/large.csv sequences/5.txt
 
     # TODO: Read database file into a variable
 
