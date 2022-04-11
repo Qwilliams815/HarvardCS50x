@@ -6,9 +6,8 @@ def main():
 
     # TODO: Check for command-line usage
     # $ python dna.py databases/large.csv sequences/5.txt
-    if len(sys.argc) != 3 {
+    if len(sys.argv) != 3:
         print("Usage: python dna.py database.csv sequence.txt")
-    }
 
     # TODO: Read database file into a variable
     with open(argv[1]) as db:
