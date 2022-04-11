@@ -2,7 +2,7 @@ import re
 import sys
 
 
-print(sys.argv[1])
+print(len(sys.argv))
 
 # number = "5555555555554444"
 # number_pattern = "[0-9]"
