@@ -13,13 +13,13 @@ def main():
         quit()
 
     # TODO: Read database file and subsequences into variables
-    subSequences = []
+    sub_sequences = []
     with open(args[1]) as db:
         reader = csv.reader(db)
         for row in reader:
             if row[0] == "name":
                 for item in row[1:]:
-                    subSequences.append(item)
+                    sub_sequences.append(item)
 
     # TODO: Read DNA sequence file into a variable
     with open(args[2], 'r') as dna:
@@ -27,6 +27,9 @@ def main():
         # print(sequence)
 
     # TODO: Find longest match of each STR in DNA sequence
+    for seq in sub_sequences:
+        print(longest_match(sequence, seq))
+
 
     # TODO: Check database for matching profiles
 
