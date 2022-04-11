@@ -37,7 +37,8 @@ def main():
 
     # TODO: Check database for matching profiles
     for str_ in found_strs:
-        
+        for person in persons:
+
     return
 
 
