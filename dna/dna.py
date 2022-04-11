@@ -23,7 +23,6 @@ def main():
                     sub_sequences.append(item)
             else:
                 people.append(row)
-    print(people)
 
     # TODO: Read DNA sequence file into a variable
     with open(args[2], 'r') as dna:
@@ -36,10 +35,13 @@ def main():
         found_strs.append(longest_match(sequence, seq))
 
     # TODO: Check database for matching profiles
-    i = 0
-    for person in persons:
-        for person_str in person[1:]:
-            if found_str[i] == person_str[i]
+    print(found_strs)
+    for person in people:
+        print(person[1:])
+    # i = 0
+    # for person in persons:
+    #     for person_str in person[1:]:
+    #         if found_str[i] == person_str[i]
 
     return
 
