@@ -13,15 +13,14 @@ def main():
         quit()
 
     # TODO: Read database file into a variable
+    subSequences = []
     with open(args[1]) as db:
         reader = csv.reader(db)
-        for row in reader:
-            print(row)
+        for item in reader:
+            print(item)
+        # for row in reader:
 
-    subSequences = []
-
-    for sub in reader[1:4]:
-        print(sub)
+        #     print(row)
 
     # TODO: Read DNA sequence file into a variable
     with open(args[2], 'r') as dna:
