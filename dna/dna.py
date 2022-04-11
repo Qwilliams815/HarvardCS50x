@@ -35,9 +35,13 @@ def main():
         found_strs.append(longest_match(sequence, seq))
 
     # TODO: Check database for matching profiles
+    for str_ in found_strs:
+        str_ = str(str_)
     print(found_strs)
     for person in people:
         print(person[1:])
+        if person[1:] == found_strs:
+            print("true")
     # i = 0
     # for person in persons:
     #     for person_str in person[1:]:
