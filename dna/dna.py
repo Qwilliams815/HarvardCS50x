@@ -7,10 +7,11 @@ def main():
     # TODO: Check for command-line usage
     # $ python dna.py databases/large.csv sequences/5.txt
     if len(sys.argc) != 3 {
-        
+        print("Usage: python dna.py database.csv sequence.txt")
     }
 
     # TODO: Read database file into a variable
+    with open(argv[1], "r")
     # Lookup differences between csv.reader and csv.DictReader
 
     # TODO: Read DNA sequence file into a variable
