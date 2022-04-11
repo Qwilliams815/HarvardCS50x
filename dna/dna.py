@@ -18,6 +18,11 @@ def main():
         reader = csv.reader(db)
         for item in reader:
             print(item)
+            if item[0] == 'name':
+                for i in item:
+                    subSequences.append[i]
+    print(subSequences)
+
         # for row in reader:
 
         #     print(row)
