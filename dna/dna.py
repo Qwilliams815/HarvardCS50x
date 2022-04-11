@@ -21,10 +21,6 @@ def main():
                 for item in row[1:]:
                     subSequences.append(item)
 
-    # for row in reader:
-
-    #     print(row)
-
     # TODO: Read DNA sequence file into a variable
     with open(args[2], 'r') as dna:
         sequence = dna.read()
