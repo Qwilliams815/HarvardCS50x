@@ -20,7 +20,8 @@ def main():
             print(item)
             if item[0] == 'name':
                 for i in item:
-                    subSequences.append[i]
+                    #subSequences.append[i]
+                    print(i)
     print(subSequences)
 
         # for row in reader:
