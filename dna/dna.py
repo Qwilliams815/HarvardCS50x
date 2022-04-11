@@ -27,7 +27,6 @@ def main():
     # TODO: Read DNA sequence file into a variable
     with open(args[2], 'r') as dna:
         sequence = dna.read()
-        # print(sequence)
 
     # TODO: Find longest match of each STR in DNA sequence
     found_strs = []
@@ -35,15 +34,12 @@ def main():
         found_strs.append(longest_match(sequence, seq))
 
     # TODO: Check database for matching profiles
-    print(found_strs)
     for person in people:
-        print(person[1:])
+        # print(person[1:])
         if person[1:] == found_strs:
-            print("true")
-    # i = 0
-    # for person in persons:
-    #     for person_str in person[1:]:
-    #         if found_str[i] == person_str[i]
+            print(person[0])
+            quit()
+    print("No match")
 
     return
 
