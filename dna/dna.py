@@ -31,11 +31,13 @@ def main():
         # print(sequence)
 
     # TODO: Find longest match of each STR in DNA sequence
+    found_strs = []
     for seq in sub_sequences:
-        print(longest_match(sequence, seq))
+        found_strs.append(longest_match(sequence, seq))
 
     # TODO: Check database for matching profiles
-
+    for str_ in found_strs:
+        
     return
 
 
