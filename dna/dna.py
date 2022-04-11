@@ -6,13 +6,12 @@ args = sys.argv
 
 def main():
 
-    # TODO: Check for command-line usage
-    # $ python dna.py databases/large.csv sequences/5.txt
+    # Check for command-line usage
     if len(args) != 3:
         print("Usage: python dna.py database.csv sequence.txt")
         quit()
 
-    # TODO: Read database file and subsequences into variables
+    # Read database file and subsequences into variables
     sub_sequences = []
     people = []
     with open(args[1]) as db:
@@ -24,18 +23,17 @@ def main():
             else:
                 people.append(row)
 
-    # TODO: Read DNA sequence file into a variable
+    # Read DNA sequence file into a variable
     with open(args[2], 'r') as dna:
         sequence = dna.read()
 
-    # TODO: Find longest match of each STR in DNA sequence
+    # Find longest match of each STR in DNA sequence
     found_strs = []
     for seq in sub_sequences:
         found_strs.append(longest_match(sequence, seq))
 
-    # TODO: Check database for matching profiles
+    # Check database for matching profiles
     for person in people:
-        # print(person[1:])
         if person[1:] == found_strs:
             print(person[0])
             quit()
