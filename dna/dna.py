@@ -12,6 +12,8 @@ def main():
 
     # TODO: Read database file into a variable
     with open(argv[1]) as db:
+        csv.DictReader(db)
+        
 
     # Lookup differences between csv.reader and csv.DictReader but then what am i supposed to do
 
