@@ -22,9 +22,9 @@ def main():
     with open(args[2], 'r') as dna:
         sequence = dna.read()
         # print(sequence)
-    print(sequence[1])
 
     # TODO: Find longest match of each STR in DNA sequence
+
 
     # TODO: Check database for matching profiles
 
