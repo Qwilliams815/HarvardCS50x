@@ -11,7 +11,8 @@ def main():
     }
 
     # TODO: Read database file into a variable
-    with open(argv[1], "r")
+    with open(argv[1]) as db:
+        
     # Lookup differences between csv.reader and csv.DictReader
 
     # TODO: Read DNA sequence file into a variable
