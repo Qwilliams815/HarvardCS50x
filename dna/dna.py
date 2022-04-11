@@ -27,6 +27,8 @@ def main():
     for index in sequence:
         print(index)
         if index == 'A':
+            for gene in genes:
+            # if sequence[sequence.index()]
             quit()
 
     # TODO: Check database for matching profiles
