@@ -6,6 +6,9 @@ def main():
 
     # TODO: Check for command-line usage
     # $ python dna.py databases/large.csv sequences/5.txt
+    if len(sys.argc) != 3 {
+        
+    }
 
     # TODO: Read database file into a variable
     # Lookup differences between csv.reader and csv.DictReader
