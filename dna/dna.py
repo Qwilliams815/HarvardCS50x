@@ -23,7 +23,7 @@ def main():
                     sub_sequences.append(item)
             else:
                 print(row)
-                people.append[row]
+                people.append(row)
 
     # TODO: Read DNA sequence file into a variable
     with open(args[2], 'r') as dna:
