@@ -18,13 +18,17 @@ def main():
         for row in reader:
             print(row)
 
+    subSequences = []
+
+    for sub in reader[1:4]:
+        print(sub)
+
     # TODO: Read DNA sequence file into a variable
     with open(args[2], 'r') as dna:
         sequence = dna.read()
         # print(sequence)
 
     # TODO: Find longest match of each STR in DNA sequence
-
 
     # TODO: Check database for matching profiles
 
