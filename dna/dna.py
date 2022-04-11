@@ -1,20 +1,21 @@
 import csv
 import sys
 
+args = sys.argv
+
 
 def main():
 
     # TODO: Check for command-line usage
     # $ python dna.py databases/large.csv sequences/5.txt
-    if len(sys.argv) != 3:
+    if len(args) != 3:
         print("Usage: python dna.py database.csv sequence.txt")
 
     # TODO: Read database file into a variable
-    with open(argv[1]) as db:
+    with open(args[1]) as db:
         reader = csv.DictReader(db)
         for row in reader:
             print(row)
-
 
     # Lookup differences between csv.reader and csv.DictReader but then what am i supposed to do
 
