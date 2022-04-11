@@ -35,8 +35,6 @@ def main():
         found_strs.append(longest_match(sequence, seq))
 
     # TODO: Check database for matching profiles
-    for str_ in found_strs:
-        str_ = str(str_)
     print(found_strs)
     for person in people:
         print(person[1:])
@@ -85,7 +83,7 @@ def longest_match(sequence, subsequence):
         longest_run = max(longest_run, count)
 
     # After checking for runs at each character in seqeuence, return longest run found
-    return longest_run
+    return str(longest_run)
 
 
 main()
