@@ -8,6 +8,7 @@ def main():
     # $ python dna.py databases/large.csv sequences/5.txt
 
     # TODO: Read database file into a variable
+    # Lookup differences between csv.reader and csv.DictReader
 
     # TODO: Read DNA sequence file into a variable
 
