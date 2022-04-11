@@ -10,6 +10,7 @@ def main():
     # $ python dna.py databases/large.csv sequences/5.txt
     if len(args) != 3:
         print("Usage: python dna.py database.csv sequence.txt")
+        quit()
 
     # TODO: Read database file into a variable
     with open(args[1]) as db:
@@ -17,9 +18,9 @@ def main():
         for row in reader:
             print(row)
 
-    # Lookup differences between csv.reader and csv.DictReader but then what am i supposed to do
-
     # TODO: Read DNA sequence file into a variable
+    with open(args[2], 'r') as dna:
+        print(dna)
 
     # TODO: Find longest match of each STR in DNA sequence
 
