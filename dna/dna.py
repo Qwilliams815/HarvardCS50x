@@ -12,21 +12,18 @@ def main():
         print("Usage: python dna.py database.csv sequence.txt")
         quit()
 
-    # TODO: Read database file into a variable
+    # TODO: Read database file and subsequences into variables
     subSequences = []
     with open(args[1]) as db:
         reader = csv.reader(db)
-        for item in reader:
-            print(item)
-            if item[0] == 'name':
-                for i in item:
-                    #subSequences.append[i]
-                    print(i)
-    print(subSequences)
+        for row in reader:
+            if row[0] == "name":
+                for item in row[1:]:
+                    subSequences.append(item)
 
-        # for row in reader:
+    # for row in reader:
 
-        #     print(row)
+    #     print(row)
 
     # TODO: Read DNA sequence file into a variable
     with open(args[2], 'r') as dna:
