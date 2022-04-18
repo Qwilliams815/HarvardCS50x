@@ -5,3 +5,4 @@ SELECT id FROM movies WHERE year = 2012;
 
 SELECT id FROM movies LIMIT 10;
 SELECT movie_id FROM ratings LIMIT 10;
+
