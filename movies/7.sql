@@ -1,2 +1,2 @@
 -- List all movies released in 2010 and their ratings, in descending order by rating. For movies with the same rating, order them alphabetically by title.
-SELECT title, rating FROM movies, ratings LIMIT 10;
+SELECT movie.title, ratings.rating FROM movies, ratings LIMIT 10;
