@@ -6,3 +6,6 @@ SELECT id FROM movies WHERE year = 2012;
 SELECT id FROM movies LIMIT 10;
 SELECT movie_id FROM ratings LIMIT 10;
 
+SELECT AVG(rating) FROM ratings JOIN ON movies.id = ratings.movie_id;
+
+sqlite> SELECT rating FROM ratings WHERE movie_id = (SELECT id FROM movies WHERE title LIKE "%Harry Potter%");
