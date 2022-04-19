@@ -4,3 +4,5 @@ SELECT name FROM movies WHERE id IN
 (SELECT id FROM people WHERE name = "Chadwick Boseman"))
 
 Movies -> rated highly -> with chadwick -> orderby rating desc -> limit 5
+
+SELECT title FROM movies WHERE id IN (SELECT movie_id FROM ratings ORDER BY rating) LIMIT 10;
