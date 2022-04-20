@@ -4,5 +4,5 @@ SELECT title FROM movies WHERE id IN (SELECT movie_id FROM stars WHERE person_id
 
 select movie_id where johnny and helena IN
 
--- Try this!
+-- Try this
 Select movie id where id = (select id of all jonny movies) = (select id's of all helans movies);
