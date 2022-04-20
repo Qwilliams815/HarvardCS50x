@@ -16,3 +16,6 @@ title from Movies where id in
     (movie_id from stars where person_id in
         (id from people where name = "Johnny Depp")
 AND
+
+SELECT movie_id FROM stars WHERE person_id IN (SELECT ID FROM people WHERE name = "Johnny Depp");
+SELECT movie_id FROM stars WHERE person_id IN (SELECT ID FROM people WHERE name = "Johnny Depp");
