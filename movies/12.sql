@@ -18,4 +18,4 @@ title from Movies where id in
 AND
 
 SELECT movie_id FROM stars WHERE person_id IN (SELECT ID FROM people WHERE name = "Johnny Depp");
-SELECT movie_id FROM stars WHERE person_id IN (SELECT ID FROM people WHERE name = "Johnny Depp");
+SELECT movie_id FROM stars WHERE person_id IN (SELECT ID FROM people WHERE name = "Helena Bonham Carter");
