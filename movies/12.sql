@@ -11,3 +11,5 @@ select movie_id where johnny and helena IN
 Select movie id where id = (select id of all jonny movies) = (select id's of all helans movies)';
 SELECT title FROM movies WHERE id IN ((SELECT ))
 -- Yikes
+
+title from Movies where id in (movie_id from stars JOIN 
