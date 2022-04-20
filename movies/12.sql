@@ -26,3 +26,7 @@ SELECT stars.movie_id FROM stars INNER JOIN stars ON
 SELECT movie_id FROM stars INNER JOIN stars ON (SELECT movie_id FROM stars WHERE person_id IN (SELECT ID FROM people WHERE name = "Johnny Depp")) = (SELECT movie_id FROM stars WHERE person_id IN (SELECT ID FROM people WHERE name = "Helena Bonham Carter"));
 
 SELECT movies.title from movies INNER JOIN stars ON movies.id = stars.movie_id WHERE movies.id IN ();
+
+Select movie id from stars where movie id in (list all movie ids of johnny depp) AND (list all movies of helena)
+
+SELECT movie_id FROM stars WHERE movie_id IN (SELECT movie_id FROM stars WHERE person_id IN (SELECT ID FROM people WHERE name = "Johnny Depp")) = (SELECT movie_id FROM stars WHERE person_id IN (SELECT ID FROM people WHERE name = "Helena Bonham Carter"));
