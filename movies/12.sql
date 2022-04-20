@@ -48,3 +48,5 @@ SELECT id FROM movies WHERE id IN
 SELECT movie_id FROM stars WHERE person_id IN (SELECT id FROM people WHERE name IN ("Johnny Depp", "Helena Bonham Carter")) ORDER BY movie_id;
 
 SELECT title FROM movies WHERE id IN (SELECT movie_id FROM stars WHERE person_id IN (SELECT id FROM people WHERE name IN ("Johnny Depp", "Helena Bonham Carter")) GROUP BY movie_id HAVING COUNT(*) > 1);
+
+SELECT title, id FROM movies WHERE title LIKE "%Lone Ranger%";
