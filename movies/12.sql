@@ -24,3 +24,5 @@ SELECT stars.movie_id FROM stars INNER JOIN stars ON
 
 
 SELECT movie_id FROM stars INNER JOIN stars ON (SELECT movie_id FROM stars WHERE person_id IN (SELECT ID FROM people WHERE name = "Johnny Depp")) = (SELECT movie_id FROM stars WHERE person_id IN (SELECT ID FROM people WHERE name = "Helena Bonham Carter"));
+
+SELECT movies.title from movies INNER JOIN stars ON movies.id = stars.movie_id LIMIT 10;
