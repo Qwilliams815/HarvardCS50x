@@ -5,5 +5,7 @@ SELECT name FROM people WHERE id IN
 (SELECT person_id FROM stars WHERE )
 
 
-SELECT count(movie_id) from STARS where person_id = (SELECT id FROM people WHERE name = "Kevin Bacon");
+SELECT name FROM people WHERE id IN (SELECT person_id FROM stars WHERE movie_id IN ((SELECT movie_id from STARS where person_id = (SELECT id FROM people WHERE name = "Kevin Bacon"))));
+
+SELECT movie_id from STARS where person_id = (SELECT id FROM people WHERE name = "Kevin Bacon");
 
