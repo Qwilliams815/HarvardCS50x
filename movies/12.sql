@@ -32,7 +32,7 @@
 
 -- SELECT title FROM movies WHERE id IN (SELECT movie_id FROM stars WHERE person_id IN (SELECT id FROM people WHERE name IN ("Johnny Depp", "Helena Bonham Carter")));
 
-SELECT COUNT(DISTINCT(movie_id)) FROM stars WHERE movie_id IN
-(SELECT movie_id FROM stars WHERE person_id = (SELECT id FROM people WHERE name = "Johnny Depp") IN
+SELECT title FROM movies WHERE id IN
+(SELECT movie_id FROM stars WHERE person_id = (SELECT id FROM people WHERE name = "Johnny Depp") AND
 (SELECT movie_id FROM stars WHERE person_id = (SELECT id FROM people WHERE name = "Helena Bonham Carter")));
 
