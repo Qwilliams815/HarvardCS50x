@@ -132,4 +132,7 @@ WHERE flight_id = 36;
 
 SELECT name, passport_number FROM people WHERE name IN ("Bruce", "Diana");
 
+-- And there we have it, since diana was not on the flight, Bruce is our thief!
+-- Now that We know who
+
 

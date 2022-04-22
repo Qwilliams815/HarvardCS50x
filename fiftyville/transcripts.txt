@@ -68,3 +68,7 @@ Witness Info
 | 430845 | Ruth    | (772) 555-5770 |                 | HZB4129       |
 | 832111 | Emma    | (329) 555-5870 | 7968707324      | 1628C65       |
 | 937274 | Raymond | (125) 555-8030 |                 | Y18DLY3       |
+
+Bruce Passenger info
+| flight_id | passport_number | seat |
+| 36        | 5773159633      | 4A   |
