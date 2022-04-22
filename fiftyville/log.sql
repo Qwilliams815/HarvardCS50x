@@ -7,6 +7,8 @@ NOTES:
             - Those 8 suspects are Vanessa, Barry, Iman, Sofia, Luca, Diana, Kelsey, Bruce
         - A total of 8 withdrawals were made on Leggett St on the day of the crim.
             - Those 8 are Kenny, Iman, Benista, Taylor, Brooke, Luca, Diana, and Bruce
+        - A total of 8 people made phone calls of < 1 min in length on the day/time of the crime.
+            - Those 8 are Kenny Sofia Benista Taylor Diana Kelsey Bruce Carina
 
     3 witnesses:
         Ruth (saw he got into a car, left the bakery parking lot 10 mins after theft).
@@ -91,7 +93,7 @@ AND year = 2021 AND month = 7 AND day = 28
 ORDER BY id;
 
 -- Find all people with those phone numbers
-SELECT name, phone_number FROM people WHERE phone_number IN (
+SELECT name FROM people WHERE phone_number IN (
 "(130) 555-0289",
 "(499) 555-9472",
 "(367) 555-5533",
