@@ -72,3 +72,8 @@ Witness Info
 Bruce Passenger info
 | flight_id | passport_number | seat |
 | 36        | 5773159633      | 4A   |
+
+Accomplice info:
+|   id   | name  |  phone_number  | passport_number | license_plate |
++--------+-------+----------------+-----------------+---------------+
+| 864400 | Robin | (375) 555-8161 |                 | 4V16VO0       |
