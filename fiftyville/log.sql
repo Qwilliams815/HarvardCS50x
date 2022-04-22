@@ -58,6 +58,9 @@ WHERE atm_location = "Leggett Street"
 AND year = 2021 AND month = 7 AND day = 28
 ORDER BY account_number;
 
+-- Find all people with those account numbers
+SELECT name from people
+
 -- Finally, Raymond heard the thief making a call to purchase a plane ticket for July 29th.
 -- The flight is described to be the earlist flight out of fiftyville tomorrow
 SELECT *
