@@ -1,22 +1,21 @@
-NOTES:
-    What we Know:
-        - theft took place on July 28, 2021 at 10:15am
-        - and that it took place on Humphrey Street at the Humphrey St Bakery.
-        - Emma (owner of the bakery)
-        - A total of 8 cars were seen leaving the bakery 10 mins after the theft.
-            - Those 8 suspects are Vanessa, Barry, Iman, Sofia, Luca, Diana, Kelsey, Bruce
-        - A total of 8 withdrawals were made on Leggett St on the day of the crim.
-            - Those 8 are Kenny, Iman, Benista, Taylor, Brooke, Luca, Diana, and Bruce
-        - A total of 8 people made phone calls of < 1 min in length on the day/time of the crime.
-            - Those 8 are Kenny Sofia, Benista, Taylor, Diana, Kelsey, Bruce, and Carina.
+-- NOTES:
 
-    3 witnesses:
-        Ruth (saw he got into a car, left the bakery parking lot 10 mins after theft).
-        Eugene (recognized him, saw him withdraw money from ATM on leggett Street).
-        Raymond (heard the theif making a phonecall, asked recipient to purchase plane ticket for July 29th, 2021).
+--     What we Know:
+--         - Theft occured on July 28, 2021 at 10:15am
+--         - Theft took place on Humphrey Street at the Humphrey St Bakery.
+--         - Emma (presumed owner of the bakery)
+--         - A total of 8 cars were seen leaving the bakery 10 mins after the theft.
+--             - Those 8 suspects are Vanessa, Barry, Iman, Sofia, Luca, Diana, Kelsey, Bruce
+--         - A total of 8 withdrawals were made on Leggett St on the day of the crime.
+--             - Those 8 are Kenny, Iman, Benista, Taylor, Brooke, Luca, Diana, and Bruce
+--         - A total of 8 people made phone calls of < 1 min in length on the day/time of the crime.
+--             - Those 8 are Kenny Sofia, Benista, Taylor, Diana, Kelsey, Bruce, and Carina.
 
-    SUSPECTS:
-    Diana (514354), Bruce (686048)
+--     3 witnesses:
+--         Ruth (saw he got into a car, left the bakery parking lot 10 mins after theft).
+--         Eugene (recognized him, saw him withdraw money from ATM on leggett Street).
+--         Raymond (heard the theif making a phonecall, asked recipient to purchase plane ticket for July 29th, 2021).
+
 
 -- Check the crime scene reports from July 28, on Humphrey St.
 SELECT description
