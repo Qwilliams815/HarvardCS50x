@@ -68,15 +68,18 @@ SELECT
     name,
     id
 FROM people
-WHERE id IN (SELECT person_id FROM bank_accounts WHERE account_number IN (
+WHERE id IN (
+    SELECT person_id
+    FROM bank_accounts
+    WHERE account_number IN (
     16153065,
-25506511,
-26013199,
-28296815,
-28500762,
-49610011,
-76054385,
-81061156
+    25506511,
+    26013199,
+    28296815,
+    28500762,
+    49610011,
+    76054385,
+    81061156
 ));
 
 -- Finally, Raymond heard the thief making a call to purchase a plane ticket for July 29th.
