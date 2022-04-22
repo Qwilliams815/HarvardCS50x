@@ -23,7 +23,7 @@ FROM crime_scene_reports
 WHERE street = "Humphrey Street"
 AND year = 2021 AND month = 7 AND day = 28;
 
--- Check eye-witness reviews
+-- Check eye-witness transcripts.
 SELECT
     name,
     transcript
