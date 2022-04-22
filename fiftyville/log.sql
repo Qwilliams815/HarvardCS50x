@@ -90,6 +90,9 @@ WHERE duration < 60
 AND year = 2021 AND month = 7 AND day = 28
 ORDER BY id;
 
+-- Find all people with those phone numbers
+SELECT 
+
 -- The flight is described to be the earlist flight out of fiftyville tomorrow
 SELECT *
 FROM flights
