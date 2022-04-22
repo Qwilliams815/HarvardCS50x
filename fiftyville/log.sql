@@ -38,6 +38,8 @@ SELECT
     license_plate
 FROM bakery_security_logs
 WHERE hour = 10
+AND minute > 15
+AND minute < 26
 AND year = 2021 AND month = 7 AND day = 28;
 
 --Find people with those licsense plates
