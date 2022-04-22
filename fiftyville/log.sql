@@ -59,7 +59,18 @@ AND year = 2021 AND month = 7 AND day = 28
 ORDER BY account_number;
 
 -- Find all people with those account numbers
-SELECT name from people
+SELECT name
+FROM people
+WHERE id IN (SELECT person_id FROM bank_accounts WHERE account_number IN (
+    16153065,
+25506511,
+26013199,
+28296815,
+28500762,
+49610011,
+76054385,
+81061156
+));
 
 -- Finally, Raymond heard the thief making a call to purchase a plane ticket for July 29th.
 -- The flight is described to be the earlist flight out of fiftyville tomorrow
