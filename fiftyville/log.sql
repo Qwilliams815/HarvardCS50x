@@ -7,9 +7,9 @@ NOTES:
             - Those 8 suspects are Vanessa, Barry, Iman, Sofia, Luca, Diana, Kelsey, Bruce
 
     3 witnesses:
-        Ruth (saw he got into a car)
-        Eugene (recognized him, saw him withdraw money from ATM on leggett ST)
-        Raymond (heard the theif making a phonecall, asked recipient to purchase plane ticket for July 29th, 2021)
+        Ruth (saw he got into a car, left the bakery parking lot 10 mins after theft).
+        Eugene (recognized him, saw him withdraw money from ATM on leggett Street).
+        Raymond (heard the theif making a phonecall, asked recipient to purchase plane ticket for July 29th, 2021).
 
 -- Check the crime scene reports from July 28, on Humphrey St.
 SELECT description
