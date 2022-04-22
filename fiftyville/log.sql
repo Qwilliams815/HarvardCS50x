@@ -8,7 +8,7 @@ NOTES:
         - A total of 8 withdrawals were made on Leggett St on the day of the crim.
             - Those 8 are Kenny, Iman, Benista, Taylor, Brooke, Luca, Diana, and Bruce
         - A total of 8 people made phone calls of < 1 min in length on the day/time of the crime.
-            - Those 8 are Kenny Sofia Benista Taylor Diana Kelsey Bruce Carina
+            - Those 8 are Kenny, Sofia, Benista, Taylor, Diana, Kelsey, Bruce, and Carina.
 
     3 witnesses:
         Ruth (saw he got into a car, left the bakery parking lot 10 mins after theft).
@@ -16,7 +16,7 @@ NOTES:
         Raymond (heard the theif making a phonecall, asked recipient to purchase plane ticket for July 29th, 2021).
 
     SUSPECTS:
-    Iman, Luca, Diana, Bruce (396669, 467400, 514354, 686048)
+    Diana, Bruce (396669, 467400, 514354, 686048)
 
 -- Check the crime scene reports from July 28, on Humphrey St.
 SELECT description
