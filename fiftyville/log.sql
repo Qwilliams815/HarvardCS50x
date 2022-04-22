@@ -14,7 +14,7 @@ NOTES:
         Raymond (heard the theif making a phonecall, asked recipient to purchase plane ticket for July 29th, 2021).
 
     SUSPECTS:
-    Iman, Luca, Diana, Bruce
+    Iman, Luca, Diana, Bruce (396669, 467400, 514354, 686048)
 
 -- Check the crime scene reports from July 28, on Humphrey St.
 SELECT description
@@ -64,7 +64,9 @@ AND year = 2021 AND month = 7 AND day = 28
 ORDER BY account_number;
 
 -- Find all people with those account numbers
-SELECT name
+SELECT
+    name,
+    id
 FROM people
 WHERE id IN (SELECT person_id FROM bank_accounts WHERE account_number IN (
     16153065,
