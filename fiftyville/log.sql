@@ -62,27 +62,27 @@ SELECT
     transaction_type
 FROM atm_transactions
 WHERE atm_location = "Leggett Street"
-AND year = 2021 AND month = 7 AND day = 28
-ORDER BY account_number;
+AND transaction_type = "withdraw"
+AND year = 2021 AND month = 7 AND day = 28;
 
 -- Find all people with those account numbers
 SELECT
     name,
     id
 FROM people
-WHERE id IN (
+WHERE id IN
+(
     SELECT person_id
     FROM bank_accounts
-    WHERE account_number IN (
-    16153065,
-    25506511,
-    26013199,
-    28296815,
-    28500762,
-    49610011,
-    76054385,
-    81061156
-));
+    WHERE account_number IN
+    (
+        SELECT account_number
+        FROM atm_transactions
+        WHERE atm_location = "Leggett Street"
+        AND transaction_type = "withdraw"
+        AND year = 2021 AND month = 7 AND day = 28
+    )
+);
 
 -- Finally, Raymond heard the thief making a call to purchase a plane ticket for July 29th.
 -- The flight is described to be the earlist flight out of fiftyville tomorrow
