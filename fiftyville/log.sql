@@ -16,7 +16,7 @@ NOTES:
         Raymond (heard the theif making a phonecall, asked recipient to purchase plane ticket for July 29th, 2021).
 
     SUSPECTS:
-    Diana, Bruce (396669, 467400, 514354, 686048)
+    Diana (514354), Bruce (686048)
 
 -- Check the crime scene reports from July 28, on Humphrey St.
 SELECT description
