@@ -124,5 +124,12 @@ SELECT
 FROM airports
 WHERE id = 4;
 
--- At this point we know the remaining suspects are Bruce and Diana, check their passport ids
+-- At this point we know the remaining suspects are Bruce and Diana,
+-- List the flights passenger passport numbers against theirs.
+SELECT *
+FROM passengers
+WHERE flight_id = 36;
+
+SELECT name, passport_number FROM people WHERE name IN ("Bruce", "Diana");
+
 
