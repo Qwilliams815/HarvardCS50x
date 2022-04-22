@@ -14,7 +14,7 @@ NOTES:
         Raymond (heard the theif making a phonecall, asked recipient to purchase plane ticket for July 29th, 2021).
 
     SUSPECTS:
-    Iman, 
+    Iman, Luca, Diana, Bruce
 
 -- Check the crime scene reports from July 28, on Humphrey St.
 SELECT description
