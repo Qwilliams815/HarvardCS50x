@@ -20,8 +20,8 @@
 -- Check the crime scene reports from July 28, on Humphrey St.
 SELECT description
 FROM crime_scene_reports
-WHERE year = 2021
-AND street = "Humphrey Street";
+WHERE street = "Humphrey Street"
+AND year = 2021 AND month = 7 AND day = 28;
 
 -- Check eye-witness reviews
 SELECT
