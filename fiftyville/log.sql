@@ -123,3 +123,6 @@ SELECT
     city
 FROM airports
 WHERE id = 4;
+
+-- At this point we know the remaining suspects are Bruce and Diana, check their passport ids
+
