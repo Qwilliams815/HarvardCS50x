@@ -125,19 +125,20 @@ WHERE id = 4;
 
 -- At this point we know the remaining suspects are Bruce and Diana,
 -- List the flights passenger passport numbers against theirs.
-SELECT *
+SELECT passengers.*, people.name
 FROM passengers
-WHERE flight_id = 36
-and passport_number IN
+JOIN people
+ON passengers.passport_number = people.passport_number
+WHERE passengers.flight_id = 36
+AND passengers.passport_number IN
     (
         SELECT passport_number
         FROM people
         WHERE name IN ("Bruce", "Diane")
     );
 
-SELECT name, passport_number FROM people WHERE name IN ("Bruce", "Diana");
-
 -- And there we have it, since diana was not on the flight, Bruce is our thief!
--- Now that We know who
+-- Now that We know that Bruce was the theif, we can look up who recieved his phonecall to identify the accomplice.
 
+SELECT 
 
