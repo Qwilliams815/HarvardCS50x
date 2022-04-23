@@ -127,7 +127,13 @@ WHERE id = 4;
 -- List the flights passenger passport numbers against theirs.
 SELECT *
 FROM passengers
-WHERE flight_id = 36;
+WHERE flight_id = 36
+and passport_number IN
+    (
+        SELECT passport_number
+        FROM people
+        WHERE name IN ("Bruce", "Diane")
+    );
 
 SELECT name, passport_number FROM people WHERE name IN ("Bruce", "Diana");
 
