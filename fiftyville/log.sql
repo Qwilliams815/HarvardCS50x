@@ -1,14 +1,14 @@
 -- NOTES:
 
---     3 witnesses:
---         Ruth (saw he got into a car, left the bakery parking lot 10 mins after theft).
---         Eugene (recognized him, saw him withdraw money from ATM on leggett Street).
---         Raymond (heard the theif making a phonecall, asked recipient to purchase plane ticket for July 29th, 2021).
+--     3 Witnesses:
+--         Ruth (saw thief get into a car, left the bakery parking lot 10 mins after theft).
+--         Eugene (recognized thief, saw him withdraw money from ATM on leggett Street).
+--         Raymond (heard the thief making a phonecall, asked recipient to purchase plane ticket for July 29th, 2021).
 
---     What we Know:
---         - Theft occured on July 28, 2021 at 10:15am
+--     What We Know:
+--         - Theft occured on July 28, 2021 at 10:15am.
 --         - Theft took place on Humphrey Street at the Humphrey St Bakery.
---         - Emma (presumed owner of the bakery)
+--         - Emma (presumed owner of the bakery).
 --         - A total of 8 cars were seen leaving the bakery 10 mins after the theft.
 --             - Those 8 suspects are Vanessa, Barry, Iman, Sofia, Luca, Diana, Kelsey, Bruce
 --         - A total of 8 withdrawals were made on Leggett St on the day of the crime.
@@ -138,15 +138,19 @@ AND passengers.passport_number IN
     );
 
 -- And there we have it, since diana was not on the flight, Bruce is our thief!
--- Now that We know that Bruce was the theif, we can look up who recieved his phonecall to identify the accomplice.
-
-SELECT *
-FROM phone_calls
-WHERE duration < 60
-AND year = 2021 AND month = 7 AND day = 28
-AND caller =
-(
-    SELECT phone_number
-    FROM people
-    WHERE name = "Bruce";
-);
+-- Now that We know that Bruce was the theif, we can look up who recieved his phonecall to identify the accomplice (Robin).
+SELECT name
+FROM people
+WHERE phone_number =
+    (
+        SELECT receiver
+        FROM phone_calls
+        WHERE duration < 60
+        AND year = 2021 AND month = 7 AND day = 28
+        AND caller =
+        (
+            SELECT phone_number
+            FROM people
+            WHERE name = "Bruce"
+        )
+    );
