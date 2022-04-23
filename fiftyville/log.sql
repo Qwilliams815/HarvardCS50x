@@ -123,7 +123,7 @@ FROM airports
 WHERE id = 4;
 
 -- At this point we know the remaining suspects are Bruce and Diana,
--- List the flights passenger passport numbers against theirs.
+-- Search for Diana or Bruce's passport_numbers from the passengers table for the earliest flight out of Fiftyville.
 SELECT passengers.*, people.name
 FROM passengers
 JOIN people
@@ -136,7 +136,7 @@ AND passengers.passport_number IN
         WHERE name IN ("Bruce", "Diane")
     );
 
--- And there we have it, since diana was not on the flight, Bruce is our thief!
+-- And there we have it, since Diana was not on the flight, Bruce is our thief!
 -- Now that We know that Bruce was the theif, we can look up who recieved his phonecall to identify the accomplice (Robin).
 SELECT name
 FROM people
