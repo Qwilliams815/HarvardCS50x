@@ -93,16 +93,15 @@ AND year = 2021 AND month = 7 AND day = 28
 ORDER BY id;
 
 -- Find all people with those phone numbers
-SELECT name FROM people WHERE phone_number IN (
-"(130) 555-0289",
-"(499) 555-9472",
-"(367) 555-5533",
-"(499) 555-9472",
-"(286) 555-6063",
-"(770) 555-1861",
-"(031) 555-6622",
-"(826) 555-1652",
-"(338) 555-6650"
+SELECT name
+FROM people
+WHERE phone_number IN
+(
+    SELECT caller
+    FROM phone_calls
+    WHERE duration < 60
+    AND year = 2021 AND month = 7 AND day = 28
+    ORDER BY id
 );
 
 -- The flight is described to be the earlist flight out of fiftyville tomorrow
