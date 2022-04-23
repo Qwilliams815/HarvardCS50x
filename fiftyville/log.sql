@@ -14,7 +14,7 @@
 --         - A total of 8 withdrawals were made on Leggett St on the day of the crime.
 --             - Those 8 are Kenny, Iman, Benista, Taylor, Brooke, Luca, Diana, and Bruce
 --         - A total of 8 people made phone calls of < 1 min in length on the day/time of the crime.
---             - Those 8 are Kenny Sofia, Benista, Taylor, Diana, Kelsey, Bruce, and Carina.
+--             - Those 8 are Kenny, Sofia, Benista, Taylor, Diana, Kelsey, Bruce, and Carina.
 
 
 -- Check the crime scene reports from July 28, on Humphrey St.
@@ -30,7 +30,7 @@ SELECT
 FROM interviews
 WHERE year = 2021 AND month = 7 AND day = 28;
 
--- Ruth recommends checking the bakery parking lot security logs
+-- Ruth recommends checking the bakery parking lot security logs.
 SELECT
     hour,
     minute,
@@ -42,7 +42,7 @@ AND minute > 15
 AND minute < 26
 AND year = 2021 AND month = 7 AND day = 28;
 
---Find people with those licsense plates
+-- Find people with those licsense plates.
 SELECT name
 FROM people
 WHERE license_plate IN
@@ -55,7 +55,7 @@ WHERE license_plate IN
         AND year = 2021 AND month = 7 AND day = 28
     );
 
--- Eugene recommends checking ATM withdrawal logs on Leggett Street
+-- Eugene recommends checking ATM withdrawal logs on Leggett Street.
 SELECT
     account_number,
     amount,
@@ -65,7 +65,7 @@ WHERE atm_location = "Leggett Street"
 AND transaction_type = "withdraw"
 AND year = 2021 AND month = 7 AND day = 28;
 
--- Find all people with those account numbers
+-- Find all people with those account numbers.
 SELECT
     name,
     id
@@ -85,7 +85,6 @@ WHERE id IN
 );
 
 -- Finally, Raymond heard the thief making a call to purchase a plane ticket for July 29th.
--- The flight is described to be the earlist flight out of fiftyville tomorrow
 SELECT *
 FROM phone_calls
 WHERE duration < 60
