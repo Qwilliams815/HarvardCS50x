@@ -140,5 +140,13 @@ AND passengers.passport_number IN
 -- And there we have it, since diana was not on the flight, Bruce is our thief!
 -- Now that We know that Bruce was the theif, we can look up who recieved his phonecall to identify the accomplice.
 
-SELECT 
-
+SELECT *
+FROM phone_calls
+WHERE duration < 60
+AND year = 2021 AND month = 7 AND day = 28
+AND caller =
+(
+    SELECT phone_number
+    FROM people
+    WHERE name = "Bruce";
+);
