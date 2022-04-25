@@ -6,4 +6,3 @@ function incorrect_answer() {
 
 }
 
-fuun
