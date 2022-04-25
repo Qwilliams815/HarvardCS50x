@@ -38,10 +38,15 @@ h1 {
 }
 
 .popup {
-    visibility: ;
+    display: none;
 }
 
-button, input[type="submit"] {
+.show_popup {
+    display: inline;
+}
+
+button,
+input[type="submit"] {
     background-color: #d9edff;
     border: 1px solid transparent;
     border-radius: 0.25rem;
