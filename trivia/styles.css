@@ -45,6 +45,9 @@ h1 {
     display: inline;
 }
 
+button:hover {
+    background: blue;
+}
 
 button,
 input[type="submit"] {
