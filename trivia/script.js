@@ -1,11 +1,12 @@
 function correct_answer() {
-    const correct_text = document.queryselector('.correct');
+    const correct_text = document.querySelector('.correct');
     correct_text.style.backgroundColor = 'green';
+    console.log("hello world");
 };
 
-function incorrect_answer() {
-    const incorrect_correct_text = document.queryselector('.incorrect');
-    correct_text.style.backgroundColor = 'red';
+function wrong_answer() {
+    const wrong_text = document.querySelector('.incorrect');
+    wrong_text.style.backgroundColor = 'red';
 
 }
 
