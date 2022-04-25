@@ -59,10 +59,6 @@ input[type="submit"] {
     vertical-align: middle;
 }
 
-.correct_popup_color {
-    background: green;
-}
-
 input[type="text"] {
     line-height: 1.8;
     width: 25%;
