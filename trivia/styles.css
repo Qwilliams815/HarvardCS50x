@@ -45,8 +45,8 @@ h1 {
     display: inline;
 }
 
-button:hover {
-    background: blue;
+.correct_popup_color {
+    background: green;
 }
 
 button,
