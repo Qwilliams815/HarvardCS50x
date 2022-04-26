@@ -4,6 +4,9 @@ const wrong_answer_2 = document.querySelector('.wrong_2');
 const correct_answer = document.querySelector('.correct');
 const popup_text = document.querySelector('.popup_text');
 
+const input_field = document.querySelector('.free_response_input');
+const submit_btn = document.querySelector('.submit_button');
+
 wrong_answer_1.addEventListener('click', function() {
     wrong_answer_1.style.backgroundColor = 'red';
     popup_text.innerHTML = "Incorrect";
