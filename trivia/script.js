@@ -6,6 +6,7 @@ const popup_text = document.querySelector('.popup_text');
 
 const input_field = document.querySelector('.free_response_input');
 const submit_btn = document.querySelector('.submit_button');
+const popup_text_2 = document.querySelector('.popup_text_2');
 
 const text_answer = "brian";
 
@@ -28,7 +29,9 @@ correct_answer.addEventListener('click', function() {
 submit_btn.addEventListener('click', function() {
     if (input_field.value.toLowerCase() == text_answer) {
         input_field.style.backgroundColor = 'green';
+        popup_text_2.innerHTML = "Correct!";
     } else {
         input_field.style.backgroundColor = 'red';
+        popup_text_2.innerHTML = "Incorrect";
     }
 })
