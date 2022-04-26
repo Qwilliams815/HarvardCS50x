@@ -18,7 +18,7 @@ wrong_answer_1.addEventListener('click', function() {
 })
 
 wrong_answer_2.addEventListener('click', function() {
-    wrong_answer_1.style.backgroundColor = 'red';
+    wrong_answer_2.style.backgroundColor = 'red';
 })
 
 correct_answer.addEventListener('click', function() {
