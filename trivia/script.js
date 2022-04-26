@@ -10,6 +10,7 @@
 // }
 const correct_text = document.querySelector('.correct_popup');
 const wrong_text = document.querySelector('.incorrect_popup');
+let text_status = false;
 
 const wrong_answer_1 = document.querySelector('.wrong_1');
 const wrong_answer_2 = document.querySelector('.wrong_2');
