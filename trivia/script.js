@@ -7,6 +7,5 @@ function correct_answer() {
 function wrong_answer() {
     const wrong_text = document.querySelector('.wrong');
     wrong_text.style.backgroundColor = 'red';
-
 }
 
