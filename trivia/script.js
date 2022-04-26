@@ -26,7 +26,7 @@ correct_answer.addEventListener('click', function() {
 
 
 submit_btn.addEventListener('click', function() {
-    if (input_field.value.toLower = text_answer) {
+    if (input_field.value.toLowerCase() == text_answer) {
         input_field.style.backgroundColor = 'green';
     } else {
         input_field.style.backgroundColor = 'red';
