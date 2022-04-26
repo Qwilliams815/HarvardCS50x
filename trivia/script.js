@@ -19,7 +19,6 @@ wrong_answer_1.addEventListener('click', function() {
     wrong_answer_1.style.backgroundColor = 'red';
     wrong_text.classList.add('show_popup');
     correct_text.classList.remove('show_popup');
-
 })
 
 wrong_answer_2.addEventListener('click', function() {
