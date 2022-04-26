@@ -7,7 +7,6 @@ const popup_text = document.querySelector('.popup_text');
 const input_field = document.querySelector('.free_response_input');
 const submit_btn = document.querySelector('.submit_button');
 const popup_text_2 = document.querySelector('.popup_text_2');
-
 const text_answer = "brian";
 
 wrong_answer_1.addEventListener('click', function() {
