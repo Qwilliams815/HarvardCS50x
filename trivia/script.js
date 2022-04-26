@@ -7,6 +7,8 @@ const popup_text = document.querySelector('.popup_text');
 const input_field = document.querySelector('.free_response_input');
 const submit_btn = document.querySelector('.submit_button');
 
+const text_answer = "brian";
+
 wrong_answer_1.addEventListener('click', function() {
     wrong_answer_1.style.backgroundColor = 'red';
     popup_text.innerHTML = "Incorrect";
@@ -23,3 +25,10 @@ correct_answer.addEventListener('click', function() {
 })
 
 
+submit_btn.addEventListener('click', function() {
+    if (input_field.value.toLower = text_answer) {
+        input_field.style.backgroundColor = 'green';
+    } else {
+        input_field.style.backgroundColor = 'red';
+    }
+})
