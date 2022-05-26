@@ -4,7 +4,7 @@ const modalXBtn = document.querySelector(".x-btn");
 const signInBtn = document.querySelector(".profile-btn");
 let profileName = document.querySelector(".profile-btn");
 const modalSubmitBtn = document.querySelector(".submit");
-const usernameInput =  document.querySelector("#username");
+const usernameInput = document.querySelector("#username");
 const passwordInput = document.querySelector("#password");
 
 if (localStorage.getItem("ProfileName")) {
