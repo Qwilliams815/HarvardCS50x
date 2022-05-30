@@ -27,6 +27,7 @@ def index():
     if request.method == "POST":
 
         # TODO: Add the user's entry into the database UPDATE TABLE
+        new_birthday_id = len(db.execute("SELECT * FROM birthdays")) + 1
         new_birthday_name = request.form["name"]
         new_birthday_month = request.form["month"]
         new_birthday_day = request.form["day"]
