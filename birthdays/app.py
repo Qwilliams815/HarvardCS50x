@@ -23,13 +23,13 @@ def after_request(response):
 
 
 @app.route("/", methods=["GET", "POST"])
-
 def index():
     if request.method == "POST":
 
         # TODO: Add the user's entry into the database UPDATE TABLE
         # Figure out how to connect form submit button to db
         new_birthday = request.form.get("")
+        print("I just submitted info")
         return redirect("/")
 
     else:
