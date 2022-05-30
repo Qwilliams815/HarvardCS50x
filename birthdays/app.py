@@ -23,15 +23,17 @@ def after_request(response):
 
 
 @app.route("/", methods=["GET", "POST"])
+
 def index():
     if request.method == "POST":
 
-        # TODO: Add the user's entry into the database
-
+        # TODO: Add the user's entry into the database UPDATE TABLE
+        # Figure out how to connect form submit button to db
+        new_birthday = request.form.get("")
         return redirect("/")
 
     else:
 
-        # TODO: Display the entries in the database on index.html
-
-        return render_template("index.html")
+        # TODO: Display the entries in the database on index.html SHOW TABLE
+        birthdays = db.execute("SELECT * FROM birthdays")
+        return render_template("index.html", birthdays=birthdays)
