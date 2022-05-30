@@ -27,9 +27,9 @@ def index():
     if request.method == "POST":
 
         # TODO: Add the user's entry into the database UPDATE TABLE
-        new_birthday_name = request.form.["name"]
-        new_birthday_month = request.form.["month"]
-        new_birthday_day = request.form.["day"]
+        new_birthday_name = request.form["name"]
+        new_birthday_month = request.form["month"]
+        new_birthday_day = request.form["day"]
         print("I just submitted info")
         return redirect("/")
 
