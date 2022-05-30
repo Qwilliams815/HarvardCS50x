@@ -33,7 +33,7 @@ def index():
         new_birthday_day = request.form["day"]
         print("I just submitted info")
 
-        db.execute("INSERT INTO birthdays (id, name, month, day))
+        db.execute("INSERT INTO birthdays (id, name, month, day) VALUES(?, ?, ?, ?)", new_birthday_id, new_birthday_name, new_birthday_month, new_birthday_day)
 
         return redirect("/")
 
