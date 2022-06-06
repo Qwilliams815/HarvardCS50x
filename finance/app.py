@@ -133,6 +133,7 @@ def register():
 
         else:
             generate_password_hash(request.form.get("password"))
+            
 
         # Query database for username
         rows = db.execute("SELECT * FROM users WHERE username = ?",
