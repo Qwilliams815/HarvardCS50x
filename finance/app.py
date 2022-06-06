@@ -131,6 +131,9 @@ def register():
         elif not request.form.get("confirm-password") or request.form.get("confirm-password") != request.form.get("password"):
             return apology("Password confirmation must match Password")
 
+        else:
+            generate_password_hash()
+
         # Query database for username
         rows = db.execute("SELECT * FROM users WHERE username = ?",
                           request.form.get("username"))
