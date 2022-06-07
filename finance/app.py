@@ -135,7 +135,11 @@ def register():
             id = len(db)
 
             # Add user to user database
-            db.execute(f"INSERT INTO users (id, username, hash) VALUES ({id}, {request.form.get("username")}, {generate_password_hash(request.form.get("password"))})")
+            db.execute(f"INSERT INTO users (id, username, hash) VALUES (
+                {id},
+                {request.form.get("username")},
+                {generate_password_hash(request.form.get("password"))}
+                )")
 
 
     #     # Query database for username
