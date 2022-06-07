@@ -153,8 +153,8 @@ def register():
     #     # Redirect user to home page
     #     return redirect("/")
 
-    # else:
-    #     return render_template("register.html")
+    else:
+        return render_template("register.html")
 
 
 @app.route("/sell", methods=["GET", "POST"])
