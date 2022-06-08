@@ -132,6 +132,7 @@ def register():
             return apology("Password confirmation must match Password")
 
         else:
+            #i have no idea
             #id = len(db)
 
             # Add user to user database
