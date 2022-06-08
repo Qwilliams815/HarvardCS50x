@@ -135,24 +135,18 @@ def register():
             #id = len(db)
 
             # Add user to user database
-            # db.execute(f"INSERT INTO users (id, username, hash) VALUES ({id}, {request.form.get("username")}, {generate_password_hash(request.form.get("password"))})")
             db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", request.form.get("username"), generate_password_hash(request.form.get("password")))
-            print(db)
 
 
 
-    #     # Query database for username
-    #     rows = db.execute("SELECT * FROM users WHERE username = ?",
-    #                       request.form.get("username"))
+        # Query database for username
+        rows = db.execute("SELECT * FROM users WHERE username = ?",
+                      request.form.get("username"))
 
-    #     # Ensure username exists and password is correct
-    #     if len(rows) != 1 or not check_password_hash(rows[0]["hash"], request.form.get("password")):
-    #         return apology("invalid username and/or password", 403)
+        # Remember which user has logged in
+        session["user_id"] = rows[0]["id"]
 
-    #     # Remember which user has logged in
-    #     session["user_id"] = rows[0]["id"]
-
-    #     # Redirect user to home page
+        # Redirect user to home page
         return redirect("/")
 
     else:
