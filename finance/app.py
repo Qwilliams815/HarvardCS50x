@@ -132,24 +132,22 @@ def register():
             return apology("Password confirmation must match Password")
 
         else:
-            #id = len(db)
 
             # Add user to user database
             db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", request.form.get("username"), generate_password_hash(request.form.get("password")))
 
+            # Query database for username
+            rows = db.execute("SELECT * FROM users WHERE username = ?",
+                          request.form.get("username"))
 
+            # Remember which user has logged in
+            session["user_id"] = rows[0]["id"]
 
-        # Query database for username
-        rows = db.execute("SELECT * FROM users WHERE username = ?",
-                      request.form.get("username"))
-
-        # Remember which user has logged in
-        session["user_id"] = rows[0]["id"]
-
-        # Redirect user to home page
-        return redirect("/")
+            # Redirect user to home page
+            return redirect("/")
 
     else:
+        # Show register page
         return render_template("register.html")
 
 
