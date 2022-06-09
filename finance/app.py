@@ -136,6 +136,8 @@ def register():
         elif not request.form.get("confirm-password") or request.form.get("confirm-password") != request.form.get("password"):
             return apology("Password confirmation must match Password")
 
+        elif request.form.get("username") in 
+
         else:
 
             # Add user to user database
