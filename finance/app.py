@@ -169,4 +169,4 @@ def register():
 def sell():
     """Sell shares of stock"""
     return apology("TODO")
-    #please dont timeout
+    #Thank you for not timing out
