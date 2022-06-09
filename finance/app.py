@@ -136,7 +136,9 @@ def register():
         elif not request.form.get("confirm-password") or request.form.get("confirm-password") != request.form.get("password"):
             return apology("Password confirmation must match Password")
 
-        elif request.form.get("username") in db.exectute("SELECT * FROM )
+        # Esure unique username
+        elif request.form.get("username") in db.execute("SELECT username FROM users"):
+            return apology("Username already taken")
 
         else:
 
