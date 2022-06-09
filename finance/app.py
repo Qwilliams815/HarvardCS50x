@@ -138,13 +138,16 @@ def register():
 
         # Ensure password confirmation was submitted and a match
         elif not request.form.get("confirm-password") or request.form.get("confirm-password") != request.form.get("password"):
-            return apology("Password confirmation must match Password")
+            return apology("Password confirmation must match Password", 403)
 
 
         else:
 
             # Add user to user database
-            db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", request.form.get("username"), generate_password_hash(request.form.get("password")))
+            try:
+                db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", request.form.get("username"), generate_password_hash(request.form.get("password")))
+            except:
+                return apology("Username already in use", 500)
 
             # Query database for username
             rows = db.execute("SELECT * FROM users WHERE username = ?",
