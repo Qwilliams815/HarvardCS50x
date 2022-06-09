@@ -6,6 +6,6 @@
 
 {% block main %}
     <h1 class="m-5 text-primary">Quoted</h1>
-    <h3>{{ quote }}</h3>
+    <h3>The price of 1 share of {{ quote['name'] }} is {{ quote['price'] | usd }}</h3>
     <a href="/quote" class="m-5"><p>Get another Quote</p></a>
 {% endblock %}
