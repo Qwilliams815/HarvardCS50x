@@ -116,7 +116,10 @@ def quote():
 
     if request.method == "POST":
         quote = lookup(request.form.get("quote"))
-        return render_template("quoted.html", quote=quote)
+        if quote != None:
+            return render_template("quoted.html", quote=quote)
+        else:
+            return apology("invalid stock symbol", 403)
     else:
         return render_template("quote.html")
 
