@@ -63,7 +63,7 @@ def history():
 @app.route("/login", methods=["GET", "POST"])
 def login():
     """Log user in"""
-    #test yet another test, wouldnt you believe it; another test                                             
+    #test yet another test, wouldnt you believe it; another test
 
     # Forget any user_id
     session.clear()
@@ -117,7 +117,7 @@ def quote():
     if request.method == "POST":
         pass
     else:
-        return apology("quote.html")
+        return render_template("quote.html")
 
 
 @app.route("/register", methods=["GET", "POST"])
