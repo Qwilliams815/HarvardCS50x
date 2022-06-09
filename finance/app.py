@@ -116,7 +116,7 @@ def quote():
 
     if request.method == "POST":
         lookup(request.form.get("quote"))
-        #redirect to quoted.html with quote=lookup(request.form.get("quote"))
+        return redirect("/quoted", value=lookup(request.form.get("quote"))
     else:
         return render_template("quote.html")
 
