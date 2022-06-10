@@ -51,7 +51,13 @@ def index():
 def buy():
     """Buy shares of stock"""
     if request.method == "POST":
-        return render_template("buy.html")
+        # Ensure username was submitted
+        if not request.form.get("symbol"):
+            return apology("must provide username", 403)
+
+        # Ensure password was submitted
+        elif not request.form.get("password"):
+            return apology("must provide password", 403)
     else:
         return render_template("buy.html")
 
