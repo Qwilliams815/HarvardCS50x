@@ -52,15 +52,23 @@ def buy():
     """Buy shares of stock"""
 
     if request.method == "POST":
-        # Ensure username was submitted
-        if not request.form.get("symbol"):
+
+        symbol = lookup(request.form.get("symbol"))
+        shares = request.form.get("shares")
+
+        # Ensure valid symbol was submitted
+        if not symbol or symbol == None:
             return apology("Invalid Symbol", 403)
 
-        # Ensure password was submitted
-        elif not request.form.get("shares"):
+        # Ensure valid # of shares
+        elif not shares or shares < 0:
             return apology("Invalid Shares Amount", 403)
 
-        elif request.form.get("shares") < 0 or #cant be negative or whatever
+        else:
+            #create new table if it doesnt exist yet
+            # check if users cash amount - (amount of shares X cost) is negative, if so, throw error.
+            # else, subtract purchased amount from cash amount and update users table
+
     else:
         return render_template("buy.html")
 
