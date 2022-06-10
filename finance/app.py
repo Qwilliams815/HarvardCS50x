@@ -126,11 +126,8 @@ def quote():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
-
-    print("TESTING")
-    print(db.execute("SELECT username FROM users"))
-
     """Register user"""
+    
     if request.method == "POST":
         # Ensure username was submitted
         if not request.form.get("username"):
