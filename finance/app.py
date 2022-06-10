@@ -43,6 +43,7 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
+    # if no portfolio table, create one
     return apology("TODO")
 
 
@@ -65,11 +66,10 @@ def buy():
             return apology("Invalid Shares Amount", 403)
 
         else:
-            #create new table if it doesnt exist yet
             # check if users cash amount - (amount of shares X cost) is negative, if so, throw error.
             # else, subtract purchased amount from cash amount and update users table
             # new table needs symbol, stock name, # of shares, price per share, total spent so far. display cash and purchaseing power at top.
-            
+
 
     else:
         return render_template("buy.html")
