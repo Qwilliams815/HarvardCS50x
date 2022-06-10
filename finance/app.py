@@ -57,7 +57,11 @@ def buy():
 @login_required
 def history():
     """Show history of transactions"""
-    return apology("TODO")
+
+    if request.method == "POST":
+        pass
+    else:
+        return apology("TODO")
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -127,7 +131,7 @@ def quote():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     """Register user"""
-    
+
     if request.method == "POST":
         # Ensure username was submitted
         if not request.form.get("username"):
