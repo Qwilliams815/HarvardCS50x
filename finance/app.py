@@ -68,7 +68,8 @@ def buy():
             #create new table if it doesnt exist yet
             # check if users cash amount - (amount of shares X cost) is negative, if so, throw error.
             # else, subtract purchased amount from cash amount and update users table
-            # new table needs stock name, shares, total spent so far.
+            # new table needs symbol, stock name, # of shares, price per share, total spent so far. display cash and purchaseing power at top.
+            
 
     else:
         return render_template("buy.html")
