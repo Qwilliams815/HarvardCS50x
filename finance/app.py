@@ -44,7 +44,10 @@ def after_request(response):
 def index():
     """Show portfolio of stocks"""
     # if no portfolio table, create one
-    return apology("TODO Home")
+    if request.method == "POST":
+        pass
+    else:
+        return render_template("index.html")
 
 
 @app.route("/buy", methods=["GET", "POST"])
