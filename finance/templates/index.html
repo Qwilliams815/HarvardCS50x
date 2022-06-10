@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block main %}
-    <h1 class="m-5 text-primary">Portfolio</h1>
+    <h1 class="m-3 text-primary">Portfolio</h1>
     <h2>Purchase Power: </h2>
     <h2>Cash: </h2>
     <table class="table table-striped">
@@ -14,5 +14,16 @@
         <th>Shares</th>
         <th>Price</th>
         <th>Total</th>
+
+        <!-- for each row in finance.portfolio:
+            <tr>
+                <td>table[symbol]</td>
+                <td>table[name]</td>
+                <td>table[shares]</td>
+                <td>table[price]</td>
+                <td>table[total]</td>
+            </tr>
+        end for -->
+
     </table>
 {% endblock %}
