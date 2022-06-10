@@ -60,7 +60,7 @@ def buy():
         elif not request.form.get("shares"):
             return apology("Invalid Shares Amount", 403)
 
-        elif request.form.get("shares") < 0 or 
+        elif request.form.get("shares") < 0 or #cant be negative or whatever
     else:
         return render_template("buy.html")
 
