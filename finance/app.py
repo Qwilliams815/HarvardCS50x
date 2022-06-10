@@ -50,14 +50,17 @@ def index():
 @login_required
 def buy():
     """Buy shares of stock"""
+
     if request.method == "POST":
         # Ensure username was submitted
         if not request.form.get("symbol"):
-            return apology("must provide username", 403)
+            return apology("Invalid Symbol", 403)
 
         # Ensure password was submitted
-        elif not request.form.get("password"):
-            return apology("must provide password", 403)
+        elif not request.form.get("shares"):
+            return apology("Invalid Shares Amount", 403)
+
+        elif request.form.get("shares") < 0 or 
     else:
         return render_template("buy.html")
 
