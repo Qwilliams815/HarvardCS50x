@@ -52,7 +52,7 @@ def index():
         db.execute("SELECT * FROM portfolio")
     except:
         db.execute("CREATE TABLE portfolio (user_portfolio_id INTEGER, symbol TEXT NOT NULL, name TEXT NOT NULL, shares INTEGER, price FLOAT, total FLOAT)")
-        db.execute("INSERT INTO portfolio (user_portfolio_id) VALUES (?)", session["user_id"])
+        db.execute("INSERT INTO portfolio (user_portfolio_id) VALUES (?)", int(session["user_id"]))
 
     return render_template("index.html", portfolio=db.execute("SELECT * FROM portfolio"), cash=db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"]))
     # cash from users, everything else from portfolio.
