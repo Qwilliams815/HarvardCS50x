@@ -81,7 +81,7 @@ def buy():
             portfolio_cash = db.execute("SELECT cash FROM portfolio")
 
             if portfolio_cash == []:
-                db.execute("INSERT INTO portfolio
+                db.execute("INSERT INTO portfolio (cash) VALUE (?)", default)
 
             if portfolio_cash - total_cost < 0:
                 return apology("Insufficient Funds")
