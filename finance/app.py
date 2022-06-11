@@ -72,7 +72,7 @@ def buy():
             return apology("Invalid Symbol", 403)
 
         # Ensure valid # of shares
-        elif not shares or shares < 1:
+        elif not shares or int(shares) < 1:
             return apology("Invalid Shares Amount", 403)
 
         else:
