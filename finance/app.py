@@ -63,6 +63,7 @@ def buy():
 
     if request.method == "POST":
 
+        # Grab symbol and shares from form
         symbol = lookup(request.form.get("symbol"))
         shares = request.form.get("shares")
 
@@ -71,12 +72,13 @@ def buy():
             return apology("Invalid Symbol", 403)
 
         # Ensure valid # of shares
-        elif not shares or shares < 0:
+        elif not shares or shares < 1:
             return apology("Invalid Shares Amount", 403)
 
         else:
             pass
-            # if db.execute("SELECT cash FROM users WHERE ) users cash amount - (amount of shares X cost) is negative, if so, throw error.
+            total_cost =
+            if db.execute("SELECT cash FROM users WHERE ) users cash amount - (amount of shares X cost) is negative, if so, throw error.
             # else, subtract purchased amount from cash amount and update users table
             # new table needs symbol, stock name, # of shares, price per share, total spent so far. display cash and purchaseing power at top.
 
