@@ -80,7 +80,7 @@ def buy():
             total_cost = symbol['price'] * shares
             portfolio_cash = db.execute("SELECT cash FROM portfolio")
             print(portfolio_cash)
-            #interesting but also broken
+            #interesting but
 
             if portfolio_cash - total_cost < 0:
                 return apology("Insufficient Funds")
