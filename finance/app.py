@@ -46,14 +46,14 @@ def index():
 
     # Create portfolio table in db if one doesnt exist
 
-    db.execute("")
+    # db.execute("DROP TABLE portfolio")
+
     try:
-        print(db.execute("SELECT * FROM porfolio"))
+        print(db.execute("SELECT * FROM portfolio"))
     except:
         db.execute("CREATE TABLE portfolio (symbol TEXT NOT NULL, name TEXT NOT NULL, shares INTEGER, price FLOAT, total FLOAT, cash FLOAT)")
 
-
-    return render_template("index.html" portfolio=db.execute("SELECT * FROM porfolio"))
+    return render_template("index.html", portfolio=db.execute("SELECT * FROM portfolio"))
 
 
 @app.route("/buy", methods=["GET", "POST"])
