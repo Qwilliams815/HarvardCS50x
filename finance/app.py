@@ -43,12 +43,14 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
+
+    # Create portfolio table in db if one doesnt exist
     try:
         print(db.execute("SELECT * FROM porfolio"))
     except:
         db.execute("CREATE TABLE portfolio (Symbol TEXT NOT NULL, Name TEXT NOT NULL, Shares INTEGER, price FLOAT, Total FLOAT, Cash FLOAT)")
 
-    return render_template("index.html")
+    return render_template("index.html" portfolio=db.execute("SELECT * FROM porfolio"))
 
 
 @app.route("/buy", methods=["GET", "POST"])
