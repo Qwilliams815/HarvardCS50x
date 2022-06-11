@@ -65,19 +65,19 @@ def buy():
 
         # Grab symbol and shares from form
         symbol = lookup(request.form.get("symbol"))
-        shares = request.form.get("shares")
+        shares = int(request.form.get("shares"))
 
         # Ensure valid symbol was submitted
         if not symbol or symbol == None:
             return apology("Invalid Symbol", 403)
 
         # Ensure valid # of shares
-        elif not shares or int(shares) < 1:
+        elif not shares or shares < 1:
             return apology("Invalid Shares Amount", 403)
 
         else:
 
-            total_cost = symbol['price'] * int(shares)
+            total_cost = symbol['price'] * shares
             portfolio_cash = db.execute("SELECT cash FROM portfolio")
 
             if portfolio_cash - total_cost < 0:
@@ -87,7 +87,7 @@ def buy():
                 db.execute("INSERT INTO portfolio (symbol, name, shares, price, total) VALUES (?, ?, ?, ?, ?)", symbol, symbol['name'], shares, symbol['price'], total_cost)
                 db.execute("UPDATE portfolio SET (cash) VALUES (?)", portfolio_cash-total_cost)
 
-                
+
                 return render_redirect("/")
             # else, subtract purchased amount from cash amount and update users table
 
