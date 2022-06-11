@@ -84,7 +84,7 @@ def buy():
                 return apology("Insufficient Funds")
 
             else:
-                db.execute("UPDATE portfolio SET cash values(?))
+                db.execute("UPDATE portfolio SET (cash) VALUES (?)", portfolio_cash-total_cost)
 
             return render_template("buy.html")
             # else, subtract purchased amount from cash amount and update users table
