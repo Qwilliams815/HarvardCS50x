@@ -45,10 +45,13 @@ def index():
     """Show portfolio of stocks"""
 
     # Create portfolio table in db if one doesnt exist
+
+    db.execute("")
     try:
         print(db.execute("SELECT * FROM porfolio"))
     except:
-        db.execute("CREATE TABLE portfolio (Symbol TEXT NOT NULL, Name TEXT NOT NULL, Shares INTEGER, price FLOAT, Total FLOAT, Cash FLOAT)")
+        db.execute("CREATE TABLE portfolio (symbol TEXT NOT NULL, name TEXT NOT NULL, shares INTEGER, price FLOAT, total FLOAT, cash FLOAT)")
+
 
     return render_template("index.html" portfolio=db.execute("SELECT * FROM porfolio"))
 
