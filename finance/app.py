@@ -46,13 +46,13 @@ def index():
 
     # Create portfolio table in db if one doesnt exist
 
-    db.execute("DROP TABLE portfolio")
+    # db.execute("DROP TABLE portfolio")
 
     try:
         db.execute("SELECT * FROM portfolio")
     except:
         db.execute("CREATE TABLE portfolio (user_portfolio_id INTEGER, symbol TEXT NOT NULL, name TEXT NOT NULL, shares INTEGER, price FLOAT, total FLOAT)")
-        
+
 
     return render_template("index.html", portfolio=db.execute("SELECT * FROM portfolio"), cash=db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"]))
     # cash from users, everything else from portfolio.
