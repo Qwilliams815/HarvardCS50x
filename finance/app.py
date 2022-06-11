@@ -84,8 +84,8 @@ def buy():
                 return apology("Insufficient Funds")
 
             else:
+                db.execute("UPDATE )
 
-                
             return render_template("buy.html")
             # else, subtract purchased amount from cash amount and update users table
 
