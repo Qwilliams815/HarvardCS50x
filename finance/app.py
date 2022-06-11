@@ -43,7 +43,10 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
-    print(db.execute("SELECT * FROM porfolio"))
+    try:
+        print(db.execute("SELECT * FROM porfolio"))
+    except:
+        db.execute(CREATE TABLE portfolio ())
 
     return render_template("index.html")
 
