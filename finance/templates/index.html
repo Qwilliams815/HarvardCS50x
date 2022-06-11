@@ -15,15 +15,15 @@
         <th>Price</th>
         <th>Total</th>
 
-        <!-- for each row in finance.portfolio:
+        {% for row in portfolio %}
             <tr>
-                <td>portfolio['Symbol']</td>
-                <td>portfolio['Name']</td>
-                <td>portfolio['Shares']</td>
-                <td>portfolio[price]</td>
-                <td>portfolio[total]</td>
+                <td>row['symbol']</td>
+                <td>row['name']</td>
+                <td>row['shares']</td>
+                <td>row['price']</td>
+                <td>row['total']</td>
             </tr>
-        end for -->
+        {% endfor %}
 
     </table>
 {% endblock %}
