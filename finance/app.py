@@ -54,7 +54,7 @@ def index():
         db.execute("CREATE TABLE portfolio (user_portfolio_id INTEGER, symbol TEXT NOT NULL, name TEXT NOT NULL, shares INTEGER, price FLOAT, total FLOAT)")
 
 
-    return render_template("index.html", portfolio=db.execute("SELECT * FROM portfolio"), cash=db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"]))
+    return render_template("index.html", portfolio=db.execute("SELECT * FROM portfolio WHERE user_portfolio_id = ?", session["user_id"]), cash=db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"]))
     # cash from users, everything else from portfolio.
 
 @app.route("/buy", methods=["GET", "POST"])
