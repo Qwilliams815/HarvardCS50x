@@ -79,7 +79,7 @@ def buy():
         else:
 
             total_cost = symbol['price'] * shares
-            cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
+            cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0]['cash']
 
             # if portfolio_cash == []:
             #     db.execute("INSERT INTO portfolio (cash) VALUE (?)", default)
