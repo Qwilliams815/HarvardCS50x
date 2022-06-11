@@ -51,6 +51,7 @@ def index():
 @login_required
 def buy():
     """Buy shares of stock"""
+    print(db.execute("SELECT portfolio FROM finance.db"))
 
     if request.method == "POST":
 
