@@ -76,9 +76,10 @@ def buy():
             return apology("Invalid Shares Amount", 403)
 
         else:
-            pass
-            total_cost =
-            if db.execute("SELECT cash FROM users WHERE ) users cash amount - (amount of shares X cost) is negative, if so, throw error.
+
+            total_cost = symbol['price'] * shares
+            print(total_cost)
+            # if db.execute("SELECT cash FROM users WHERE ) users cash amount - (amount of shares X cost) is negative, if so, throw error.
             # else, subtract purchased amount from cash amount and update users table
             # new table needs symbol, stock name, # of shares, price per share, total spent so far. display cash and purchaseing power at top.
 
