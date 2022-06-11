@@ -84,9 +84,10 @@ def buy():
                 return apology("Insufficient Funds")
 
             else:
+                db.execute("INSERT INTO portfolio (symbol, name, shares, price, total) VALUES (?, ?, ?, ?, ?)", symbol, symbol['name'], shares, symbol['price'], total_cost)
                 db.execute("UPDATE portfolio SET (cash) VALUES (?)", portfolio_cash-total_cost)
 
-            return render_template("buy.html")
+                return render_redirect("/")
             # else, subtract purchased amount from cash amount and update users table
 
 
