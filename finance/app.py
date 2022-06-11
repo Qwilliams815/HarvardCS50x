@@ -80,15 +80,15 @@ def buy():
             total_cost = symbol['price'] * shares
             portfolio_cash = db.execute("SELECT cash FROM portfolio")
 
-            if portfolio_cash == []:
-                db.execute("INSERT INTO portfolio (cash) VALUE (?)", default)
+            # if portfolio_cash == []:
+            #     db.execute("INSERT INTO portfolio (cash) VALUE (?)", default)
 
             if portfolio_cash - total_cost < 0:
                 return apology("Insufficient Funds")
 
             else:
                 db.execute("INSERT INTO portfolio (symbol, name, shares, price, total) VALUES (?, ?, ?, ?, ?)", symbol, symbol['name'], shares, symbol['price'], total_cost)
-                db.execute("UPDATE user SET (cash) VALUES (?) WHERE ", portfolio_cash-total_cost)
+                db.execute("UPDATE user SET (cash) = ? WHERE user = ?", portfolio_cash-total_cost)
 
 
                 return render_redirect("/")
