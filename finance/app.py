@@ -43,6 +43,7 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
+    #print(db.execute("SELECT portfolio FROM finance"))
 
     return render_template("index.html")
 
@@ -51,7 +52,6 @@ def index():
 @login_required
 def buy():
     """Buy shares of stock"""
-    print(db.execute("SELECT portfolio FROM finance.db"))
 
     if request.method == "POST":
 
