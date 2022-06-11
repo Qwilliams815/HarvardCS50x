@@ -79,18 +79,17 @@ def buy():
         else:
 
             total_cost = symbol['price'] * shares
-            portfolio_cash = db.execute("SELECT cash FROM portfolio")
+            cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
 
             # if portfolio_cash == []:
             #     db.execute("INSERT INTO portfolio (cash) VALUE (?)", default)
 
-            if portfolio_cash - total_cost < 0:
+            if cash - total_cost < 0:
                 return apology("Insufficient Funds")
 
             else:
-                db.execute("INSERT INTO portfolio (symbol, name, shares, price, total) VALUES (?, ?, ?, ?, ?)", symbol, symbol['name'], shares, symbol['price'], total_cost)
-                db.execute("UPDATE user SET (cash) = ? WHERE user = ?", portfolio_cash-total_cost)
-
+                db.execute("INSERT INTO portfolio (user_portfolio_id, symbol, name, shares, price, total) VALUES (?, ?, ?, ?, ?, ?)", session["user_id"], symbol, symbol['name'], shares, symbol['price'], total_cost)
+                db.execute("UPDATE users SET (cash) = ? WHERE id = ?", cash-total_cost, session["user_id"])
 
                 return render_redirect("/")
             # else, subtract purchased amount from cash amount and update users table
