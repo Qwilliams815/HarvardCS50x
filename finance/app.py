@@ -46,7 +46,7 @@ def index():
     try:
         print(db.execute("SELECT * FROM porfolio"))
     except:
-        db.execute("CREATE TABLE portfolio (Symbol varchar(255), Name varchar(255), Shares int, price float, Total float, Cash float")
+        db.execute("CREATE TABLE portfolio (Symbol TEXT NOT NULL, Name TEXT NOT NULL, Shares INTEGER, price FLOAT, Total FLOAT, Cash FLOAT)")
 
     return render_template("index.html")
 
