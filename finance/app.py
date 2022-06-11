@@ -43,6 +43,7 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
+    
     # if no portfolio table, create one
     if request.method == "POST":
         pass
