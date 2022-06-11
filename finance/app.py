@@ -49,7 +49,7 @@ def index():
     # db.execute("DROP TABLE portfolio")
 
     try:
-        print(db.execute("SELECT * FROM portfolio"))
+        db.execute("SELECT * FROM portfolio")
     except:
         db.execute("CREATE TABLE portfolio (symbol TEXT NOT NULL, name TEXT NOT NULL, shares INTEGER, price FLOAT, total FLOAT, cash NUMERIC NOT NULL DEFAULT 10000.00)")
 
