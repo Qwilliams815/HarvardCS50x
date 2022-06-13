@@ -89,7 +89,8 @@ def buy():
 
             else:
 
-                if symbol['symbol'] in db.execute("SELECT symbol FROM portfolio WHERE portfolio_user_id = ?", session["user_id"]):
+                if symbol['symbol'] in db.execute("SELECT symbol FROM portfolio WHERE user_portfolio_id = ?", session["user_id"]):
+                    db.execute("UPDATE portfolio ())
                     #already symbol already in portfolio, just add the shares and tota
                 else:
                     db.execute("INSERT INTO portfolio (user_portfolio_id, symbol, name, shares, price, total) VALUES (?, ?, ?, ?, ?, ?)", session["user_id"], symbol['symbol'], symbol['name'], shares, symbol['price'], total_cost)
