@@ -102,7 +102,7 @@ def buy():
                     current_shares = db.execute("SELECT shares FROM portfolio WHERE symbol = ? AND user_portfolio_id = ?", symbol['symbol'], session["user_id"])
                     current_total = db.execute("SELECT total FROM portfolio WHERE symbol = ? AND user_portfolio_id = ?", symbol['symbol'], session["user_id"])
 
-                    db.execute("UPDATE portfolio (shares, total) VALUES (?, ?) WHERE symbol = ? AND user_portfolio_id = ?", current_shares+shares, current_total+total_cost, symbol['symbol'], session["user_id"])
+                    db.execute("UPDATE portfolio (shares, total) VALUES (?, ?) WHERE symbol = ? AND user_portfolio_id = ?", int(current_shares)+int(shares), int(current_total)+int(total_cost), symbol['symbol'], session["user_id"])
                     db.execute("UPDATE users SET (cash) = ? WHERE id = ?", cash-total_cost, session["user_id"])
                     #already symbol already in portfolio, just add the shares and total
                 else:
