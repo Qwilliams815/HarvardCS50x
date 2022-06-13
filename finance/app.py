@@ -68,7 +68,6 @@ def buy():
 
     if request.method == "POST":
 
-
         # Grab symbol and shares from form
         symbol = lookup(request.form.get("symbol"))
         shares = int(request.form.get("shares"))
