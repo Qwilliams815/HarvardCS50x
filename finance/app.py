@@ -98,7 +98,7 @@ def buy():
                 symbols = [sym for sym in db.execute("SELECT symbol FROM portfolio WHERE user_portfolio_id = ?", session["user_id"])]
                 print("SYMBOLS: ", symbols)
 
-                if symbol['symbol'] == sym['symbol']:
+                if symbol['symbol'] in symbols:
                     current_shares = db.execute("SELECT shares FROM portfolio WHERE symbol = ? AND user_portfolio_id = ?", symbol['symbol'], session["user_id"])
                     current_total = db.execute("SELECT total FROM portfolio WHERE symbol = ? AND user_portfolio_id = ?", symbol['symbol'], session["user_id"])
 
