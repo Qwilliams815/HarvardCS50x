@@ -49,7 +49,6 @@ def index():
     # db.execute("DROP TABLE portfolio")
     # db.execute("UPDATE users SET cash = ? WHERE id = ?", 10000.00, session["user_id"])
 
-    # print(symbol['symbol'] in db.execute("SELECT symbol FROM portfolio WHERE user_portfolio_id = ?", session["user_id"]))
 
     try:
         db.execute("SELECT * FROM portfolio")
@@ -68,6 +67,8 @@ def buy():
     """Buy shares of stock"""
 
     if request.method == "POST":
+
+        print(symbol['symbol'] in db.execute("SELECT symbol FROM portfolio WHERE user_portfolio_id = ?", session["user_id"]))
 
         # Grab symbol and shares from form
         symbol = lookup(request.form.get("symbol"))
