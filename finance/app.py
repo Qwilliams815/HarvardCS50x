@@ -46,7 +46,8 @@ def index():
 
     # Create portfolio table in db if one doesnt exist
 
-    # db.execute("DROP TABLE portfolio")
+    db.execute("DROP TABLE portfolio")
+    db.execute("UPDATE TABLE users cash = ? WHERE id = ?", 10000.00, session["user_id"])
 
     try:
         db.execute("SELECT * FROM portfolio")
