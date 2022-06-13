@@ -95,7 +95,7 @@ def buy():
                 return apology("Insufficient Funds")
 
             else:
-                symbols = item for items in db.execute("SELECT symbol FROM portfolio WHERE user_portfolio_id = ?", session["user_id"])
+                symbols = sym for sym in db.execute("SELECT symbol FROM portfolio WHERE user_portfolio_id = ?", session["user_id"])
                 print("SYMBOLS: ", symbols)
 
                 if symbol['symbol'] == sym['symbol']:
