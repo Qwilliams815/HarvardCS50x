@@ -95,7 +95,7 @@ def buy():
                 return apology("Insufficient Funds")
 
             else:
-
+                
                 if symbol['symbol'] in db.execute("SELECT symbol FROM portfolio WHERE user_portfolio_id = ?", session["user_id"]):
                     current_shares = db.execute("SELECT shares FROM portfolio WHERE symbol = ? AND user_portfolio_id = ?", symbol['symbol'], session["user_id"])
                     current_total = db.execute("SELECT total FROM portfolio WHERE symbol = ? AND user_portfoio_id = ?", symbol['symbol'], session["user_id"])
