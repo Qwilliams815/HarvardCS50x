@@ -72,7 +72,7 @@ def buy():
         # Grab symbol and shares from form
         symbol = lookup(request.form.get("symbol"))
         shares = int(request.form.get("shares"))
-
+        print("TESTESTESTESTEST")
         print(symbol['symbol'] in db.execute("SELECT symbol FROM portfolio WHERE user_portfolio_id = ?", session["user_id"]))
 
         # Ensure valid symbol was submitted
