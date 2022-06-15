@@ -232,7 +232,10 @@ def sell():
     symbols = db.execute("SELECT symbol FROM portfolio WHERE user_portfolio_id = ?", session["user_id"])
 
     if request.method == "POST":
-        request.form.get("")
+        chosen_symbol = request.form.get("symbol")
+        shares = request.form.get("shares")
+
+        # update amount of shares/total from 
 
     else:
         print(symbols)
