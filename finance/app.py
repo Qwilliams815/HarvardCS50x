@@ -228,6 +228,6 @@ def register():
 @login_required
 def sell():
     """Sell shares of stock"""
-    symbols = db.execute("")
+    symbols = db.execute("SELECT symbol FROM portfolio WHERE portfolio_user_id = ?", session["user_id"])
     return apology("TODO")
     #Thank you for not timing out
