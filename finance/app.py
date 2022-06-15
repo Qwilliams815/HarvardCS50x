@@ -98,6 +98,7 @@ def buy():
 
                     db.execute("UPDATE portfolio SET shares = ?, total = ? WHERE symbol = ? AND user_portfolio_id = ?", current_shares+shares, current_total+total_cost, symbol['symbol'], session["user_id"])
                     db.execute("UPDATE users SET (cash) = ? WHERE id = ?", cash-total_cost, session["user_id"])
+
                 else:
                     db.execute("INSERT INTO portfolio (user_portfolio_id, symbol, name, shares, price, total) VALUES (?, ?, ?, ?, ?, ?)", session["user_id"], symbol['symbol'], symbol['name'], shares, symbol['price'], total_cost)
                     db.execute("UPDATE users SET (cash) = ? WHERE id = ?", cash-total_cost, session["user_id"])
