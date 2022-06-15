@@ -228,5 +228,6 @@ def register():
 @login_required
 def sell():
     """Sell shares of stock"""
+    symbols = db.execute("")
     return apology("TODO")
     #Thank you for not timing out
