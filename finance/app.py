@@ -54,6 +54,11 @@ def index():
     except:
         db.execute("CREATE TABLE portfolio (user_portfolio_id INTEGER, symbol TEXT NOT NULL, name TEXT NOT NULL, shares INTEGER, price FLOAT, total FLOAT)")
 
+    try:
+        db.execute("SELECT * FROM history")
+    except:
+        
+
     cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0]['cash']
     portfolio = db.execute("SELECT * FROM portfolio WHERE user_portfolio_id = ?", session["user_id"])
     purchase_power = db.execute("SELECT SUM(total) FROM portfolio WHERE user_portfolio_id = ?", session["user_id"])[0]['SUM(total)']
