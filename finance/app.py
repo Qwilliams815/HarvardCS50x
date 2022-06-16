@@ -240,7 +240,7 @@ def sell():
             return apology("Invalid shares amount")
 
         else:
-            #
+            # Update shares amount and total price, shares = current shares - shares; total = symbol['total'] - symbol['price'] * shares
             db.execute("UPDATE portfolios SET )
 
         # update amount of shares/total from the other thing
