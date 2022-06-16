@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <h1 class="m-3 text-primary">Portfolio</h1>
+    <h2>Purchase Power: (cash + all investments)</h2>
+    <h2>Cash: {{ cash[0]['cash'] | usd }}</h2>
+    <table class="table table-striped">
+        <th>Symbol</th>
+        <th>Name</th>
+        <th>Shares</th>
+        <th>Price</th>
+        <th>Total</th>
+
+        {% for row in portfolio %}
+            <tr>
+                <td>{{ row['symbol'] }}</td>
+                <td>{{ row['name'] }}</td>
+                <td>{{ row['shares'] }}</td>
+                <td>{{ row['price'] }}</td>
+                <td>{{ row['total'] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
