@@ -237,7 +237,7 @@ def sell():
         current_shares = db.execute("SELECT shares FROM portfolio WHERE symbol = ? AND user_portoflio_id = ?", chosen_symbol, session['user_id'])
 
         if shares > crrent_shares:
-            return apology("Password confirmation must match Password", 403)
+            return apology("Invalid shares amount")
 
         # update amount of shares/total from the other thing
 
