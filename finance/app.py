@@ -232,7 +232,6 @@ def sell():
     symbols = db.execute("SELECT symbol FROM portfolio WHERE user_portfolio_id = ?", session["user_id"])
 
     if request.method == "POST":
-        symbol = lookup(request.form.get("symbol"))
         chosen_symbol = request.form.get("symbol")
         shares = int(request.form.get("shares"))
         current_shares = db.execute("SELECT shares FROM portfolio WHERE symbol = ? AND user_portfolio_id = ?", chosen_symbol, session['user_id'])
@@ -246,7 +245,7 @@ def sell():
             total = db.execute("SELECT total FROM portfolio WHERE symbol = ? AND user_portfolio_id = ?", chosen_symbol, session['user_id'])
             db.execute("UPDATE portfolio SET shares = ?, total = ? WHERE user_portfolio_id = ?", current_shares[0]['shares']-shares, total[0]['total']-price[0]['price']*shares, session['user_id'])
 
-            flash(f"{symbol['name']} Stock Sold!")
+            flash(f"{lookup(chosen_symbol)['name']} Stock Sold!")
             return redirect("/")
 
     else:
