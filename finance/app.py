@@ -87,7 +87,6 @@ def buy():
             return apology("Invalid Shares Amount", 403)
 
         else:
-
             total_cost = symbol['price'] * shares
             cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0]['cash']
 
