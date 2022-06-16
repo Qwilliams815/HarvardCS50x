@@ -58,7 +58,7 @@ def index():
     portfolio = db.execute("SELECT * FROM portfolio WHERE user_portfolio_id = ?", session["user_id"])
     purchase_power = db.execute("SELECT SUM(total) FROM portfolio WHERE user_portfolio_id = ?", session["user_id"])
 
-    return render_template("index.html", portfolio=portfolio, cash=cash, purchase_power=purchase_power)
+    return render_template("index.html", portfolio=portfolio, cash=cash, purchase_power=purchase_power+cash)
 
 @app.route("/buy", methods=["GET", "POST"])
 @login_required
