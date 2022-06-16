@@ -1,8 +1,11 @@
 import re
 
+def useRegex(input):
+    pattern = re.compile(r"[a-zA-Z]+", re.IGNORECASE)
+    print(pattern.match(input))
 
-
-print()
+word = "asdasfe12341"
+useRegex(word)
 
 # number = "5555555555554444"
 # number_pattern = "[0-9]"
