@@ -57,7 +57,7 @@ def index():
     try:
         db.execute("SELECT * FROM history")
     except:
-        db.execute("CREATE TABLE history (user_history_id INTEGER, symbol TEXT NOT NULL, shares INTEGER, price FLOAT, time FLOAT)")
+        db.execute("CREATE TABLE history (user_history_id INTEGER, symbol TEXT NOT NULL, shares INTEGER, price FLOAT, time TEXT NOT NULL)")
 
 
 
@@ -108,7 +108,7 @@ def buy():
                 else:
                     db.execute("INSERT INTO portfolio (user_portfolio_id, symbol, name, shares, price, total) VALUES (?, ?, ?, ?, ?, ?)", session["user_id"], symbol['symbol'], symbol['name'], shares, symbol['price'], total_cost)
                     db.execute("UPDATE users SET (cash) = ? WHERE id = ?", cash-total_cost, session["user_id"])
-                    db.execute("INSERT INTO history (user_history_id, symbol, shares, price, time) VALUES (?, ?, ?, ?, ?)", session["user_id"], symbol, shares, price, time)
+                    db.execute("INSERT INTO history (user_history_id, symbol, shares, price, time) VALUES (?, ?, ?, ?, ?)", session["user_id"], symbol['symbol'], shares, symbol['price'], symbol['time'])
 
                 flash(f"{symbol['name']} Stock purchased!")
                 return redirect("/")
