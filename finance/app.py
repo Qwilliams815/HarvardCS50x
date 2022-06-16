@@ -232,6 +232,7 @@ def sell():
     symbols = db.execute("SELECT symbol FROM portfolio WHERE user_portfolio_id = ?", session["user_id"])
 
     if request.method == "POST":
+        symbol = lookup(request.form.get("symbol"))
         chosen_symbol = request.form.get("symbol")
         shares = int(request.form.get("shares"))
         current_shares = db.execute("SELECT shares FROM portfolio WHERE symbol = ? AND user_portfolio_id = ?", chosen_symbol, session['user_id'])
