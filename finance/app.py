@@ -233,17 +233,17 @@ def sell():
 
     if request.method == "POST":
         chosen_symbol = request.form.get("symbol")
-        shares = request.form.get("shares")
+        shares = int(request.form.get("shares"))
         current_shares = db.execute("SELECT shares FROM portfolio WHERE symbol = ? AND user_portfolio_id = ?", chosen_symbol, session['user_id'])
 
-        if shares > current_shares or shares < 0:
+        if shares > current_shares[0]['shares'] or shares < 0:
             return apology("Invalid shares amount")
 
         else:
             # Update shares amount and total price, shares = current shares - shares; total = symbol['total'] - symbol['price'] * shares
             price = db.execute("SELECT price FROM portfolio WHERE symbol = ? AND user_portfolio_id = ?", chosen_symbol, session['user_id'])
             total = db.execute("SELECT total FROM portfolio WHERE symbol = ? AND user_portfolio_id = ?", chosen_symbol, session['user_id'])
-            db.execute("UPDATE portfolios SET (shares, total) = ?, ? WHERE user_portfolio_id", current_shares-shares, total-price*shares)
+            db.execute("UPDATE portfolios SET (shares, total) = ?, ? WHERE user_portfolio_id = ?", current_shares-shares, total-price*shares, session['user_id'])
 
             flash(f"{symbol['name']} Stock Sold!")
             return redirect("/")
