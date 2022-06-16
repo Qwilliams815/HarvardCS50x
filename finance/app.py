@@ -241,6 +241,7 @@ def sell():
 
     if request.method == "POST":
         chosen_symbol = request.form.get("symbol")
+        symbol = lookup(request.form.get("symbol"))
         shares = int(request.form.get("shares"))
         current_shares = db.execute("SELECT shares FROM portfolio WHERE symbol = ? AND user_portfolio_id = ?", chosen_symbol, session['user_id'])
 
@@ -255,7 +256,7 @@ def sell():
             # TODO
             db.execute("INSERT INTO history (user_history_id, symbol, shares, price, time) VALUES (?, ?, ?, ?, ?)", session["user_id"], symbol['symbol'], 0-shares, symbol['price'], symbol['time'])
 
-            flash(f"{lookup(chosen_symbol)['name']} Stock Sold!")
+            flash(f"{symbol['name']} Stock Sold!")
             return redirect("/")
 
     else:
