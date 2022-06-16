@@ -241,6 +241,7 @@ def sell():
 
         else:
             # Update shares amount and total price, shares = current shares - shares; total = symbol['total'] - symbol['price'] * shares
+            price = db.execute("SELECT price FROM portfolio WHERE symbol = ? AND user_portfolio_id = ?", chosen_symbol, session['user_id'])
             db.execute("UPDATE portfolios SET (shares, total)")
 
         # update amount of shares/total from the other thing
