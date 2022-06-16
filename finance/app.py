@@ -251,6 +251,8 @@ def sell():
             price = db.execute("SELECT price FROM portfolio WHERE symbol = ? AND user_portfolio_id = ?", chosen_symbol, session['user_id'])
             total = db.execute("SELECT total FROM portfolio WHERE symbol = ? AND user_portfolio_id = ?", chosen_symbol, session['user_id'])
             db.execute("UPDATE portfolio SET shares = ?, total = ? WHERE symbol = ? AND user_portfolio_id = ?", current_shares[0]['shares']-shares, total[0]['total']-price[0]['price']*shares, chosen_symbol, session['user_id'])
+            # TODO
+            #db.execute("INSERT INTO history (user_history_id, symbol, shares, price, time) VALUES (?, ?, ?, ?, ?)", session["user_id"], symbol['symbol'], shares, symbol['price'], symbol['time'])
 
             flash(f"{lookup(chosen_symbol)['name']} Stock Sold!")
             return redirect("/")
