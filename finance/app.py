@@ -245,7 +245,8 @@ def sell():
             total = db.execute("SELECT total FROM portfolio WHERE symbol = ? AND user_portfolio_id = ?", chosen_symbol, session['user_id'])
             db.execute("UPDATE portfolios SET (shares, total) = ?, ? WHERE user_portfolio_id", current_shares-shares, total-price*shares)
 
-            render 
+            flash(f"{symbol['name']} Stock Sold!")
+            return redirect("/")
 
     else:
         print(symbols)
