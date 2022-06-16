@@ -235,7 +235,7 @@ def sell():
         chosen_symbol = request.form.get("symbol")
         shares = request.form.get("shares")
 
-        # update amount of shares/total from 
+        # update amount of shares/total from the other thing
 
     else:
         print(symbols)
