@@ -49,17 +49,16 @@ def index():
     # db.execute("DROP TABLE portfolio")
     # db.execute("UPDATE users SET cash = ? WHERE id = ?", 10000.00, session["user_id"])
 
-
     try:
         db.execute("SELECT * FROM portfolio")
     except:
         db.execute("CREATE TABLE portfolio (user_portfolio_id INTEGER, symbol TEXT NOT NULL, name TEXT NOT NULL, shares INTEGER, price FLOAT, total FLOAT)")
 
     cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
-    print(cash)
+    portfolio = db.execute("SELECT * FROM portfolio WHERE user_portfolio_id = ?", session["user_id"])
+    purchase_power = db.execute("SELECT SUM(total) FROM portfolio WHERE user_portfolio_id = ?", session["user_id"])
 
-    return render_template("index.html", portfolio=db.execute("SELECT * FROM portfolio WHERE user_portfolio_id = ?", session["user_id"]), cash=db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"]))
-    # cash from users, everything else from portfolio.
+    return render_template("index.html", portfolio=portfolio, cash=cash, purchase_power=purchase_power)
 
 @app.route("/buy", methods=["GET", "POST"])
 @login_required
