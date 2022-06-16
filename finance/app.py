@@ -236,8 +236,11 @@ def sell():
         shares = request.form.get("shares")
         current_shares = db.execute("SELECT shares FROM portfolio WHERE symbol = ? AND user_portoflio_id = ?", chosen_symbol, session['user_id'])
 
-        if shares > crrent_shares:
+        if shares > current_shares or shares < 0:
             return apology("Invalid shares amount")
+
+        else:
+            
 
         # update amount of shares/total from the other thing
 
