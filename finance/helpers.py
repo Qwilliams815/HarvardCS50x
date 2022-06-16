@@ -53,7 +53,8 @@ def lookup(symbol):
         return {
             "name": quote["companyName"],
             "price": float(quote["latestPrice"]),
-            "symbol": quote["symbol"]
+            "symbol": quote["symbol"],
+            "time": quote["latestTime"]
         }
     except (KeyError, TypeError, ValueError):
         return None
