@@ -1,7 +1,7 @@
 import re
 
 def useRegex(input):
-    pattern = re.compile(r"[a-zA-Z]+", re.IGNORECASE)
+    pattern = re.compile(r"^[a-zA-Z]+$", re.IGNORECASE)
     print(pattern.match(input))
 
 word = "asdasfe12341"
