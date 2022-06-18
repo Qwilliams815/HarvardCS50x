@@ -1,12 +1,12 @@
-import re
+# import re
 
-def useRegex(input):
-    pattern = re.compile(r"^[a-zA-Z]{3,7}$", re.IGNORECASE)
-    # return pattern.match(input)
-    print(pattern.match(input))
+# def useRegex(input):
+#     pattern = re.compile(r"^[a-zA-Z]{3,7}$", re.IGNORECASE)
+#     # return pattern.match(input)
+#     print(pattern.match(input))
 
-word = "as2gdf"
-useRegex(word)
+# word = "as2gdf"
+# useRegex(word)
 # if not useRegex(word):
 #     print("Failed")
 # else:
@@ -24,3 +24,16 @@ useRegex(word)
 #     if number.startswith(num) and len(number) == 16:
 #         print("MASTERCARD")
 #         quit()
+
+def is_one(number):
+    if number == 1:
+        print("yes its one")
+
+
+def is_two(number):
+    if number == 2:
+        print("yes its two")
+
+num = 3
+if not is_one(num) and not is_two(num):
+    print("num is neither")
