@@ -2,13 +2,15 @@ import re
 
 def useRegex(input):
     pattern = re.compile(r"^[a-zA-Z]{3,7}$", re.IGNORECASE)
-    return pattern.match(input)
+    # return pattern.match(input)
+    print(pattern.match(input))
 
-word = "asg3df"
-if not useRegex(word):
-    print("Failed")
-else:
-    print("passed")
+word = "as2gdf"
+useRegex(word)
+# if not useRegex(word):
+#     print("Failed")
+# else:
+#     print("passed")
 
 # number = "5555555555554444"
 # number_pattern = "[0-9]"
