@@ -82,15 +82,15 @@ def buy():
         # if not symbol or symbol == None:
         #     return apology("Invalid Symbol", 403)
 
-        validate_symbol(symbol)
+        if not validate_symbol(symbol) and not validate_shares(shares):
 
         # Ensure valid # of shares
         # elif not shares or shares < 1:
         #     return apology("Invalid Shares Amount", 403)
 
-        validate_shares(shares)
+        #validate_shares(shares)
 
-        else:
+        #else:
             total_cost = symbol['price'] * shares
             cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0]['cash']
 
