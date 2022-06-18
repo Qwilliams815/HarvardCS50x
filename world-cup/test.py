@@ -4,7 +4,7 @@ def useRegex(input):
     pattern = re.compile(r"^[a-zA-Z]{3,7}+$", re.IGNORECASE)
     print(pattern.match(input))
 
-word = "asfdf"
+word = "asgdf"
 useRegex(word)
 
 # number = "5555555555554444"
