@@ -1,10 +1,10 @@
 import re
 
 def useRegex(input):
-    pattern = re.compile(r"^[a-zA-Z]+$", re.IGNORECASE)
+    pattern = re.compile(r"^[a-zA-Z]{3,7}+$", re.IGNORECASE)
     print(pattern.match(input))
 
-word = "asdasfe12341"
+word = "asfdf"
 useRegex(word)
 
 # number = "5555555555554444"
