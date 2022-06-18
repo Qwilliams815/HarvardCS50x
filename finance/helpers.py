@@ -66,3 +66,9 @@ def usd(value):
 
 
 def validate_symbol(symbol):
+    if not symbol or symbol == None:
+        return apology("Invalid Symbol", 403)
+
+def validate_shares(shares):
+    if not shares or shares < 1:
+        return apology("Invalid Shares Amount", 403)

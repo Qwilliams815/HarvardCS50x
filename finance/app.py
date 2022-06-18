@@ -6,7 +6,7 @@ from flask_session import Session
 from tempfile import mkdtemp
 from werkzeug.security import check_password_hash, generate_password_hash
 
-from helpers import apology, login_required, lookup, usd
+from helpers import apology, login_required, lookup, usd, validate_symbol, validate_shares
 
 # Configure application
 app = Flask(__name__)
@@ -79,12 +79,16 @@ def buy():
         shares = int(request.form.get("shares"))
 
         # Ensure valid symbol was submitted
-        if not symbol or symbol == None:
-            return apology("Invalid Symbol", 403)
+        # if not symbol or symbol == None:
+        #     return apology("Invalid Symbol", 403)
+
+        validate_symbol(symbol)
 
         # Ensure valid # of shares
-        elif not shares or shares < 1:
-            return apology("Invalid Shares Amount", 403)
+        # elif not shares or shares < 1:
+        #     return apology("Invalid Shares Amount", 403)
+
+        validate_shares(shares)
 
         else:
             total_cost = symbol['price'] * shares
