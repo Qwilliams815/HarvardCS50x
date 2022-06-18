@@ -1,7 +1,7 @@
 import re
 
 def useRegex(input):
-    pattern = re.compile(r"^[a-zA-Z]{3,7}+$", re.IGNORECASE)
+    pattern = re.compile(r"^[a-zA-Z]{3,7}$", re.IGNORECASE)
     print(pattern.match(input))
 
 word = "asgdf"
