@@ -82,7 +82,9 @@ def buy():
         # if not symbol or symbol == None:
         #     return apology("Invalid Symbol", 403)
 
-        if not validate_symbol(symbol) and not validate_shares(shares):
+        # if not validate_symbol(symbol) and not validate_shares(shares):
+        validate_symbol(symbol)
+        validate_shares(shares)
 
         # Ensure valid # of shares
         # elif not shares or shares < 1:
@@ -91,31 +93,31 @@ def buy():
         #validate_shares(shares)
 
         #else:
-            total_cost = symbol['price'] * shares
-            cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0]['cash']
+        total_cost = symbol['price'] * shares
+        cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0]['cash']
 
-            if cash - total_cost < 0:
-                return apology("Insufficient Funds")
+        if cash - total_cost < 0:
+            return apology("Insufficient Funds")
+
+        else:
+            symbols = [sym['symbol'] for sym in db.execute("SELECT symbol FROM portfolio WHERE user_portfolio_id = ?", session["user_id"])]
+            print("SYMBOLS: ", symbols)
+
+            db.execute("INSERT INTO history (user_history_id, symbol, shares, price, time) VALUES (?, ?, ?, ?, ?)", session["user_id"], symbol['symbol'], shares, symbol['price'], symbol['time'])
+
+            if symbol['symbol'] in symbols:
+                current_shares = db.execute("SELECT shares FROM portfolio WHERE symbol = ? AND user_portfolio_id = ?", symbol['symbol'], session["user_id"])[0]['shares']
+                current_total = db.execute("SELECT total FROM portfolio WHERE symbol = ? AND user_portfolio_id = ?", symbol['symbol'], session["user_id"])[0]['total']
+
+                db.execute("UPDATE portfolio SET shares = ?, total = ? WHERE symbol = ? AND user_portfolio_id = ?", current_shares+shares, current_total+total_cost, symbol['symbol'], session["user_id"])
+                db.execute("UPDATE users SET (cash) = ? WHERE id = ?", cash-total_cost, session["user_id"])
 
             else:
-                symbols = [sym['symbol'] for sym in db.execute("SELECT symbol FROM portfolio WHERE user_portfolio_id = ?", session["user_id"])]
-                print("SYMBOLS: ", symbols)
+                db.execute("INSERT INTO portfolio (user_portfolio_id, symbol, name, shares, price, total) VALUES (?, ?, ?, ?, ?, ?)", session["user_id"], symbol['symbol'], symbol['name'], shares, symbol['price'], total_cost)
+                db.execute("UPDATE users SET (cash) = ? WHERE id = ?", cash-total_cost, session["user_id"])
 
-                db.execute("INSERT INTO history (user_history_id, symbol, shares, price, time) VALUES (?, ?, ?, ?, ?)", session["user_id"], symbol['symbol'], shares, symbol['price'], symbol['time'])
-
-                if symbol['symbol'] in symbols:
-                    current_shares = db.execute("SELECT shares FROM portfolio WHERE symbol = ? AND user_portfolio_id = ?", symbol['symbol'], session["user_id"])[0]['shares']
-                    current_total = db.execute("SELECT total FROM portfolio WHERE symbol = ? AND user_portfolio_id = ?", symbol['symbol'], session["user_id"])[0]['total']
-
-                    db.execute("UPDATE portfolio SET shares = ?, total = ? WHERE symbol = ? AND user_portfolio_id = ?", current_shares+shares, current_total+total_cost, symbol['symbol'], session["user_id"])
-                    db.execute("UPDATE users SET (cash) = ? WHERE id = ?", cash-total_cost, session["user_id"])
-
-                else:
-                    db.execute("INSERT INTO portfolio (user_portfolio_id, symbol, name, shares, price, total) VALUES (?, ?, ?, ?, ?, ?)", session["user_id"], symbol['symbol'], symbol['name'], shares, symbol['price'], total_cost)
-                    db.execute("UPDATE users SET (cash) = ? WHERE id = ?", cash-total_cost, session["user_id"])
-
-                flash(f"{symbol['name']} Stock purchased!")
-                return redirect("/")
+            flash(f"{symbol['name']} Stock purchased!")
+            return redirect("/")
 
 
     else:
