@@ -66,7 +66,8 @@ def usd(value):
 
 
 def validate_symbol(symbol):
-    if not symbol or symbol == None or symbol['symbol'].isalpha() == False:
+    # or symbol['symbol'].isalpha() == False
+    if not symbol or symbol == None:
         return apology("Invalid Symbol", 403)
 
 def validate_shares(shares):
