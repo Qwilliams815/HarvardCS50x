@@ -79,7 +79,7 @@ def buy():
         shares = request.form.get("shares")
         print("SYMBOL: ", symbol)
 
-        # Validate symbol and shares 
+        # Validate symbol and shares input
         if  validate_symbol(symbol):
             return validate_symbol(symbol)
 
