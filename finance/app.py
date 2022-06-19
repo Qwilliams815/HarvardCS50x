@@ -77,6 +77,7 @@ def buy():
         # Grab symbol and shares from form
         symbol = lookup(request.form.get("symbol"))
         shares = int(request.form.get("shares"))
+        print("SYMBOL: ", symbol)
 
         # Ensure valid symbol was submitted
         # if not symbol or symbol == None:
