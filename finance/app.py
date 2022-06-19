@@ -84,9 +84,9 @@ def buy():
         #     return apology("Invalid Symbol", 403)
 
         # if not validate_symbol(symbol) and not validate_shares(shares):
-        # if  validate_symbol(symbol):
-        #     return validate_symbol(symbol)
-        return validate_symbol(symbol) if validate_symbol(symbol)
+        if  validate_symbol(symbol):
+            return validate_symbol(symbol)
+
         # return apology("test2")
         validate_shares(shares)
         shares = int(shares)
