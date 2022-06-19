@@ -66,7 +66,7 @@ def usd(value):
 
 
 def validate_symbol(symbol):
-    # or symbol['symbol'].isalpha() == False
+    # or symbol['symbol'].isalpha() == False why is this not returning?
     if not symbol or symbol == None:
         print("WE GOT HERE ~~~~~~~~~")
         return apology("Invalid Symbol", 403)
