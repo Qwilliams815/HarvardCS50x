@@ -76,7 +76,7 @@ def buy():
 
         # Grab symbol and shares from form
         symbol = lookup(request.form.get("symbol"))
-        shares = int(request.form.get("shares"))
+        shares = request.form.get("shares")
         print("SYMBOL: ", symbol)
 
         # Ensure valid symbol was submitted
@@ -86,6 +86,7 @@ def buy():
         # if not validate_symbol(symbol) and not validate_shares(shares):
         validate_symbol(symbol)
         validate_shares(shares)
+        shares = int(shares)
 
         # Ensure valid # of shares
         # elif not shares or shares < 1:

@@ -69,7 +69,11 @@ def validate_symbol(symbol):
     # or symbol['symbol'].isalpha() == False
     if not symbol or symbol == None:
         return apology("Invalid Symbol", 403)
+    else:
+        pass
 
 def validate_shares(shares):
     if not shares or shares < 1:
         return apology("Invalid Shares Amount", 403)
+    else:
+        pass
