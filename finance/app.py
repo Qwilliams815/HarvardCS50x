@@ -251,8 +251,11 @@ def sell():
     if request.method == "POST":
         chosen_symbol = request.form.get("symbol")
         symbol = lookup(request.form.get("symbol"))
-        shares = int(request.form.get("shares"))
+        shares = request.form.get("shares")
         current_shares = db.execute("SELECT shares FROM portfolio WHERE symbol = ? AND user_portfolio_id = ?", chosen_symbol, session['user_id'])
+
+
+        shares = int(shares)
 
         if shares > current_shares[0]['shares'] or shares < 1 or not shares:
             return apology("Invalid shares amount")
