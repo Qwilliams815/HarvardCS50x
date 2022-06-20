@@ -88,6 +88,7 @@ def buy():
 
         shares = int(shares)
 
+        # Prepare for transaction validation ERASE THIS
         total_cost = symbol['price'] * shares
         cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0]['cash']
 
