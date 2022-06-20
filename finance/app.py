@@ -77,7 +77,6 @@ def buy():
         # Grab symbol and shares from form
         symbol = lookup(request.form.get("symbol"))
         shares = request.form.get("shares")
-        print("SYMBOL: ", symbol)
 
         # Validate symbol and shares input
         if  validate_symbol(symbol):
@@ -98,7 +97,6 @@ def buy():
         else:
             # Gather list of currently purchased symbols
             symbols = [sym['symbol'] for sym in db.execute("SELECT symbol FROM portfolio WHERE user_portfolio_id = ?", session["user_id"])]
-            #print("SYMBOLS: ", symbols)
 
             # Add new event to history table
             db.execute("INSERT INTO history (user_history_id, symbol, shares, price, time) VALUES (?, ?, ?, ?, ?)", session["user_id"], symbol['symbol'], shares, symbol['price'], symbol['time'])
@@ -277,5 +275,4 @@ def sell():
             return redirect("/")
 
     else:
-        print(symbols)
         return render_template("sell.html", symbols=symbols)
