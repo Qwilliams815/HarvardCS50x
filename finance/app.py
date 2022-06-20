@@ -187,7 +187,10 @@ def quote():
     """Get stock quote."""
 
     if request.method == "POST":
+
         quote = lookup(request.form.get("quote"))
+
+        # Validate quote input
         if quote != None:
             return render_template("quoted.html", quote=quote)
         else:
