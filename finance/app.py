@@ -254,6 +254,8 @@ def sell():
         shares = request.form.get("shares")
         current_shares = db.execute("SELECT shares FROM portfolio WHERE symbol = ? AND user_portfolio_id = ?", chosen_symbol, session['user_id'])
 
+        if validate_shares(shares):
+            return validate_shares(shares)
 
         shares = int(shares)
 
