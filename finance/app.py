@@ -250,12 +250,13 @@ def sell():
     symbols = db.execute("SELECT symbol FROM portfolio WHERE user_portfolio_id = ?", session["user_id"])
 
     if request.method == "POST":
-        
+
         chosen_symbol = request.form.get("symbol")
         symbol = lookup(request.form.get("symbol"))
         shares = request.form.get("shares")
         current_shares = db.execute("SELECT shares FROM portfolio WHERE symbol = ? AND user_portfolio_id = ?", chosen_symbol, session['user_id'])
 
+        # Validate shares amount
         if validate_shares(shares):
             return validate_shares(shares)
 
