@@ -44,11 +44,11 @@ def after_request(response):
 def index():
     """Show portfolio of stocks"""
 
-    # Create portfolio table in db if one doesnt exist
-
+    # DB reset commands
     # db.execute("DROP TABLE portfolio")
     # db.execute("UPDATE users SET cash = ? WHERE id = ?", 10000.00, session["user_id"])
 
+    # Create portfolio table in db if one doesnt exist
     try:
         db.execute("SELECT * FROM portfolio")
     except:
