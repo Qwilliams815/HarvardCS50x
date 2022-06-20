@@ -96,11 +96,14 @@ def buy():
             return apology("Insufficient Funds")
 
         else:
+            # Gather list of currently purchased symbols
             symbols = [sym['symbol'] for sym in db.execute("SELECT symbol FROM portfolio WHERE user_portfolio_id = ?", session["user_id"])]
-            print("SYMBOLS: ", symbols)
+            #print("SYMBOLS: ", symbols)
 
+            # Add new event to history table
             db.execute("INSERT INTO history (user_history_id, symbol, shares, price, time) VALUES (?, ?, ?, ?, ?)", session["user_id"], symbol['symbol'], shares, symbol['price'], symbol['time'])
 
+            # Check whether stock has been purchased before
             if symbol['symbol'] in symbols:
                 current_shares = db.execute("SELECT shares FROM portfolio WHERE symbol = ? AND user_portfolio_id = ?", symbol['symbol'], session["user_id"])[0]['shares']
                 current_total = db.execute("SELECT total FROM portfolio WHERE symbol = ? AND user_portfolio_id = ?", symbol['symbol'], session["user_id"])[0]['total']
