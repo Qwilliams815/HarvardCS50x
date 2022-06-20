@@ -246,9 +246,11 @@ def register():
 def sell():
     """Sell shares of stock"""
 
+    # Collect all currently purchased symbols
     symbols = db.execute("SELECT symbol FROM portfolio WHERE user_portfolio_id = ?", session["user_id"])
 
     if request.method == "POST":
+        
         chosen_symbol = request.form.get("symbol")
         symbol = lookup(request.form.get("symbol"))
         shares = request.form.get("shares")
