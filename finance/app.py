@@ -45,8 +45,8 @@ def index():
     """Show portfolio of stocks"""
 
     # DB reset commands
-    # db.execute("DROP TABLE portfolio")
-    # db.execute("UPDATE users SET cash = ? WHERE id = ?", 10000.00, session["user_id"])
+    db.execute("DROP TABLE portfolio")
+    db.execute("UPDATE users SET cash = ? WHERE id = ?", 10000.00, session["user_id"])
 
     # Create portfolio table in db if one doesnt exist
     try:
@@ -270,7 +270,6 @@ def sell():
             price = db.execute("SELECT price FROM portfolio WHERE symbol = ? AND user_portfolio_id = ?", chosen_symbol, session['user_id'])
             total = db.execute("SELECT total FROM portfolio WHERE symbol = ? AND user_portfolio_id = ?", chosen_symbol, session['user_id'])
             db.execute("UPDATE portfolio SET shares = ?, total = ? WHERE symbol = ? AND user_portfolio_id = ?", current_shares[0]['shares']-shares, total[0]['total']-price[0]['price']*shares, chosen_symbol, session['user_id'])
-            # TODO
             db.execute("INSERT INTO history (user_history_id, symbol, shares, price, time) VALUES (?, ?, ?, ?, ?)", session["user_id"], symbol['symbol'], 0-shares, symbol['price'], symbol['time'])
 
             flash(f"{symbol['name']} Stock Sold!")
