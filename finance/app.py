@@ -52,7 +52,7 @@ def index():
     try:
         db.execute("SELECT * FROM portfolio")
     except:
-        db.execute("CREATE TABLE portfolio (user_portfolio_id INTEGER, symbol TEXT NOT NULL, name TEXT NOT NULL, shares INTEGER, price FLOAT, total FLOAT)")
+        db.execute("CREATE TABLE portfolio (user_portfolio_id INTEGER, symbol TEXT NOT NULL, name TEXT NOT NULL, shares INTEGER, price FLOAT, total FLOAT, bought_price FLOAT)")
 
     try:
         db.execute("SELECT * FROM history")
