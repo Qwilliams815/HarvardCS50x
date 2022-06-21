@@ -59,7 +59,11 @@ def index():
     except:
         db.execute("CREATE TABLE history (user_history_id INTEGER, symbol TEXT NOT NULL, shares INTEGER, price FLOAT, time TEXT NOT NULL)")
 
-
+    #TODO for row in portfolio,
+            # if row[bought_price] > lookup(symbol)['price']
+                # turn row background red
+            # elif row[bought_price] < lookup(symbol)['price']
+                # turn row background green
 
     cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0]['cash']
     portfolio = db.execute("SELECT * FROM portfolio WHERE user_portfolio_id = ?", session["user_id"])
