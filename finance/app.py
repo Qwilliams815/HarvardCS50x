@@ -45,8 +45,8 @@ def index():
     """Show portfolio of stocks"""
 
     # DB reset commands
-    db.execute("DROP TABLE portfolio")
-    db.execute("UPDATE users SET cash = ? WHERE id = ?", 10000.00, session["user_id"])
+    # db.execute("DROP TABLE portfolio")
+    # db.execute("UPDATE users SET cash = ? WHERE id = ?", 10000.00, session["user_id"])
 
     # Create portfolio table in db if one doesnt exist
     try:
