@@ -262,8 +262,8 @@ def sell():
         # except:
         #     return apology("Invalid Symbol", 403)
 
-        if validate_symbol(lookup(request.form.get("symbol"))):
-            validate_symbol(lookup(request.form.get("symbol")))
+        if validate_symbol(chosen_symbol):
+            return validate_symbol(chosen_symbol)
 
         symbol = lookup(request.form.get("symbol"))
 
