@@ -262,6 +262,8 @@ def sell():
         except:
             return apology("Invalid Symbol", 403)
 
+        symbol = lookup(request.form.get("symbol"))
+
         shares = request.form.get("shares")
         current_shares = db.execute("SELECT shares FROM portfolio WHERE symbol = ? AND user_portfolio_id = ?", chosen_symbol, session['user_id'])
 
