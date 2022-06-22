@@ -66,14 +66,12 @@ def usd(value):
 
 
 def validate_symbol(symbol):
-     #return apology("test", 403)
-    # or symbol['symbol'].isalpha() == False why is this not returning?
     if not symbol or symbol == None:
         print("WE GOT HERE ~~~~~~~~~")
         return apology("Invalid Symbol", 403)
-    # else:
-    #     pass
+
 
 def validate_shares(shares):
     if not shares or int(shares) < 1:
         return apology("Invalid Shares Amount", 403)
+        # what if shares is float?

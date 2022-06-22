@@ -47,6 +47,7 @@ def index():
     # DB reset commands
     # db.execute("DROP TABLE portfolio")
     # db.execute("UPDATE users SET cash = ? WHERE id = ?", 10000.00, session["user_id"])
+    # db.execute("DELETE FROM portfolio WHERE symbol = ? AND user_portfolio_id = ?", "F", session["user_id"])
 
     # Create portfolio table in db if one doesnt exist
     try:
@@ -59,17 +60,18 @@ def index():
     except:
         db.execute("CREATE TABLE history (user_history_id INTEGER, symbol TEXT NOT NULL, shares INTEGER, price FLOAT, time TEXT NOT NULL)")
 
-    #TODO for row in portfolio,
-            # if row[bought_price] > lookup(symbol)['price']
-                # turn row background red
-            # elif row[bought_price] < lookup(symbol)['price']
-                # turn row background green
-
     cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0]['cash']
     portfolio = db.execute("SELECT * FROM portfolio WHERE user_portfolio_id = ?", session["user_id"])
     purchase_power = db.execute("SELECT SUM(total) FROM portfolio WHERE user_portfolio_id = ?", session["user_id"])[0]['SUM(total)']
     if not purchase_power:
         purchase_power = 0.00;
+
+    # Update portfolio with realtime price lookup
+    for stock in portfolio:
+        symbol_lookup = lookup(stock['symbol'])
+        updated_price = symbol_lookup['price']
+
+        db.execute("UPDATE portfolio SET price = ? WHERE symbol = ? AND user_portfolio_id = ?", updated_price, stock['symbol'], session["user_id"])
 
     return render_template("index.html", portfolio=portfolio, cash=cash, purchase_power=purchase_power+cash)
 
@@ -139,7 +141,6 @@ def history():
 @app.route("/login", methods=["GET", "POST"])
 def login():
     """Log user in"""
-    #test yet another test, wouldnt you believe it; another test
 
     # Forget any user_id
     session.clear()
@@ -269,14 +270,16 @@ def sell():
         if shares > current_shares[0]['shares'] or shares < 1 or not shares:
             return apology("Invalid shares amount")
 
-        #TODO If shares = 0, drop that entry from profiles.
 
         else:
-            # Update shares amount and total price, shares = current shares - shares; total = symbol['total'] - symbol['price'] * shares
             price = db.execute("SELECT price FROM portfolio WHERE symbol = ? AND user_portfolio_id = ?", chosen_symbol, session['user_id'])
             total = db.execute("SELECT total FROM portfolio WHERE symbol = ? AND user_portfolio_id = ?", chosen_symbol, session['user_id'])
+
             db.execute("UPDATE portfolio SET shares = ?, total = ? WHERE symbol = ? AND user_portfolio_id = ?", current_shares[0]['shares']-shares, total[0]['total']-price[0]['price']*shares, chosen_symbol, session['user_id'])
             db.execute("INSERT INTO history (user_history_id, symbol, shares, price, time) VALUES (?, ?, ?, ?, ?)", session["user_id"], symbol['symbol'], 0-shares, symbol['price'], symbol['time'])
+
+            # If shares = 0, drop that entry from profiles.
+            db.execute("DELETE FROM portfolio WHERE shares = 0 AND user_portfolio_id = ?", session["user_id"])
 
             flash(f"{symbol['name']} Stock Sold!")
             return redirect("/")

@@ -16,13 +16,24 @@
         <th>Total</th>
 
         {% for row in portfolio %}
-            <tr>
+
+            <!-- Changing row-color based on stock price profit fluctuation -->
+            {% set row_color = "" %}
+
+            {% if row['price'] > row['bought_price'] %}
+                {% set row_color = "table-success" %}
+            {% elif row['price'] < row['bought_price'] %}
+                {% set row_color = "table-danger" %}
+            {% endif %}
+
+            <tr class={{ row_color }}>
                 <td>{{ row['symbol'] }}</td>
                 <td>{{ row['name'] }}</td>
                 <td>{{ row['shares'] }}</td>
                 <td>{{ row['price'] }}</td>
                 <td>{{ row['total'] }}</td>
             </tr>
+
         {% endfor %}
     </table>
 {% endblock %}
