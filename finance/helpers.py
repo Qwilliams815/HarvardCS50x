@@ -67,7 +67,6 @@ def usd(value):
 
 def validate_symbol(symbol):
     if not symbol or symbol == None:
-        print("WE GOT HERE ~~~~~~~~~")
         return apology("Invalid Symbol", 403)
 
 
