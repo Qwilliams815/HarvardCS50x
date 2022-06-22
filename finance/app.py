@@ -255,6 +255,7 @@ def sell():
     symbols = db.execute("SELECT symbol FROM portfolio WHERE user_portfolio_id = ?", session["user_id"])
 
     if request.method == "POST":
+
         try:
             chosen_symbol = request.form.get("symbol")
         except:
