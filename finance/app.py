@@ -257,11 +257,8 @@ def sell():
     if request.method == "POST":
 
         chosen_symbol = request.form.get("symbol")
-        # try:
-        #     symbol = lookup(request.form.get("symbol"))
-        # except:
-        #     return apology("Invalid Symbol", 403)
 
+        # Validate symbol before calling lookup()
         if validate_symbol(chosen_symbol):
             return validate_symbol(chosen_symbol)
 
