@@ -255,10 +255,9 @@ def sell():
     symbols = db.execute("SELECT symbol FROM portfolio WHERE user_portfolio_id = ?", session["user_id"])
 
     if request.method == "POST":
-
-        chosen_symbol = request.form.get("symbol")
-        if not symbol or symbol == None:
-            print("WE GOT HERE ~~~~~~~~~")
+        try:
+            chosen_symbol = request.form.get("symbol")
+        except:
             return apology("Invalid Symbol", 403)
         symbol = lookup(request.form.get("symbol"))
         shares = request.form.get("shares")
