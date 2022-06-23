@@ -210,7 +210,7 @@ def register():
     """Register user"""
 
     if request.method == "POST":
-        
+
         # Ensure username was submitted
         if not request.form.get("username"):
             return apology("must provide username", 400)
@@ -222,6 +222,9 @@ def register():
         # Ensure password confirmation was submitted and a match
         elif not request.form.get("confirmation") or request.form.get("confirmation") != request.form.get("password"):
             return apology("Password confirmation must match Password", 400)
+
+        # Ensure username is not a duplicate
+
 
 
         else:
@@ -243,6 +246,7 @@ def register():
             return redirect("/")
 
     else:
+        print(db.execute("SELECT usern))
         # Show register page
         return render_template("register.html")
 
