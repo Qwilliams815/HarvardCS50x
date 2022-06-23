@@ -66,7 +66,10 @@ def usd(value):
 
 
 def validate_symbol(symbol):
-    symbol = symbol.strip()
+    try:
+        symbol = symbol.strip()
+    except:
+        return apology("Invalid Symbol", 400)
     if not symbol or symbol == None:
         return apology("Invalid Symbol", 400)
     if not symbol.isalpha():
