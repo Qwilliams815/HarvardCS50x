@@ -70,7 +70,6 @@ def validate_symbol(symbol):
         return apology("Invalid Symbol", 400)
 
 
-
 def validate_shares(shares):
     if not shares or int(shares) < 1:
         return apology("Invalid Shares Amount", 400)
