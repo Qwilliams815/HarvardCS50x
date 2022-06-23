@@ -87,7 +87,11 @@ def buy():
             return validate_symbol(request.form.get("symbol"))
 
         # Grab symbol and shares from form
-        symbol = lookup(request.form.get("symbol"))
+        try:
+            symbol = lookup(request.form.get("symbol"))
+        except:
+            return apology("Invalid Symbol", 400)
+
         shares = request.form.get("shares")
 
         if validate_shares(shares):
