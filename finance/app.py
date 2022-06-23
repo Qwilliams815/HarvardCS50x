@@ -88,6 +88,10 @@ def buy():
 
         # Grab symbol and shares from form
         symbol = lookup(request.form.get("symbol").strip())
+
+        if validate_symbol(symbol):
+            return validate_symbol(symbol)
+
         shares = request.form.get("shares")
 
         if validate_shares(shares):
@@ -96,6 +100,7 @@ def buy():
         shares = int(shares)
 
         # Prepare for transaction validation
+        print(symbol)
         total_cost = symbol['price'] * shares
         cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0]['cash']
 
