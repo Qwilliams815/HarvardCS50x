@@ -279,6 +279,7 @@ def sell():
             return validate_symbol(chosen_symbol)
 
         symbol = lookup(request.form.get("symbol").strip())
+        print(symbol['time'])
 
         shares = request.form.get("shares")
         current_shares = db.execute("SELECT shares FROM portfolio WHERE symbol = ? AND user_portfolio_id = ?", chosen_symbol, session['user_id'])
