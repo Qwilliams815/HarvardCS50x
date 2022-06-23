@@ -82,13 +82,13 @@ def buy():
 
     if request.method == "POST":
 
+        # Validate symbol and shares input
+        if  validate_symbol(request.form.get("symbol")):
+            return validate_symbol(request.form.get("symbol"))
+
         # Grab symbol and shares from form
         symbol = lookup(request.form.get("symbol"))
         shares = request.form.get("shares")
-
-        # Validate symbol and shares input
-        if  validate_symbol(symbol):
-            return validate_symbol(symbol)
 
         if validate_shares(shares):
             return validate_shares(shares)
