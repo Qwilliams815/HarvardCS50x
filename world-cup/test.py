@@ -38,7 +38,10 @@
 # if not is_one(num) and not is_two(num):
 #     print("num is neither")
 
-dicts = [{'username': 'bri'}, {'username': 'brian'}]
-name = 'brian'
-if {'username': name} in dicts:
-    print("found")
+# dicts = [{'username': 'bri'}, {'username': 'brian'}]
+name = '    brian    '
+# if {'username': name} in dicts:
+#     print("found")
+
+name = name.strip()
+print(name)
