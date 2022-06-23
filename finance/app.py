@@ -224,7 +224,8 @@ def register():
             return apology("Password confirmation must match Password", 400)
 
         # Ensure username is not a duplicate
-        if {'username': 'bri'} in db.execute:
+        if {'username': request.form.get("username")} in db.execute("SELECT username FROM users"):
+            return apology("Username already taken", 400)
 
 
 
