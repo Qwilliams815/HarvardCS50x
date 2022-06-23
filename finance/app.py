@@ -193,6 +193,10 @@ def quote():
 
     if request.method == "POST":
 
+        # Validate input before calling lookup()
+        if validate_symbol(request.form.get("symbol")):
+            return validate_symbol(request.form.get("symbol"))
+
         quote = lookup(request.form.get("symbol"))
 
         # Validate quote input
