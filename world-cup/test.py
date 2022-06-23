@@ -25,15 +25,19 @@
 #         print("MASTERCARD")
 #         quit()
 
-def is_one(number):
-    if number == 1:
-        print("yes its one")
+# def is_one(number):
+#     if number == 1:
+#         print("yes its one")
 
 
-def is_two(number):
-    if number == 2:
-        print("yes its two")
+# def is_two(number):
+#     if number == 2:
+#         print("yes its two")
 
-num = 3
-if not is_one(num) and not is_two(num):
-    print("num is neither")
+# num = 3
+# if not is_one(num) and not is_two(num):
+#     print("num is neither")
+
+dicts = [{'username': 'bria'}, {'username': 'brian'}]
+if {'username': 'bri'} in dicts:
+    print("found")
