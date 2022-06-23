@@ -73,6 +73,11 @@ def validate_symbol(symbol):
 
 def validate_shares(shares):
     print(shares)
-    if not shares or (type(shares) != int) or (int(shares) < 1):
-        return apology("Invalid Shares Amount1", 400)
+    if not shares:
+        try:
+            shares = int(shares)
+        except:
+            return apology("Invalid Shares Amount1", 400)
+        if int(shares) < 1:
+            return apology("Invalid Shares Amount1", 400)
         # what if shares is float?
