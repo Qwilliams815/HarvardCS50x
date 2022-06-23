@@ -69,18 +69,20 @@ def validate_symbol(symbol):
     symbol = symbol.strip()
     if not symbol or symbol == None:
         return apology("Invalid Symbol", 400)
+    if not symbol.isaplha():
+        return apology("Invalid Symbol", 400)
 
 
 def validate_shares(shares):
     print(shares)
     if not shares:
-        return apology("Invalid Shares Amount1", 400)
-        
+        return apology("Invalid Shares Amount", 400)
+
     try:
         shares = int(shares)
     except:
-        return apology("Invalid Shares Amount1", 400)
+        return apology("Invalid Shares Amount", 400)
 
     if int(shares) < 1:
-        return apology("Invalid Shares Amount1", 400)
+        return apology("Invalid Shares Amount", 400)
         # what if shares is float?
