@@ -69,7 +69,7 @@ def validate_symbol(symbol):
     symbol = symbol.strip()
     if not symbol or symbol == None:
         return apology("Invalid Symbol", 400)
-    if not symbol.isaplha():
+    if not symbol.isalpha():
         return apology("Invalid Symbol", 400)
 
 
