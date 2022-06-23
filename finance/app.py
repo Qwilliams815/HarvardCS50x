@@ -89,7 +89,7 @@ def buy():
         # Grab symbol and shares from form
         symbol = lookup(request.form.get("symbol").strip())
 
-        if validate_symbol(symbol['symbol']):
+        if symbol == None:
             return validate_symbol(symbol['symbol'])
 
         shares = request.form.get("shares")
