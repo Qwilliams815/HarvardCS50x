@@ -199,11 +199,11 @@ def quote():
 
         quote = lookup(request.form.get("symbol"))
 
-        # Validate quote input
+        # Validate lookup(quote)
         if quote != None:
             return render_template("quoted.html", quote=quote)
         else:
-            return apology("invalid stock symbol", 403)
+            return apology("invalid stock symbol", 400)
 
     else:
         return render_template("quote.html")
