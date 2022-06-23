@@ -246,7 +246,7 @@ def register():
             return redirect("/")
 
     else:
-        print(db.execute("SELECT usern))
+        print(db.execute("SELECT username FROM users"))
         # Show register page
         return render_template("register.html")
 
