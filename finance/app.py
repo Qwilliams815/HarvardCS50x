@@ -301,7 +301,7 @@ def sell():
             total = db.execute("SELECT total FROM portfolio WHERE symbol = ? AND user_portfolio_id = ?", chosen_symbol, session['user_id'])
 
             # Update cash, update portfolio stats, add history entry
-            db.execute("UPDATE users SET cash = ? WHERE user_id = ?", price[0]['price']*shares, session["user_id"])
+            db.execute("UPDATE users SET cash = ? WHERE id = ?", price[0]['price']*shares, session["user_id"])
             db.execute("UPDATE portfolio SET shares = ?, total = ? WHERE symbol = ? AND user_portfolio_id = ?", current_shares[0]['shares']-shares, total[0]['total']-price[0]['price']*shares, chosen_symbol, session['user_id'])
             db.execute("INSERT INTO history (user_history_id, symbol, shares, price, time) VALUES (?, ?, ?, ?, ?)", session["user_id"], symbol['symbol'], 0-shares, symbol['price'], symbol['time'])
 
