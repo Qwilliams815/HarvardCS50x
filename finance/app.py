@@ -193,7 +193,7 @@ def quote():
 
     if request.method == "POST":
 
-        quote = lookup(request.form.get("quote"))
+        quote = lookup(request.form.get("symbol"))
 
         # Validate quote input
         if quote != None:
