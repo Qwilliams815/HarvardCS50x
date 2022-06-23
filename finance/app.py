@@ -87,7 +87,7 @@ def buy():
             return validate_symbol(request.form.get("symbol"))
 
         # Grab symbol and shares from form
-        symbol = lookup(request.form.get("symbol"))
+        symbol = lookup(request.form.get("symbol").strip())
         shares = request.form.get("shares")
 
         if validate_shares(shares):
@@ -197,7 +197,7 @@ def quote():
         if validate_symbol(request.form.get("symbol")):
             return validate_symbol(request.form.get("symbol"))
 
-        quote = lookup(request.form.get("symbol"))
+        quote = lookup(request.form.get("symbol").strip())
 
         # Validate lookup(quote)
         if quote != None:
@@ -273,7 +273,7 @@ def sell():
         if validate_symbol(chosen_symbol):
             return validate_symbol(chosen_symbol)
 
-        symbol = lookup(request.form.get("symbol"))
+        symbol = lookup(request.form.get("symbol").strip())
 
         shares = request.form.get("shares")
         current_shares = db.execute("SELECT shares FROM portfolio WHERE symbol = ? AND user_portfolio_id = ?", chosen_symbol, session['user_id'])
