@@ -112,7 +112,10 @@ def buy():
             symbols = [sym['symbol'] for sym in db.execute("SELECT symbol FROM portfolio WHERE user_portfolio_id = ?", session["user_id"])]
 
             # Add new event to history table
-            db.execute("INSERT INTO history (user_history_id, symbol, shares, price, time) VALUES (?, ?, ?, ?, ?)", session["user_id"], symbol['symbol'], shares, symbol['price'], symbol['time'])
+            try:
+                db.execute("INSERT INTO history (user_history_id, symbol, shares, price, time) VALUES (?, ?, ?, ?, ?)", session["user_id"], symbol['symbol'], shares, symbol['price'], symbol['time'])
+            except:
+                pass
 
             # Check whether stock has been purchased before. If so; update data, if not; add new data
             if symbol['symbol'] in symbols:
@@ -279,7 +282,6 @@ def sell():
             return validate_symbol(chosen_symbol)
 
         symbol = lookup(request.form.get("symbol").strip())
-        print(symbol['time'])
 
         shares = request.form.get("shares")
         current_shares = db.execute("SELECT shares FROM portfolio WHERE symbol = ? AND user_portfolio_id = ?", chosen_symbol, session['user_id'])
@@ -305,8 +307,10 @@ def sell():
             # Update cash, update portfolio stats, add history entry
             db.execute("UPDATE users SET cash = ? WHERE id = ?", cash+(price[0]['price']*shares), session["user_id"])
             db.execute("UPDATE portfolio SET shares = ?, total = ? WHERE symbol = ? AND user_portfolio_id = ?", current_shares[0]['shares']-shares, total[0]['total']-price[0]['price']*shares, chosen_symbol, session['user_id'])
-            db.execute("INSERT INTO history (user_history_id, symbol, shares, price, time) VALUES (?, ?, ?, ?, ?)", session["user_id"], symbol['symbol'], 0-shares, symbol['price'], symbol['time'])
-
+            try:
+                db.execute("INSERT INTO history (user_history_id, symbol, shares, price, time) VALUES (?, ?, ?, ?, ?)", session["user_id"], symbol['symbol'], 0-shares, symbol['price'], symbol['time'])
+            except:
+                pass
             # If shares = 0, drop that entry from profiles.
             db.execute("DELETE FROM portfolio WHERE shares = 0 AND user_portfolio_id = ?", session["user_id"])
 
