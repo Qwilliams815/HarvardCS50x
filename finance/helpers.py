@@ -67,6 +67,7 @@ def usd(value):
 
 def validate_symbol(symbol):
     try:
+        print(symbol)
         symbol = symbol.strip()
     except:
         return apology("Invalid Symbol1", 400)
