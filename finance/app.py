@@ -280,6 +280,7 @@ def sell():
 
         symbol = lookup(request.form.get("symbol").strip())
 
+        # Grab shares data
         shares = request.form.get("shares")
         current_shares = db.execute("SELECT shares FROM portfolio WHERE symbol = ? AND user_portfolio_id = ?",
         symbol['symbol'], session['user_id'])
@@ -288,8 +289,8 @@ def sell():
         if validate_shares(shares):
             return validate_shares(shares)
 
-        if validate_symbol(chosen_symbol):
-            return validate_symbol(chosen_symbol)
+        # if validate_symbol(chosen_symbol):
+        #     return validate_symbol(chosen_symbol)
 
         shares = int(shares)
 
