@@ -296,7 +296,6 @@ def sell():
         if shares > current_shares[0]['shares'] or shares < 1 or not shares:
             return apology("Invalid shares amount")
 
-
         else:
             price = db.execute("SELECT price FROM portfolio WHERE symbol = ? AND user_portfolio_id = ?", chosen_symbol, session['user_id'])
             total = db.execute("SELECT total FROM portfolio WHERE symbol = ? AND user_portfolio_id = ?", chosen_symbol, session['user_id'])
