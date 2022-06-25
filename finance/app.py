@@ -293,6 +293,8 @@ def sell():
             return apology("Invalid shares amount")
 
         else:
+            
+            # Grab price, total, and cash for sale calculation
             price = db.execute("SELECT price FROM portfolio WHERE symbol = ? AND user_portfolio_id = ?", symbol['symbol'], session['user_id'])
             total = db.execute("SELECT total FROM portfolio WHERE symbol = ? AND user_portfolio_id = ?", symbol['symbol'], session['user_id'])
             cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0]['cash']
@@ -306,7 +308,7 @@ def sell():
                 session["user_id"], symbol['symbol'], 0-shares, symbol['price'], symbol['time'])
             except:
                 pass
-            
+
             # If shares = 0, drop that entry from profiles.
             db.execute("DELETE FROM portfolio WHERE shares = 0 AND user_portfolio_id = ?", session["user_id"])
 
