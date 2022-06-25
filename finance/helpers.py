@@ -90,5 +90,8 @@ def validate_shares(shares):
         return apology("Invalid Shares Amount", 400)
         # what if shares is float?
 
-def return_test():
-    return apology("Test return", 400)
+def return_test(symbol):
+    if symbol:
+        return lookup(symbol)
+    else:
+        return apology("Test return", 400)
