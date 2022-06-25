@@ -238,8 +238,6 @@ def register():
         if {'username': request.form.get("username")} in db.execute("SELECT username FROM users"):
             return apology("Username already taken", 400)
 
-
-
         else:
 
             # Add user to user database
