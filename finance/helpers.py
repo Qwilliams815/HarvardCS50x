@@ -89,3 +89,6 @@ def validate_shares(shares):
     if int(shares) < 1:
         return apology("Invalid Shares Amount", 400)
         # what if shares is float?
+
+def return_test():
+    return apology("Test return", 400)
