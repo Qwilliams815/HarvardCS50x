@@ -66,6 +66,9 @@ def usd(value):
 
 
 def validate_symbol(symbol):
+    # Validate the raw input
+
+    # validate the lookup
     try:
         symbol = symbol.strip()
     except:
@@ -90,8 +93,8 @@ def validate_shares(shares):
         return apology("Invalid Shares Amount", 400)
         # what if shares is float?
 
-def return_test(symbol):
-    if symbol:
-        return lookup(symbol)
+def return_test(word):
+    if word:
+        return "hello, " + word
     else:
         return apology("Test return", 400)
