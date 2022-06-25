@@ -90,7 +90,7 @@ def buy():
         symbol = lookup(request.form.get("symbol").strip())
 
         if symbol == None:
-            return apology("Invalid Symbol5", 400)
+            return apology("Invalid Symbol", 400)
 
         shares = request.form.get("shares")
 
