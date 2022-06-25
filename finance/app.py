@@ -134,7 +134,7 @@ def buy():
 
 
     else:
-        sym = return_test("AAPL")
+        return return_test("")
         return render_template("buy.html")
 
 
