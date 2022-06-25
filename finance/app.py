@@ -64,7 +64,7 @@ def index():
     portfolio = db.execute("SELECT * FROM portfolio WHERE user_portfolio_id = ?", session["user_id"])
     purchase_power = db.execute("SELECT SUM(total) FROM portfolio WHERE user_portfolio_id = ?", session["user_id"])[0]['SUM(total)']
     if not purchase_power:
-        purchase_power = 0.00;
+        purchase_power = 0.00
 
     # Update portfolio with realtime price lookup
     for stock in portfolio:
@@ -244,13 +244,14 @@ def register():
 
             # Add user to user database
             try:
-                db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", request.form.get("username"), generate_password_hash(request.form.get("password")))
+                db.execute("INSERT INTO users (username, hash) VALUES (?, ?)",
+                request.form.get("username"), generate_password_hash(request.form.get("password")))
             except:
                 return apology("Username already in use", 500)
 
             # Query database for username
             rows = db.execute("SELECT * FROM users WHERE username = ?",
-                          request.form.get("username"))
+            request.form.get("username"))
 
             # Remember which user has logged in
             session["user_id"] = rows[0]["id"]
@@ -282,7 +283,8 @@ def sell():
         symbol = lookup(request.form.get("symbol").strip())
 
         shares = request.form.get("shares")
-        current_shares = db.execute("SELECT shares FROM portfolio WHERE symbol = ? AND user_portfolio_id = ?", chosen_symbol, session['user_id'])
+        current_shares = db.execute("SELECT shares FROM portfolio WHERE symbol = ? AND user_portfolio_id = ?",
+        chosen_symbol, session['user_id'])
 
         # Validate shares amount
         if validate_shares(shares):
@@ -303,9 +305,11 @@ def sell():
 
             # Update cash, update portfolio stats, add history entry
             db.execute("UPDATE users SET cash = ? WHERE id = ?", cash+(price[0]['price']*shares), session["user_id"])
-            db.execute("UPDATE portfolio SET shares = ?, total = ? WHERE symbol = ? AND user_portfolio_id = ?", current_shares[0]['shares']-shares, total[0]['total']-price[0]['price']*shares, chosen_symbol, session['user_id'])
+            db.execute("UPDATE portfolio SET shares = ?, total = ? WHERE symbol = ? AND user_portfolio_id = ?",
+            current_shares[0]['shares']-shares, total[0]['total']-price[0]['price']*shares, chosen_symbol, session['user_id'])
             try:
-                db.execute("INSERT INTO history (user_history_id, symbol, shares, price, time) VALUES (?, ?, ?, ?, ?)", session["user_id"], symbol['symbol'], 0-shares, symbol['price'], symbol['time'])
+                db.execute("INSERT INTO history (user_history_id, symbol, shares, price, time) VALUES (?, ?, ?, ?, ?)",
+                session["user_id"], symbol['symbol'], 0-shares, symbol['price'], symbol['time'])
             except:
                 pass
             # If shares = 0, drop that entry from profiles.
