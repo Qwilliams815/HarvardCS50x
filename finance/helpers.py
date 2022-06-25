@@ -69,11 +69,11 @@ def validate_symbol(symbol):
     try:
         symbol = symbol.strip()
     except:
-        return apology("Invalid Symbol1", 400)
+        return apology("Invalid Symbol", 400)
     if not symbol or symbol == None:
-        return apology("Invalid Symbol2", 400)
+        return apology("Invalid Symbol", 400)
     if not symbol.isalpha():
-        return apology("Invalid Symbol3", 400)
+        return apology("Invalid Symbol", 400)
 
 
 def validate_shares(shares):
