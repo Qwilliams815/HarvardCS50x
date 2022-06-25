@@ -207,7 +207,7 @@ def quote():
 
         quote = lookup(request.form.get("symbol").strip())
 
-        # Validate lookup(quote)
+        # Validate lookup(quote) huh
         if quote != None:
             return render_template("quoted.html", quote=quote)
         else:
