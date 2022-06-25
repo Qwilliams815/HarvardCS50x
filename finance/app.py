@@ -272,8 +272,6 @@ def sell():
 
     if request.method == "POST":
 
-        # chosen_symbol = request.form.get("symbol")
-
         # Validate symbol before calling lookup()
         if validate_symbol(request.form.get("symbol")):
             return validate_symbol(request.form.get("symbol"))
@@ -288,9 +286,6 @@ def sell():
         # Validate shares amount
         if validate_shares(shares):
             return validate_shares(shares)
-
-        # if validate_symbol(chosen_symbol):
-        #     return validate_symbol(chosen_symbol)
 
         shares = int(shares)
 
