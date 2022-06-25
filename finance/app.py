@@ -293,7 +293,7 @@ def sell():
             return apology("Invalid shares amount")
 
         else:
-            
+
             # Grab price, total, and cash for sale calculation
             price = db.execute("SELECT price FROM portfolio WHERE symbol = ? AND user_portfolio_id = ?", symbol['symbol'], session['user_id'])
             total = db.execute("SELECT total FROM portfolio WHERE symbol = ? AND user_portfolio_id = ?", symbol['symbol'], session['user_id'])
@@ -303,6 +303,7 @@ def sell():
             db.execute("UPDATE users SET cash = ? WHERE id = ?", cash+(price[0]['price']*shares), session["user_id"])
             db.execute("UPDATE portfolio SET shares = ?, total = ? WHERE symbol = ? AND user_portfolio_id = ?",
             current_shares[0]['shares']-shares, total[0]['total']-price[0]['price']*shares, symbol['symbol'], session['user_id'])
+            
             try:
                 db.execute("INSERT INTO history (user_history_id, symbol, shares, price, time) VALUES (?, ?, ?, ?, ?)",
                 session["user_id"], symbol['symbol'], 0-shares, symbol['price'], symbol['time'])
