@@ -65,6 +65,7 @@ def usd(value):
     return f"${value:,.2f}"
 
 
+# Validates raw symbol input
 def validate_symbol(symbol):
     try:
         symbol = symbol.strip()
@@ -76,6 +77,7 @@ def validate_symbol(symbol):
         return apology("Invalid Symbol", 400)
 
 
+# Validates raw shares input
 def validate_shares(shares):
     print(shares)
     if not shares:
@@ -88,4 +90,3 @@ def validate_shares(shares):
 
     if int(shares) < 1:
         return apology("Invalid Shares Amount", 400)
-        # what if shares is float?
