@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="popup_styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="button-wrapper">
+      <div id="dictionary" class="button">
+        <img src="img_assets/book-half.svg" alt="" />
+        <p>Dictionary</p>
+      </div>
+    </div>
+
+    <div class="button-wrapper">
+      <div id="screen-reader" class="button">
+        <img src="img_assets/soundwave.svg" alt="" />
+        <p>Screen Reader</p>
+      </div>
+      <div class="sub-buttons">
+        <input
+          class="radio__input radio_screen_reader"
+          type="radio"
+          value="slow"
+          name="reader-set"
+          id="slow"
+          data-speed="0.5"
+        />
+        <label class="radio__label" for="slow">S</label>
+
+        <input
+          class="radio__input radio_screen_reader"
+          type="radio"
+          value="med"
+          name="reader-set"
+          id="medium"
+          data-speed="1"
+        />
+        <label class="radio__label" for="medium">M</label>
+
+        <input
+          class="radio__input radio_screen_reader"
+          type="radio"
+          value="fast"
+          name="reader-set"
+          id="fast"
+          data-speed="3"
+        />
+        <label class="radio__label" for="fast">F</label>
+
+        <!-- <button id="slow-speed">S</button>
+            <button id="med-speed">M</button>
+            <button id="fast-speed">F</button> -->
+      </div>
+    </div>
+
+    <div class="button-wrapper">
+      <div id="page-structure" class="button">
+        <img src="img_assets/layout-text-window-reverse.svg" alt="" />
+        <p>Page Structure</p>
+      </div>
+    </div>
+
+    <div class="button-wrapper">
+      <div id="text-size" class="button">
+        <img src="img_assets/fonts.svg" alt="" />
+        <p>Text Size</p>
+      </div>
+      <div class="sub-buttons">
+        <input
+          class="radio__input"
+          type="radio"
+          value="small"
+          name="text-size-set"
+          id="small-1"
+          data-zoom="1"
+        />
+        <label class="radio__label" for="small-1">S</label>
+
+        <input
+          class="radio__input"
+          type="radio"
+          value="med"
+          name="text-size-set"
+          id="medium-1"
+          data-zoom="1.75"
+        />
+        <label class="radio__label" for="medium-1">M</label>
+
+        <input
+          class="radio__input"
+          type="radio"
+          value="large"
+          name="text-size-set"
+          id="large-1"
+          data-zoom="2.5"
+        />
+        <label class="radio__label" for="large-1">L</label>
+      </div>
+    </div>
+
+    <div class="button-wrapper">
+      <div id="line-height" class="button">
+        <img src="img_assets/arrows-expand.svg" alt="" />
+        <p>Line Height</p>
+      </div>
+      <div class="sub-buttons">
+        <input
+          class="radio__input"
+          type="radio"
+          value="small"
+          name="line-height-set"
+          id="small-2"
+          data-height = "1rem"
+        />
+        <label class="radio__label" for="small-2">S</label>
+
+        <input
+          class="radio__input"
+          type="radio"
+          value="med"
+          name="line-height-set"
+          id="medium-2"
+          data-height = "3rem"
+        />
+        <label class="radio__label" for="medium-2">M</label>
+
+        <input
+          class="radio__input"
+          type="radio"
+          value="large"
+          name="line-height-set"
+          id="large-2"
+          data-height = "5rem"
+        />
+        <label class="radio__label" for="large-2">L</label>
+      </div>
+    </div>
+
+    <div class="button-wrapper">
+      <div id="word-spacing" class="button">
+        <img src="img_assets/distribute-horizontal.svg" alt="" />
+        <p>Word Spacing</p>
+      </div>
+
+      <div class="sub-buttons">
+        <input
+          class="radio__input"
+          type="radio"
+          value="small"
+          name="spacing-set"
+          id="small-3"
+          data-space="0rem"
+        />
+        <label class="radio__label" for="small-3">S</label>
+
+        <input
+          class="radio__input"
+          type="radio"
+          value="med"
+          name="spacing-set"
+          id="medium-3"
+          data-space=".5rem"
+        />
+        <label class="radio__label" for="medium-3">M</label>
+
+        <input
+          class="radio__input"
+          type="radio"
+          value="large"
+          name="spacing-set"
+          id="large-3"
+          data-space="1rem"
+        />
+        <label class="radio__label" for="large-3">L</label>
+      </div>
+    </div>
+    <div class="modal"></div>
+  </body>
+  <script src="popup.js"></script>
+</html>
