@@ -1,6 +1,6 @@
 # WebAccessibilityChromeExt
 
-#### Video Demo: 
+#### Video Demo:
 
 #### Description -
 
