@@ -8,7 +8,8 @@ int main(void)
     do
     {
         height = get_int("Height: ");
-    } while (1 > height || height > 8);
+    }
+    while (1 > height || height > 8);
 
     int row_length = height;
     int row_index = 1;
