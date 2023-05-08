@@ -20,24 +20,34 @@ int main(void)
     int score2 = compute_score(word2);
 
     // Print the winner
-    if (score1 > score2) {
+    if (score1 > score2)
+    {
         printf("Player 1 wins!\n");
-    } else if (score1 < score2) {
+    }
+    else if (score1 < score2)
+    {
         printf("Player 2 wins!\n");
-    } else {
+    }
+    else
+    {
         printf("Tie!\n");
     }
 }
 
-int compute_score(string word) {
+int compute_score(string word)
+{
 
     // Compute and return score for string
     int point_sum = 0;
-    for (int i=0, n=strlen(word); i < n; i++) {
-        char cap_letter = toupper(word[i]);
-        // subtract 65 from letters ascii value to correspond alphabetically with its proper POINTS index.
-        int letter_point_index = cap_letter - 65;
-        point_sum += POINTS[letter_point_index];
+    for (int i = 0, n = strlen(word); i < n; i++)
+    {
+        if (isalpha(word[i]))
+        {
+            char cap_letter = toupper(word[i]);
+            // subtract 65 from letters ascii value to correspond alphabetically with its proper POINTS index.
+            int letter_point_index = cap_letter - 65;
+            point_sum += POINTS[letter_point_index];
+        }
     }
     return point_sum;
 };
