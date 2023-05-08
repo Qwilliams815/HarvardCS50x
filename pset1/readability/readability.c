@@ -14,6 +14,7 @@ int main(void)
     int words = 0;
     int sentances = 0;
 
+    // Loop over each letter in text
     for (int i = 0, n = strlen(text); i < n; i++)
     {
         if (isalpha(text[i]))
