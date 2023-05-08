@@ -56,6 +56,7 @@ int main(void)
         if (checksum_total % 10 == 0)
         {
 
+            // Identify AMEX
             if (first_two_numbers == 34 || first_two_numbers == 37)
             {
                 if (card_number_length == 15)
@@ -63,6 +64,7 @@ int main(void)
                     printf("AMEX\n");
                 }
             }
+            // Identify MASTERCARD
             else if (first_two_numbers >= 51 && first_two_numbers <= 55)
             {
                 if (card_number_length == 16)
@@ -70,6 +72,7 @@ int main(void)
                     printf("MASTERCARD\n");
                 }
             }
+            // Identify VISA
             else if (first_two_numbers / 10 == 4)
             {
                 if (card_number_length == 13 || card_number_length == 16)
