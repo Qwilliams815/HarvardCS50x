@@ -7,5 +7,6 @@ int main(void)
 {
     int test = 6;
     printf("%f", test);
+    printf(strlen("Hello my name is brian"))
 
 }
