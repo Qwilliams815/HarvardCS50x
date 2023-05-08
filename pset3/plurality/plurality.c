@@ -10,8 +10,7 @@ typedef struct
 {
     string name;
     int votes;
-}
-candidate;
+} candidate;
 
 // Array of candidates
 candidate candidates[MAX];
@@ -66,9 +65,11 @@ int main(int argc, string argv[])
 // Update vote totals given a new vote
 bool vote(string name)
 {
-    for (int i=0; i<candidate_count; i++) {
-        if (strcmp(name, candidates[i].name) == 0) {
-            //printf("match found\n");
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (strcmp(name, candidates[i].name) == 0)
+        {
+            // printf("match found\n");
             candidates[i].votes += 1;
             return true;
         }
@@ -80,22 +81,25 @@ bool vote(string name)
 void print_winner(void)
 {
     // Bubble sorting highest vote count
-    for (int i=0; i<candidate_count; i++) {
-        if (candidates[i].votes > candidates[i+1].votes) {
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (candidates[i].votes > candidates[i + 1].votes)
+        {
 
             // Swapping current and next indices
-            candidate temp = candidates[i+1];
-            candidates[i+1] = candidates[i];
+            candidate temp = candidates[i + 1];
+            candidates[i + 1] = candidates[i];
             candidates[i] = temp;
         }
     }
 
     // Checking for Tie(s)
-    for (int i=0; i<candidate_count; i++) {
-        if (candidates[i].votes == candidates[candidate_count].votes) {
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (candidates[i].votes == candidates[candidate_count].votes)
+        {
             printf("%s\n", candidates[i].name);
         }
     }
     printf("%s\n", candidates[candidate_count].name);
 }
-
