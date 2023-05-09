@@ -25,11 +25,13 @@ Here is a list of all the widgets, along with a short description:
 
 # The Files -
 
-- Popup (popup.js, popup.html, popup_styles.css): These 3 files handle the logic, layout, and styling of the popup window launched when you click the extension icon. Popup.js is responsible for handling wdiget activation and sending messages to the content script to follow through on widget functionality, as well as writing widget activation status to local storage.
+- Popup (popup.js, popup.html, popup_styles.css): These 3 files handle the logic, layout, and styling of the popup window launched when you click the extension icon. Popup.js is responsible for handling widget activation and sending messages to the content script to follow through on widget functionality, as well as writing widget activation status to local storage.
 
-- Content (content_script.js, content_styles.css): These are file that get injected into a web page when it becomes active. Content.js handles all the widget logic when it recieves the OK from popup.js. This involves adding event listeners to text, creating a showdow host element for the dictionary and page structure shadowDOM modals, and various API calls. Content_script.js is also responsible for reading and activating widget activation status from local storage. This is important because we want our preferences to run 
+- Content (content_script.js, content_styles.css): These are file that get injected into a web page when it becomes active. Content.js handles all the widget logic when it receives the OK from popup.js. This involves adding event listeners to text, creating a showdow host element for the dictionary and page structure shadowDOM modals, and various API calls. Content_script.js is also responsible for reading and activating widget activation status from local storage. This is important because we want our preferences to run on the page before activating the popup.
 
-- Background
+- Background (background.js, manifest.json): Background.js is responsible for grabbing the current tabs ID and sending it to the content script so that loading preferences from storage can be achieved successfully. Manifest.json is a collection of settings the tell chrome what my extension does, what it needs permission for, and what files need to be linked to make my extension work properly.
+
+- Assets (image_assets, icon_assets): Various images and icons for buttons, widgets, and other aesthetic purposes.
 
 # What I Learned -
 
